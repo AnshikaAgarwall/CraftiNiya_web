@@ -1,0 +1,137 @@
+.section {
+  padding-block: var(--section-y);
+  background-color: var(--c-bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+.card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background-color: var(--c-sunken);
+  transition:
+    transform var(--t-base) var(--ease),
+    box-shadow var(--t-base) var(--ease);
+}
+
+.card[data-feature="true"] {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Trailing tiles widened to close the last row — see tileSpan(). */
+.card[data-span="2"] {
+  grid-column: span 2;
+}
+
+.card[data-span="full"] {
+  grid-column: 1 / -1;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-lg);
+}
+
+.cardImage {
+  height: 100%;
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.06);
+}
+
+.cardImage img {
+  transition: transform var(--t-slow) var(--ease);
+}
+
+/* Bottom-weighted warm scrim: enough to carry white text, not a dark wash. */
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(var(--c-ink-rgb) / 0) 40%,
+    rgb(var(--c-ink-rgb) / 0.28) 66%,
+    rgb(var(--c-ink-rgb) / 0.72) 100%
+  );
+}
+
+.cardBody {
+  position: absolute;
+  right: var(--sp-5);
+  bottom: var(--sp-5);
+  left: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  color: var(--c-text-on-media);
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  text-shadow: 0 1px 12px rgb(var(--c-ink-rgb) / 0.5);
+}
+
+.card[data-feature="true"] .cardTitle {
+  font-size: var(--fs-2xl);
+}
+
+.cardMeta {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  opacity: 0.88;
+}
+
+.skeleton {
+  aspect-ratio: 3 / 4;
+  height: auto;
+  border-radius: var(--r-lg);
+}
+
+.skeleton:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card[data-feature="true"] {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .skeleton:first-child {
+    grid-column: span 2;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 520px) {
+  .cardBody {
+    right: var(--sp-4);
+    bottom: var(--sp-4);
+    left: var(--sp-4);
+  }
+
+  .cardTitle,
+  .card[data-feature="true"] .cardTitle {
+    font-size: var(--fs-md);
+  }
+}

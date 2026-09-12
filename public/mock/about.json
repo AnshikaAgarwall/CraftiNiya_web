@@ -1,0 +1,96 @@
+{
+  "seo": {
+    "title": "About",
+    "description": "Craftiniya is a small handmade studio making home decor, candles, crochet and personalized gifts in small batches."
+  },
+  "hero": {
+    "title": "Handmade with love, made to feel special",
+    "body": "Discover handcrafted decor, candles, crochet and gifts that blend timeless charm with everyday use. Every piece is made in small batches and carries the story of the hands that made it.",
+    "cta": { "label": "Shop the collection", "href": "/shop" },
+    "videoUrl": null,
+    "image": { "url": null, "alt": "A Craftiniya maker holding a handmade piece" }
+  },
+  "welcome": {
+    "title": "Welcome to Craftiniya",
+    "body": "Explore our collections of home decor, candles, crochet, festive essentials and personalized gifts. Find something that feels like you — or like the person you are gifting.",
+    "image": { "url": null, "alt": "Finishing a handmade piece in the studio" },
+    "stats": [
+      { "id": "pieces", "value": "135+", "label": "Handmade pieces", "icon": "package" },
+      { "id": "collections", "value": "7", "label": "Collections", "icon": "palette" },
+      { "id": "customers", "value": "1,000+", "label": "Happy customers", "icon": "heart" }
+    ]
+  },
+  "services": {
+    "eyebrow": "What we make",
+    "title": "We can help style your home & life",
+    "items": [
+      {
+        "id": "home-decor",
+        "icon": "lamp",
+        "title": "Handmade Home Decor",
+        "body": "Wall art, nameplates, clocks and tabletop pieces for spaces that feel lived in.",
+        "href": "/category/home-decor"
+      },
+      {
+        "id": "candles",
+        "icon": "flame",
+        "title": "Candles & Fragrance",
+        "body": "Hand-poured soy candles, sculpted pieces and wax melts for a softly scented home.",
+        "href": "/category/candles-fragrance"
+      },
+      {
+        "id": "gifting",
+        "icon": "gift",
+        "title": "Thoughtful Gifting",
+        "body": "Hampers and ready-to-give gifts for every occasion, wrapped with care.",
+        "href": "/category/gifts"
+      },
+      {
+        "id": "personalized",
+        "icon": "pen-line",
+        "title": "Personalized Keepsakes",
+        "body": "Names, dates and words made into pieces that belong to one person alone.",
+        "href": "/category/personalized"
+      }
+    ]
+  },
+  "commitment": {
+    "title": "Our commitment to craft",
+    "body": "We make in small runs, by hand, and we are honest about it. These are the standards we hold every piece to.",
+    "image": { "url": null, "alt": "A maker holding a personalized nameplate" },
+    "metrics": [
+      { "id": "handmade", "label": "Handmade in small batches", "value": 95 },
+      { "id": "materials", "label": "Sustainable materials", "value": 80 },
+      { "id": "craft", "label": "Quality craftsmanship", "value": 90 },
+      { "id": "packaging", "label": "Plastic-free packaging", "value": 70 }
+    ]
+  },
+  "policies": {
+    "title": "The practical bits",
+    "items": [
+      {
+        "id": "shipping",
+        "title": "Shipping",
+        "body": "Everything is made to order, so allow 2–4 days in the studio before dispatch. Delivery is 3–6 days across India. Orders over ₹1,499 ship free; below that it is a flat ₹99."
+      },
+      {
+        "id": "returns",
+        "title": "Returns",
+        "body": "Unused pieces can come back within 7 days of delivery for a full refund. Personalized and made-to-order commissions cannot be returned unless they arrive damaged — tell us within 48 hours and we will remake or refund."
+      },
+      {
+        "id": "care",
+        "title": "Care",
+        "body": "Keep resin out of prolonged direct sun. Trim candle wicks to 5mm before each burn and never leave one unattended. Spot-clean crochet in cold water and dry flat."
+      },
+      {
+        "id": "contact",
+        "title": "Contact",
+        "body": "Questions about an order, a custom brief, or a wholesale enquiry — email us and a person will reply, usually within a day."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Anything else — just ask."
+  }
+}

@@ -1,0 +1,155 @@
+/* The footer stays light: --c-surface ground, with secondary copy in
+   --c-text-2 at 6.38:1. */
+
+.footer {
+  margin-top: var(--sp-12);
+  border-top: 1px solid var(--c-border);
+  background-color: var(--c-surface);
+  color: var(--c-text);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.6fr repeat(3, 1fr);
+  gap: var(--sp-9);
+  padding-block: var(--sp-10) var(--sp-9);
+}
+
+/* ---------- brand column ---------- */
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-4);
+}
+
+/* Same wordmark treatment as the header — the name is the logo. */
+.wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: var(--fw-semibold);
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--c-text);
+  transition: color var(--t-fast) var(--ease);
+}
+
+.wordmark:hover {
+  color: var(--c-brand);
+}
+
+.tagline {
+  max-width: 30ch;
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+}
+
+.social {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.socialLink {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-circle);
+  color: var(--c-text);
+  transition:
+    background-color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+
+.socialLink:hover {
+  background-color: var(--c-brand);
+  border-color: var(--c-brand);
+  color: var(--c-text-on-brand);
+}
+
+.socialLink svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* ---------- link columns ---------- */
+
+.colHeading {
+  margin-bottom: var(--sp-4);
+  color: var(--c-brand);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+}
+
+.colList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.colLink {
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  transition: color var(--t-fast) var(--ease);
+}
+
+.colLink:hover {
+  color: var(--c-brand-hover);
+}
+
+/* ---------- bottom bar ---------- */
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding-block: var(--sp-5);
+  border-top: 1px solid var(--c-border);
+  color: var(--c-text-2);
+  font-size: var(--fs-xs);
+}
+
+.credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.credit svg {
+  width: 13px;
+  height: 13px;
+  color: var(--c-brand);
+  fill: var(--c-brand);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-7);
+  }
+
+  .brandCol {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .inner {
+    grid-template-columns: 1fr;
+    padding-block: var(--sp-8) var(--sp-6);
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

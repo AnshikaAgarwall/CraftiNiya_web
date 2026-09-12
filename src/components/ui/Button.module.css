@@ -1,0 +1,159 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-align: center;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    box-shadow var(--t-base) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.button:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.label {
+  display: inline-block;
+}
+
+.spinner {
+  flex: 0 0 auto;
+}
+
+/* ---------- sizes ---------- */
+
+.sm {
+  min-height: 34px;
+  padding: 0 var(--sp-4);
+  font-size: var(--fs-xs);
+}
+
+.md {
+  min-height: 44px;
+  padding: 0 var(--sp-6);
+  font-size: var(--fs-sm);
+}
+
+.lg {
+  min-height: 52px;
+  padding: 0 var(--sp-8);
+  font-size: var(--fs-base);
+}
+
+.iconOnly {
+  padding: 0;
+  aspect-ratio: 1;
+  border-radius: var(--r-circle);
+}
+
+.iconOnly.sm { width: 34px; }
+.iconOnly.md { width: 44px; }
+.iconOnly.lg { width: 52px; }
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ---------- variants ---------- */
+
+.primary {
+  background-color: var(--c-brand);
+  color: var(--c-text-on-brand);
+  border: 1px solid var(--c-brand);
+}
+
+.primary:not(:disabled):hover {
+  background-color: var(--c-brand-hover);
+  border-color: var(--c-brand-hover);
+  box-shadow: var(--sh-md);
+}
+
+/* Secondary uses --c-border-strong, not the decorative divider colour:
+   an interactive edge needs 3:1 contrast to satisfy WCAG 1.4.11. */
+.secondary {
+  background-color: var(--c-surface);
+  color: var(--c-text);
+  border: 1px solid var(--c-border-strong);
+}
+
+.secondary:not(:disabled):hover {
+  background-color: var(--c-brand-soft);
+  border-color: var(--c-brand);
+  color: var(--c-brand-hover);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--c-text);
+  border: 1px solid transparent;
+}
+
+.ghost:not(:disabled):hover {
+  background-color: var(--c-brand-soft);
+  color: var(--c-brand-hover);
+}
+
+.subtle {
+  background-color: var(--c-brand-soft);
+  color: var(--c-brand-hover);
+  border: 1px solid transparent;
+}
+
+.subtle:not(:disabled):hover {
+  background-color: var(--c-brand);
+  color: var(--c-text-on-brand);
+}
+
+/* Terracotta is a fill only. Text on it is --c-text-on-accent (4.80:1), never white (2.76:1). */
+.accent {
+  background-color: var(--c-accent);
+  color: var(--c-text-on-accent);
+  border: 1px solid var(--c-accent);
+}
+
+.accent:not(:disabled):hover {
+  background-color: var(--c-accent-ink);
+  border-color: var(--c-accent-ink);
+  color: var(--c-surface);
+}
+
+.danger {
+  background-color: transparent;
+  color: var(--c-error);
+  border: 1px solid var(--c-error);
+}
+
+.danger:not(:disabled):hover {
+  background-color: var(--c-error);
+  color: var(--c-surface);
+}
+
+.link {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--c-brand-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link:not(:disabled):hover {
+  color: var(--c-text);
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "under-99",
+    "label": "Under ₹99",
+    "tag": "Little joys",
+    "description": "Small tokens, cards and stocking fillers",
+    "min": null,
+    "max": 99,
+    "sortOrder": 1,
+    "productCount": 5
+  },
+  {
+    "id": "under-299",
+    "label": "Under ₹299",
+    "tag": "Most loved",
+    "description": "Thoughtful pocket-sized gifting",
+    "min": null,
+    "max": 299,
+    "sortOrder": 2,
+    "productCount": 26
+  },
+  {
+    "id": "under-399",
+    "label": "Under ₹399",
+    "tag": "Best value",
+    "description": "Everyday keepsakes worth giving",
+    "min": null,
+    "max": 399,
+    "sortOrder": 3,
+    "productCount": 35
+  },
+  {
+    "id": "under-499",
+    "label": "Under ₹499",
+    "tag": "Gift-ready",
+    "description": "Considered pieces under five hundred",
+    "min": null,
+    "max": 499,
+    "sortOrder": 4,
+    "productCount": 44
+  }
+]

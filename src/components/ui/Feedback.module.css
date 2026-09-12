@@ -1,0 +1,112 @@
+.spinner {
+  animation: spin 0.9s linear infinite;
+}
+
+/* ---------- skeleton ---------- */
+
+.skeleton {
+  display: block;
+  width: 100%;
+  height: 1em;
+  border-radius: var(--r-sm);
+  background-image: linear-gradient(
+    90deg,
+    var(--c-sunken) 25%,
+    var(--c-brand-soft) 37%,
+    var(--c-sunken) 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.cardSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-3);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  background-color: var(--c-surface);
+}
+
+.cardSkeletonImage {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  margin-bottom: var(--sp-2);
+  border-radius: var(--r-md);
+}
+
+/* ---------- loading block ---------- */
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding: var(--sp-10) var(--sp-4);
+  color: var(--c-text-2);
+}
+
+.blockText {
+  font-size: var(--fs-sm);
+}
+
+/* ---------- empty / error ---------- */
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding: var(--sp-10) var(--sp-6);
+  text-align: center;
+  border: 1px dashed var(--c-border);
+  border-radius: var(--r-lg);
+  background-color: var(--c-surface);
+}
+
+.stateError {
+  border-style: solid;
+  border-color: var(--c-error);
+  background-color: var(--c-error-soft);
+}
+
+.stateIcon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--r-circle);
+  background-color: var(--c-brand-soft);
+  color: var(--c-brand);
+}
+
+.stateIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.stateIconError {
+  background-color: var(--c-surface);
+  color: var(--c-error);
+}
+
+.stateTitle {
+  margin: 0;
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+}
+
+.stateText {
+  max-width: 44ch;
+  margin: 0;
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+}
+
+.stateAction {
+  margin-top: var(--sp-2);
+}

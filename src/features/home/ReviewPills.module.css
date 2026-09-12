@@ -1,0 +1,145 @@
+.section {
+  padding-block: var(--section-y);
+  background-color: var(--c-surface);
+  border-block: 1px solid var(--c-border);
+  overflow: hidden;
+}
+
+.rail {
+  display: flex;
+  gap: var(--sp-4);
+  width: max-content;
+}
+
+/* Two identical tracks scrolling as one, so the loop has no visible seam. */
+.track {
+  display: flex;
+  gap: var(--sp-4);
+}
+
+.trackAnimated {
+  animation: reviewMarquee 46s linear infinite;
+}
+
+.rail:hover .trackAnimated {
+  animation-play-state: paused;
+}
+
+@keyframes reviewMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% - var(--sp-4))); }
+}
+
+/* Reduced motion: a plain horizontal scroller the viewer drives themselves. */
+.railStatic {
+  width: 100%;
+  padding-inline: var(--gutter);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.railStatic::-webkit-scrollbar {
+  display: none;
+}
+
+.railStatic .track:last-child {
+  display: none;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  width: 400px;
+  padding: var(--sp-3) var(--sp-5) var(--sp-3) var(--sp-3);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-pill);
+  background-color: var(--c-bg);
+  transition:
+    border-color var(--t-base) var(--ease),
+    box-shadow var(--t-base) var(--ease);
+}
+
+.pill:hover {
+  border-color: var(--c-brand);
+  box-shadow: var(--sh-md);
+}
+
+.thumb {
+  flex: 0 0 auto;
+  width: 62px;
+  height: 62px;
+  overflow: hidden;
+  border-radius: var(--r-circle);
+  background-color: var(--c-sunken);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.name {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  white-space: nowrap;
+}
+
+.verified {
+  width: 14px;
+  height: 14px;
+  color: var(--c-success);
+}
+
+.email {
+  color: var(--c-text-2);
+  font-size: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text {
+  margin-top: var(--sp-1);
+  color: var(--c-text-2);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-snug);
+  /* One line only — these are pills, not cards. */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.loading {
+  display: flex;
+  gap: var(--sp-4);
+  overflow: hidden;
+}
+
+.skeleton {
+  flex: 0 0 400px;
+  height: 86px;
+  border-radius: var(--r-pill);
+}
+
+@media (max-width: 520px) {
+  .pill {
+    width: 320px;
+  }
+
+  .skeleton {
+    flex-basis: 320px;
+  }
+}

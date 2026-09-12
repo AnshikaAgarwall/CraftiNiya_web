@@ -1,0 +1,253 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  max-width: 920px;
+  padding-block: var(--sp-10) var(--sp-11);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-9) var(--sp-6);
+  border-radius: var(--r-lg);
+  background-color: var(--c-success-soft);
+  text-align: center;
+}
+
+.tick {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: var(--sp-2);
+  border-radius: var(--r-circle);
+  background-color: var(--c-surface);
+  color: var(--c-success);
+}
+
+.tick svg {
+  width: 30px;
+  height: 30px;
+}
+
+.title {
+  font-size: var(--fs-2xl);
+}
+
+.subtitle {
+  max-width: 46ch;
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+}
+
+.orderNumber {
+  margin-top: var(--sp-2);
+  padding: var(--sp-2) var(--sp-5);
+  border-radius: var(--r-pill);
+  background-color: var(--c-surface);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--ls-wide);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+
+.card {
+  padding: var(--sp-6);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  background-color: var(--c-surface);
+}
+
+.cardTitle {
+  margin-bottom: var(--sp-5);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+}
+
+.cardTitleSpaced {
+  margin-top: var(--sp-6);
+}
+
+/* ---------- timeline ---------- */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.timeline li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  color: var(--c-text-2);
+}
+
+.timeline svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  padding: 2px;
+  color: var(--c-text-2);
+}
+
+.timelineDone {
+  color: var(--c-text) !important;
+}
+
+.timelineDone svg {
+  color: var(--c-success);
+}
+
+.timeline div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timeline strong {
+  font-size: var(--fs-sm);
+}
+
+.timeline span {
+  font-size: var(--fs-xs);
+  color: var(--c-text-2);
+}
+
+/* ---------- address ---------- */
+
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  font-style: normal;
+  line-height: var(--lh-base);
+}
+
+.address strong {
+  color: var(--c-text);
+}
+
+.payment {
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+}
+
+/* ---------- items ---------- */
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding-bottom: var(--sp-5);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.itemThumb {
+  display: block;
+  width: 56px;
+  overflow: hidden;
+  border-radius: var(--r-sm);
+  background-color: var(--c-sunken);
+}
+
+.itemBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.itemTitle {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+
+.itemMeta {
+  color: var(--c-text-2);
+  font-size: var(--fs-xs);
+}
+
+.itemPrice {
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.totals {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+  margin-left: auto;
+  max-width: 320px;
+}
+
+.totals > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  font-size: var(--fs-sm);
+}
+
+.totals dt {
+  color: var(--c-text-2);
+}
+
+.totals dd {
+  margin: 0;
+  font-weight: var(--fw-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.grand {
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--c-border);
+}
+
+.grand dt {
+  color: var(--c-text) !important;
+  font-weight: var(--fw-semibold);
+}
+
+.grand dd {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-2);
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

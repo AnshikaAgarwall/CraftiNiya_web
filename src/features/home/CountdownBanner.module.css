@@ -1,0 +1,131 @@
+.banner {
+  padding-block: var(--sp-9);
+  background-color: var(--c-accent-soft);
+  border-block: 1px solid var(--c-border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-9);
+}
+
+.copy {
+  max-width: 34rem;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+  /* Terracotta as type must use the darker ink token — --c-accent fails AA as text. */
+  color: var(--c-accent-ink);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+}
+
+.label svg {
+  width: 15px;
+  height: 15px;
+}
+
+.headline {
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-tight);
+}
+
+.subline {
+  margin-top: var(--sp-3);
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+}
+
+.timerBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  flex: 0 0 auto;
+}
+
+.timer {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+  min-width: 68px;
+  padding: var(--sp-3) var(--sp-2);
+  border-radius: var(--r-md);
+  background-color: var(--c-surface);
+  box-shadow: var(--sh-sm);
+}
+
+.unitValue {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  letter-spacing: var(--ls-tight);
+  /* Tabular figures stop the digits jittering as the seconds change. */
+  font-variant-numeric: tabular-nums;
+  color: var(--c-text);
+}
+
+.unitLabel {
+  color: var(--c-text-2);
+  font-size: 9px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.ends {
+  color: var(--c-text-2);
+  font-size: var(--fs-xs);
+}
+
+.cta {
+  margin-top: var(--sp-1);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-7);
+  }
+
+  .timerBlock {
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .timer {
+    gap: var(--sp-2);
+    width: 100%;
+  }
+
+  .unit {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .unitValue {
+    font-size: 1.5rem;
+  }
+
+  .cta {
+    width: 100%;
+  }
+}

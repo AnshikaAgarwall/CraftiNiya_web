@@ -1,0 +1,65 @@
+/* ---------- why ---------- */
+
+.why {
+  padding-block: var(--section-y);
+  background-color: var(--c-surface);
+  border-block: 1px solid var(--c-border);
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+}
+
+.whyCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-6);
+  border-radius: var(--r-lg);
+  background-color: var(--c-bg);
+}
+
+.whyIcon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: var(--sp-2);
+  border-radius: var(--r-circle);
+  background-color: var(--c-brand-soft);
+  color: var(--c-brand);
+}
+
+.whyIcon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.whyTitle {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+}
+
+.whyBody {
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+}
+
+@media (max-width: 900px) {
+  .whyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .whyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .whyCard {
+    padding: var(--sp-5);
+  }
+}

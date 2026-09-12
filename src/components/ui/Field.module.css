@@ -1,0 +1,143 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  color: var(--c-text);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.required {
+  color: var(--c-error);
+}
+
+.control {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: var(--sp-4);
+  display: grid;
+  place-items: center;
+  color: var(--c-text-2);
+  pointer-events: none;
+}
+
+.icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.input {
+  width: 100%;
+  min-height: 46px;
+  padding: var(--sp-3) var(--sp-4);
+  /* --c-border-strong, not --c-border: an interactive boundary needs 3:1. */
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-md);
+  background-color: var(--c-surface);
+  color: var(--c-text);
+  font-size: var(--fs-base);
+  transition:
+    border-color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
+}
+
+.hasIcon .input {
+  padding-left: calc(var(--sp-4) * 2 + 17px);
+}
+
+.input::placeholder {
+  color: var(--c-text-2);
+  opacity: 0.75;
+}
+
+.input:hover:not(:disabled) {
+  border-color: var(--c-brand);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--c-brand);
+  box-shadow: 0 0 0 3px var(--c-brand-soft);
+}
+
+.textarea {
+  min-height: 110px;
+  line-height: var(--lh-base);
+  resize: vertical;
+}
+
+.selectWrap {
+  position: relative;
+}
+
+.select {
+  appearance: none;
+  padding-right: var(--sp-9);
+  cursor: pointer;
+}
+
+.chevron {
+  position: absolute;
+  right: var(--sp-4);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--c-text-2);
+  border-bottom: 2px solid var(--c-text-2);
+  transform: translateY(-2px) rotate(45deg);
+  pointer-events: none;
+}
+
+.hasError .input {
+  border-color: var(--c-error);
+}
+
+.hasError .input:focus {
+  box-shadow: 0 0 0 3px var(--c-error-soft);
+}
+
+.hint {
+  color: var(--c-text-2);
+  font-size: var(--fs-xs);
+}
+
+.error {
+  color: var(--c-error);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+}
+
+/* ---------- checkbox / radio ---------- */
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.choiceInput {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--c-brand);
+  cursor: pointer;
+}
+
+.choiceLabel {
+  color: var(--c-text);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  user-select: none;
+}

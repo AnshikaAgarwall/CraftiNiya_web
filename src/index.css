@@ -1,0 +1,8 @@
+/* =========================================================
+   CRAFTINIYA — GLOBAL ENTRY
+   This file imports and nothing else. All component styling
+   lives in co-located *.module.css files.
+   ========================================================= */
+
+@import "./styles/tokens.css";
+@import "./styles/base.css";

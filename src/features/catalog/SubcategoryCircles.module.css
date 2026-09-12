@@ -1,0 +1,106 @@
+.rail {
+  display: flex;
+  gap: var(--sp-6);
+  padding-block: var(--sp-2) var(--sp-4);
+  overflow-x: auto;
+  /* Negative inline margin + matching padding lets the rail bleed to the
+     screen edge on mobile while its first item stays aligned to the grid. */
+  margin-inline: calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+  scroll-snap-type: x proximity;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  width: 104px;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.circle {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  overflow: hidden;
+  border: 2px solid var(--c-border);
+  border-radius: var(--r-circle);
+  background-color: var(--c-sunken);
+  transition:
+    border-color var(--t-base) var(--ease),
+    transform var(--t-base) var(--ease);
+}
+
+.circle img {
+  transition: transform var(--t-slow) var(--ease);
+}
+
+.item:hover .circle {
+  border-color: var(--c-brand);
+  transform: translateY(-2px);
+}
+
+.item:hover .circle img {
+  transform: scale(1.08);
+}
+
+/* "All", and any subcategory without a poster yet (shows its initial). */
+.allCircle,
+.textCircle {
+  background-color: var(--c-brand-soft);
+  color: var(--c-brand-hover);
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+}
+
+.itemActive .circle {
+  border-color: var(--c-brand);
+  box-shadow: 0 0 0 3px var(--c-brand-soft);
+}
+
+.label {
+  color: var(--c-text);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-snug);
+}
+
+.itemActive .label {
+  color: var(--c-brand-hover);
+  font-weight: var(--fw-bold);
+}
+
+.count {
+  color: var(--c-text-2);
+  font-size: 10px;
+}
+
+.skeletonCircle {
+  width: 84px;
+  height: 84px;
+  border-radius: var(--r-circle);
+}
+
+@media (max-width: 640px) {
+  .rail {
+    gap: var(--sp-4);
+  }
+
+  .item {
+    width: 82px;
+  }
+
+  .circle,
+  .skeletonCircle {
+    width: 68px;
+    height: 68px;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+}

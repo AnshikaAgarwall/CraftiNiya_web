@@ -1,0 +1,116 @@
+/* Fills the locked auth viewport and never scrolls with the page — only the
+   two tracks inside it move. */
+.showcase {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  background-color: var(--c-sunken);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  height: 100%;
+  padding: var(--sp-4);
+}
+
+/* Each column is a strip of film: a darker rail with sprocket perforations
+   punched down both edges. */
+.strip {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-sm);
+  background-color: var(--c-support);
+  padding-inline: 14px;
+}
+
+/* Sprocket holes: one 7×26px tile holding an 11px bar over 15px of nothing,
+   tiled down the rail. The laurel rail is only 14px wide on each edge, so the
+   panel still reads light overall. */
+.strip::before,
+.strip::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 14px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--c-bg) 0 11px,
+    transparent 11px 26px
+  );
+  background-size: 7px 26px;
+  background-repeat: repeat-y;
+  background-position: center top;
+  pointer-events: none;
+}
+
+.strip::before {
+  left: 0;
+}
+
+.strip::after {
+  right: 0;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+/* Opposite directions, endlessly. Long durations because this is ambient
+   texture beside a form, not something to watch. */
+.trackUp {
+  animation: marqueeUp 48s linear infinite;
+}
+
+.trackDown {
+  animation: marqueeDown 48s linear infinite;
+}
+
+/* Spacing as margin, not gap — see the note in the component. Half the track
+   height must equal exactly one set of frames or the loop jumps. */
+.frame {
+  margin-bottom: 6px;
+  overflow: hidden;
+  background-color: var(--c-surface);
+}
+
+.frameImage {
+  display: block;
+}
+
+/* Fades top and bottom so frames enter and leave the strip rather than being
+   sliced off at the edge. */
+.fadeTop,
+.fadeBottom {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  height: 15%;
+  pointer-events: none;
+}
+
+.fadeTop {
+  top: 0;
+  background: linear-gradient(
+    180deg,
+    var(--c-sunken) 0%,
+    rgb(var(--c-sunken-rgb) / 0) 100%
+  );
+}
+
+.fadeBottom {
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    var(--c-sunken) 0%,
+    rgb(var(--c-sunken-rgb) / 0) 100%
+  );
+}

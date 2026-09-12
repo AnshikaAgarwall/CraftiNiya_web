@@ -1,0 +1,220 @@
+/* ---------- badge ---------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge_sm {
+  padding: 3px var(--sp-2);
+  font-size: 9px;
+}
+
+.badge_md {
+  padding: var(--sp-1) var(--sp-3);
+  font-size: var(--fs-xs);
+}
+
+.tone_neutral {
+  background-color: var(--c-sunken);
+  color: var(--c-text-2);
+}
+
+.tone_brand {
+  background-color: var(--c-brand-soft);
+  color: var(--c-brand-hover);
+}
+
+/* --c-text-on-accent on Terracotta = 4.80:1. White would be 2.76:1 and must not be used. */
+.tone_accent {
+  background-color: var(--c-accent);
+  color: var(--c-text-on-accent);
+}
+
+.tone_solid {
+  background-color: var(--c-text);
+  color: var(--c-surface);
+}
+
+.tone_success {
+  background-color: var(--c-success-soft);
+  color: var(--c-success);
+}
+
+.tone_error {
+  background-color: var(--c-error-soft);
+  color: var(--c-error);
+}
+
+/* ---------- price ---------- */
+
+.price {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.priceCurrent {
+  color: var(--c-text);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-tight);
+}
+
+.price_sm .priceCurrent { font-size: var(--fs-base); }
+.price_md .priceCurrent { font-size: var(--fs-md); }
+.price_lg .priceCurrent { font-size: var(--fs-xl); }
+
+.priceWas {
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  text-decoration: line-through;
+}
+
+/* Terracotta as TYPE must use the darker ink token, not --c-accent. */
+.priceOff {
+  color: var(--c-accent-ink);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+/* ---------- rating ---------- */
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+}
+
+.stars {
+  display: inline-flex;
+  gap: 1px;
+}
+
+.star {
+  color: var(--c-border);
+  fill: var(--c-border);
+}
+
+.starFull {
+  color: var(--c-accent);
+  fill: var(--c-accent);
+}
+
+.starHalf {
+  color: var(--c-accent);
+  fill: transparent;
+}
+
+.ratingValue {
+  color: var(--c-text);
+  font-weight: var(--fw-semibold);
+}
+
+.ratingCount {
+  color: var(--c-text-2);
+  font-size: var(--fs-xs);
+}
+
+/* ---------- chip ---------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-pill);
+  background-color: var(--c-surface);
+  color: var(--c-text);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+
+button.chip:hover {
+  border-color: var(--c-brand);
+  background-color: var(--c-brand-soft);
+  color: var(--c-brand-hover);
+}
+
+.chipActive {
+  border-color: var(--c-brand);
+  background-color: var(--c-brand);
+  color: var(--c-text-on-brand);
+}
+
+.chipX {
+  font-size: var(--fs-md);
+  line-height: 1;
+}
+
+/* ---------- section heading ---------- */
+
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-8);
+}
+
+.heading_center {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: var(--sp-2);
+  color: var(--c-brand);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+}
+
+.headingTitle {
+  font-size: var(--fs-3xl);
+}
+
+.headingSub {
+  max-width: 58ch;
+  margin-top: var(--sp-3);
+  color: var(--c-text-2);
+  font-size: var(--fs-base);
+}
+
+.heading_center .headingSub {
+  margin-inline: auto;
+}
+
+.headingAction {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-4);
+  }
+
+  .heading_center {
+    align-items: center;
+  }
+}

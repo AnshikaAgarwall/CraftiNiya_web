@@ -1,0 +1,442 @@
+/* ---------- shared split layout ---------- */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(var(--sp-7), 6vw, var(--sp-11));
+  align-items: center;
+}
+
+.splitReverse {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.copy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.body {
+  max-width: 52ch;
+  color: var(--c-text-2);
+  font-size: var(--fs-md);
+  line-height: var(--lh-base);
+}
+
+.sectionTitle {
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-tight);
+}
+
+/* ---------- framed image ---------- */
+
+.frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
+  padding-inline: var(--sp-7);
+}
+
+.frameLeft {
+  justify-self: start;
+}
+
+/* Organic "pebble" outline — percentages, not radius tokens, because the shape
+   is the point. The terracotta ring is the padding showing through. */
+.blob {
+  padding: var(--sp-3);
+  border-radius: 38% 62% 46% 54% / 34% 40% 60% 66%;
+  background-color: var(--c-accent);
+  box-shadow: var(--sh-lg);
+}
+
+.blob > span {
+  border-radius: 36% 64% 44% 56% / 32% 38% 62% 68%;
+}
+
+.swatches {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transform: translateY(-50%);
+}
+
+.frameLeft .swatches {
+  right: auto;
+  left: 0;
+}
+
+.swatches span {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--c-surface);
+  border-radius: var(--r-circle);
+  box-shadow: var(--sh-sm);
+}
+
+.swatches span:nth-child(1) {
+  background-color: var(--c-accent-soft);
+}
+
+.swatches span:nth-child(2) {
+  background-color: var(--c-accent);
+}
+
+.swatches span:nth-child(3) {
+  background-color: var(--c-brand-hover);
+}
+
+.sparkle {
+  position: absolute;
+  top: var(--sp-2);
+  left: var(--sp-2);
+  width: 30px;
+  height: 30px;
+  color: var(--c-accent-ink);
+}
+
+.frameLeft .sparkle {
+  right: var(--sp-2);
+  left: auto;
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  padding-block: var(--sp-10) var(--sp-12);
+  border-radius: 0 0 50% 50% / 0 0 var(--sp-10) var(--sp-10);
+  background-color: var(--c-sunken);
+}
+
+.heroSparkle {
+  width: 28px;
+  height: 28px;
+  color: var(--c-accent-ink);
+}
+
+.heroTitle {
+  font-size: var(--fs-4xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-2);
+}
+
+.play {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-circle);
+  background-color: var(--c-surface);
+  color: var(--c-brand-hover);
+  box-shadow: var(--sh-md);
+  transition: transform var(--t-base) var(--ease);
+}
+
+.play:hover {
+  transform: scale(1.06);
+}
+
+.play svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* ---------- welcome ---------- */
+
+.welcome {
+  padding-block: var(--section-y);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  margin-top: var(--sp-3);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+  padding-inline: var(--sp-3);
+  text-align: center;
+}
+
+.stat + .stat {
+  border-left: 1px solid var(--c-border);
+}
+
+.statValue {
+  color: var(--c-text);
+  font-family: var(--font-serif);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+}
+
+.statLabel {
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+}
+
+.statIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-top: var(--sp-3);
+  border-radius: var(--r-circle);
+  background-color: var(--c-surface);
+  color: var(--c-accent-ink);
+  box-shadow: var(--sh-sm);
+}
+
+.statIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- services ---------- */
+
+.services {
+  padding-block: var(--section-y);
+  border-radius: 50% 50% 0 0 / var(--sp-10) var(--sp-10) 0 0;
+  background-color: var(--c-surface);
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-7) var(--sp-5);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  background-color: var(--c-bg);
+  text-align: center;
+  box-shadow: var(--sh-sm);
+}
+
+.serviceLink {
+  transition:
+    transform var(--t-base) var(--ease),
+    box-shadow var(--t-base) var(--ease),
+    border-color var(--t-base) var(--ease);
+}
+
+.serviceLink:hover {
+  border-color: var(--c-brand);
+  box-shadow: var(--sh-lg);
+  transform: translateY(-4px);
+}
+
+.serviceIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: var(--sp-2);
+  border-radius: var(--r-circle);
+  background-color: var(--c-accent-soft);
+  color: var(--c-accent-ink);
+}
+
+.serviceIcon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.serviceTitle {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+}
+
+.serviceBody {
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+}
+
+/* ---------- commitment ---------- */
+
+.commitment {
+  padding-block: var(--section-y);
+  background-color: var(--c-surface);
+}
+
+.metrics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  max-width: 460px;
+  margin-top: var(--sp-2);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.metricHead {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  color: var(--c-text);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+
+.metricValue {
+  color: var(--c-text-2);
+  font-weight: var(--fw-medium);
+}
+
+.metricTrack {
+  display: block;
+  height: 8px;
+  overflow: hidden;
+  border-radius: var(--r-pill);
+  background-color: var(--c-sunken);
+}
+
+.metricFill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--c-accent);
+}
+
+.metric:nth-child(even) .metricFill {
+  background-color: var(--c-brand);
+}
+
+/* ---------- policies ---------- */
+
+.policies {
+  padding-block: var(--section-y);
+}
+
+.policiesTitle {
+  margin-bottom: var(--sp-8);
+  font-size: var(--fs-2xl);
+  text-align: center;
+}
+
+.policyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-5);
+}
+
+.policy {
+  padding: var(--sp-6);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  background-color: var(--c-surface);
+  /* Anchored from footer links, so keep the header clear of the target. */
+  scroll-margin-top: calc(var(--header-h) + var(--sp-5));
+}
+
+.policy h3 {
+  margin-bottom: var(--sp-3);
+  color: var(--c-brand);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+}
+
+.policy p {
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-loose);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-9);
+  padding-top: var(--sp-8);
+  border-top: 1px solid var(--c-border);
+  text-align: center;
+}
+
+.contact p {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .split,
+  .splitReverse {
+    grid-template-columns: 1fr;
+  }
+
+  .frame,
+  .frameLeft {
+    justify-self: center;
+    max-width: 380px;
+  }
+
+  /* Copy first on phones, whichever side the picture sits on at desktop. */
+  .splitReverse .frame {
+    order: 2;
+  }
+
+  .serviceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    padding-block: var(--sp-8) var(--sp-10);
+  }
+}
+
+@media (max-width: 640px) {
+  .serviceGrid,
+  .policyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    padding-inline: var(--sp-2);
+  }
+
+  .contactActions {
+    flex-direction: column;
+    align-self: stretch;
+  }
+}

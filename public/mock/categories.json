@@ -1,0 +1,387 @@
+[
+  {
+    "id": "home-decor",
+    "slug": "home-decor",
+    "title": "Home Decor",
+    "description": "Handmade wall art, nameplates, clocks and tabletop pieces that make a home feel lived in.",
+    "posterImage": "https://upkriti.com/cdn/shop/products/97_f426fd26-4803-482d-b11b-7b4fbf7255d4.png?v=1706524941&width=1946",
+    "productCount": 24,
+    "subcategories": [
+      {
+        "id": "wall-decor",
+        "slug": "wall-decor",
+        "title": "Wall Decor",
+        "posterImage": "https://upkriti.com/cdn/shop/products/97_f426fd26-4803-482d-b11b-7b4fbf7255d4.png?v=1706524941&width=1946",
+        "productCount": 3
+      },
+      {
+        "id": "door-decor",
+        "slug": "door-decor",
+        "title": "Door Decor",
+        "posterImage": "https://www.desiclik.com/images/P/DSC05248-01.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "table-decor",
+        "slug": "table-decor",
+        "title": "Table Decor",
+        "posterImage": "https://i.etsystatic.com/31532206/r/il/83c758/7796602711/il_fullxfull.7796602711_ro8g.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "frames",
+        "slug": "frames",
+        "title": "Frames",
+        "posterImage": "https://upkriti.com/cdn/shop/products/97_f426fd26-4803-482d-b11b-7b4fbf7255d4.png?v=1706524941&width=1946",
+        "productCount": 3
+      },
+      {
+        "id": "nameplates",
+        "slug": "nameplates",
+        "title": "Nameplates",
+        "posterImage": "https://cdn.shopify.com/s/files/1/0585/4694/6211/files/Personalised-Mandala-Nameboard-2.jpg?v=1738758511",
+        "productCount": 3
+      },
+      {
+        "id": "clocks",
+        "slug": "clocks",
+        "title": "Clocks",
+        "posterImage": "https://upkriti.com/cdn/shop/products/97_f426fd26-4803-482d-b11b-7b4fbf7255d4.png?v=1706524941&width=1946",
+        "productCount": 3
+      },
+      {
+        "id": "decorative-trays",
+        "slug": "decorative-trays",
+        "title": "Decorative Trays",
+        "posterImage": "https://cdn.shopify.com/s/files/1/2331/2177/files/20230828_173156_550x.jpg?v=1693484658",
+        "productCount": 3
+      },
+      {
+        "id": "hanging-decor",
+        "slug": "hanging-decor",
+        "title": "Hanging Decor",
+        "posterImage": "https://www.desiclik.com/images/P/DSC05248-01.jpg",
+        "productCount": 3
+      }
+    ]
+  },
+  {
+    "id": "bags-accessories",
+    "slug": "bags-accessories",
+    "title": "Bags & Accessories",
+    "description": "Totes, slings, potlis and crochet bags, stitched and finished by hand.",
+    "posterImage": "https://cdn.lojasonlinectt.pt/usercontent/catarinaferreiraatelier/media/images/4c786e0-200342-img_3224.jpg",
+    "productCount": 21,
+    "subcategories": [
+      {
+        "id": "tote-bags",
+        "slug": "tote-bags",
+        "title": "Tote Bags",
+        "posterImage": "https://cdn.lojasonlinectt.pt/usercontent/catarinaferreiraatelier/media/images/4c786e0-200342-img_3224.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "sling-bags",
+        "slug": "sling-bags",
+        "title": "Sling Bags",
+        "posterImage": "https://cdn.lojasonlinectt.pt/usercontent/catarinaferreiraatelier/media/images/4c786e0-200342-img_3224.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "potli-bags",
+        "slug": "potli-bags",
+        "title": "Potli Bags",
+        "posterImage": "https://cdn.lojasonlinectt.pt/usercontent/catarinaferreiraatelier/media/images/4c786e0-200342-img_3224.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "clutches",
+        "slug": "clutches",
+        "title": "Clutches",
+        "posterImage": "https://cdn.lojasonlinectt.pt/usercontent/catarinaferreiraatelier/media/images/4c786e0-200342-img_3224.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "pouches",
+        "slug": "pouches",
+        "title": "Pouches",
+        "posterImage": "https://cdn.lojasonlinectt.pt/usercontent/catarinaferreiraatelier/media/images/4c786e0-200342-img_3224.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "crochet-bags",
+        "slug": "crochet-bags",
+        "title": "Crochet Bags",
+        "posterImage": "https://cdn.lojasonlinectt.pt/usercontent/catarinaferreiraatelier/media/images/4c786e0-200342-img_3224.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "bag-charms",
+        "slug": "bag-charms",
+        "title": "Bag Charms",
+        "posterImage": "https://cdn.lojasonlinectt.pt/usercontent/catarinaferreiraatelier/media/images/4c786e0-200342-img_3224.jpg",
+        "productCount": 3
+      }
+    ]
+  },
+  {
+    "id": "candles-fragrance",
+    "slug": "candles-fragrance",
+    "title": "Candles & Fragrance",
+    "description": "Hand-poured soy candles, sculpted pieces and wax melts, made in small batches.",
+    "posterImage": "https://cdn.dribbble.com/userupload/46514767/file/6d5650919a55c12b0911a0d65f2ba7f2.png?resize=752x&vertical=center",
+    "productCount": 18,
+    "subcategories": [
+      {
+        "id": "scented-candles",
+        "slug": "scented-candles",
+        "title": "Scented Candles",
+        "posterImage": "https://cdn.dribbble.com/userupload/46514767/file/6d5650919a55c12b0911a0d65f2ba7f2.png?resize=752x&vertical=center",
+        "productCount": 3
+      },
+      {
+        "id": "decorative-candles",
+        "slug": "decorative-candles",
+        "title": "Decorative Candles",
+        "posterImage": "https://cdn.dribbble.com/userupload/46514767/file/6d5650919a55c12b0911a0d65f2ba7f2.png?resize=752x&vertical=center",
+        "productCount": 3
+      },
+      {
+        "id": "flower-candles",
+        "slug": "flower-candles",
+        "title": "Flower Candles",
+        "posterImage": "https://cdn.dribbble.com/userupload/46514767/file/6d5650919a55c12b0911a0d65f2ba7f2.png?resize=752x&vertical=center",
+        "productCount": 3
+      },
+      {
+        "id": "jar-candles",
+        "slug": "jar-candles",
+        "title": "Jar Candles",
+        "posterImage": "https://cdn.dribbble.com/userupload/46514767/file/6d5650919a55c12b0911a0d65f2ba7f2.png?resize=752x&vertical=center",
+        "productCount": 3
+      },
+      {
+        "id": "bubble-candles",
+        "slug": "bubble-candles",
+        "title": "Bubble Candles",
+        "posterImage": "https://cdn.dribbble.com/userupload/46514767/file/6d5650919a55c12b0911a0d65f2ba7f2.png?resize=752x&vertical=center",
+        "productCount": 3
+      },
+      {
+        "id": "wax-melts",
+        "slug": "wax-melts",
+        "title": "Wax Melts",
+        "posterImage": "https://cdn.dribbble.com/userupload/46514767/file/6d5650919a55c12b0911a0d65f2ba7f2.png?resize=752x&vertical=center",
+        "productCount": 3
+      }
+    ]
+  },
+  {
+    "id": "handmade-crochet",
+    "slug": "handmade-crochet",
+    "title": "Handmade & Crochet",
+    "description": "Crochet flowers, bouquets, plushies and little handmade keepsakes that last.",
+    "posterImage": "https://arttales.in/cdn/shop/articles/Why_Handmade_Personalized_Crochet_Flower_Bouquets_Are_the_Hottest_Gifting_Trend_in_India_751b7542-6f51-4b01-8b6a-c10068e7a594.jpg?v=1746810950&width=750",
+    "productCount": 18,
+    "subcategories": [
+      {
+        "id": "crochet-flowers",
+        "slug": "crochet-flowers",
+        "title": "Crochet Flowers",
+        "posterImage": "https://arttales.in/cdn/shop/articles/Why_Handmade_Personalized_Crochet_Flower_Bouquets_Are_the_Hottest_Gifting_Trend_in_India_751b7542-6f51-4b01-8b6a-c10068e7a594.jpg?v=1746810950&width=750",
+        "productCount": 3
+      },
+      {
+        "id": "bouquets",
+        "slug": "bouquets",
+        "title": "Bouquets",
+        "posterImage": "https://arttales.in/cdn/shop/articles/Why_Handmade_Personalized_Crochet_Flower_Bouquets_Are_the_Hottest_Gifting_Trend_in_India_751b7542-6f51-4b01-8b6a-c10068e7a594.jpg?v=1746810950&width=750",
+        "productCount": 3
+      },
+      {
+        "id": "plushies",
+        "slug": "plushies",
+        "title": "Plushies",
+        "posterImage": "https://arttales.in/cdn/shop/articles/Why_Handmade_Personalized_Crochet_Flower_Bouquets_Are_the_Hottest_Gifting_Trend_in_India_751b7542-6f51-4b01-8b6a-c10068e7a594.jpg?v=1746810950&width=750",
+        "productCount": 3
+      },
+      {
+        "id": "crochet-keychains",
+        "slug": "crochet-keychains",
+        "title": "Keychains",
+        "posterImage": "https://arttales.in/cdn/shop/articles/Why_Handmade_Personalized_Crochet_Flower_Bouquets_Are_the_Hottest_Gifting_Trend_in_India_751b7542-6f51-4b01-8b6a-c10068e7a594.jpg?v=1746810950&width=750",
+        "productCount": 3
+      },
+      {
+        "id": "bookmarks",
+        "slug": "bookmarks",
+        "title": "Bookmarks",
+        "posterImage": "https://arttales.in/cdn/shop/articles/Why_Handmade_Personalized_Crochet_Flower_Bouquets_Are_the_Hottest_Gifting_Trend_in_India_751b7542-6f51-4b01-8b6a-c10068e7a594.jpg?v=1746810950&width=750",
+        "productCount": 3
+      },
+      {
+        "id": "handmade-accessories",
+        "slug": "handmade-accessories",
+        "title": "Handmade Accessories",
+        "posterImage": "https://arttales.in/cdn/shop/articles/Why_Handmade_Personalized_Crochet_Flower_Bouquets_Are_the_Hottest_Gifting_Trend_in_India_751b7542-6f51-4b01-8b6a-c10068e7a594.jpg?v=1746810950&width=750",
+        "productCount": 3
+      }
+    ]
+  },
+  {
+    "id": "festive-pooja",
+    "slug": "festive-pooja",
+    "title": "Festive & Pooja",
+    "description": "Pooja thalis, diyas, torans and festive decor, handmade for every celebration.",
+    "posterImage": "https://i.pinimg.com/736x/a6/8c/ff/a68cff2a7ae64c456454b874a952a062.jpg",
+    "productCount": 21,
+    "subcategories": [
+      {
+        "id": "pooja-thali",
+        "slug": "pooja-thali",
+        "title": "Pooja Thali",
+        "posterImage": "https://i.pinimg.com/736x/a6/8c/ff/a68cff2a7ae64c456454b874a952a062.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "karva-chauth",
+        "slug": "karva-chauth",
+        "title": "Karva Chauth",
+        "posterImage": "https://i.pinimg.com/736x/a6/8c/ff/a68cff2a7ae64c456454b874a952a062.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "diwali",
+        "slug": "diwali",
+        "title": "Diwali",
+        "posterImage": "https://i.pinimg.com/736x/a6/8c/ff/a68cff2a7ae64c456454b874a952a062.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "torans",
+        "slug": "torans",
+        "title": "Torans",
+        "posterImage": "https://www.desiclik.com/images/P/DSC05248-01.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "diyas",
+        "slug": "diyas",
+        "title": "Diyas",
+        "posterImage": "https://i.pinimg.com/736x/a6/8c/ff/a68cff2a7ae64c456454b874a952a062.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "rakhi",
+        "slug": "rakhi",
+        "title": "Rakhi",
+        "posterImage": "https://i.pinimg.com/736x/a6/8c/ff/a68cff2a7ae64c456454b874a952a062.jpg",
+        "productCount": 3
+      },
+      {
+        "id": "festive-decor",
+        "slug": "festive-decor",
+        "title": "Festive Decor",
+        "posterImage": "https://i.pinimg.com/736x/a6/8c/ff/a68cff2a7ae64c456454b874a952a062.jpg",
+        "productCount": 3
+      }
+    ]
+  },
+  {
+    "id": "gifts",
+    "slug": "gifts",
+    "title": "Gifts",
+    "description": "Hampers and ready-to-give gifts for birthdays, weddings, anniversaries and housewarmings.",
+    "posterImage": "https://www.satmya.in/cdn/shop/files/Ananda_Gift_Basket_1_1024x1024%402x.jpg?v=1727110930",
+    "productCount": 18,
+    "subcategories": [
+      {
+        "id": "gift-hampers",
+        "slug": "gift-hampers",
+        "title": "Gift Hampers",
+        "posterImage": "https://cdn.shopaccino.com/guljaipur/products/dsc07833-588968895520793_s.jpg?v=722",
+        "productCount": 3
+      },
+      {
+        "id": "birthday-gifts",
+        "slug": "birthday-gifts",
+        "title": "Birthday Gifts",
+        "posterImage": "https://www.satmya.in/cdn/shop/files/Ananda_Gift_Basket_1_1024x1024%402x.jpg?v=1727110930",
+        "productCount": 3
+      },
+      {
+        "id": "wedding-gifts",
+        "slug": "wedding-gifts",
+        "title": "Wedding Gifts",
+        "posterImage": "https://www.satmya.in/cdn/shop/files/Ananda_Gift_Basket_1_1024x1024%402x.jpg?v=1727110930",
+        "productCount": 3
+      },
+      {
+        "id": "anniversary-gifts",
+        "slug": "anniversary-gifts",
+        "title": "Anniversary Gifts",
+        "posterImage": "https://www.satmya.in/cdn/shop/files/Ananda_Gift_Basket_1_1024x1024%402x.jpg?v=1727110930",
+        "productCount": 3
+      },
+      {
+        "id": "housewarming-gifts",
+        "slug": "housewarming-gifts",
+        "title": "Housewarming Gifts",
+        "posterImage": "https://cdn.shopaccino.com/guljaipur/products/dsc07833-588968895520793_s.jpg?v=722",
+        "productCount": 3
+      },
+      {
+        "id": "return-gifts",
+        "slug": "return-gifts",
+        "title": "Return Gifts",
+        "posterImage": "https://www.satmya.in/cdn/shop/files/Ananda_Gift_Basket_1_1024x1024%402x.jpg?v=1727110930",
+        "productCount": 3
+      }
+    ]
+  },
+  {
+    "id": "personalized",
+    "slug": "personalized",
+    "title": "Personalized",
+    "description": "Nameplates, keychains, frames and candles made with your names, dates and words.",
+    "posterImage": "https://cdn.shopify.com/s/files/1/0585/4694/6211/files/Personalised-Mandala-Nameboard-2.jpg?v=1738758511",
+    "productCount": 15,
+    "subcategories": [
+      {
+        "id": "personalized-nameplates",
+        "slug": "personalized-nameplates",
+        "title": "Personalized Nameplates",
+        "posterImage": "https://cdn.shopify.com/s/files/1/0585/4694/6211/files/Personalised-Mandala-Nameboard-2.jpg?v=1738758511",
+        "productCount": 3
+      },
+      {
+        "id": "personalized-keychains",
+        "slug": "personalized-keychains",
+        "title": "Keychains",
+        "posterImage": "https://cdn.shopify.com/s/files/1/0585/4694/6211/files/Personalised-Mandala-Nameboard-2.jpg?v=1738758511",
+        "productCount": 3
+      },
+      {
+        "id": "personalized-frames",
+        "slug": "personalized-frames",
+        "title": "Frames",
+        "posterImage": "https://cdn.shopify.com/s/files/1/0585/4694/6211/files/Personalised-Mandala-Nameboard-2.jpg?v=1738758511",
+        "productCount": 3
+      },
+      {
+        "id": "personalized-candles",
+        "slug": "personalized-candles",
+        "title": "Candles",
+        "posterImage": "https://cdn.dribbble.com/userupload/46514767/file/6d5650919a55c12b0911a0d65f2ba7f2.png?resize=752x&vertical=center",
+        "productCount": 3
+      },
+      {
+        "id": "couple-gifts",
+        "slug": "couple-gifts",
+        "title": "Couple Gifts",
+        "posterImage": "https://www.satmya.in/cdn/shop/files/Ananda_Gift_Basket_1_1024x1024%402x.jpg?v=1727110930",
+        "productCount": 3
+      }
+    ]
+  }
+]

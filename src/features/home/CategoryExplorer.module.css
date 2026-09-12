@@ -1,0 +1,25 @@
+.section {
+  padding-block: var(--section-y);
+  background-color: var(--c-bg);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-8);
+}
+
+/* Centre the rail while it fits; `safe` falls back to start alignment once it
+   overflows, so the first circles never scroll out of reach. */
+.rail ul,
+.rail > div {
+  justify-content: safe center;
+}
+
+@media (max-width: 520px) {
+  .tabs {
+    margin-bottom: var(--sp-6);
+  }
+}

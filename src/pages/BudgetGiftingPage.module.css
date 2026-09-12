@@ -1,0 +1,110 @@
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-3);
+  text-align: left;
+}
+
+.tier {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding: var(--sp-5);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  background-color: var(--c-bg);
+  transition:
+    opacity var(--t-base) var(--ease),
+    border-color var(--t-base) var(--ease),
+    background-color var(--t-base) var(--ease),
+    box-shadow var(--t-base) var(--ease),
+    transform var(--t-base) var(--ease);
+}
+
+/* Selected stays fully saturated; the rest dim — the brief's active state. */
+.tierActive {
+  border-color: var(--c-brand);
+  background-color: var(--c-surface);
+  box-shadow: var(--sh-md);
+  transform: translateY(-2px);
+}
+
+.tierDim {
+  opacity: 0.55;
+}
+
+.tierDim:hover {
+  opacity: 1;
+  border-color: var(--c-border-strong);
+}
+
+.tierIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--sp-2);
+  border-radius: var(--r-circle);
+  background-color: var(--c-sunken);
+  color: var(--c-text-2);
+  transition:
+    background-color var(--t-base) var(--ease),
+    color var(--t-base) var(--ease);
+}
+
+.tierActive .tierIcon {
+  background-color: var(--c-accent);
+  color: var(--c-text-on-accent);
+}
+
+.tierIcon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.tierTag {
+  color: var(--c-brand);
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+}
+
+.tierLabel {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  line-height: 1.1;
+  letter-spacing: var(--ls-tight);
+}
+
+.tierCount {
+  color: var(--c-text-2);
+  font-size: var(--fs-xs);
+}
+
+.tierSkeleton {
+  height: 150px;
+  border-radius: var(--r-lg);
+}
+
+@media (max-width: 900px) {
+  .tiers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .tier {
+    padding: var(--sp-4);
+  }
+
+  .tierLabel {
+    font-size: var(--fs-md);
+  }
+
+  .tierIcon {
+    width: 34px;
+    height: 34px;
+  }
+}

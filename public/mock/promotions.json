@@ -1,0 +1,14 @@
+[
+  {
+    "id": "promo-festive",
+    "active": true,
+    "label": "Festive Edit",
+    "headline": "Diwali sale — up to 30% off handmade gifting",
+    "subline": "Free shipping on everything over ₹1,499.",
+    "startsAt": "2026-09-08T17:58:12.387Z",
+    "endsAt": "2026-09-14T22:58:12.387Z",
+    "ctaLabel": "Shop the sale",
+    "ctaHref": "/sale",
+    "theme": "accent"
+  }
+]

@@ -1,0 +1,5037 @@
+[
+  {
+    "id": "prod-wall-decor-01",
+    "slug": "macrame-boho-wall-hanging",
+    "title": "Macramé Boho Wall Hanging",
+    "description": "Hand-knotted cotton cord hanging with a fringed hem, sized for above a bed or sofa.",
+    "category": "home-decor",
+    "subcategory": "wall-decor",
+    "gender": "unisex",
+    "price": 1299,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 4,
+    "orderCount": 395,
+    "createdAt": "2026-07-09",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (24 inches), Width (16 inches)",
+      "materials": "Braided cotton cord, driftwood dowel"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-wall-decor-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 23,
+    "lowStock": false
+  },
+  {
+    "id": "prod-wall-decor-02",
+    "slug": "lippan-mirror-mud-art-panel",
+    "title": "Lippan Mirror Mud Art Panel",
+    "description": "Kutch-inspired relief work set with hand-cut mirrors on a round base.",
+    "category": "home-decor",
+    "subcategory": "wall-decor",
+    "gender": "unisex",
+    "price": 1899,
+    "salePrice": 1539,
+    "isOnSale": true,
+    "discountPercentage": 19,
+    "rating": 4,
+    "reviewCount": 2,
+    "orderCount": 86,
+    "createdAt": "2026-06-15",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (12 inches)",
+      "materials": "Clay, mirror pieces, MDF base"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-wall-decor-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 37,
+    "lowStock": false
+  },
+  {
+    "id": "prod-wall-decor-03",
+    "slug": "resin-ocean-wave-wall-art",
+    "title": "Resin Ocean Wave Wall Art",
+    "description": "Layered resin waves poured over a white base and edged in gold leaf.",
+    "category": "home-decor",
+    "subcategory": "wall-decor",
+    "gender": "unisex",
+    "price": 2499,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 95,
+    "createdAt": "2026-07-27",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (18 inches), Width (12 inches)",
+      "materials": "Epoxy resin, mica pigments, gold leaf, MDF"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-wall-decor-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 6,
+    "lowStock": false
+  },
+  {
+    "id": "prod-door-decor-01",
+    "slug": "floral-welcome-door-hanging",
+    "title": "Floral Welcome Door Hanging",
+    "description": "Hand-painted wooden hanging with a welcome script and dried-flower accents.",
+    "category": "home-decor",
+    "subcategory": "door-decor",
+    "gender": "unisex",
+    "price": 699,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 288,
+    "createdAt": "2026-07-20",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (10 inches), Width (6 inches)",
+      "materials": "Pine wood, acrylic paint, dried flowers, jute rope"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-door-decor-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 25,
+    "lowStock": false
+  },
+  {
+    "id": "prod-door-decor-02",
+    "slug": "dried-flower-door-wreath",
+    "title": "Dried Flower Door Wreath",
+    "description": "A full wreath of preserved flowers and grasses on a natural vine ring.",
+    "category": "home-decor",
+    "subcategory": "door-decor",
+    "gender": "unisex",
+    "price": 1499,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 3,
+    "orderCount": 187,
+    "createdAt": "2026-07-10",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (14 inches)",
+      "materials": "Grapevine ring, preserved flowers, pampas grass"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-door-decor-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 26,
+    "lowStock": false
+  },
+  {
+    "id": "prod-door-decor-03",
+    "slug": "crochet-door-knob-hangers-set-of-2",
+    "title": "Crochet Door Knob Hangers (Set of 2)",
+    "description": "Soft crocheted hangers that dress up a door handle or cupboard knob.",
+    "category": "home-decor",
+    "subcategory": "door-decor",
+    "gender": "unisex",
+    "price": 349,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.8,
+    "reviewCount": 4,
+    "orderCount": 43,
+    "createdAt": "2026-08-11",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (7 inches) each",
+      "materials": "Cotton yarn, wooden beads"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-door-decor-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 13,
+    "lowStock": false
+  },
+  {
+    "id": "prod-table-decor-01",
+    "slug": "pressed-petal-resin-coasters-set-of-4",
+    "title": "Pressed Petal Resin Coasters (Set of 4)",
+    "description": "Glossy resin coasters with pressed petals, stacked in a matching holder.",
+    "category": "home-decor",
+    "subcategory": "table-decor",
+    "gender": "unisex",
+    "price": 999,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 250,
+    "createdAt": "2026-03-16",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (4 inches) each",
+      "materials": "Epoxy resin, pressed flowers, gold flakes"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-table-decor-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 33,
+    "lowStock": false
+  },
+  {
+    "id": "prod-table-decor-02",
+    "slug": "terracotta-bud-vase-trio",
+    "title": "Terracotta Bud Vase Trio",
+    "description": "Three hand-thrown bud vases in graded heights, one stem each.",
+    "category": "home-decor",
+    "subcategory": "table-decor",
+    "gender": "unisex",
+    "price": 849,
+    "salePrice": 649,
+    "isOnSale": true,
+    "discountPercentage": 24,
+    "rating": 5,
+    "reviewCount": 2,
+    "orderCount": 225,
+    "createdAt": "2026-03-21",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (4, 5 and 6 inches)",
+      "materials": "Terracotta clay, matte sealant"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-table-decor-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 22,
+    "lowStock": false
+  },
+  {
+    "id": "prod-table-decor-03",
+    "slug": "brass-urli-centrepiece",
+    "title": "Brass Urli Centrepiece",
+    "description": "Shallow brass urli for floating flowers and tea lights on a dining or coffee table.",
+    "category": "home-decor",
+    "subcategory": "table-decor",
+    "gender": "unisex",
+    "price": 1699,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.7,
+    "reviewCount": 3,
+    "orderCount": 109,
+    "createdAt": "2026-05-18",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (10 inches), Height (3 inches)",
+      "materials": "Brass"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-table-decor-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 26,
+    "lowStock": false
+  },
+  {
+    "id": "prod-frames-01",
+    "slug": "pressed-flower-glass-frame",
+    "title": "Pressed Flower Glass Frame",
+    "description": "Real pressed flowers sealed between two panes in a slim wooden frame.",
+    "category": "home-decor",
+    "subcategory": "frames",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": 779,
+    "isOnSale": true,
+    "discountPercentage": 13,
+    "rating": 4.7,
+    "reviewCount": 3,
+    "orderCount": 32,
+    "createdAt": "2026-04-26",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (8 inches), Width (6 inches)",
+      "materials": "Glass, pressed flowers, teak wood"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-frames-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 8,
+    "lowStock": false
+  },
+  {
+    "id": "prod-frames-02",
+    "slug": "hand-carved-wooden-photo-frame",
+    "title": "Hand-Carved Wooden Photo Frame",
+    "description": "Floral carving around a 4x6 photo window, finished in a warm walnut stain.",
+    "category": "home-decor",
+    "subcategory": "frames",
+    "gender": "unisex",
+    "price": 749,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 4,
+    "orderCount": 120,
+    "createdAt": "2026-06-12",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (9 inches), Width (7 inches)",
+      "materials": "Sheesham wood, glass"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-frames-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 36,
+    "lowStock": false
+  },
+  {
+    "id": "prod-frames-03",
+    "slug": "resin-floral-border-frame",
+    "title": "Resin Floral Border Frame",
+    "description": "Photo frame cast in clear resin with dried blooms along the border.",
+    "category": "home-decor",
+    "subcategory": "frames",
+    "gender": "unisex",
+    "price": 1199,
+    "salePrice": 999,
+    "isOnSale": true,
+    "discountPercentage": 17,
+    "rating": 3.8,
+    "reviewCount": 4,
+    "orderCount": 94,
+    "createdAt": "2026-05-16",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (8 inches), Width (8 inches)",
+      "materials": "Epoxy resin, dried flowers"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-frames-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 4,
+    "lowStock": true
+  },
+  {
+    "id": "prod-nameplates-01",
+    "slug": "resin-floral-nameplate",
+    "title": "Resin Floral Nameplate",
+    "description": "Round resin nameplate with pressed flowers and gold lettering for the front door.",
+    "category": "home-decor",
+    "subcategory": "nameplates",
+    "gender": "unisex",
+    "price": 2199,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 4,
+    "orderCount": 99,
+    "createdAt": "2026-04-10",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (12 inches)",
+      "materials": "Epoxy resin, dried flowers, MDF base, acrylic letters"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-nameplates-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": false,
+    "stockCount": 0,
+    "lowStock": false
+  },
+  {
+    "id": "prod-nameplates-02",
+    "slug": "engraved-mango-wood-nameplate",
+    "title": "Engraved Mango Wood Nameplate",
+    "description": "Laser-engraved nameplate on solid wood, sealed for outdoor walls.",
+    "category": "home-decor",
+    "subcategory": "nameplates",
+    "gender": "unisex",
+    "price": 1599,
+    "salePrice": 1299,
+    "isOnSale": true,
+    "discountPercentage": 19,
+    "rating": 3.5,
+    "reviewCount": 2,
+    "orderCount": 188,
+    "createdAt": "2026-03-19",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (14 inches), Width (6 inches)",
+      "materials": "Mango wood, weatherproof varnish"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-nameplates-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 14,
+    "lowStock": false
+  },
+  {
+    "id": "prod-nameplates-03",
+    "slug": "mandala-art-nameplate",
+    "title": "Mandala Art Nameplate",
+    "description": "Hand-painted dot mandala nameplate on a sturdy round base.",
+    "category": "home-decor",
+    "subcategory": "nameplates",
+    "gender": "unisex",
+    "price": 1399,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 3,
+    "orderCount": 193,
+    "createdAt": "2026-07-07",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (10 inches)",
+      "materials": "MDF, acrylic paint, varnish"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-nameplates-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 18,
+    "lowStock": false
+  },
+  {
+    "id": "prod-clocks-01",
+    "slug": "resin-geode-wall-clock",
+    "title": "Resin Geode Wall Clock",
+    "description": "Silent-sweep wall clock set in a resin geode with gold edges.",
+    "category": "home-decor",
+    "subcategory": "clocks",
+    "gender": "unisex",
+    "price": 2799,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.5,
+    "reviewCount": 2,
+    "orderCount": 177,
+    "createdAt": "2026-05-25",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (12 inches)",
+      "materials": "Epoxy resin, mica pigments, silent quartz movement"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-clocks-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 12,
+    "lowStock": false
+  },
+  {
+    "id": "prod-clocks-02",
+    "slug": "hand-painted-folk-art-clock",
+    "title": "Hand-Painted Folk Art Clock",
+    "description": "Folk motifs painted by hand around a quiet quartz movement.",
+    "category": "home-decor",
+    "subcategory": "clocks",
+    "gender": "unisex",
+    "price": 1499,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 90,
+    "createdAt": "2026-03-04",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (11 inches)",
+      "materials": "MDF, acrylic paint, quartz movement"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-clocks-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 25,
+    "lowStock": false
+  },
+  {
+    "id": "prod-clocks-03",
+    "slug": "macrame-fringe-wall-clock",
+    "title": "Macramé Fringe Wall Clock",
+    "description": "A wooden clock face ringed with knotted cotton fringe.",
+    "category": "home-decor",
+    "subcategory": "clocks",
+    "gender": "unisex",
+    "price": 1299,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.8,
+    "reviewCount": 4,
+    "orderCount": 334,
+    "createdAt": "2026-05-16",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (14 inches)",
+      "materials": "Cotton cord, wood, quartz movement"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-clocks-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 35,
+    "lowStock": false
+  },
+  {
+    "id": "prod-decorative-trays-01",
+    "slug": "marbled-resin-serving-tray",
+    "title": "Marbled Resin Serving Tray",
+    "description": "Food-safe resin tray in marbled pastels with brass handles.",
+    "category": "home-decor",
+    "subcategory": "decorative-trays",
+    "gender": "unisex",
+    "price": 1899,
+    "salePrice": 1599,
+    "isOnSale": true,
+    "discountPercentage": 16,
+    "rating": 4,
+    "reviewCount": 4,
+    "orderCount": 223,
+    "createdAt": "2026-07-03",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (15 inches), Width (10 inches)",
+      "materials": "Food-safe epoxy resin, MDF, brass handles"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-decorative-trays-01-v1",
+        "name": "Blush"
+      },
+      {
+        "id": "prod-decorative-trays-01-v2",
+        "name": "Ocean Blue"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 27,
+    "lowStock": false
+  },
+  {
+    "id": "prod-decorative-trays-02",
+    "slug": "mango-wood-inlay-tray",
+    "title": "Mango Wood Inlay Tray",
+    "description": "Rectangular wooden tray with a hand-set resin inlay.",
+    "category": "home-decor",
+    "subcategory": "decorative-trays",
+    "gender": "unisex",
+    "price": 1599,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 247,
+    "createdAt": "2026-03-27",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (14 inches), Width (9 inches)",
+      "materials": "Mango wood, resin inlay"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-decorative-trays-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 27,
+    "lowStock": false
+  },
+  {
+    "id": "prod-decorative-trays-03",
+    "slug": "agate-resin-trinket-tray",
+    "title": "Agate Resin Trinket Tray",
+    "description": "Small resin trinket tray for rings and keys, edged in gold.",
+    "category": "home-decor",
+    "subcategory": "decorative-trays",
+    "gender": "unisex",
+    "price": 649,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 185,
+    "createdAt": "2026-03-20",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (6 inches), Width (4 inches)",
+      "materials": "Epoxy resin, gold leaf"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-decorative-trays-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 33,
+    "lowStock": false
+  },
+  {
+    "id": "prod-hanging-decor-01",
+    "slug": "crochet-mandala-dreamcatcher",
+    "title": "Crochet Mandala Dreamcatcher",
+    "description": "Crocheted mandala centre with feathers and wooden beads.",
+    "category": "home-decor",
+    "subcategory": "hanging-decor",
+    "gender": "unisex",
+    "price": 799,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 4,
+    "orderCount": 198,
+    "createdAt": "2026-03-19",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (8 inches), Length (22 inches)",
+      "materials": "Cotton yarn, metal ring, feathers, wooden beads"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-hanging-decor-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 26,
+    "lowStock": false
+  },
+  {
+    "id": "prod-hanging-decor-02",
+    "slug": "brass-bell-wind-chime",
+    "title": "Brass Bell Wind Chime",
+    "description": "Brass bells strung on beaded cords for a balcony or doorway.",
+    "category": "home-decor",
+    "subcategory": "hanging-decor",
+    "gender": "unisex",
+    "price": 599,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3,
+    "reviewCount": 2,
+    "orderCount": 419,
+    "createdAt": "2026-08-10",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (20 inches)",
+      "materials": "Brass bells, wooden beads, cotton cord"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-hanging-decor-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 33,
+    "lowStock": false
+  },
+  {
+    "id": "prod-hanging-decor-03",
+    "slug": "rattan-hanging-planter",
+    "title": "Rattan Hanging Planter",
+    "description": "Handwoven rattan planter on a macramé hanger for trailing plants.",
+    "category": "home-decor",
+    "subcategory": "hanging-decor",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.7,
+    "reviewCount": 3,
+    "orderCount": 192,
+    "createdAt": "2026-04-14",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (7 inches), Length (30 inches)",
+      "materials": "Rattan, cotton cord"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Anniversaries",
+      "targetAudience": "Anyone setting up or refreshing a home"
+    },
+    "variants": [
+      {
+        "id": "prod-hanging-decor-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 13,
+    "lowStock": false
+  },
+  {
+    "id": "prod-tote-bags-01",
+    "slug": "block-printed-canvas-tote",
+    "title": "Block-Printed Canvas Tote",
+    "description": "Sturdy canvas tote hand block-printed in indigo, with an inside pocket.",
+    "category": "bags-accessories",
+    "subcategory": "tote-bags",
+    "gender": "women",
+    "price": 699,
+    "salePrice": 529,
+    "isOnSale": true,
+    "discountPercentage": 24,
+    "rating": 5,
+    "reviewCount": 2,
+    "orderCount": 236,
+    "createdAt": "2026-07-06",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (15 inches), Width (14 inches), Depth (4 inches)",
+      "materials": "Cotton canvas, natural dyes"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-tote-bags-01-v1",
+        "name": "Indigo"
+      },
+      {
+        "id": "prod-tote-bags-01-v2",
+        "name": "Madder Red"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 16,
+    "lowStock": false
+  },
+  {
+    "id": "prod-tote-bags-02",
+    "slug": "hand-painted-floral-tote",
+    "title": "Hand-Painted Floral Tote",
+    "description": "Zippered tote with a hand-painted floral panel on both sides.",
+    "category": "bags-accessories",
+    "subcategory": "tote-bags",
+    "gender": "women",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 3,
+    "orderCount": 172,
+    "createdAt": "2026-05-18",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (16 inches), Width (15 inches)",
+      "materials": "Cotton canvas, fabric paint"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-tote-bags-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 18,
+    "lowStock": false
+  },
+  {
+    "id": "prod-tote-bags-03",
+    "slug": "jute-market-tote",
+    "title": "Jute Market Tote",
+    "description": "Roomy jute tote with cotton handles for market runs.",
+    "category": "bags-accessories",
+    "subcategory": "tote-bags",
+    "gender": "women",
+    "price": 549,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.7,
+    "reviewCount": 3,
+    "orderCount": 73,
+    "createdAt": "2026-05-09",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (16 inches), Width (13 inches), Depth (5 inches)",
+      "materials": "Jute, cotton webbing"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-tote-bags-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 8,
+    "lowStock": false
+  },
+  {
+    "id": "prod-sling-bags-01",
+    "slug": "mirror-work-crossbody-sling",
+    "title": "Mirror Work Crossbody Sling",
+    "description": "Compact sling with mirror-work embroidery and an adjustable strap.",
+    "category": "bags-accessories",
+    "subcategory": "sling-bags",
+    "gender": "women",
+    "price": 1199,
+    "salePrice": 899,
+    "isOnSale": true,
+    "discountPercentage": 25,
+    "rating": 4,
+    "reviewCount": 3,
+    "orderCount": 397,
+    "createdAt": "2026-06-05",
+    "isFeatured": true,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (9 inches), Width (7 inches)",
+      "materials": "Cotton, mirror work, polyester lining"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-sling-bags-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 26,
+    "lowStock": false
+  },
+  {
+    "id": "prod-sling-bags-02",
+    "slug": "vegan-leather-mini-sling",
+    "title": "Vegan Leather Mini Sling",
+    "description": "Structured mini sling in vegan leather with a hand-stitched edge.",
+    "category": "bags-accessories",
+    "subcategory": "sling-bags",
+    "gender": "women",
+    "price": 1399,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.5,
+    "reviewCount": 2,
+    "orderCount": 204,
+    "createdAt": "2026-04-15",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (8 inches), Width (6 inches), Depth (2 inches)",
+      "materials": "PU leather, cotton lining"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-sling-bags-02-v1",
+        "name": "Tan"
+      },
+      {
+        "id": "prod-sling-bags-02-v2",
+        "name": "Black"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 5,
+    "lowStock": true
+  },
+  {
+    "id": "prod-sling-bags-03",
+    "slug": "crochet-phone-sling",
+    "title": "Crochet Phone Sling",
+    "description": "Crocheted phone pouch on a long strap, sized for most phones.",
+    "category": "bags-accessories",
+    "subcategory": "sling-bags",
+    "gender": "women",
+    "price": 649,
+    "salePrice": 569,
+    "isOnSale": true,
+    "discountPercentage": 12,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 216,
+    "createdAt": "2026-07-26",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (7 inches), Width (4 inches)",
+      "materials": "Cotton yarn"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-sling-bags-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 37,
+    "lowStock": false
+  },
+  {
+    "id": "prod-potli-bags-01",
+    "slug": "zardozi-silk-potli",
+    "title": "Zardozi Silk Potli",
+    "description": "Silk potli with zardozi embroidery and a pearl-string handle.",
+    "category": "bags-accessories",
+    "subcategory": "potli-bags",
+    "gender": "women",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 260,
+    "createdAt": "2026-06-01",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (9 inches), Width (7 inches)",
+      "materials": "Raw silk, zari thread, faux pearls"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-potli-bags-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 7,
+    "lowStock": false
+  },
+  {
+    "id": "prod-potli-bags-02",
+    "slug": "mirror-work-festive-potli",
+    "title": "Mirror Work Festive Potli",
+    "description": "Drawstring potli with mirror work and tasselled cords.",
+    "category": "bags-accessories",
+    "subcategory": "potli-bags",
+    "gender": "women",
+    "price": 749,
+    "salePrice": 669,
+    "isOnSale": true,
+    "discountPercentage": 11,
+    "rating": 4,
+    "reviewCount": 2,
+    "orderCount": 213,
+    "createdAt": "2026-05-28",
+    "isFeatured": true,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (8 inches), Width (7 inches)",
+      "materials": "Cotton silk, mirror pieces, tassels"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-potli-bags-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 40,
+    "lowStock": false
+  },
+  {
+    "id": "prod-potli-bags-03",
+    "slug": "velvet-beaded-potli",
+    "title": "Velvet Beaded Potli",
+    "description": "Velvet potli with hand-beaded motifs for weddings and festive evenings.",
+    "category": "bags-accessories",
+    "subcategory": "potli-bags",
+    "gender": "women",
+    "price": 999,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 4,
+    "orderCount": 40,
+    "createdAt": "2026-03-11",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (9 inches), Width (8 inches)",
+      "materials": "Velvet, glass beads"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-potli-bags-03-v1",
+        "name": "Maroon"
+      },
+      {
+        "id": "prod-potli-bags-03-v2",
+        "name": "Emerald"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 24,
+    "lowStock": false
+  },
+  {
+    "id": "prod-clutches-01",
+    "slug": "beaded-evening-clutch",
+    "title": "Beaded Evening Clutch",
+    "description": "Hard-case clutch covered in hand-set beads with a detachable chain.",
+    "category": "bags-accessories",
+    "subcategory": "clutches",
+    "gender": "women",
+    "price": 1499,
+    "salePrice": 1329,
+    "isOnSale": true,
+    "discountPercentage": 11,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 166,
+    "createdAt": "2026-03-29",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (8 inches), Width (4 inches)",
+      "materials": "Glass beads, metal frame, satin lining"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-clutches-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 38,
+    "lowStock": false
+  },
+  {
+    "id": "prod-clutches-02",
+    "slug": "pressed-flower-resin-clutch",
+    "title": "Pressed Flower Resin Clutch",
+    "description": "Clear resin clutch with pressed flowers and a gold clasp.",
+    "category": "bags-accessories",
+    "subcategory": "clutches",
+    "gender": "women",
+    "price": 1799,
+    "salePrice": 1529,
+    "isOnSale": true,
+    "discountPercentage": 15,
+    "rating": 3.8,
+    "reviewCount": 4,
+    "orderCount": 180,
+    "createdAt": "2026-06-20",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (7 inches), Width (4 inches)",
+      "materials": "Epoxy resin, pressed flowers, metal clasp"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-clutches-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 33,
+    "lowStock": false
+  },
+  {
+    "id": "prod-clutches-03",
+    "slug": "embroidered-envelope-clutch",
+    "title": "Embroidered Envelope Clutch",
+    "description": "Soft envelope clutch with thread embroidery and a magnetic flap.",
+    "category": "bags-accessories",
+    "subcategory": "clutches",
+    "gender": "women",
+    "price": 999,
+    "salePrice": 809,
+    "isOnSale": true,
+    "discountPercentage": 19,
+    "rating": 4.7,
+    "reviewCount": 3,
+    "orderCount": 63,
+    "createdAt": "2026-08-01",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (10 inches), Width (6 inches)",
+      "materials": "Cotton silk, embroidery thread"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-clutches-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 6,
+    "lowStock": false
+  },
+  {
+    "id": "prod-pouches-01",
+    "slug": "quilted-cotton-makeup-pouch",
+    "title": "Quilted Cotton Makeup Pouch",
+    "description": "Padded zip pouch in block-printed cotton, wipe-clean inside.",
+    "category": "bags-accessories",
+    "subcategory": "pouches",
+    "gender": "women",
+    "price": 449,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.8,
+    "reviewCount": 4,
+    "orderCount": 57,
+    "createdAt": "2026-08-16",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (8 inches), Width (5 inches)",
+      "materials": "Cotton, quilting batting, PEVA lining"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-pouches-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 7,
+    "lowStock": false
+  },
+  {
+    "id": "prod-pouches-02",
+    "slug": "kalamkari-zip-pouch-set-3",
+    "title": "Kalamkari Zip Pouch Set (3)",
+    "description": "Three nesting pouches in hand-painted Kalamkari prints.",
+    "category": "bags-accessories",
+    "subcategory": "pouches",
+    "gender": "women",
+    "price": 599,
+    "salePrice": 469,
+    "isOnSale": true,
+    "discountPercentage": 22,
+    "rating": 3.7,
+    "reviewCount": 3,
+    "orderCount": 145,
+    "createdAt": "2026-03-01",
+    "isFeatured": true,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (5, 7 and 9 inches)",
+      "materials": "Cotton, metal zips"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-pouches-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 16,
+    "lowStock": false
+  },
+  {
+    "id": "prod-pouches-03",
+    "slug": "crochet-coin-pouch",
+    "title": "Crochet Coin Pouch",
+    "description": "Little crocheted coin purse with a snap closure.",
+    "category": "bags-accessories",
+    "subcategory": "pouches",
+    "gender": "women",
+    "price": 199,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 185,
+    "createdAt": "2026-08-11",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (4 inches), Width (3 inches)",
+      "materials": "Cotton yarn, metal snap"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-pouches-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 38,
+    "lowStock": false
+  },
+  {
+    "id": "prod-crochet-bags-01",
+    "slug": "granny-square-shoulder-bag",
+    "title": "Granny Square Shoulder Bag",
+    "description": "Classic granny-square shoulder bag in warm, mixed colours.",
+    "category": "bags-accessories",
+    "subcategory": "crochet-bags",
+    "gender": "women",
+    "price": 1299,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.8,
+    "reviewCount": 4,
+    "orderCount": 125,
+    "createdAt": "2026-07-09",
+    "isFeatured": true,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (12 inches), Width (11 inches)",
+      "materials": "Cotton yarn, fabric lining"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-crochet-bags-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 26,
+    "lowStock": false
+  },
+  {
+    "id": "prod-crochet-bags-02",
+    "slug": "crochet-bucket-bag",
+    "title": "Crochet Bucket Bag",
+    "description": "Drawstring bucket bag worked in a tight, structured stitch.",
+    "category": "bags-accessories",
+    "subcategory": "crochet-bags",
+    "gender": "women",
+    "price": 1099,
+    "salePrice": 969,
+    "isOnSale": true,
+    "discountPercentage": 12,
+    "rating": 4.7,
+    "reviewCount": 3,
+    "orderCount": 189,
+    "createdAt": "2026-06-23",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Height (10 inches), Diameter (8 inches)",
+      "materials": "Cotton cord"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-crochet-bags-02-v1",
+        "name": "Cream"
+      },
+      {
+        "id": "prod-crochet-bags-02-v2",
+        "name": "Sage"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 18,
+    "lowStock": false
+  },
+  {
+    "id": "prod-crochet-bags-03",
+    "slug": "crochet-mesh-beach-tote",
+    "title": "Crochet Mesh Beach Tote",
+    "description": "Open mesh tote that folds flat, made for beach days and markets.",
+    "category": "bags-accessories",
+    "subcategory": "crochet-bags",
+    "gender": "women",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 13,
+    "createdAt": "2026-05-04",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (16 inches), Width (14 inches)",
+      "materials": "Cotton yarn"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-crochet-bags-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 12,
+    "lowStock": false
+  },
+  {
+    "id": "prod-bag-charms-01",
+    "slug": "crochet-strawberry-bag-charm",
+    "title": "Crochet Strawberry Bag Charm",
+    "description": "Plump crocheted strawberry on a gold-tone clasp.",
+    "category": "bags-accessories",
+    "subcategory": "bag-charms",
+    "gender": "women",
+    "price": 249,
+    "salePrice": 219,
+    "isOnSale": true,
+    "discountPercentage": 12,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 169,
+    "createdAt": "2026-08-01",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (4 inches)",
+      "materials": "Cotton yarn, fibre fill, metal clasp"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-bag-charms-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 5,
+    "lowStock": true
+  },
+  {
+    "id": "prod-bag-charms-02",
+    "slug": "beaded-initial-bag-charm",
+    "title": "Beaded Initial Bag Charm",
+    "description": "Beaded charm strung with the letter of your choice.",
+    "category": "bags-accessories",
+    "subcategory": "bag-charms",
+    "gender": "women",
+    "price": 299,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 244,
+    "createdAt": "2026-05-14",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (5 inches)",
+      "materials": "Glass beads, acrylic letter beads, lobster clasp"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-bag-charms-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 27,
+    "lowStock": false
+  },
+  {
+    "id": "prod-bag-charms-03",
+    "slug": "pom-pom-tassel-bag-charm",
+    "title": "Pom-Pom Tassel Bag Charm",
+    "description": "A cheerful cluster of yarn pom-poms and tassels.",
+    "category": "bags-accessories",
+    "subcategory": "bag-charms",
+    "gender": "women",
+    "price": 179,
+    "salePrice": 149,
+    "isOnSale": true,
+    "discountPercentage": 17,
+    "rating": 4,
+    "reviewCount": 3,
+    "orderCount": 199,
+    "createdAt": "2026-03-04",
+    "isFeatured": false,
+    "ageGroup": "12+ years",
+    "specifications": {
+      "dimensions": "Length (6 inches)",
+      "materials": "Wool-blend yarn, key ring"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Festivals, Everyday use",
+      "targetAudience": "Women and teens who like carrying something handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-bag-charms-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 30,
+    "lowStock": false
+  },
+  {
+    "id": "prod-scented-candles-01",
+    "slug": "lavender-soy-candle-tin",
+    "title": "Lavender Soy Candle Tin",
+    "description": "Clean-burning soy wax scented with lavender and a hint of vanilla.",
+    "category": "candles-fragrance",
+    "subcategory": "scented-candles",
+    "gender": "unisex",
+    "price": 449,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 3,
+    "orderCount": 25,
+    "createdAt": "2026-05-12",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Diameter (3 inches), Burn time (25 hours)",
+      "materials": "Soy wax, cotton wick, fragrance oil, tin"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-scented-candles-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 21,
+    "lowStock": false
+  },
+  {
+    "id": "prod-scented-candles-02",
+    "slug": "sandalwood-and-rose-candle",
+    "title": "Sandalwood & Rose Candle",
+    "description": "Warm sandalwood and Indian rose in a matte ceramic vessel.",
+    "category": "candles-fragrance",
+    "subcategory": "scented-candles",
+    "gender": "unisex",
+    "price": 699,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 34,
+    "createdAt": "2026-06-09",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Diameter (3.5 inches), Burn time (35 hours)",
+      "materials": "Soy wax, cotton wick, fragrance oil, ceramic"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-scented-candles-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 22,
+    "lowStock": false
+  },
+  {
+    "id": "prod-scented-candles-03",
+    "slug": "mogra-jasmine-candle",
+    "title": "Mogra Jasmine Candle",
+    "description": "A heady mogra scent, poured in small batches.",
+    "category": "candles-fragrance",
+    "subcategory": "scented-candles",
+    "gender": "unisex",
+    "price": 599,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 4,
+    "orderCount": 84,
+    "createdAt": "2026-08-13",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Diameter (3 inches), Burn time (30 hours)",
+      "materials": "Soy wax, cotton wick, fragrance oil, glass"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-scented-candles-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 36,
+    "lowStock": false
+  },
+  {
+    "id": "prod-decorative-candles-01",
+    "slug": "sculpted-twist-pillar-candles-pair",
+    "title": "Sculpted Twist Pillar Candles (Pair)",
+    "description": "Spiral-twist pillars that look as good unlit as they do burning.",
+    "category": "candles-fragrance",
+    "subcategory": "decorative-candles",
+    "gender": "unisex",
+    "price": 549,
+    "salePrice": 469,
+    "isOnSale": true,
+    "discountPercentage": 15,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 126,
+    "createdAt": "2026-07-14",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Height (6 inches), Diameter (2 inches)",
+      "materials": "Soy-paraffin blend, cotton wick"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-decorative-candles-01-v1",
+        "name": "Ivory"
+      },
+      {
+        "id": "prod-decorative-candles-01-v2",
+        "name": "Terracotta"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": false,
+    "stockCount": 0,
+    "lowStock": false
+  },
+  {
+    "id": "prod-decorative-candles-02",
+    "slug": "carved-floral-pillar-candle",
+    "title": "Carved Floral Pillar Candle",
+    "description": "Pillar candle with a hand-carved floral relief.",
+    "category": "candles-fragrance",
+    "subcategory": "decorative-candles",
+    "gender": "unisex",
+    "price": 799,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 4,
+    "orderCount": 241,
+    "createdAt": "2026-05-22",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Height (5 inches), Diameter (3 inches)",
+      "materials": "Paraffin wax, cotton wick"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-decorative-candles-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 4,
+    "lowStock": true
+  },
+  {
+    "id": "prod-decorative-candles-03",
+    "slug": "ribbed-taper-candles-set-of-4",
+    "title": "Ribbed Taper Candles (Set of 4)",
+    "description": "Slim ribbed tapers for candle stands and dinner tables.",
+    "category": "candles-fragrance",
+    "subcategory": "decorative-candles",
+    "gender": "unisex",
+    "price": 399,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.7,
+    "reviewCount": 3,
+    "orderCount": 196,
+    "createdAt": "2026-08-05",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Height (10 inches) each",
+      "materials": "Soy wax, cotton wick"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-decorative-candles-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 24,
+    "lowStock": false
+  },
+  {
+    "id": "prod-flower-candles-01",
+    "slug": "rose-bouquet-candle-box",
+    "title": "Rose Bouquet Candle Box",
+    "description": "A cluster of wax roses set in a small gift box.",
+    "category": "candles-fragrance",
+    "subcategory": "flower-candles",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.5,
+    "reviewCount": 2,
+    "orderCount": 289,
+    "createdAt": "2026-04-14",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Length (6 inches), Width (6 inches)",
+      "materials": "Soy wax, cotton wicks, kraft box"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-flower-candles-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 25,
+    "lowStock": false
+  },
+  {
+    "id": "prod-flower-candles-02",
+    "slug": "peony-candle-set-3",
+    "title": "Peony Candle Set (3)",
+    "description": "Three layered peony candles in soft pastel shades.",
+    "category": "candles-fragrance",
+    "subcategory": "flower-candles",
+    "gender": "unisex",
+    "price": 499,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 251,
+    "createdAt": "2026-05-15",
+    "isFeatured": true,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Diameter (2.5 inches) each",
+      "materials": "Soy wax, cotton wick"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-flower-candles-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 12,
+    "lowStock": false
+  },
+  {
+    "id": "prod-flower-candles-03",
+    "slug": "floating-lotus-candles-set-of-6",
+    "title": "Floating Lotus Candles (Set of 6)",
+    "description": "Lotus-shaped candles that float in an urli or bowl of water.",
+    "category": "candles-fragrance",
+    "subcategory": "flower-candles",
+    "gender": "unisex",
+    "price": 299,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.8,
+    "reviewCount": 4,
+    "orderCount": 97,
+    "createdAt": "2026-06-16",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Diameter (2 inches) each",
+      "materials": "Paraffin wax, cotton wick"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Pooja, Dinner parties",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-flower-candles-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 22,
+    "lowStock": false
+  },
+  {
+    "id": "prod-jar-candles-01",
+    "slug": "amber-glass-jar-candle",
+    "title": "Amber Glass Jar Candle",
+    "description": "Cedar and amber scent in a reusable amber glass jar with a lid.",
+    "category": "candles-fragrance",
+    "subcategory": "jar-candles",
+    "gender": "unisex",
+    "price": 799,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 2,
+    "orderCount": 148,
+    "createdAt": "2026-03-25",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Height (3.5 inches), Burn time (40 hours)",
+      "materials": "Soy wax, cotton wick, glass jar"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-jar-candles-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 5,
+    "lowStock": true
+  },
+  {
+    "id": "prod-jar-candles-02",
+    "slug": "coffee-and-vanilla-jar-candle",
+    "title": "Coffee & Vanilla Jar Candle",
+    "description": "A cosy café scent in a clear glass tumbler.",
+    "category": "candles-fragrance",
+    "subcategory": "jar-candles",
+    "gender": "unisex",
+    "price": 649,
+    "salePrice": 509,
+    "isOnSale": true,
+    "discountPercentage": 22,
+    "rating": 3.8,
+    "reviewCount": 4,
+    "orderCount": 313,
+    "createdAt": "2026-05-12",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Height (3 inches), Burn time (35 hours)",
+      "materials": "Soy wax, cotton wick, glass jar"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-jar-candles-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 26,
+    "lowStock": false
+  },
+  {
+    "id": "prod-jar-candles-03",
+    "slug": "dried-botanical-jar-candle",
+    "title": "Dried Botanical Jar Candle",
+    "description": "Topped with dried rose petals and lavender buds.",
+    "category": "candles-fragrance",
+    "subcategory": "jar-candles",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 288,
+    "createdAt": "2026-08-21",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Height (3.5 inches), Burn time (40 hours)",
+      "materials": "Soy wax, dried botanicals, cotton wick, glass jar"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-jar-candles-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 11,
+    "lowStock": false
+  },
+  {
+    "id": "prod-bubble-candles-01",
+    "slug": "pastel-bubble-cube-candle",
+    "title": "Pastel Bubble Cube Candle",
+    "description": "The trending bubble cube, poured in soft pastel wax.",
+    "category": "candles-fragrance",
+    "subcategory": "bubble-candles",
+    "gender": "unisex",
+    "price": 349,
+    "salePrice": 299,
+    "isOnSale": true,
+    "discountPercentage": 14,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 239,
+    "createdAt": "2026-07-12",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Length (2.5 inches), Width (2.5 inches), Height (2.5 inches)",
+      "materials": "Soy wax, cotton wick"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-bubble-candles-01-v1",
+        "name": "Blush Pink"
+      },
+      {
+        "id": "prod-bubble-candles-01-v2",
+        "name": "Sage"
+      },
+      {
+        "id": "prod-bubble-candles-01-v3",
+        "name": "Lilac"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 5,
+    "lowStock": true
+  },
+  {
+    "id": "prod-bubble-candles-02",
+    "slug": "mini-bubble-candle-set-3",
+    "title": "Mini Bubble Candle Set (3)",
+    "description": "Three mini bubble candles, ready to gift.",
+    "category": "candles-fragrance",
+    "subcategory": "bubble-candles",
+    "gender": "unisex",
+    "price": 599,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 4,
+    "orderCount": 198,
+    "createdAt": "2026-03-03",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Length (2 inches) each",
+      "materials": "Soy wax, cotton wick"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-bubble-candles-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 7,
+    "lowStock": false
+  },
+  {
+    "id": "prod-bubble-candles-03",
+    "slug": "marble-bubble-candle",
+    "title": "Marble Bubble Candle",
+    "description": "Bubble cube swirled with a hand-marbled finish.",
+    "category": "candles-fragrance",
+    "subcategory": "bubble-candles",
+    "gender": "unisex",
+    "price": 399,
+    "salePrice": 359,
+    "isOnSale": true,
+    "discountPercentage": 10,
+    "rating": 4,
+    "reviewCount": 4,
+    "orderCount": 199,
+    "createdAt": "2026-04-14",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Length (2.5 inches), Width (2.5 inches), Height (2.5 inches)",
+      "materials": "Soy wax, cotton wick"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-bubble-candles-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 5,
+    "lowStock": true
+  },
+  {
+    "id": "prod-wax-melts-01",
+    "slug": "heart-wax-melts-pack-of-6",
+    "title": "Heart Wax Melts (Pack of 6)",
+    "description": "Heart-shaped scented melts for an electric or tea-light warmer.",
+    "category": "candles-fragrance",
+    "subcategory": "wax-melts",
+    "gender": "unisex",
+    "price": 199,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 4,
+    "orderCount": 120,
+    "createdAt": "2026-08-04",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Length (1.5 inches) each",
+      "materials": "Soy wax, fragrance oil"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-wax-melts-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 33,
+    "lowStock": false
+  },
+  {
+    "id": "prod-wax-melts-02",
+    "slug": "wax-melt-sampler",
+    "title": "Wax Melt Sampler",
+    "description": "Four mini melts in our best-selling scents.",
+    "category": "candles-fragrance",
+    "subcategory": "wax-melts",
+    "gender": "unisex",
+    "price": 99,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 4,
+    "orderCount": 117,
+    "createdAt": "2026-08-28",
+    "isFeatured": true,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Length (1 inch) each",
+      "materials": "Soy wax, fragrance oil"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-wax-melts-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 28,
+    "lowStock": false
+  },
+  {
+    "id": "prod-wax-melts-03",
+    "slug": "ceramic-wax-warmer-with-melts",
+    "title": "Ceramic Wax Warmer with Melts",
+    "description": "Hand-glazed tea-light warmer with a pack of melts to start.",
+    "category": "candles-fragrance",
+    "subcategory": "wax-melts",
+    "gender": "unisex",
+    "price": 1199,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 4,
+    "orderCount": 324,
+    "createdAt": "2026-04-04",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Height (4.5 inches), Diameter (3.5 inches)",
+      "materials": "Ceramic, soy wax, fragrance oil"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Birthdays, Housewarming, Self-care",
+      "targetAudience": "Anyone who loves a softly scented home"
+    },
+    "variants": [
+      {
+        "id": "prod-wax-melts-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 11,
+    "lowStock": false
+  },
+  {
+    "id": "prod-crochet-flowers-01",
+    "slug": "crochet-sunflower-stem",
+    "title": "Crochet Sunflower Stem",
+    "description": "A single crocheted sunflower on a bendable stem — never wilts.",
+    "category": "handmade-crochet",
+    "subcategory": "crochet-flowers",
+    "gender": "unisex",
+    "price": 249,
+    "salePrice": 209,
+    "isOnSale": true,
+    "discountPercentage": 16,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 131,
+    "createdAt": "2026-03-26",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (14 inches)",
+      "materials": "Cotton yarn, floral wire"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-crochet-flowers-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 32,
+    "lowStock": false
+  },
+  {
+    "id": "prod-crochet-flowers-02",
+    "slug": "crochet-tulip-stems-set-of-3",
+    "title": "Crochet Tulip Stems (Set of 3)",
+    "description": "Three tulips in spring colours for a small vase.",
+    "category": "handmade-crochet",
+    "subcategory": "crochet-flowers",
+    "gender": "unisex",
+    "price": 599,
+    "salePrice": 519,
+    "isOnSale": true,
+    "discountPercentage": 13,
+    "rating": 4.7,
+    "reviewCount": 3,
+    "orderCount": 113,
+    "createdAt": "2026-04-25",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (13 inches) each",
+      "materials": "Cotton yarn, floral wire"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-crochet-flowers-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 20,
+    "lowStock": false
+  },
+  {
+    "id": "prod-crochet-flowers-03",
+    "slug": "crochet-rose-in-a-pot",
+    "title": "Crochet Rose in a Pot",
+    "description": "A crocheted rose planted in a tiny terracotta pot.",
+    "category": "handmade-crochet",
+    "subcategory": "crochet-flowers",
+    "gender": "unisex",
+    "price": 449,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.7,
+    "reviewCount": 3,
+    "orderCount": 48,
+    "createdAt": "2026-04-01",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (6 inches)",
+      "materials": "Cotton yarn, terracotta pot"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-crochet-flowers-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 39,
+    "lowStock": false
+  },
+  {
+    "id": "prod-bouquets-01",
+    "slug": "crochet-rose-bouquet",
+    "title": "Crochet Rose Bouquet",
+    "description": "Seven crocheted red roses wrapped in kraft paper and ribbon.",
+    "category": "handmade-crochet",
+    "subcategory": "bouquets",
+    "gender": "unisex",
+    "price": 1499,
+    "salePrice": 1229,
+    "isOnSale": true,
+    "discountPercentage": 18,
+    "rating": 4,
+    "reviewCount": 3,
+    "orderCount": 165,
+    "createdAt": "2026-04-13",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (16 inches)",
+      "materials": "Cotton yarn, floral wire, kraft paper, ribbon"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-bouquets-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 20,
+    "lowStock": false
+  },
+  {
+    "id": "prod-bouquets-02",
+    "slug": "mixed-crochet-flower-bouquet",
+    "title": "Mixed Crochet Flower Bouquet",
+    "description": "Sunflowers, tulips and daisies in one everlasting bunch.",
+    "category": "handmade-crochet",
+    "subcategory": "bouquets",
+    "gender": "unisex",
+    "price": 1899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 3,
+    "orderCount": 135,
+    "createdAt": "2026-04-25",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (18 inches)",
+      "materials": "Cotton yarn, floral wire, wrapping paper"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-bouquets-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 37,
+    "lowStock": false
+  },
+  {
+    "id": "prod-bouquets-03",
+    "slug": "mini-crochet-tulip-bouquet",
+    "title": "Mini Crochet Tulip Bouquet",
+    "description": "A hand-sized bouquet of three tulips, ready to gift.",
+    "category": "handmade-crochet",
+    "subcategory": "bouquets",
+    "gender": "unisex",
+    "price": 799,
+    "salePrice": 639,
+    "isOnSale": true,
+    "discountPercentage": 20,
+    "rating": 3.5,
+    "reviewCount": 2,
+    "orderCount": 242,
+    "createdAt": "2026-06-01",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (11 inches)",
+      "materials": "Cotton yarn, floral wire, ribbon"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-bouquets-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 34,
+    "lowStock": false
+  },
+  {
+    "id": "prod-plushies-01",
+    "slug": "amigurumi-teddy-bear",
+    "title": "Amigurumi Teddy Bear",
+    "description": "Soft crocheted teddy with safety eyes and a little bow.",
+    "category": "handmade-crochet",
+    "subcategory": "plushies",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 178,
+    "createdAt": "2026-08-07",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (8 inches)",
+      "materials": "Cotton yarn, hypoallergenic fibre fill, safety eyes"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-plushies-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 5,
+    "lowStock": true
+  },
+  {
+    "id": "prod-plushies-02",
+    "slug": "crochet-bunny-plush",
+    "title": "Crochet Bunny Plush",
+    "description": "Long-eared bunny, stitched tight so the stuffing stays put.",
+    "category": "handmade-crochet",
+    "subcategory": "plushies",
+    "gender": "unisex",
+    "price": 799,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 217,
+    "createdAt": "2026-06-11",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (9 inches)",
+      "materials": "Milk cotton yarn, fibre fill"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-plushies-02-v1",
+        "name": "Cream"
+      },
+      {
+        "id": "prod-plushies-02-v2",
+        "name": "Pink"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 9,
+    "lowStock": false
+  },
+  {
+    "id": "prod-plushies-03",
+    "slug": "crochet-octopus-plush",
+    "title": "Crochet Octopus Plush",
+    "description": "Curly-legged octopus plush that fits in a palm.",
+    "category": "handmade-crochet",
+    "subcategory": "plushies",
+    "gender": "unisex",
+    "price": 499,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 200,
+    "createdAt": "2026-04-07",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (5 inches)",
+      "materials": "Cotton yarn, fibre fill"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-plushies-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 37,
+    "lowStock": false
+  },
+  {
+    "id": "prod-crochet-keychains-01",
+    "slug": "crochet-daisy-keychain",
+    "title": "Crochet Daisy Keychain",
+    "description": "A little crocheted daisy on a sturdy key ring.",
+    "category": "handmade-crochet",
+    "subcategory": "crochet-keychains",
+    "gender": "unisex",
+    "price": 149,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.8,
+    "reviewCount": 4,
+    "orderCount": 190,
+    "createdAt": "2026-06-15",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (3.5 inches)",
+      "materials": "Cotton yarn, metal key ring"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-crochet-keychains-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 21,
+    "lowStock": false
+  },
+  {
+    "id": "prod-crochet-keychains-02",
+    "slug": "amigurumi-cat-keychain",
+    "title": "Amigurumi Cat Keychain",
+    "description": "A tiny crocheted cat to keep your keys company.",
+    "category": "handmade-crochet",
+    "subcategory": "crochet-keychains",
+    "gender": "unisex",
+    "price": 199,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.5,
+    "reviewCount": 2,
+    "orderCount": 205,
+    "createdAt": "2026-06-12",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (4 inches)",
+      "materials": "Cotton yarn, fibre fill, metal key ring"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-crochet-keychains-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 13,
+    "lowStock": false
+  },
+  {
+    "id": "prod-crochet-keychains-03",
+    "slug": "crochet-fruit-keychain-trio",
+    "title": "Crochet Fruit Keychain Trio",
+    "description": "Strawberry, cherry and lemon keychains in one set.",
+    "category": "handmade-crochet",
+    "subcategory": "crochet-keychains",
+    "gender": "unisex",
+    "price": 349,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 151,
+    "createdAt": "2026-03-24",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (3 inches) each",
+      "materials": "Cotton yarn, fibre fill, metal key rings"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-crochet-keychains-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 15,
+    "lowStock": false
+  },
+  {
+    "id": "prod-bookmarks-01",
+    "slug": "crochet-flower-tail-bookmark",
+    "title": "Crochet Flower Tail Bookmark",
+    "description": "A crocheted flower that peeks out of the top of your book.",
+    "category": "handmade-crochet",
+    "subcategory": "bookmarks",
+    "gender": "unisex",
+    "price": 89,
+    "salePrice": 79,
+    "isOnSale": true,
+    "discountPercentage": 11,
+    "rating": 3.5,
+    "reviewCount": 4,
+    "orderCount": 136,
+    "createdAt": "2026-06-03",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (8 inches)",
+      "materials": "Cotton thread"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-bookmarks-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 7,
+    "lowStock": false
+  },
+  {
+    "id": "prod-bookmarks-02",
+    "slug": "pressed-flower-resin-bookmark",
+    "title": "Pressed Flower Resin Bookmark",
+    "description": "Clear resin bookmark with real pressed flowers and a tassel.",
+    "category": "handmade-crochet",
+    "subcategory": "bookmarks",
+    "gender": "unisex",
+    "price": 199,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 26,
+    "createdAt": "2026-03-13",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (6 inches), Width (2 inches)",
+      "materials": "Epoxy resin, pressed flowers, silk tassel"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-bookmarks-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 14,
+    "lowStock": false
+  },
+  {
+    "id": "prod-bookmarks-03",
+    "slug": "embroidered-linen-bookmark",
+    "title": "Embroidered Linen Bookmark",
+    "description": "Hand-embroidered linen bookmark with a ribbon tail.",
+    "category": "handmade-crochet",
+    "subcategory": "bookmarks",
+    "gender": "unisex",
+    "price": 149,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 2,
+    "orderCount": 245,
+    "createdAt": "2026-06-25",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (7 inches), Width (2 inches)",
+      "materials": "Linen, embroidery thread"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-bookmarks-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 23,
+    "lowStock": false
+  },
+  {
+    "id": "prod-handmade-accessories-01",
+    "slug": "crochet-scrunchie-set-3",
+    "title": "Crochet Scrunchie Set (3)",
+    "description": "Three crocheted scrunchies that are gentle on hair.",
+    "category": "handmade-crochet",
+    "subcategory": "handmade-accessories",
+    "gender": "unisex",
+    "price": 299,
+    "salePrice": 259,
+    "isOnSale": true,
+    "discountPercentage": 13,
+    "rating": 4.8,
+    "reviewCount": 4,
+    "orderCount": 38,
+    "createdAt": "2026-07-19",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (4 inches) each",
+      "materials": "Cotton yarn, elastic"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-handmade-accessories-01-v1",
+        "name": "Pastels"
+      },
+      {
+        "id": "prod-handmade-accessories-01-v2",
+        "name": "Earth Tones"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 15,
+    "lowStock": false
+  },
+  {
+    "id": "prod-handmade-accessories-02",
+    "slug": "crochet-flower-hair-clips-pair",
+    "title": "Crochet Flower Hair Clips (Pair)",
+    "description": "Two crocheted flowers on snap clips.",
+    "category": "handmade-crochet",
+    "subcategory": "handmade-accessories",
+    "gender": "unisex",
+    "price": 199,
+    "salePrice": 179,
+    "isOnSale": true,
+    "discountPercentage": 10,
+    "rating": 4.3,
+    "reviewCount": 4,
+    "orderCount": 164,
+    "createdAt": "2026-05-20",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (2 inches) each",
+      "materials": "Cotton yarn, metal clips"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-handmade-accessories-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 14,
+    "lowStock": false
+  },
+  {
+    "id": "prod-handmade-accessories-03",
+    "slug": "beaded-daisy-bracelet",
+    "title": "Beaded Daisy Bracelet",
+    "description": "Hand-strung seed-bead bracelet in a daisy chain pattern.",
+    "category": "handmade-crochet",
+    "subcategory": "handmade-accessories",
+    "gender": "unisex",
+    "price": 179,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.8,
+    "reviewCount": 4,
+    "orderCount": 209,
+    "createdAt": "2026-04-27",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Circumference (6.5 inches)",
+      "materials": "Glass seed beads, stretch cord"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Valentine's Day, Anniversaries, Just because",
+      "targetAudience": "Friends, partners and kids who love something soft and handmade"
+    },
+    "variants": [
+      {
+        "id": "prod-handmade-accessories-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 10,
+    "lowStock": false
+  },
+  {
+    "id": "prod-pooja-thali-01",
+    "slug": "kundan-decorated-pooja-thali-set",
+    "title": "Kundan Decorated Pooja Thali Set",
+    "description": "Steel thali dressed in kundan and lace, with a diya, bell and roli-chawal bowls.",
+    "category": "festive-pooja",
+    "subcategory": "pooja-thali",
+    "gender": "unisex",
+    "price": 1499,
+    "salePrice": 1149,
+    "isOnSale": true,
+    "discountPercentage": 23,
+    "rating": 4.3,
+    "reviewCount": 4,
+    "orderCount": 189,
+    "createdAt": "2026-07-08",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (12 inches)",
+      "materials": "Stainless steel, kundan stones, lace"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-pooja-thali-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 19,
+    "lowStock": false
+  },
+  {
+    "id": "prod-pooja-thali-02",
+    "slug": "brass-aarti-thali-set",
+    "title": "Brass Aarti Thali Set",
+    "description": "Polished brass thali with a matching diya, kalash and incense stand.",
+    "category": "festive-pooja",
+    "subcategory": "pooja-thali",
+    "gender": "unisex",
+    "price": 1899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 3,
+    "orderCount": 383,
+    "createdAt": "2026-07-08",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (10 inches)",
+      "materials": "Brass"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-pooja-thali-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 31,
+    "lowStock": false
+  },
+  {
+    "id": "prod-pooja-thali-03",
+    "slug": "meenakari-pooja-thali",
+    "title": "Meenakari Pooja Thali",
+    "description": "Hand-enamelled meenakari thali in festive reds and greens.",
+    "category": "festive-pooja",
+    "subcategory": "pooja-thali",
+    "gender": "unisex",
+    "price": 1199,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 4,
+    "orderCount": 254,
+    "createdAt": "2026-04-24",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (11 inches)",
+      "materials": "Metal, meenakari enamel"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-pooja-thali-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 30,
+    "lowStock": false
+  },
+  {
+    "id": "prod-karva-chauth-01",
+    "slug": "karva-chauth-thali-set-with-channi",
+    "title": "Karva Chauth Thali Set with Channi",
+    "description": "Decorated thali, karwa, channi and diya — everything for the evening pooja.",
+    "category": "festive-pooja",
+    "subcategory": "karva-chauth",
+    "gender": "unisex",
+    "price": 1299,
+    "salePrice": 1169,
+    "isOnSale": true,
+    "discountPercentage": 10,
+    "rating": 4.7,
+    "reviewCount": 3,
+    "orderCount": 206,
+    "createdAt": "2026-07-31",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (12 inches)",
+      "materials": "Steel, decorative lace, kundan stones"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-karva-chauth-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 34,
+    "lowStock": false
+  },
+  {
+    "id": "prod-karva-chauth-02",
+    "slug": "hand-painted-karwa-lota",
+    "title": "Hand-Painted Karwa Lota",
+    "description": "Clay karwa painted by hand in red and gold.",
+    "category": "festive-pooja",
+    "subcategory": "karva-chauth",
+    "gender": "unisex",
+    "price": 449,
+    "salePrice": 379,
+    "isOnSale": true,
+    "discountPercentage": 16,
+    "rating": 4,
+    "reviewCount": 4,
+    "orderCount": 237,
+    "createdAt": "2026-03-17",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (6 inches)",
+      "materials": "Terracotta, acrylic paint"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-karva-chauth-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 22,
+    "lowStock": false
+  },
+  {
+    "id": "prod-karva-chauth-03",
+    "slug": "decorated-channi-sieve",
+    "title": "Decorated Channi (Sieve)",
+    "description": "Steel channi trimmed with gota and beads for moon-sighting.",
+    "category": "festive-pooja",
+    "subcategory": "karva-chauth",
+    "gender": "unisex",
+    "price": 349,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 178,
+    "createdAt": "2026-05-15",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (8 inches)",
+      "materials": "Stainless steel, gota lace, beads"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-karva-chauth-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 12,
+    "lowStock": false
+  },
+  {
+    "id": "prod-diwali-01",
+    "slug": "diwali-pooja-gift-box",
+    "title": "Diwali Pooja Gift Box",
+    "description": "Diyas, a candle, a mini toran and sweets tin in one festive box.",
+    "category": "festive-pooja",
+    "subcategory": "diwali",
+    "gender": "unisex",
+    "price": 1599,
+    "salePrice": 1259,
+    "isOnSale": true,
+    "discountPercentage": 21,
+    "rating": 4,
+    "reviewCount": 3,
+    "orderCount": 249,
+    "createdAt": "2026-05-30",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (12 inches), Width (10 inches)",
+      "materials": "Terracotta, soy wax, fabric, cardboard box"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-diwali-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 9,
+    "lowStock": false
+  },
+  {
+    "id": "prod-diwali-02",
+    "slug": "reusable-rangoli-stencil-kit",
+    "title": "Reusable Rangoli Stencil Kit",
+    "description": "Six reusable stencils with colour powders for quick rangoli.",
+    "category": "festive-pooja",
+    "subcategory": "diwali",
+    "gender": "unisex",
+    "price": 399,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 5,
+    "reviewCount": 2,
+    "orderCount": 217,
+    "createdAt": "2026-06-14",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (10 inches), Width (10 inches)",
+      "materials": "PET plastic, rangoli colours"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-diwali-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 18,
+    "lowStock": false
+  },
+  {
+    "id": "prod-diwali-03",
+    "slug": "lakshmi-charan-stickers-set-of-10",
+    "title": "Lakshmi Charan Stickers (Set of 10)",
+    "description": "Kumkum-red footprint stickers for Diwali entrances.",
+    "category": "festive-pooja",
+    "subcategory": "diwali",
+    "gender": "unisex",
+    "price": 99,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 4,
+    "orderCount": 213,
+    "createdAt": "2026-07-23",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (4 inches) each",
+      "materials": "Vinyl"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-diwali-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 3,
+    "lowStock": true
+  },
+  {
+    "id": "prod-torans-01",
+    "slug": "marigold-bandhanwar-toran",
+    "title": "Marigold Bandhanwar Toran",
+    "description": "Fabric marigold strands with mango-leaf drops for the main door.",
+    "category": "festive-pooja",
+    "subcategory": "torans",
+    "gender": "unisex",
+    "price": 699,
+    "salePrice": 629,
+    "isOnSale": true,
+    "discountPercentage": 10,
+    "rating": 4.5,
+    "reviewCount": 4,
+    "orderCount": 16,
+    "createdAt": "2026-07-02",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (40 inches)",
+      "materials": "Fabric flowers, beads, cotton cord"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-torans-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 29,
+    "lowStock": false
+  },
+  {
+    "id": "prod-torans-02",
+    "slug": "mirror-work-door-toran",
+    "title": "Mirror Work Door Toran",
+    "description": "Gujarati mirror-work toran with tassel hangings.",
+    "category": "festive-pooja",
+    "subcategory": "torans",
+    "gender": "unisex",
+    "price": 999,
+    "salePrice": 789,
+    "isOnSale": true,
+    "discountPercentage": 21,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 133,
+    "createdAt": "2026-05-10",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (38 inches)",
+      "materials": "Cotton, mirror pieces, tassels"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-torans-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 29,
+    "lowStock": false
+  },
+  {
+    "id": "prod-torans-03",
+    "slug": "beaded-shubh-labh-toran",
+    "title": "Beaded Shubh Labh Toran",
+    "description": "Beaded toran with Shubh and Labh side hangings.",
+    "category": "festive-pooja",
+    "subcategory": "torans",
+    "gender": "unisex",
+    "price": 549,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 5,
+    "reviewCount": 2,
+    "orderCount": 61,
+    "createdAt": "2026-03-12",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (36 inches)",
+      "materials": "Glass beads, felt, cotton thread"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-torans-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 40,
+    "lowStock": false
+  },
+  {
+    "id": "prod-diyas-01",
+    "slug": "hand-painted-clay-diyas-set-of-12",
+    "title": "Hand-Painted Clay Diyas (Set of 12)",
+    "description": "Terracotta diyas painted by hand in bright festive colours.",
+    "category": "festive-pooja",
+    "subcategory": "diyas",
+    "gender": "unisex",
+    "price": 399,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 2,
+    "orderCount": 358,
+    "createdAt": "2026-08-02",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (3 inches) each",
+      "materials": "Terracotta, acrylic paint"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-diyas-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 28,
+    "lowStock": false
+  },
+  {
+    "id": "prod-diyas-02",
+    "slug": "kundan-decorated-diyas-set-of-4",
+    "title": "Kundan Decorated Diyas (Set of 4)",
+    "description": "Clay diyas finished with kundan stones and gold paint.",
+    "category": "festive-pooja",
+    "subcategory": "diyas",
+    "gender": "unisex",
+    "price": 349,
+    "salePrice": 299,
+    "isOnSale": true,
+    "discountPercentage": 14,
+    "rating": 3.3,
+    "reviewCount": 3,
+    "orderCount": 154,
+    "createdAt": "2026-03-01",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (3.5 inches) each",
+      "materials": "Terracotta, kundan stones"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-diyas-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 30,
+    "lowStock": false
+  },
+  {
+    "id": "prod-diyas-03",
+    "slug": "single-terracotta-diya",
+    "title": "Single Terracotta Diya",
+    "description": "A plain, well-fired clay diya for daily pooja.",
+    "category": "festive-pooja",
+    "subcategory": "diyas",
+    "gender": "unisex",
+    "price": 49,
+    "salePrice": 39,
+    "isOnSale": true,
+    "discountPercentage": 20,
+    "rating": 4.7,
+    "reviewCount": 3,
+    "orderCount": 222,
+    "createdAt": "2026-03-16",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (3 inches)",
+      "materials": "Terracotta"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-diyas-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 11,
+    "lowStock": false
+  },
+  {
+    "id": "prod-rakhi-01",
+    "slug": "kundan-rakhi",
+    "title": "Kundan Rakhi",
+    "description": "Kundan-set rakhi on a silk thread, with roli and chawal.",
+    "category": "festive-pooja",
+    "subcategory": "rakhi",
+    "gender": "unisex",
+    "price": 149,
+    "salePrice": 109,
+    "isOnSale": true,
+    "discountPercentage": 27,
+    "rating": 5,
+    "reviewCount": 2,
+    "orderCount": 178,
+    "createdAt": "2026-03-25",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (9 inches)",
+      "materials": "Kundan stones, silk thread"
+    },
+    "gifting": {
+      "idealFor": "Raksha Bandhan",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-rakhi-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 32,
+    "lowStock": false
+  },
+  {
+    "id": "prod-rakhi-02",
+    "slug": "rudraksha-thread-rakhi",
+    "title": "Rudraksha Thread Rakhi",
+    "description": "Simple rudraksha bead rakhi on a red-gold thread.",
+    "category": "festive-pooja",
+    "subcategory": "rakhi",
+    "gender": "unisex",
+    "price": 99,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 5,
+    "reviewCount": 3,
+    "orderCount": 201,
+    "createdAt": "2026-07-11",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (9 inches)",
+      "materials": "Rudraksha bead, cotton thread"
+    },
+    "gifting": {
+      "idealFor": "Raksha Bandhan",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-rakhi-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 31,
+    "lowStock": false
+  },
+  {
+    "id": "prod-rakhi-03",
+    "slug": "bhaiya-bhabhi-lumba-rakhi-set",
+    "title": "Bhaiya Bhabhi Lumba Rakhi Set",
+    "description": "A matching rakhi and lumba pair for brother and bhabhi.",
+    "category": "festive-pooja",
+    "subcategory": "rakhi",
+    "gender": "unisex",
+    "price": 349,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 4,
+    "orderCount": 151,
+    "createdAt": "2026-04-30",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (9 inches) each",
+      "materials": "Beads, pearls, silk thread"
+    },
+    "gifting": {
+      "idealFor": "Raksha Bandhan",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-rakhi-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 5,
+    "lowStock": true
+  },
+  {
+    "id": "prod-festive-decor-01",
+    "slug": "paper-kandil-lantern",
+    "title": "Paper Kandil Lantern",
+    "description": "Handmade star kandil for the balcony or doorway.",
+    "category": "festive-pooja",
+    "subcategory": "festive-decor",
+    "gender": "unisex",
+    "price": 599,
+    "salePrice": 459,
+    "isOnSale": true,
+    "discountPercentage": 23,
+    "rating": 3.8,
+    "reviewCount": 4,
+    "orderCount": 327,
+    "createdAt": "2026-06-19",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (18 inches)",
+      "materials": "Handmade paper, bamboo frame"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-festive-decor-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 28,
+    "lowStock": false
+  },
+  {
+    "id": "prod-festive-decor-02",
+    "slug": "marigold-garlands-pack-of-5",
+    "title": "Marigold Garlands (Pack of 5)",
+    "description": "Reusable fabric marigold garlands for walls and doorways.",
+    "category": "festive-pooja",
+    "subcategory": "festive-decor",
+    "gender": "unisex",
+    "price": 449,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 4,
+    "orderCount": 197,
+    "createdAt": "2026-06-29",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (60 inches) each",
+      "materials": "Fabric flowers, cotton cord"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-festive-decor-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 17,
+    "lowStock": false
+  },
+  {
+    "id": "prod-festive-decor-03",
+    "slug": "brass-hanging-bells",
+    "title": "Brass Hanging Bells",
+    "description": "A pair of brass bells on beaded strings for the pooja room.",
+    "category": "festive-pooja",
+    "subcategory": "festive-decor",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 4,
+    "orderCount": 211,
+    "createdAt": "2026-03-25",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (24 inches)",
+      "materials": "Brass, beads, cotton cord"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Navratri, Karva Chauth, Raksha Bandhan, Griha Pravesh",
+      "targetAudience": "Families celebrating at home and gifting through the festive season"
+    },
+    "variants": [
+      {
+        "id": "prod-festive-decor-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 12,
+    "lowStock": false
+  },
+  {
+    "id": "prod-gift-hampers-01",
+    "slug": "self-care-candle-hamper",
+    "title": "Self-Care Candle Hamper",
+    "description": "Two soy candles, wax melts and a crochet scrunchie in a woven basket, ready for gifting.",
+    "category": "gifts",
+    "subcategory": "gift-hampers",
+    "gender": "unisex",
+    "price": 1999,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 260,
+    "createdAt": "2026-03-12",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (12 inches), Width (9 inches)",
+      "materials": "Soy wax, cotton yarn, seagrass basket"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Corporate gifting, Thank-you gifts",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-gift-hampers-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 40,
+    "lowStock": false
+  },
+  {
+    "id": "prod-gift-hampers-02",
+    "slug": "festive-diya-and-dry-fruit-hamper",
+    "title": "Festive Diya & Dry Fruit Hamper",
+    "description": "Painted diyas, a brass urli and a tin of dry fruits, ribbon-tied.",
+    "category": "gifts",
+    "subcategory": "gift-hampers",
+    "gender": "unisex",
+    "price": 2499,
+    "salePrice": 1969,
+    "isOnSale": true,
+    "discountPercentage": 21,
+    "rating": 4,
+    "reviewCount": 2,
+    "orderCount": 129,
+    "createdAt": "2026-06-04",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (14 inches), Width (10 inches)",
+      "materials": "Terracotta, brass, tin, wooden tray"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Corporate gifting, Thank-you gifts",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-gift-hampers-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 26,
+    "lowStock": false
+  },
+  {
+    "id": "prod-gift-hampers-03",
+    "slug": "crochet-bloom-hamper",
+    "title": "Crochet Bloom Hamper",
+    "description": "A crochet bouquet, keychain and bookmark in one pretty box.",
+    "category": "gifts",
+    "subcategory": "gift-hampers",
+    "gender": "unisex",
+    "price": 1799,
+    "salePrice": 1619,
+    "isOnSale": true,
+    "discountPercentage": 10,
+    "rating": 4.3,
+    "reviewCount": 4,
+    "orderCount": 214,
+    "createdAt": "2026-07-06",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (12 inches), Width (8 inches)",
+      "materials": "Cotton yarn, kraft box"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Corporate gifting, Thank-you gifts",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-gift-hampers-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 15,
+    "lowStock": false
+  },
+  {
+    "id": "prod-birthday-gifts-01",
+    "slug": "birthday-surprise-gift-box",
+    "title": "Birthday Surprise Gift Box",
+    "description": "A jar candle, crochet flower and handwritten card, wrapped to open.",
+    "category": "gifts",
+    "subcategory": "birthday-gifts",
+    "gender": "unisex",
+    "price": 1499,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 180,
+    "createdAt": "2026-03-28",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (10 inches), Width (10 inches)",
+      "materials": "Soy wax, cotton yarn, card, gift box"
+    },
+    "gifting": {
+      "idealFor": "Birthdays",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-birthday-gifts-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 37,
+    "lowStock": false
+  },
+  {
+    "id": "prod-birthday-gifts-02",
+    "slug": "crochet-bouquet-and-candle-combo",
+    "title": "Crochet Bouquet & Candle Combo",
+    "description": "A mini crochet bouquet paired with a scented candle.",
+    "category": "gifts",
+    "subcategory": "birthday-gifts",
+    "gender": "unisex",
+    "price": 1299,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 5,
+    "reviewCount": 4,
+    "orderCount": 246,
+    "createdAt": "2026-06-12",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (11 inches)",
+      "materials": "Cotton yarn, soy wax"
+    },
+    "gifting": {
+      "idealFor": "Birthdays",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-birthday-gifts-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 17,
+    "lowStock": false
+  },
+  {
+    "id": "prod-birthday-gifts-03",
+    "slug": "birthday-cake-candle-gift-set",
+    "title": "Birthday Cake Candle Gift Set",
+    "description": "A cake-shaped candle with number toppers and a card.",
+    "category": "gifts",
+    "subcategory": "birthday-gifts",
+    "gender": "unisex",
+    "price": 699,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 2,
+    "orderCount": 90,
+    "createdAt": "2026-03-26",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (3 inches)",
+      "materials": "Soy wax, cotton wick, card"
+    },
+    "gifting": {
+      "idealFor": "Birthdays",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-birthday-gifts-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 36,
+    "lowStock": false
+  },
+  {
+    "id": "prod-wedding-gifts-01",
+    "slug": "varmala-preservation-resin-frame",
+    "title": "Varmala Preservation Resin Frame",
+    "description": "Petals from the wedding garland preserved in resin with names and date.",
+    "category": "gifts",
+    "subcategory": "wedding-gifts",
+    "gender": "unisex",
+    "price": 3499,
+    "salePrice": 2829,
+    "isOnSale": true,
+    "discountPercentage": 19,
+    "rating": 5,
+    "reviewCount": 2,
+    "orderCount": 35,
+    "createdAt": "2026-08-28",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (12 inches), Width (12 inches)",
+      "materials": "Epoxy resin, preserved flowers, wooden frame"
+    },
+    "gifting": {
+      "idealFor": "Weddings, Engagements, Receptions",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-wedding-gifts-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 35,
+    "lowStock": false
+  },
+  {
+    "id": "prod-wedding-gifts-02",
+    "slug": "brass-pooja-set-wedding-gift",
+    "title": "Brass Pooja Set Wedding Gift",
+    "description": "A boxed brass diya, thali and kalash set for the couple's new home.",
+    "category": "gifts",
+    "subcategory": "wedding-gifts",
+    "gender": "unisex",
+    "price": 2999,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 123,
+    "createdAt": "2026-06-01",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (14 inches), Width (10 inches)",
+      "materials": "Brass, velvet-lined box"
+    },
+    "gifting": {
+      "idealFor": "Weddings, Engagements, Receptions",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-wedding-gifts-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 36,
+    "lowStock": false
+  },
+  {
+    "id": "prod-wedding-gifts-03",
+    "slug": "embroidered-shagun-envelopes-pack-of-10",
+    "title": "Embroidered Shagun Envelopes (Pack of 10)",
+    "description": "Hand-embroidered cash envelopes for wedding shagun.",
+    "category": "gifts",
+    "subcategory": "wedding-gifts",
+    "gender": "unisex",
+    "price": 299,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 2,
+    "orderCount": 203,
+    "createdAt": "2026-05-18",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (7 inches), Width (3.5 inches)",
+      "materials": "Silk fabric, embroidery thread"
+    },
+    "gifting": {
+      "idealFor": "Weddings, Engagements, Receptions",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-wedding-gifts-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 9,
+    "lowStock": false
+  },
+  {
+    "id": "prod-anniversary-gifts-01",
+    "slug": "forever-crochet-rose-box",
+    "title": "Forever Crochet Rose Box",
+    "description": "A single crocheted red rose under a glass dome.",
+    "category": "gifts",
+    "subcategory": "anniversary-gifts",
+    "gender": "unisex",
+    "price": 999,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 4,
+    "orderCount": 118,
+    "createdAt": "2026-06-20",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (8 inches)",
+      "materials": "Cotton yarn, glass dome, wooden base"
+    },
+    "gifting": {
+      "idealFor": "Anniversaries, Valentine's Day",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-anniversary-gifts-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 39,
+    "lowStock": false
+  },
+  {
+    "id": "prod-anniversary-gifts-02",
+    "slug": "anniversary-memory-jar",
+    "title": "Anniversary Memory Jar",
+    "description": "A glass jar of 50 rolled notes to fill with reasons and memories.",
+    "category": "gifts",
+    "subcategory": "anniversary-gifts",
+    "gender": "unisex",
+    "price": 799,
+    "salePrice": 639,
+    "isOnSale": true,
+    "discountPercentage": 20,
+    "rating": 4,
+    "reviewCount": 2,
+    "orderCount": 298,
+    "createdAt": "2026-06-18",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (6 inches)",
+      "materials": "Glass jar, handmade paper, twine"
+    },
+    "gifting": {
+      "idealFor": "Anniversaries, Valentine's Day",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-anniversary-gifts-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 20,
+    "lowStock": false
+  },
+  {
+    "id": "prod-anniversary-gifts-03",
+    "slug": "date-night-candle-set",
+    "title": "Date Night Candle Set",
+    "description": "Two rose-scented candles and a matchbox, boxed for two.",
+    "category": "gifts",
+    "subcategory": "anniversary-gifts",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 2,
+    "orderCount": 87,
+    "createdAt": "2026-04-06",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (3 inches) each",
+      "materials": "Soy wax, cotton wick, glass, kraft box"
+    },
+    "gifting": {
+      "idealFor": "Anniversaries, Valentine's Day",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-anniversary-gifts-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 36,
+    "lowStock": false
+  },
+  {
+    "id": "prod-housewarming-gifts-01",
+    "slug": "candle-and-toran-housewarming-set",
+    "title": "Candle & Toran Housewarming Set",
+    "description": "A small door toran, jar candle and diyas for the first evening.",
+    "category": "gifts",
+    "subcategory": "housewarming-gifts",
+    "gender": "unisex",
+    "price": 1499,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 67,
+    "createdAt": "2026-07-10",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (12 inches), Width (9 inches)",
+      "materials": "Fabric, soy wax, terracotta"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Griha Pravesh",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-housewarming-gifts-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 24,
+    "lowStock": false
+  },
+  {
+    "id": "prod-housewarming-gifts-02",
+    "slug": "welcome-home-gift-box",
+    "title": "Welcome Home Gift Box",
+    "description": "A welcome door hanging, coasters and a brass urli, boxed.",
+    "category": "gifts",
+    "subcategory": "housewarming-gifts",
+    "gender": "unisex",
+    "price": 1899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.5,
+    "reviewCount": 2,
+    "orderCount": 115,
+    "createdAt": "2026-04-16",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (14 inches), Width (10 inches)",
+      "materials": "Pine wood, epoxy resin, brass"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Griha Pravesh",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-housewarming-gifts-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 40,
+    "lowStock": false
+  },
+  {
+    "id": "prod-housewarming-gifts-03",
+    "slug": "hand-painted-terracotta-planters-set-of-3",
+    "title": "Hand-Painted Terracotta Planters (Set of 3)",
+    "description": "Three painted planters for windowsill herbs or succulents.",
+    "category": "gifts",
+    "subcategory": "housewarming-gifts",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 5,
+    "reviewCount": 2,
+    "orderCount": 105,
+    "createdAt": "2026-06-10",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (4 inches) each",
+      "materials": "Terracotta, acrylic paint"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Griha Pravesh",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-housewarming-gifts-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 29,
+    "lowStock": false
+  },
+  {
+    "id": "prod-return-gifts-01",
+    "slug": "mini-potli-return-gifts-pack-of-10",
+    "title": "Mini Potli Return Gifts (Pack of 10)",
+    "description": "Ten mini brocade potlis, ready to fill with sweets or dry fruits.",
+    "category": "gifts",
+    "subcategory": "return-gifts",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.7,
+    "reviewCount": 3,
+    "orderCount": 74,
+    "createdAt": "2026-03-29",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (5 inches), Width (4 inches) each",
+      "materials": "Brocade fabric, drawstring cord"
+    },
+    "gifting": {
+      "idealFor": "Birthday parties, Haldi and Mehendi, Baby showers",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-return-gifts-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 14,
+    "lowStock": false
+  },
+  {
+    "id": "prod-return-gifts-02",
+    "slug": "crochet-keychain-return-gifts-pack-of-10",
+    "title": "Crochet Keychain Return Gifts (Pack of 10)",
+    "description": "Ten assorted crochet keychains, individually bagged for easy gifting.",
+    "category": "gifts",
+    "subcategory": "return-gifts",
+    "gender": "unisex",
+    "price": 1299,
+    "salePrice": 1049,
+    "isOnSale": true,
+    "discountPercentage": 19,
+    "rating": 3.5,
+    "reviewCount": 2,
+    "orderCount": 22,
+    "createdAt": "2026-08-10",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (3 inches) each",
+      "materials": "Cotton yarn, metal key rings"
+    },
+    "gifting": {
+      "idealFor": "Birthday parties, Haldi and Mehendi, Baby showers",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-return-gifts-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 8,
+    "lowStock": false
+  },
+  {
+    "id": "prod-return-gifts-03",
+    "slug": "mini-diya-gift-boxes-pack-of-10",
+    "title": "Mini Diya Gift Boxes (Pack of 10)",
+    "description": "Ten little boxes, each holding two painted diyas.",
+    "category": "gifts",
+    "subcategory": "return-gifts",
+    "gender": "unisex",
+    "price": 799,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 28,
+    "createdAt": "2026-04-02",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (3 inches), Width (3 inches) each",
+      "materials": "Terracotta, kraft boxes"
+    },
+    "gifting": {
+      "idealFor": "Birthday parties, Haldi and Mehendi, Baby showers",
+      "targetAudience": "Anyone you want to spoil, wrapped and ready to give"
+    },
+    "variants": [
+      {
+        "id": "prod-return-gifts-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 27,
+    "lowStock": false
+  },
+  {
+    "id": "prod-personalized-nameplates-01",
+    "slug": "custom-resin-family-nameplate",
+    "title": "Custom Resin Family Nameplate",
+    "description": "Your family name in gold letters over pressed flowers set in resin.",
+    "category": "personalized",
+    "subcategory": "personalized-nameplates",
+    "gender": "unisex",
+    "price": 2499,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 2,
+    "orderCount": 111,
+    "createdAt": "2026-08-25",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (14 inches), Width (8 inches)",
+      "materials": "Epoxy resin, dried flowers, acrylic letters, MDF base"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-nameplates-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 21,
+    "lowStock": false
+  },
+  {
+    "id": "prod-personalized-nameplates-02",
+    "slug": "personalized-ganesha-wooden-nameplate",
+    "title": "Personalized Ganesha Wooden Nameplate",
+    "description": "Engraved wooden nameplate with a Ganesha motif and your name.",
+    "category": "personalized",
+    "subcategory": "personalized-nameplates",
+    "gender": "unisex",
+    "price": 1799,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 260,
+    "createdAt": "2026-07-07",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (15 inches), Width (6 inches)",
+      "materials": "Sheesham wood, weatherproof varnish"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-nameplates-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 40,
+    "lowStock": false
+  },
+  {
+    "id": "prod-personalized-nameplates-03",
+    "slug": "kids-room-name-door-sign",
+    "title": "Kids' Room Name Door Sign",
+    "description": "A painted cloud-shaped door sign with your child's name.",
+    "category": "personalized",
+    "subcategory": "personalized-nameplates",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": 749,
+    "isOnSale": true,
+    "discountPercentage": 17,
+    "rating": 4.8,
+    "reviewCount": 4,
+    "orderCount": 75,
+    "createdAt": "2026-07-19",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (10 inches), Width (6 inches)",
+      "materials": "MDF, acrylic paint"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-nameplates-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 38,
+    "lowStock": false
+  },
+  {
+    "id": "prod-personalized-keychains-01",
+    "slug": "engraved-wooden-name-keychain",
+    "title": "Engraved Wooden Name Keychain",
+    "description": "A name or short word laser-engraved on a wooden tag.",
+    "category": "personalized",
+    "subcategory": "personalized-keychains",
+    "gender": "unisex",
+    "price": 199,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 4,
+    "orderCount": 298,
+    "createdAt": "2026-03-16",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (3 inches)",
+      "materials": "Beech wood, metal key ring"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-keychains-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 21,
+    "lowStock": false
+  },
+  {
+    "id": "prod-personalized-keychains-02",
+    "slug": "resin-initial-keychain-with-flowers",
+    "title": "Resin Initial Keychain with Flowers",
+    "description": "Your initial cast in resin with tiny dried flowers.",
+    "category": "personalized",
+    "subcategory": "personalized-keychains",
+    "gender": "unisex",
+    "price": 249,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 3,
+    "orderCount": 128,
+    "createdAt": "2026-05-06",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (2 inches)",
+      "materials": "Epoxy resin, dried flowers, gold flakes, key ring"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-keychains-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 13,
+    "lowStock": false
+  },
+  {
+    "id": "prod-personalized-keychains-03",
+    "slug": "couple-photo-keychain",
+    "title": "Couple Photo Keychain",
+    "description": "A double-sided acrylic keychain printed with your photo.",
+    "category": "personalized",
+    "subcategory": "personalized-keychains",
+    "gender": "unisex",
+    "price": 299,
+    "salePrice": 229,
+    "isOnSale": true,
+    "discountPercentage": 23,
+    "rating": 4.3,
+    "reviewCount": 3,
+    "orderCount": 100,
+    "createdAt": "2026-08-10",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (2.5 inches)",
+      "materials": "Acrylic, metal key ring"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-keychains-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 11,
+    "lowStock": false
+  },
+  {
+    "id": "prod-personalized-frames-01",
+    "slug": "custom-name-resin-photo-frame",
+    "title": "Custom Name Resin Photo Frame",
+    "description": "A resin photo frame with names and a date set into the border.",
+    "category": "personalized",
+    "subcategory": "personalized-frames",
+    "gender": "unisex",
+    "price": 1299,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 5,
+    "reviewCount": 2,
+    "orderCount": 128,
+    "createdAt": "2026-04-12",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (8 inches), Width (10 inches)",
+      "materials": "Epoxy resin, dried flowers, acrylic letters"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-frames-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 8,
+    "lowStock": false
+  },
+  {
+    "id": "prod-personalized-frames-02",
+    "slug": "engraved-wooden-photo-frame",
+    "title": "Engraved Wooden Photo Frame",
+    "description": "Wooden frame engraved with a message of your choice.",
+    "category": "personalized",
+    "subcategory": "personalized-frames",
+    "gender": "unisex",
+    "price": 999,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.8,
+    "reviewCount": 4,
+    "orderCount": 180,
+    "createdAt": "2026-08-05",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (8 inches), Width (10 inches)",
+      "materials": "Mango wood, glass"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-frames-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 22,
+    "lowStock": false
+  },
+  {
+    "id": "prod-personalized-frames-03",
+    "slug": "personalized-song-lyrics-frame",
+    "title": "Personalized Song Lyrics Frame",
+    "description": "Your song's lyrics printed around a favourite photo.",
+    "category": "personalized",
+    "subcategory": "personalized-frames",
+    "gender": "unisex",
+    "price": 1199,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4,
+    "reviewCount": 4,
+    "orderCount": 101,
+    "createdAt": "2026-08-15",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (12 inches), Width (9 inches)",
+      "materials": "Art paper, wooden frame, glass"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-frames-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 20,
+    "lowStock": false
+  },
+  {
+    "id": "prod-personalized-candles-01",
+    "slug": "custom-label-soy-jar-candle",
+    "title": "Custom Label Soy Jar Candle",
+    "description": "A scented jar candle with a label printed with your message.",
+    "category": "personalized",
+    "subcategory": "personalized-candles",
+    "gender": "unisex",
+    "price": 699,
+    "salePrice": 589,
+    "isOnSale": true,
+    "discountPercentage": 16,
+    "rating": 4,
+    "reviewCount": 4,
+    "orderCount": 26,
+    "createdAt": "2026-07-17",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Height (3.5 inches), Burn time (35 hours)",
+      "materials": "Soy wax, cotton wick, glass jar"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-candles-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 3,
+    "lowStock": true
+  },
+  {
+    "id": "prod-personalized-candles-02",
+    "slug": "name-engraved-pillar-candle",
+    "title": "Name Engraved Pillar Candle",
+    "description": "A pillar candle carved with a name or date.",
+    "category": "personalized",
+    "subcategory": "personalized-candles",
+    "gender": "unisex",
+    "price": 599,
+    "salePrice": 509,
+    "isOnSale": true,
+    "discountPercentage": 15,
+    "rating": 3.5,
+    "reviewCount": 2,
+    "orderCount": 260,
+    "createdAt": "2026-08-08",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Height (6 inches), Diameter (3 inches)",
+      "materials": "Paraffin wax, cotton wick"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-candles-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 27,
+    "lowStock": false
+  },
+  {
+    "id": "prod-personalized-candles-03",
+    "slug": "photo-print-candle",
+    "title": "Photo Print Candle",
+    "description": "A white pillar candle printed with a photo of your choice.",
+    "category": "personalized",
+    "subcategory": "personalized-candles",
+    "gender": "unisex",
+    "price": 799,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 3.5,
+    "reviewCount": 2,
+    "orderCount": 218,
+    "createdAt": "2026-07-10",
+    "isFeatured": false,
+    "ageGroup": "Adult supervision",
+    "specifications": {
+      "dimensions": "Height (6 inches), Diameter (3 inches)",
+      "materials": "Paraffin wax, cotton wick, image transfer"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-personalized-candles-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 23,
+    "lowStock": false
+  },
+  {
+    "id": "prod-couple-gifts-01",
+    "slug": "couple-name-resin-wall-plaque",
+    "title": "Couple Name Resin Wall Plaque",
+    "description": "A resin plaque with both names, a date and pressed flowers.",
+    "category": "personalized",
+    "subcategory": "couple-gifts",
+    "gender": "unisex",
+    "price": 1999,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.5,
+    "reviewCount": 2,
+    "orderCount": 99,
+    "createdAt": "2026-03-13",
+    "isFeatured": false,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Diameter (10 inches)",
+      "materials": "Epoxy resin, pressed flowers, acrylic letters"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-couple-gifts-01-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 20,
+    "lowStock": false
+  },
+  {
+    "id": "prod-couple-gifts-02",
+    "slug": "his-and-hers-personalized-mugs",
+    "title": "His & Hers Personalized Mugs",
+    "description": "A pair of ceramic mugs printed with your names.",
+    "category": "personalized",
+    "subcategory": "couple-gifts",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": 799,
+    "isOnSale": true,
+    "discountPercentage": 11,
+    "rating": 4.3,
+    "reviewCount": 4,
+    "orderCount": 205,
+    "createdAt": "2026-03-12",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Height (4 inches) each",
+      "materials": "Ceramic"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-couple-gifts-02-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 39,
+    "lowStock": false
+  },
+  {
+    "id": "prod-couple-gifts-03",
+    "slug": "couple-caricature-frame",
+    "title": "Couple Caricature Frame",
+    "description": "A hand-drawn caricature of the two of you, framed.",
+    "category": "personalized",
+    "subcategory": "couple-gifts",
+    "gender": "unisex",
+    "price": 1499,
+    "salePrice": 1119,
+    "isOnSale": true,
+    "discountPercentage": 25,
+    "rating": 4.3,
+    "reviewCount": 4,
+    "orderCount": 67,
+    "createdAt": "2026-03-04",
+    "isFeatured": true,
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Length (12 inches), Width (9 inches)",
+      "materials": "Art paper, wooden frame, glass"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Weddings, Housewarming",
+      "targetAudience": "Someone who deserves a gift made just for them"
+    },
+    "variants": [
+      {
+        "id": "prod-couple-gifts-03-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 5,
+    "lowStock": true
+  }
+]

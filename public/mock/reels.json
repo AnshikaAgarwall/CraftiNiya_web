@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Pouring gold foil in ocean resin tray",
+    "posterUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+    "videoUrl": null,
+    "externalUrl": "https://instagram.com/craftiniya",
+    "views": 9000,
+    "likes": 1200,
+    "publishedAt": "2026-08-01T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "Hand-pouring soy wax with dried lavender buds",
+    "posterUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80",
+    "videoUrl": null,
+    "externalUrl": "https://instagram.com/craftiniya",
+    "views": 1000,
+    "likes": 840,
+    "publishedAt": "2026-08-07T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "title": "Packaging custom anniversary hampers with wax seal",
+    "posterUrl": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=80",
+    "videoUrl": null,
+    "externalUrl": "https://instagram.com/craftiniya",
+    "views": 9000,
+    "likes": 1500,
+    "publishedAt": "2026-08-13T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "title": "Preserving wedding garland flowers in resin clock",
+    "posterUrl": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80",
+    "videoUrl": null,
+    "externalUrl": "https://instagram.com/craftiniya",
+    "views": 14000,
+    "likes": 2100,
+    "publishedAt": "2026-08-19T00:00:00.000Z"
+  },
+  {
+    "id": "5",
+    "title": "Ocean wave coaster set demolding session",
+    "posterUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80",
+    "videoUrl": null,
+    "externalUrl": "https://instagram.com/craftiniya",
+    "views": 6500,
+    "likes": 920,
+    "publishedAt": "2026-08-25T00:00:00.000Z"
+  },
+  {
+    "id": "6",
+    "title": "Creating botanical tea light candle holders",
+    "posterUrl": "https://images.unsplash.com/photo-1514517521153-1be72277b32f?auto=format&fit=crop&w=600&q=80",
+    "videoUrl": null,
+    "externalUrl": "https://instagram.com/craftiniya",
+    "views": 11000,
+    "likes": 1800,
+    "publishedAt": "2026-08-31T00:00:00.000Z"
+  }
+]

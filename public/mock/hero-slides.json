@@ -1,0 +1,41 @@
+[
+  {
+    "id": "festive-edit",
+    "sortOrder": 1,
+    "active": true,
+    "eyebrow": "The Festive Edit",
+    "title": "Gifts that glow this festive season.",
+    "body": "Clay diyas, hand-poured candles and keepsakes — wrapped, sealed and ready to give.",
+    "href": "/sale",
+    "videoUrl": "https://videos.pexels.com/video-files/34428330/14585482_1280_720_50fps.mp4",
+    "posterUrl": "https://images.pexels.com/videos/34428330/pictures/preview-0.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1920&h=1080&q=80",
+    "source": "https://www.pexels.com/video/34428330/"
+  },
+  {
+    "id": "made-by-hand",
+    "sortOrder": 2,
+    "active": true,
+    "eyebrow": "Made by hand",
+    "title": "Handmade pieces, made to feel special.",
+    "body": "Shaped, poured and finished by one maker, in small batches of a dozen or fewer.",
+    "href": "/shop",
+    "videoUrl": "https://videos.pexels.com/video-files/5634000/5634000-hd_1280_720_24fps.mp4",
+    "posterUrl": "https://images.pexels.com/videos/5634000/pictures/preview-0.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1920&h=1080&q=80",
+    "source": "https://www.pexels.com/video/5634000/"
+  },
+  {
+    "id": "gifting-sorted",
+    "sortOrder": 3,
+    "active": true,
+    "eyebrow": "Gifting, sorted",
+    "title": "Wrapped by hand before it reaches you.",
+    "body": "Every order leaves tissue-wrapped and ribbon-tied, with a handwritten note if you would like one.",
+    "href": "/budget-gifting",
+    "videoUrl": "https://videos.pexels.com/video-files/6275420/6275420-sd_960_506_30fps.mp4",
+    "posterUrl": "https://images.pexels.com/videos/6275420/pictures/preview-0.jpg",
+    "imageUrl": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1920&h=1080&q=80",
+    "source": "https://www.pexels.com/video/6275420/"
+  }
+]
