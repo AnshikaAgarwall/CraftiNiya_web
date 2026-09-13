@@ -1,148 +1,410 @@
+/* =========================================================
+   BUDGET TIERS — Artisan Market Cart / Stall Architecture
+   Single Row of 4 Carts Across All Screens (Desktop, Tab, Mobile)
+   Scales down smoothly to fit on screen without horizontal scroll!
+   ========================================================= */
+
 .section {
-  padding-block: var(--section-y);
+  padding-block: clamp(var(--sp-6), 3.5vw, var(--sp-10));
   background-color: var(--c-bg);
+  overflow: hidden;
 }
 
-.grid {
+/* Desktop View: Single 4-column row */
+.desktopGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--sp-4);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(8px, 1.5vw, var(--sp-4));
+  align-items: end;
+  width: 100%;
 }
 
-.card {
+/* Mobile & Tablet Auto-Scrolling Train Track (Hidden on Desktop) */
+.mobileMarqueeWrapper {
+  display: none;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-block: 8px;
+}
+
+.mobileMarqueeWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.mobileTrack {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  width: max-content;
+  will-change: transform;
+  animation: trainScroll 18s linear infinite;
+}
+
+.mobileMarqueeWrapper:hover .mobileTrack {
+  animation-play-state: paused;
+}
+
+.mobileCartSlide {
+  flex: 0 0 170px;
+  width: 170px;
+}
+
+@keyframes trainScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    /* 4 items + gaps = 1/3 of the 3x-repeated list */
+    transform: translateX(calc(-100% / 3));
+  }
+}
+
+/* ---------- Cart Wrapper Link ---------- */
+
+.cart {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-2);
-  padding: var(--sp-6);
-  overflow: hidden;
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-lg);
-  background-color: var(--c-surface);
-  transition:
-    border-color var(--t-base) var(--ease),
-    box-shadow var(--t-base) var(--ease),
-    transform var(--t-base) var(--ease);
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding-bottom: clamp(6px, 1vw, 12px);
+  width: 100%;
+  min-width: 0;
+  transition: transform var(--t-base) var(--ease);
 }
 
-/* Warm wash that grows on hover — cheaper than a second background image and
-   keeps the card readable at every state. */
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 130px;
-  height: 130px;
-  border-radius: var(--r-circle);
-  background-color: var(--c-brand-soft);
-  transform: translate(38%, -38%);
-  transition: transform var(--t-slow) var(--ease);
+.cart:hover {
+  transform: translateY(-5px);
 }
 
-.card:hover {
-  border-color: var(--c-brand);
-  box-shadow: var(--sh-lg);
-  transform: translateY(-4px);
-}
+/* ---------- 1. Awning / Striped Canopy ---------- */
 
-.card:hover::before {
-  transform: translate(28%, -28%) scale(1.25);
-}
-
-.card > * {
+.awning {
   position: relative;
+  width: 100%;
+  z-index: 3;
+  filter: drop-shadow(0 3px 5px rgb(0 0 0 / 0.08));
 }
 
-.icon {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  margin-bottom: var(--sp-3);
-  border-radius: var(--r-circle);
-  background-color: var(--c-accent);
-  /* Pine ink on Terracotta = 4.80:1. White here would be 2.76:1. */
-  color: var(--c-text-on-accent);
+.stripes {
+  display: flex;
+  width: 100%;
+  height: clamp(28px, 4.5vw, 54px);
+  border-radius: clamp(6px, 1vw, 12px) clamp(6px, 1vw, 12px) 0 0;
+  overflow: hidden;
+  box-shadow: inset 0 2px 3px rgb(255 255 255 / 0.4);
 }
 
-.icon svg {
-  width: 21px;
-  height: 21px;
+.stripe {
+  flex: 1;
+  height: 100%;
+}
+
+/* Alternating brand terracotta / amber & warm cream stripes */
+.stripe:nth-child(odd) {
+  background: linear-gradient(180deg,
+      color-mix(in srgb, var(--c-brand) 92%, #fff) 0%,
+      var(--c-brand) 100%);
+}
+
+.stripe:nth-child(even) {
+  background: linear-gradient(180deg,
+      #ffffff 0%,
+      color-mix(in srgb, var(--c-sunken) 80%, #fff) 100%);
+}
+
+/* Scalloped valance hem */
+.valance {
+  display: flex;
+  width: 100%;
+  height: clamp(6px, 1.1vw, 12px);
+  margin-top: -1px;
+}
+
+.scallop {
+  flex: 1;
+  height: 100%;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+}
+
+.scallop:nth-child(odd) {
+  background-color: var(--c-brand);
+}
+
+.scallop:nth-child(even) {
+  background-color: color-mix(in srgb, var(--c-sunken) 85%, #fff);
+}
+
+/* ---------- 2. Middle Signboard Frame ---------- */
+
+.board {
+  position: relative;
+  width: calc(100% - clamp(4px, 0.8vw, 12px));
+  min-height: clamp(64px, 9.5vw, 110px);
+  background: linear-gradient(180deg,
+      var(--c-surface) 0%,
+      var(--c-surface) 65%,
+      var(--c-sunken) 100%);
+  border-inline: clamp(1px, 0.2vw, 2px) solid color-mix(in srgb, var(--c-border-strong) 85%, var(--c-brand));
+  padding: clamp(10px, 1.8vw, 20px) clamp(4px, 1vw, 12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 4px;
+  box-shadow:
+    inset 0 2px 4px rgb(0 0 0 / 0.03),
+    0 3px 8px rgb(0 0 0 / 0.03);
+  z-index: 2;
+  transition: background-color var(--t-fast) var(--ease);
+}
+
+.cart:hover .board {
+  background: linear-gradient(180deg,
+      var(--c-surface) 0%,
+      color-mix(in srgb, var(--c-brand-soft) 25%, var(--c-surface)) 100%);
 }
 
 .tag {
-  color: var(--c-brand);
-  font-size: 10px;
+  display: inline-block;
+  font-size: clamp(7px, 0.75vw, 10px);
   font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-wider);
+  letter-spacing: var(--ls-wide);
   text-transform: uppercase;
+  color: var(--c-brand);
+  padding: 1px clamp(3px, 0.4vw, 6px);
+  background-color: var(--c-accent-soft);
+  border: 1px solid var(--c-accent);
+  border-radius: var(--r-pill);
+  white-space: nowrap;
 }
 
 .label {
   font-family: var(--font-serif);
-  font-size: var(--fs-2xl);
+  font-size: clamp(11.5px, 1.65vw, 21px);
   font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-tight);
-  line-height: 1;
+  color: var(--c-text);
+  line-height: 1.15;
+  margin: 1px 0 0;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .desc {
+  font-size: clamp(8px, 0.9vw, 11.5px);
   color: var(--c-text-2);
-  font-size: var(--fs-sm);
-  line-height: var(--lh-snug);
+  line-height: 1.25;
+  margin: 1px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 20ch;
 }
 
-.foot {
+/* ---------- 3. Counter Table Shelf ---------- */
+
+.counterShelf {
+  width: 100%;
+  height: clamp(5px, 0.7vw, 9px);
+  background: linear-gradient(180deg,
+      color-mix(in srgb, var(--c-brand) 70%, #d97706) 0%,
+      color-mix(in srgb, var(--c-brand) 90%, #78350f) 100%);
+  border-radius: 3px;
+  box-shadow: 0 1.5px 3px rgb(0 0 0 / 0.12);
+  z-index: 3;
+}
+
+/* ---------- 4. Cart Chassis with Wheels & Arrow ---------- */
+
+.cartChassis {
+  position: relative;
+  width: calc(100% - clamp(4px, 0.6vw, 10px));
+  height: clamp(30px, 4.6vw, 54px);
+  background: linear-gradient(180deg,
+      color-mix(in srgb, var(--c-sunken) 70%, var(--c-surface)) 0%,
+      var(--c-sunken) 100%);
+  border: clamp(1px, 0.15vw, 1.5px) solid var(--c-border-strong);
+  border-top: none;
+  border-radius: 0 0 clamp(5px, 0.8vw, 10px) clamp(5px, 0.8vw, 10px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--sp-3);
-  margin-top: var(--sp-5);
-  padding-top: var(--sp-4);
-  border-top: 1px solid var(--c-border);
+  padding-inline: clamp(4px, 0.9vw, 12px);
+  margin-top: -1px;
+  z-index: 2;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 0.04);
 }
 
-.count {
-  color: var(--c-text-2);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-wide);
-  text-transform: uppercase;
+/* Wheels */
+.wheel {
+  position: relative;
+  width: clamp(20px, 3.2vw, 38px);
+  height: clamp(20px, 3.2vw, 38px);
+  margin-bottom: clamp(-7px, -0.9vw, -12px);
+  display: grid;
+  place-items: center;
+  z-index: 4;
 }
 
-.arrow {
-  width: 17px;
-  height: 17px;
-  color: var(--c-brand);
-  transition: transform var(--t-base) var(--ease);
+.wheelRim {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: clamp(1.8px, 0.3vw, 3.5px) solid #292524;
+  background-color: #fafaf9;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.22);
+  display: grid;
+  place-items: center;
+  transition: transform var(--t-slow) var(--ease);
 }
 
-.card:hover .arrow {
-  transform: translateX(4px);
+.cart:hover .wheelRim {
+  transform: rotate(35deg);
 }
+
+.spoke {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #78716c;
+}
+
+.spoke:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.spoke:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.spoke:nth-child(3) {
+  transform: rotate(90deg);
+}
+
+.spoke:nth-child(4) {
+  transform: rotate(135deg);
+}
+
+.wheelHub {
+  position: absolute;
+  width: clamp(5px, 0.7vw, 9px);
+  height: clamp(5px, 0.7vw, 9px);
+  background-color: var(--c-brand);
+  border-radius: 50%;
+  border: 1px solid #292524;
+  z-index: 2;
+}
+
+/* Center CTA Pill */
+.ctaPill {
+  display: grid;
+  place-items: center;
+  width: clamp(18px, 2.8vw, 36px);
+  height: clamp(14px, 2vw, 22px);
+  background-color: var(--c-text);
+  color: var(--c-surface);
+  border-radius: var(--r-pill);
+  box-shadow: 0 1.5px 4px rgb(0 0 0 / 0.18);
+  transition:
+    background-color var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease);
+}
+
+.cart:hover .ctaPill {
+  background-color: var(--c-brand);
+  transform: scale(1.08);
+}
+
+.ctaArrow {
+  width: clamp(9px, 1.2vw, 14px);
+  height: clamp(9px, 1.2vw, 14px);
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.cart:hover .ctaArrow {
+  transform: translateX(2px);
+}
+
+/* Ground shadow under cart */
+.groundShadow {
+  width: 85%;
+  height: clamp(3px, 0.5vw, 5px);
+  margin-top: clamp(3px, 0.5vw, 6px);
+  background: radial-gradient(ellipse at center,
+      rgb(0 0 0 / 0.18) 0%,
+      transparent 75%);
+  border-radius: 50%;
+  transition: transform var(--t-base) var(--ease), opacity var(--t-base) var(--ease);
+}
+
+.cart:hover .groundShadow {
+  transform: scale(0.85);
+  opacity: 0.5;
+}
+
+/* ---------- Skeleton ---------- */
 
 .skeleton {
-  height: 250px;
-  border-radius: var(--r-lg);
+  width: 100%;
+  height: clamp(120px, 18vw, 220px);
+  border-radius: 12px;
+  background-color: var(--c-sunken);
 }
+
+/* =========================================================
+   RESPONSIVE TUNING: MOBILE & TABLET AUTO-SCROLLING TRAIN
+   Desktop stays clean 4-in-a-row grid!
+   ========================================================= */
 
 @media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 520px) {
-  .grid {
-    grid-template-columns: 1fr;
+  .desktopGrid {
+    display: none !important;
   }
 
-  .card {
-    padding: var(--sp-5);
+  .mobileMarqueeWrapper {
+    display: block !important;
+  }
+
+  .mobileCartSlide {
+    flex: 0 0 175px;
+    width: 175px;
+  }
+
+  .tag {
+    font-size: 8px;
+    padding: 1px 6px;
+    letter-spacing: 0.02em;
   }
 
   .label {
-    font-size: var(--fs-xl);
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileCartSlide {
+    flex: 0 0 155px;
+    width: 155px;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobileTrack {
+    animation: none !important;
   }
 }

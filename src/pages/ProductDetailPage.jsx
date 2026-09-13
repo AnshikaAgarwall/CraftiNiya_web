@@ -157,6 +157,17 @@ export default function ProductDetailPage() {
                 <Badge tone="accent">{product.discountPct}% off</Badge>
               </span>
             ) : null}
+
+            {/* Floating Favourite (Wishlist) Button on top-right of image */}
+            <button
+              type="button"
+              onClick={() => toggle(product.id)}
+              aria-pressed={wishlisted}
+              aria-label={wishlisted ? "Remove from wishlist" : "Save to wishlist"}
+              className={cn(s.imageWishButton, wishlisted && s.imageWishButtonOn)}
+            >
+              <Heart size={18} />
+            </button>
           </div>
 
           {images.length > 1 && (
@@ -181,15 +192,6 @@ export default function ProductDetailPage() {
         <div className={s.info}>
           <p className={s.eyebrow}>{product.subcategoryTitle}</p>
           <h1 className={s.title}>{product.title}</h1>
-
-          {product.reviewCount > 0 && (
-            <Rating
-              value={summary?.average ?? product.rating}
-              count={summary?.total ?? product.reviewCount}
-              size={15}
-              className={s.rating}
-            />
-          )}
 
           <Price
             listMinor={product.listPriceMinor}
@@ -272,18 +274,6 @@ export default function ProductDetailPage() {
             >
               {product.inStock && maxQty > 0 ? "Add to bag" : "Sold out"}
             </Button>
-
-            <Button
-              size="lg"
-              variant="secondary"
-              iconOnly
-              onClick={() => toggle(product.id)}
-              aria-pressed={wishlisted}
-              aria-label={wishlisted ? "Remove from wishlist" : "Save to wishlist"}
-              className={cn(s.wishButton, wishlisted && s.wishButtonOn)}
-            >
-              <Heart size={19} />
-            </Button>
           </div>
 
           <ul className={s.assurances}>
@@ -299,155 +289,125 @@ export default function ProductDetailPage() {
               Made and checked by hand
             </li>
           </ul>
-        </div>
-      </div>
 
-      {/* ---------- tabs ---------- */}
-      <section className={`container ${s.tabsSection}`}>
-        <div className={`${s.tabList} no-scrollbar`} role="tablist" aria-label="Product information">
-          {TABS.map((t) => (
-            <button
-              key={t.id}
-              type="button"
-              role="tab"
-              aria-selected={tab === t.id}
-              onClick={() => setTab(t.id)}
-              className={cn(s.tab, tab === t.id && s.tabActive)}
-            >
-              {t.label}
-              {t.id === "reviews" && summary?.total ? ` (${summary.total})` : ""}
-            </button>
-          ))}
-        </div>
-
-        <div className={s.tabPanel} role="tabpanel">
-          {tab === "details" && (
-            <div className={s.prose}>
-              <p>{product.description}</p>
-              {product.specifications?.materials && (
-                <p>
-                  <strong>Made from:</strong> {product.specifications.materials}
-                </p>
-              )}
-              <p>
-                Because each piece is finished by hand, small differences in tone,
-                grain and finish are normal — and are the reason no two are
-                identical.
-              </p>
+          {/* ---------- Product Detail Tabs (Embedded right below Made and checked by hand) ---------- */}
+          <div className={s.productTabsContainer}>
+            <div className={`${s.tabList} no-scrollbar`} role="tablist" aria-label="Product information">
+              {TABS.map((t) => (
+                <button
+                  key={t.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={tab === t.id}
+                  onClick={() => setTab(t.id)}
+                  className={cn(s.tab, tab === t.id && s.tabActive)}
+                >
+                  {t.label}
+                </button>
+              ))}
             </div>
-          )}
 
-          {tab === "specs" && (
-            <dl className={s.specs}>
-              {product.specifications?.dimensions && (
-                <div>
-                  <dt>Dimensions</dt>
-                  <dd>{product.specifications.dimensions}</dd>
+            <div className={s.tabPanel} role="tabpanel">
+              {tab === "details" && (
+                <div className={s.prose}>
+                  <p>{product.description}</p>
+                  {product.specifications?.materials && (
+                    <p>
+                      <strong>Made from:</strong> {product.specifications.materials}
+                    </p>
+                  )}
+                  <p>
+                    Because each piece is finished by hand, small differences in tone,
+                    grain and finish are normal — and are the reason no two are
+                    identical.
+                  </p>
                 </div>
               )}
-              {product.specifications?.materials && (
-                <div>
-                  <dt>Materials</dt>
-                  <dd>{product.specifications.materials}</dd>
-                </div>
-              )}
-              {product.ageGroup && (
-                <div>
-                  <dt>Suitable for</dt>
-                  <dd>{product.ageGroup}</dd>
-                </div>
-              )}
-              <div>
-                <dt>Category</dt>
-                <dd>
-                  {product.categoryTitle} · {product.subcategoryTitle}
-                </dd>
-              </div>
-              {product.createdAt && (
-                <div>
-                  <dt>Added</dt>
-                  <dd>{formatDate(product.createdAt)}</dd>
-                </div>
-              )}
-            </dl>
-          )}
 
-          {tab === "gifting" && (
-            <div className={s.prose}>
-              {product.gifting?.idealFor && (
-                <p>
-                  <strong>Ideal for:</strong> {product.gifting.idealFor}
-                </p>
+              {tab === "specs" && (
+                <div className={s.specsList}>
+                  {product.specifications?.dimensions && (
+                    <div className={s.specRow}>
+                      <span className={s.specKey}>Dimensions:</span>
+                      <span className={s.specVal}>{product.specifications.dimensions}</span>
+                    </div>
+                  )}
+                  {product.specifications?.materials && (
+                    <div className={s.specRow}>
+                      <span className={s.specKey}>Materials:</span>
+                      <span className={s.specVal}>{product.specifications.materials}</span>
+                    </div>
+                  )}
+                  {product.ageGroup && (
+                    <div className={s.specRow}>
+                      <span className={s.specKey}>Suitable for:</span>
+                      <span className={s.specVal}>{product.ageGroup}</span>
+                    </div>
+                  )}
+                  <div className={s.specRow}>
+                    <span className={s.specKey}>Category:</span>
+                    <span className={s.specVal}>
+                      {product.categoryTitle} · {product.subcategoryTitle}
+                    </span>
+                  </div>
+                  {product.createdAt && (
+                    <div className={s.specRow}>
+                      <span className={s.specKey}>Added on:</span>
+                      <span className={s.specVal}>{formatDate(product.createdAt)}</span>
+                    </div>
+                  )}
+                </div>
               )}
-              {product.gifting?.targetAudience && (
-                <p>
-                  <strong>Who it suits:</strong> {product.gifting.targetAudience}
-                </p>
-              )}
-              <p>
-                Every order is wrapped in tissue, padded and sealed. Add a note at
-                checkout and we will write it by hand.
-              </p>
-            </div>
-          )}
 
-          {tab === "reviews" && (
-            <div className={s.reviews}>
-              {summary?.total ? (
-                <div className={s.reviewSummary}>
-                  <div className={s.reviewAverage}>
-                    <strong>{summary.average.toFixed(1)}</strong>
-                    <Rating value={summary.average} size={15} showValue={false} />
-                    <span>{pluralize(summary.total, "review")}</span>
+              {tab === "gifting" && (
+                <div className={s.prose}>
+                  {product.gifting?.idealFor && (
+                    <p>
+                      <strong>Ideal for:</strong> {product.gifting.idealFor}
+                    </p>
+                  )}
+                  {product.gifting?.targetAudience && (
+                    <p>
+                      <strong>Who it suits:</strong> {product.gifting.targetAudience}
+                    </p>
+                  )}
+                  <p>
+                    Every order is wrapped in tissue, padded and sealed. Add a note at
+                    checkout and we will write it by hand.
+                  </p>
+                </div>
+              )}
+
+              {tab === "reviews" && (
+                <div className={s.reviews}>
+                  <div className={s.reviewList}>
+                    {(reviews?.items ?? []).map((review) => (
+                      <div key={review.id} className={s.reviewItem}>
+                        <div className={s.reviewTopRow}>
+                          <span className={s.reviewAuthor}>{review.authorName}</span>
+                          {review.isVerifiedPurchase && (
+                            <span className={s.verifiedTag}>Verified</span>
+                          )}
+                          <Rating value={review.rating} size={11} showValue={false} />
+                          <span className={s.reviewDate}>{formatDate(review.createdAt)}</span>
+                        </div>
+                        {review.title && <p className={s.reviewTitleText}>{review.title}</p>}
+                        <p className={s.reviewBodyText}>{review.body}</p>
+                      </div>
+                    ))}
                   </div>
 
-                  <ul className={s.histogram}>
-                    {[5, 4, 3, 2, 1].map((star) => {
-                      const count = summary.distribution[star] ?? 0;
-                      const pct = summary.total ? (count / summary.total) * 100 : 0;
-                      return (
-                        <li key={star}>
-                          <span className={s.histLabel}>{star}★</span>
-                          <span className={s.histTrack}>
-                            <span className={s.histFill} style={{ width: `${pct}%` }} />
-                          </span>
-                          <span className={s.histCount}>{count}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
+                  {!reviews?.items?.length && (
+                    <p className={s.noReviews}>
+                      No reviews for this piece yet. Yours would be the first.
+                    </p>
+                  )}
                 </div>
-              ) : null}
-
-              <ul className={s.reviewList}>
-                {(reviews?.items ?? []).map((review) => (
-                  <li key={review.id} className={s.review}>
-                    <div className={s.reviewHead}>
-                      <div>
-                        <p className={s.reviewName}>{review.authorName}</p>
-                        <p className={s.reviewMeta}>
-                          {review.authorEmail}
-                          {review.isVerifiedPurchase && " · Verified purchase"}
-                        </p>
-                      </div>
-                      <Rating value={review.rating} size={13} showValue={false} />
-                    </div>
-                    {review.title && <p className={s.reviewTitle}>{review.title}</p>}
-                    <p className={s.reviewBody}>{review.body}</p>
-                    <p className={s.reviewDate}>{formatDate(review.createdAt)}</p>
-                  </li>
-                ))}
-              </ul>
-
-              {!reviews?.items?.length && (
-                <p className={s.noReviews}>
-                  No reviews for this piece yet. Yours would be the first.
-                </p>
               )}
             </div>
-          )}
+          </div>
         </div>
-      </section>
+      </div>
 
       {/* ---------- related ---------- */}
       {related?.length > 0 && (

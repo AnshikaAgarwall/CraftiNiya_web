@@ -82,7 +82,7 @@ export default function CountdownBanner() {
 
           {endsLocal && <p className={s.ends}>Ends {endsLocal}</p>}
 
-          <Button to={promo.ctaHref} variant="accent" size="lg" className={s.cta}>
+          <Button to={promo.ctaHref} variant="accent" size="sm" className={s.cta}>
             {promo.ctaLabel}
           </Button>
         </div>

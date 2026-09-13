@@ -22,7 +22,7 @@ body {
   min-height: 100vh;
   background-color: var(--c-bg);
   color: var(--c-text);
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: var(--fs-base);
   line-height: var(--lh-base);
   -webkit-font-smoothing: antialiased;
@@ -50,9 +50,6 @@ h3,
 h4 {
   font-family: var(--font-serif);
   font-weight: var(--fw-semibold);
-  /* A half-soft Fraunces: rounder terminals than the default, calmer than
-     the fully soft, "wonky" cut reserved for the wordmark. */
-  font-variation-settings: "SOFT" 50;
   line-height: var(--lh-tight);
   letter-spacing: var(--ls-tight);
   color: var(--c-text);
@@ -60,7 +57,7 @@ h4 {
 
 h5,
 h6 {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-weight: var(--fw-semibold);
   line-height: var(--lh-snug);
 }

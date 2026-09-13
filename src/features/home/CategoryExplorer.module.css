@@ -1,6 +1,12 @@
+/* =========================================================
+   CATEGORY CARDS — Full Visibility & Screen-Height Fit
+   ========================================================= */
+
 .section {
-  padding-block: var(--section-y);
+  padding-block: clamp(var(--sp-4), 3vh, var(--section-y));
   background-color: var(--c-bg);
+  /* Section ko browser ke vertical scroll se rokne ke liye */
+  box-sizing: border-box;
 }
 
 .tabs {
@@ -8,18 +14,124 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--sp-2);
-  margin-bottom: var(--sp-8);
+  margin-bottom: var(--sp-6);
 }
 
-/* Centre the rail while it fits; `safe` falls back to start alignment once it
-   overflows, so the first circles never scroll out of reach. */
+/* Centre the rail while it fits */
 .rail ul,
 .rail > div {
   justify-content: safe center;
 }
 
+/* ---------- Grid & Cards Fit Height ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+  align-items: stretch;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-5);
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  background-color: var(--c-surface);
+
+  /* Card ki max height constrain ki gayi hai taaki vertical scroll na ho */
+  max-height: clamp(260px, 48vh, 380px);
+  box-sizing: border-box;
+  
+  transition:
+    border-color var(--t-base) var(--ease),
+    box-shadow var(--t-base) var(--ease),
+    transform var(--t-base) var(--ease);
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Text & Icon auto-adjust size for compact frame */
+.icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--sp-2);
+  border-radius: 50%;
+  background-color: var(--c-accent);
+  color: var(--c-text-on-accent);
+  flex-shrink: 0;
+}
+
+.label {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  line-height: 1.1;
+  
+  /* Text vertical overflow handle karne ke liye clamp */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.desc {
+  color: var(--c-text-2);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-snug);
+  
+  /* Paragraph content max 2 lines tak dikhegi */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-top: auto; /* Footer hamesha bottom border par lock rahega */
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--c-border);
+  flex-shrink: 0;
+}
+
+/* ---------- Mobile & Small Screen Adjustments ---------- */
+
+@media (max-width: 900px) {
+  .tabs {
+    margin-bottom: var(--sp-4);
+  }
+
+  .grid {
+    /* Side-by-side horizontal scroll to prevent section breaking */
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--sp-2);
+  }
+
+  .card {
+    min-width: 240px;
+    /* Mobile screen height according fit adjustment */
+    max-height: clamp(240px, 45vh, 340px);
+    padding: var(--sp-4);
+  }
+}
+
 @media (max-width: 520px) {
   .tabs {
-    margin-bottom: var(--sp-6);
+    margin-bottom: var(--sp-3);
   }
 }

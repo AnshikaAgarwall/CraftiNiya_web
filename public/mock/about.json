@@ -3,17 +3,10 @@
     "title": "About",
     "description": "Craftiniya is a small handmade studio making home decor, candles, crochet and personalized gifts in small batches."
   },
-  "hero": {
-    "title": "Handmade with love, made to feel special",
-    "body": "Discover handcrafted decor, candles, crochet and gifts that blend timeless charm with everyday use. Every piece is made in small batches and carries the story of the hands that made it.",
-    "cta": { "label": "Shop the collection", "href": "/shop" },
-    "videoUrl": null,
-    "image": { "url": null, "alt": "A Craftiniya maker holding a handmade piece" }
-  },
   "welcome": {
     "title": "Welcome to Craftiniya",
     "body": "Explore our collections of home decor, candles, crochet, festive essentials and personalized gifts. Find something that feels like you — or like the person you are gifting.",
-    "image": { "url": null, "alt": "Finishing a handmade piece in the studio" },
+    "image": { "url": "https://plus.unsplash.com/premium_photo-1710595925696-5d644538592d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "alt": "Finishing a handmade piece in the studio" },
     "stats": [
       { "id": "pieces", "value": "135+", "label": "Handmade pieces", "icon": "package" },
       { "id": "collections", "value": "7", "label": "Collections", "icon": "palette" },
@@ -54,15 +47,66 @@
       }
     ]
   },
-  "commitment": {
-    "title": "Our commitment to craft",
-    "body": "We make in small runs, by hand, and we are honest about it. These are the standards we hold every piece to.",
-    "image": { "url": null, "alt": "A maker holding a personalized nameplate" },
-    "metrics": [
-      { "id": "handmade", "label": "Handmade in small batches", "value": 95 },
-      { "id": "materials", "label": "Sustainable materials", "value": 80 },
-      { "id": "craft", "label": "Quality craftsmanship", "value": 90 },
-      { "id": "packaging", "label": "Plastic-free packaging", "value": 70 }
+  "stalls": {
+    "active": true,
+    "eyebrow": "Live Events & Pop-ups",
+    "title": "Our Stalls & Exhibitions",
+    "body": "Glimpses from artisan fairs, flea markets, and live pop-up stalls where we bring CraftiNiya directly to you.",
+    "items": [
+      {
+        "id": "stall-1",
+        "title": null,
+        "event": null,
+        "location": null,
+        "date": null,
+        "imageUrl": null,
+        "caption": null
+      },
+      {
+        "id": "stall-2",
+        "title": null,
+        "event": null,
+        "location": null,
+        "date": null,
+        "imageUrl": null,
+        "caption": null
+      },
+      {
+        "id": "stall-3",
+        "title": null,
+        "event": null,
+        "location": null,
+        "date": null,
+        "imageUrl": null,
+        "caption": null
+      },
+      {
+        "id": "stall-4",
+        "title": null,
+        "event": null,
+        "location": null,
+        "date": null,
+        "imageUrl": null,
+        "caption": null
+      },
+      {
+        "id": "stall-5",
+        "title": null,
+        "event": null,
+        "location": null,
+        "date": null,
+        "imageUrl": null,
+        "caption": null
+      },
+      {
+        "id": "stall-6",
+        "title": null,
+        "event": null,
+        "location": null,
+        "date": null,
+        "imageUrl": null,
+        "caption": null
+      }
     ]
   },
   "policies": {

@@ -1,0 +1,367 @@
+/* =========================================================
+   SALE POPUP POSTER MODAL — Clear Photo, Zero Black Shadow
+   White #FFFFFF · Deep Green #1F3A2B · Moss Green #4A6B53
+   Very Muted Pink #E8C9D1 · Pale Pink #F8EFF2
+   ========================================================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: var(--sp-4);
+  background-color: rgba(31, 58, 43, 0.35); /* Soft transparent backdrop */
+  backdrop-filter: blur(6px);
+  animation: overlayFadeIn 280ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  animation: modalScaleUp 320ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.93) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Floating Cross Button */
+.closeButton {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-circle);
+  border: 1.5px solid var(--c-border);
+  background-color: #ffffff;
+  color: var(--c-text);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(31, 58, 43, 0.15);
+  transition:
+    transform var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+
+.closeButton:hover {
+  background-color: var(--c-brand-soft);
+  color: var(--c-brand-hover);
+  transform: rotate(90deg) scale(1.08);
+}
+
+/* Poster Card — Zero Black Shadows, 100% Clear Photo */
+.poster {
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--c-border);
+  background-color: #ffffff;
+  box-shadow: 0 16px 40px rgba(31, 58, 43, 0.12);
+  cursor: pointer;
+  transition: transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease);
+}
+
+.poster:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 48px rgba(31, 58, 43, 0.18);
+}
+
+/* 100% Clear Photo Header */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: var(--c-sunken);
+}
+
+.posterImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1; /* 100% clear photo — NO dark shadows! */
+  transition: transform 4s ease-out;
+}
+
+.poster:hover .posterImg {
+  transform: scale(1.06);
+}
+
+/* Badges floating on image */
+.imageBadgeRow {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.liveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e8c9d1;
+  color: #dc3545;
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.flameIcon {
+  color: #dc3545;
+  animation: flamePulse 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes flamePulse {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.discountBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  background-color: var(--c-brand);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(74, 107, 83, 0.3);
+}
+
+/* Content Body */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--sp-5) var(--sp-6) var(--sp-6);
+  color: var(--c-text);
+  background-color: #ffffff;
+}
+
+.headline {
+  margin: 0 0 var(--sp-2);
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 3.5vw, 1.55rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  color: var(--c-text);
+  letter-spacing: -0.01em;
+}
+
+.subline {
+  max-width: 400px;
+  margin: 0 0 var(--sp-4);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-base);
+  color: var(--c-text-2);
+}
+
+/* Countdown Timer */
+.timerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+  width: 100%;
+}
+
+.timerTitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  color: var(--c-text-2);
+  text-transform: uppercase;
+}
+
+.timerBlocks {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.timerUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px;
+  padding: 4px 6px;
+  border-radius: var(--r-sm);
+  background-color: var(--c-sunken);
+  border: 1px solid var(--c-border);
+}
+
+.timerUnit strong {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  color: var(--c-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.timerUnit span {
+  margin-top: 2px;
+  font-size: 7.5px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-text-2);
+}
+
+.timerColon {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  color: var(--c-brand);
+}
+
+/* Coupon Box */
+.couponRow {
+  margin-bottom: var(--sp-4);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.couponBox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: var(--r-pill);
+  background-color: var(--c-accent-soft);
+  border: 1px dashed var(--c-accent);
+  cursor: pointer;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease);
+}
+
+.couponBox:hover {
+  background-color: #ffffff;
+  border-color: var(--c-brand);
+}
+
+.tagIcon {
+  color: var(--c-brand);
+}
+
+.couponLabel {
+  font-size: 9.5px;
+  color: var(--c-text-2);
+  letter-spacing: var(--ls-wide);
+}
+
+.couponCode {
+  font-family: monospace;
+  font-size: 12.5px;
+  font-weight: var(--fw-bold);
+  color: var(--c-brand-hover);
+  letter-spacing: 1px;
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 8px;
+  margin-left: 2px;
+  border-radius: var(--r-pill);
+  border: none;
+  background-color: var(--c-brand);
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.copyBtn:hover {
+  transform: scale(1.05);
+}
+
+/* CTA Button */
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  width: 100%;
+  max-width: 280px;
+  padding: 11px var(--sp-5);
+  border-radius: var(--r-pill);
+  border: none;
+  background: var(--c-brand);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(74, 107, 83, 0.3);
+  transition:
+    transform var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
+}
+
+.ctaBtn:hover {
+  background-color: var(--c-brand-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(74, 107, 83, 0.42);
+}
+
+@media (max-width: 480px) {
+  .imageContainer {
+    height: 180px;
+  }
+
+  .content {
+    padding: var(--sp-4);
+  }
+}

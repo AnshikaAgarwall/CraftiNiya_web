@@ -11,7 +11,7 @@ export const BRAND = {
   tagline: "Handmade with love",
   strapline: "Handmade pieces, made to feel special.",
   email: "hello@craftiniya.in",
-  instagram: "https://instagram.com/craftiniya",
+  instagram: "https://www.instagram.com/manmish_creations?igsi=am9xYjJkejJjOHho",
 };
 
 /** Secondary navigation bar — centred below the brand bar. */

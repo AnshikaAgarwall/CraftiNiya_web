@@ -1,27 +1,23 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Gift, Heart, Package, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SectionHeading } from "../../components/ui/Bits.jsx";
 import { Skeleton } from "../../components/ui/Feedback.jsx";
 import { useAsync } from "../../hooks/useAsync.js";
 import promoService from "../../services/promoService.js";
-import { pluralize } from "../../lib/format.js";
 import s from "./BudgetTiers.module.css";
 
 /**
- * Budget gifting entry points.
+ * Budget Gifting Carts / Stalls
  *
- * Tiers come from the dataset, not constants, so their price points can change
- * without a deploy. Any tier with no stock behind it is hidden rather than
- * shown as a card that leads to an empty page — a dead end on a shop front is
- * worse than one fewer option.
+ * Designed like artisan market carts with striped canopy, sign board,
+ * wheels, and direct filter links into the shop catalog.
+ * Desktop: Clean 4-column grid.
+ * Mobile & Tablet: Auto-scrolling train rail.
  */
-
-const ICONS = [Heart, Gift, Package, Sparkles];
-
 export default function BudgetTiers() {
   const { data: tiers, loading } = useAsync((opts) => promoService.getBudgetTiers(opts), []);
 
-  const visible = (tiers ?? []).filter((t) => t.productCount > 0);
+  const visible = (tiers ?? []).filter((t) => t.productCount > 0).slice(0, 4);
 
   if (!loading && !visible.length) return null;
 
@@ -31,41 +27,108 @@ export default function BudgetTiers() {
         <SectionHeading
           eyebrow="Gifting by budget"
           title="Something lovely, whatever you had in mind"
-          subtitle="Set a number and we will show you only what fits it."
+          subtitle="Pick a stall to explore curated handcrafted creations for your budget."
         />
 
-        <div className={s.grid}>
+        {/* Desktop View: Clean 4-Column Grid */}
+        <div className={s.desktopGrid}>
           {loading
             ? Array.from({ length: 4 }, (_, i) => (
                 <Skeleton key={i} className={s.skeleton} />
               ))
-            : visible.map((tier, i) => {
-                const Icon = ICONS[i % ICONS.length];
-                return (
-                  <Link
-                    key={tier.id}
-                    to={`/budget-gifting?tier=${tier.id}`}
-                    className={s.card}
-                  >
-                    <span className={s.icon} aria-hidden="true">
-                      <Icon />
-                    </span>
-
-                    <span className={s.tag}>{tier.tag}</span>
-                    <span className={s.label}>{tier.label}</span>
-                    <span className={s.desc}>{tier.description}</span>
-
-                    <span className={s.foot}>
-                      <span className={s.count}>
-                        {pluralize(tier.productCount, "piece")}
-                      </span>
-                      <ArrowRight className={s.arrow} aria-hidden="true" />
-                    </span>
-                  </Link>
-                );
-              })}
+            : visible.map((tier) => (
+                <CartItem key={tier.id} tier={tier} />
+              ))}
         </div>
+
+        {/* Mobile & Tablet View: Smooth Auto-Scrolling Train Marquee */}
+        {!loading && visible.length > 0 && (
+          <div className={s.mobileMarqueeWrapper} role="region" aria-label="Budget gifting stalls">
+            <div className={s.mobileTrack}>
+              {[...visible, ...visible, ...visible].map((tier, idx) => (
+                <div key={`${tier.id}-${idx}`} className={s.mobileCartSlide}>
+                  <CartItem tier={tier} />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
+  );
+}
+
+function CartItem({ tier }) {
+  return (
+    <Link
+      to={`/budget-gifting?tier=${tier.id}`}
+      className={s.cart}
+      title={`Shop gifts ${tier.label}`}
+    >
+      {/* Top: Striped Market Stall Awning / Canopy */}
+      <div className={s.awning}>
+        <div className={s.stripes}>
+          <span className={s.stripe} />
+          <span className={s.stripe} />
+          <span className={s.stripe} />
+          <span className={s.stripe} />
+          <span className={s.stripe} />
+          <span className={s.stripe} />
+          <span className={s.stripe} />
+        </div>
+        {/* Wavy scalloped hem */}
+        <div className={s.valance}>
+          <span className={s.scallop} />
+          <span className={s.scallop} />
+          <span className={s.scallop} />
+          <span className={s.scallop} />
+          <span className={s.scallop} />
+          <span className={s.scallop} />
+          <span className={s.scallop} />
+        </div>
+      </div>
+
+      {/* Middle: Signboard Frame with Category & Price */}
+      <div className={s.board}>
+        <span className={s.tag}>{tier.tag}</span>
+        <h3 className={s.label}>{tier.label}</h3>
+      </div>
+
+      {/* Counter Table Shelf */}
+      <div className={s.counterShelf} />
+
+      {/* Bottom: Cart Chassis with Wheel Axle & Arrow Pill */}
+      <div className={s.cartChassis}>
+        {/* Left Wheel */}
+        <div className={s.wheel} aria-hidden="true">
+          <div className={s.wheelRim}>
+            <span className={s.spoke} />
+            <span className={s.spoke} />
+            <span className={s.spoke} />
+            <span className={s.spoke} />
+            <span className={s.wheelHub} />
+          </div>
+        </div>
+
+        {/* Center Action Button */}
+        <div className={s.ctaPill} aria-hidden="true">
+          <ArrowRight size={14} className={s.ctaArrow} />
+        </div>
+
+        {/* Right Wheel */}
+        <div className={s.wheel} aria-hidden="true">
+          <div className={s.wheelRim}>
+            <span className={s.spoke} />
+            <span className={s.spoke} />
+            <span className={s.spoke} />
+            <span className={s.spoke} />
+            <span className={s.wheelHub} />
+          </div>
+        </div>
+      </div>
+
+      {/* Ground Shadow */}
+      <div className={s.groundShadow} aria-hidden="true" />
+    </Link>
   );
 }

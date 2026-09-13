@@ -4,6 +4,7 @@ import Footer from "../components/layout/Footer.jsx";
 import SearchOverlay from "../components/layout/SearchOverlay.jsx";
 import Toaster from "../components/layout/Toaster.jsx";
 import ErrorBoundary from "../components/common/ErrorBoundary.jsx";
+import SalePopup from "../components/common/SalePopup.jsx";
 
 /**
  * Chrome that wraps every route.
@@ -41,6 +42,7 @@ export default function RootLayout() {
 
       <SearchOverlay />
       <Toaster />
+      <SalePopup />
     </>
   );
 }

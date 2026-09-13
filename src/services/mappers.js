@@ -132,14 +132,55 @@ export function mapReview(raw) {
 
 export function mapReel(raw) {
   if (!raw) return null;
+  const caption = raw.caption ?? raw.description ?? "";
+  const product = raw.product
+    ? {
+        id: raw.product.id,
+        title: raw.product.title,
+        slug: raw.product.slug,
+        price: raw.product.price,
+        salePrice: raw.product.salePrice ?? null,
+        category: raw.product.category ?? "",
+        image: raw.product.image ?? raw.posterUrl,
+        inStock: raw.product.inStock ?? true,
+      }
+    : null;
+
   return {
-    id: raw.id,
-    title: raw.title,
+    id: String(raw.id),
+    instagramId: raw.instagramId ?? null,
+    instagramUrl:
+      raw.instagramUrl ??
+      raw.externalUrl ??
+      "https://www.instagram.com/manmish_creations?igsi=am9xYjJkejJjOHho",
+    title: raw.title ?? "Handmade Creation",
+    caption,
+    description: caption,
     posterUrl: raw.posterUrl ?? FALLBACK_IMAGE,
     videoUrl: raw.videoUrl ?? null,
-    externalUrl: raw.externalUrl ?? null,
-    views: raw.views ?? 0,
-    likes: raw.likes ?? 0,
+    tags: Array.isArray(raw.tags) ? raw.tags : [],
+    views: Number(raw.views) || 0,
+    likes: Number(raw.likes) || 0,
+    commentsCount:
+      Number(raw.commentsCount) ||
+      Math.max(12, Math.round((Number(raw.likes) || 0) / 14)),
+    isFeaturedOnHome: raw.isFeaturedOnHome !== false,
+    order: Number(raw.order) || 99,
+    author: {
+      name: raw.author?.name ?? "Manmish Creations",
+      handle: raw.author?.handle ?? "@manmish_creations",
+      profileUrl:
+        raw.author?.profileUrl ??
+        "https://www.instagram.com/manmish_creations?igsi=am9xYjJkejJjOHho",
+      avatarUrl: raw.author?.avatarUrl ?? FALLBACK_IMAGE,
+      verified: raw.author?.verified ?? true,
+    },
+    taggedProductId: raw.taggedProductId ?? product?.id ?? null,
+    product,
+    visitUrl:
+      raw.visitUrl ??
+      (product?.slug ? `/product/${product.slug}` : "/shop"),
+    visitLabel: raw.visitLabel ?? "Visit Product",
     publishedAt: raw.publishedAt ?? null,
   };
 }
@@ -239,15 +280,19 @@ export function mapAboutPage(raw) {
           : null,
       ),
     })),
-    commitment: mapSection(raw.commitment, (c) => ({
-      title: c.title ?? "",
-      body: c.body ?? "",
-      image: mapImage(c.image),
-      metrics: mapList(c.metrics, (m, i) =>
-        m?.label
-          ? { id: m.id ?? `metric-${i}`, label: m.label, value: Math.min(Math.max(Number(m.value) || 0, 0), 100) }
-          : null,
-      ),
+    stalls: mapSection(raw.stalls, (st) => ({
+      eyebrow: st.eyebrow ?? "",
+      title: st.title ?? "Our Stalls & Exhibitions",
+      body: st.body ?? "",
+      items: mapList(st.items, (it, i) => ({
+        id: it?.id ?? `stall-${i}`,
+        title: it?.title ?? null,
+        event: it?.event ?? null,
+        location: it?.location ?? null,
+        date: it?.date ?? null,
+        imageUrl: it?.imageUrl ?? null,
+        caption: it?.caption ?? null,
+      })),
     })),
     policies: mapSection(raw.policies, (p) => ({
       title: p.title ?? "",

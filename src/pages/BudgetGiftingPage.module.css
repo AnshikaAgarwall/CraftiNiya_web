@@ -1,110 +1,367 @@
-.tiers {
+/* =========================================================
+   BUDGET GIFTING PAGE — Artisan Market Cart / Stall Architecture
+   Interactive tabs for selecting budget tier with visual active state
+   ========================================================= */
+
+.cartsRow {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--sp-3);
-  text-align: left;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(6px, 1.4vw, var(--sp-4));
+  align-items: end;
+  width: 100%;
+  margin-top: var(--sp-6);
 }
 
-.tier {
+/* ---------- Cart Wrapper Button ---------- */
+
+.cart {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-1);
-  padding: var(--sp-5);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-lg);
-  background-color: var(--c-bg);
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  padding-bottom: clamp(6px, 1vw, 12px);
+  width: 100%;
+  min-width: 0;
+  color: inherit;
   transition:
-    opacity var(--t-base) var(--ease),
-    border-color var(--t-base) var(--ease),
-    background-color var(--t-base) var(--ease),
-    box-shadow var(--t-base) var(--ease),
-    transform var(--t-base) var(--ease);
+    transform var(--t-base) var(--ease),
+    opacity var(--t-base) var(--ease);
 }
 
-/* Selected stays fully saturated; the rest dim — the brief's active state. */
-.tierActive {
-  border-color: var(--c-brand);
-  background-color: var(--c-surface);
-  box-shadow: var(--sh-md);
-  transform: translateY(-2px);
+.cart:hover {
+  transform: translateY(-5px);
 }
 
-.tierDim {
-  opacity: 0.55;
+/* Dim unselected carts, highlight active selected cart */
+.cartDim {
+  opacity: 0.6;
 }
 
-.tierDim:hover {
+.cartDim:hover {
   opacity: 1;
-  border-color: var(--c-border-strong);
 }
 
-.tierIcon {
+.cartActive {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.cartActive .board {
+  border-inline-color: var(--c-brand);
+  box-shadow:
+    inset 0 2px 5px rgb(var(--c-accent-rgb, 234 126 107) / 0.1),
+    0 4px 12px rgb(var(--c-accent-rgb, 234 126 107) / 0.12);
+  background: linear-gradient(
+    180deg,
+    var(--c-surface) 0%,
+    color-mix(in srgb, var(--c-brand-soft) 30%, var(--c-surface)) 100%
+  );
+}
+
+.cartActive .ctaPill {
+  background-color: var(--c-brand);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgb(var(--c-accent-rgb, 234 126 107) / 0.4);
+}
+
+.cartActive .groundShadow {
+  opacity: 0.6;
+}
+
+/* ---------- 1. Awning / Striped Canopy ---------- */
+
+.awning {
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  filter: drop-shadow(0 3px 5px rgb(0 0 0 / 0.08));
+}
+
+.stripes {
+  display: flex;
+  width: 100%;
+  height: clamp(22px, 3.5vw, 42px);
+  border-radius: clamp(6px, 1vw, 12px) clamp(6px, 1vw, 12px) 0 0;
+  overflow: hidden;
+  box-shadow: inset 0 2px 3px rgb(255 255 255 / 0.4);
+}
+
+.stripe {
+  flex: 1;
+  height: 100%;
+}
+
+.stripe:nth-child(odd) {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--c-brand) 92%, #fff) 0%,
+    var(--c-brand) 100%
+  );
+}
+
+.stripe:nth-child(even) {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    color-mix(in srgb, var(--c-sunken) 80%, #fff) 100%
+  );
+}
+
+/* Scalloped valance hem */
+.valance {
+  display: flex;
+  width: 100%;
+  height: clamp(5px, 0.9vw, 9px);
+  margin-top: -1px;
+}
+
+.scallop {
+  flex: 1;
+  height: 100%;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+}
+
+.scallop:nth-child(odd) {
+  background-color: var(--c-brand);
+}
+
+.scallop:nth-child(even) {
+  background-color: color-mix(in srgb, var(--c-sunken) 85%, #fff);
+}
+
+/* ---------- 2. Middle Signboard Frame ---------- */
+
+.board {
+  position: relative;
+  width: calc(100% - clamp(4px, 0.8vw, 12px));
+  min-height: clamp(48px, 7vw, 84px);
+  background: linear-gradient(
+    180deg,
+    var(--c-surface) 0%,
+    var(--c-surface) 65%,
+    var(--c-sunken) 100%
+  );
+  border-inline: clamp(1px, 0.2vw, 2px) solid color-mix(in srgb, var(--c-border-strong) 85%, var(--c-brand));
+  padding: clamp(6px, 1.2vw, 14px) clamp(2px, 0.8vw, 10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 3px;
+  box-shadow:
+    inset 0 2px 4px rgb(0 0 0 / 0.03),
+    0 3px 8px rgb(0 0 0 / 0.03);
+  z-index: 2;
+  transition: background-color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+
+.tag {
+  display: inline-block;
+  font-size: clamp(7px, 0.75vw, 10px);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-brand);
+  padding: 1px clamp(3px, 0.4vw, 6px);
+  background-color: var(--c-accent-soft);
+  border: 1px solid var(--c-accent);
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+}
+
+.label {
+  font-family: var(--font-serif);
+  font-size: clamp(11.5px, 1.65vw, 21px);
+  font-weight: var(--fw-bold);
+  color: var(--c-text);
+  line-height: 1.15;
+  margin: 1px 0 0;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* ---------- 3. Counter Table Shelf ---------- */
+
+.counterShelf {
+  width: 100%;
+  height: clamp(5px, 0.7vw, 9px);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--c-brand) 70%, #d97706) 0%,
+    color-mix(in srgb, var(--c-brand) 90%, #78350f) 100%
+  );
+  border-radius: 3px;
+  box-shadow: 0 1.5px 3px rgb(0 0 0 / 0.12);
+  z-index: 3;
+}
+
+/* ---------- 4. Cart Chassis with Wheels & Arrow ---------- */
+
+.cartChassis {
+  position: relative;
+  width: calc(100% - clamp(4px, 0.6vw, 10px));
+  height: clamp(24px, 3.8vw, 44px);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--c-sunken) 70%, var(--c-surface)) 0%,
+    var(--c-sunken) 100%
+  );
+  border: clamp(1px, 0.15vw, 1.5px) solid var(--c-border-strong);
+  border-top: none;
+  border-radius: 0 0 clamp(5px, 0.8vw, 10px) clamp(5px, 0.8vw, 10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: clamp(4px, 0.9vw, 12px);
+  margin-top: -1px;
+  z-index: 2;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 0.04);
+}
+
+/* Wheels */
+.wheel {
+  position: relative;
+  width: clamp(18px, 2.8vw, 34px);
+  height: clamp(18px, 2.8vw, 34px);
+  margin-bottom: clamp(-6px, -0.8vw, -10px);
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
-  margin-bottom: var(--sp-2);
-  border-radius: var(--r-circle);
-  background-color: var(--c-sunken);
-  color: var(--c-text-2);
+  z-index: 4;
+}
+
+.wheelRim {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: clamp(1.8px, 0.3vw, 3.5px) solid #292524;
+  background-color: #fafaf9;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.22);
+  display: grid;
+  place-items: center;
+  transition: transform var(--t-slow) var(--ease);
+}
+
+.cart:hover .wheelRim {
+  transform: rotate(35deg);
+}
+
+.spoke {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #78716c;
+}
+
+.spoke:nth-child(1) { transform: rotate(0deg); }
+.spoke:nth-child(2) { transform: rotate(45deg); }
+.spoke:nth-child(3) { transform: rotate(90deg); }
+.spoke:nth-child(4) { transform: rotate(135deg); }
+
+.wheelHub {
+  position: absolute;
+  width: clamp(5px, 0.7vw, 9px);
+  height: clamp(5px, 0.7vw, 9px);
+  background-color: var(--c-brand);
+  border-radius: 50%;
+  border: 1px solid #292524;
+  z-index: 2;
+}
+
+/* Center CTA Pill */
+.ctaPill {
+  display: grid;
+  place-items: center;
+  width: clamp(18px, 2.8vw, 36px);
+  height: clamp(14px, 2vw, 22px);
+  background-color: var(--c-text);
+  color: var(--c-surface);
+  border-radius: var(--r-pill);
+  box-shadow: 0 1.5px 4px rgb(0 0 0 / 0.18);
   transition:
-    background-color var(--t-base) var(--ease),
-    color var(--t-base) var(--ease);
+    background-color var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease);
 }
 
-.tierActive .tierIcon {
-  background-color: var(--c-accent);
-  color: var(--c-text-on-accent);
+.cart:hover .ctaPill {
+  background-color: var(--c-brand);
+  transform: scale(1.08);
 }
 
-.tierIcon svg {
-  width: 19px;
-  height: 19px;
+.ctaArrow {
+  width: clamp(9px, 1.2vw, 14px);
+  height: clamp(9px, 1.2vw, 14px);
+  transition: transform var(--t-fast) var(--ease);
 }
 
-.tierTag {
-  color: var(--c-brand);
-  font-size: 10px;
-  font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-wider);
-  text-transform: uppercase;
+.cart:hover .ctaArrow {
+  transform: translateX(2px);
 }
 
-.tierLabel {
-  font-family: var(--font-serif);
-  font-size: var(--fs-xl);
-  font-weight: var(--fw-bold);
-  line-height: 1.1;
-  letter-spacing: var(--ls-tight);
+/* Ground shadow */
+.groundShadow {
+  width: 85%;
+  height: clamp(3px, 0.5vw, 5px);
+  margin-top: clamp(3px, 0.5vw, 6px);
+  background: radial-gradient(
+    ellipse at center,
+    rgb(0 0 0 / 0.18) 0%,
+    transparent 75%
+  );
+  border-radius: 50%;
+  transition: transform var(--t-base) var(--ease), opacity var(--t-base) var(--ease);
 }
 
-.tierCount {
-  color: var(--c-text-2);
-  font-size: var(--fs-xs);
+.cart:hover .groundShadow {
+  transform: scale(0.85);
+  opacity: 0.5;
 }
 
-.tierSkeleton {
-  height: 150px;
-  border-radius: var(--r-lg);
+/* ---------- Skeleton ---------- */
+
+.cartSkeleton {
+  width: 100%;
+  height: clamp(120px, 16vw, 180px);
+  border-radius: 12px;
+  background-color: var(--c-sunken);
 }
 
-@media (max-width: 900px) {
-  .tiers {
-    grid-template-columns: repeat(2, 1fr);
+/* =========================================================
+   RESPONSIVE TUNING: ALWAYS 4 IN A ROW ON ALL DEVICES
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .cartsRow {
+    gap: 4px;
+    margin-top: var(--sp-4);
+  }
+
+  .tag {
+    font-size: 7px;
+    padding: 0 3px;
+  }
+
+  .label {
+    font-size: 12px;
   }
 }
 
-@media (max-width: 480px) {
-  .tier {
-    padding: var(--sp-4);
+@media (max-width: 380px) {
+  .cartsRow {
+    gap: 3px;
   }
 
-  .tierLabel {
-    font-size: var(--fs-md);
+  .label {
+    font-size: 11px;
   }
 
-  .tierIcon {
-    width: 34px;
-    height: 34px;
+  .tag {
+    font-size: 6.5px;
   }
 }

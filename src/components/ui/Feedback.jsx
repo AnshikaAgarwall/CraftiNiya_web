@@ -27,7 +27,14 @@ export function Skeleton({ width, height, radius, className, style }) {
 }
 
 /** Card-shaped placeholder matching ProductCard's proportions. */
-export function ProductCardSkeleton() {
+export function ProductCardSkeleton({ compact = false }) {
+  if (compact) {
+    return (
+      <div className={cn(s.cardSkeleton, s.compactSkeleton)}>
+        <Skeleton className={s.cardSkeletonImage} />
+      </div>
+    );
+  }
   return (
     <div className={s.cardSkeleton}>
       <Skeleton className={s.cardSkeletonImage} />

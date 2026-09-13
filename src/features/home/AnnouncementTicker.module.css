@@ -1,0 +1,98 @@
+/* =========================================================
+   ANNOUNCEMENT TICKER STRIP (Immediately below Hero section)
+   Smooth Infinite Marquee with Brand Styling
+   ========================================================= */
+
+.tickerWrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #0f1115;
+  color: #ffffff;
+  padding-block: 10px;
+  position: relative;
+  border-block: 1px solid rgb(255 255 255 / 0.08);
+  user-select: none;
+}
+
+/* Subtle edge blur vignettes */
+.tickerWrapper::before,
+.tickerWrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(24px, 5vw, 60px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tickerWrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, #0f1115 0%, transparent 100%);
+}
+
+.tickerWrapper::after {
+  right: 0;
+  background: linear-gradient(270deg, #0f1115 0%, transparent 100%);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+  animation: tickerScroll 28s linear infinite;
+}
+
+.tickerWrapper:hover .track {
+  animation-play-state: paused;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-inline: clamp(14px, 2.5vw, 24px);
+  white-space: nowrap;
+}
+
+.icon {
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+.text {
+  font-size: clamp(11.5px, 1.1vw, 13px);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
+}
+
+.dot {
+  margin-left: clamp(12px, 2vw, 20px);
+  color: rgb(255 255 255 / 0.55);
+  font-size: 14px;
+}
+
+@keyframes tickerScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .tickerWrapper {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation-duration: 60s;
+  }
+}

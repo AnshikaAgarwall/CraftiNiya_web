@@ -32,7 +32,7 @@
   color: var(--c-brand-hover);
 }
 
-/* --c-text-on-accent on Terracotta = 4.80:1. White would be 2.76:1 and must not be used. */
+/* Berry Pink/Purple tone: white text on #B33973 gives 5.2:1 contrast (WCAG AA pass) */
 .tone_accent {
   background-color: var(--c-accent);
   color: var(--c-text-on-accent);
@@ -107,12 +107,12 @@
 }
 
 .starFull {
-  color: var(--c-accent);
-  fill: var(--c-accent);
+  color: var(--c-brand);
+  fill: var(--c-brand);
 }
 
 .starHalf {
-  color: var(--c-accent);
+  color: var(--c-brand);
   fill: transparent;
 }
 
@@ -169,13 +169,33 @@ button.chip:hover {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: var(--sp-6);
-  margin-bottom: var(--sp-8);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+
+.heading_split {
+  align-items: flex-end;
+}
+
+.heading_left {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.headingText {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
 }
 
 .heading_center {
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+.heading_center .headingText {
   text-align: center;
 }
 
@@ -194,9 +214,14 @@ button.chip:hover {
 
 .headingSub {
   max-width: 58ch;
-  margin-top: var(--sp-3);
+  margin-top: var(--sp-2);
   color: var(--c-text-2);
   font-size: var(--fs-base);
+}
+
+.heading_left .headingSub {
+  margin-inline: 0;
+  margin-right: auto;
 }
 
 .heading_center .headingSub {
@@ -204,17 +229,48 @@ button.chip:hover {
 }
 
 .headingAction {
-  flex: 0 0 auto;
+  flex-shrink: 0;
 }
 
 @media (max-width: 640px) {
   .heading {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--sp-4);
+    margin-bottom: var(--sp-4);
+    gap: var(--sp-2);
+  }
+
+  .heading_split {
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+  }
+
+  .heading_split .eyebrow {
+    margin-bottom: 2px;
+    font-size: 9.5px;
+  }
+
+  .heading_split .headingTitle {
+    font-size: clamp(1rem, 3.8vw, 1.2rem);
+    line-height: 1.15;
+  }
+
+  .heading_split .headingSub {
+    display: none;
+  }
+
+  .headingAction {
+    margin-bottom: 2px;
+  }
+
+  .headingAction a,
+  .headingAction button {
+    padding: 3px 8px !important;
+    font-size: 11px !important;
+    min-height: 28px !important;
   }
 
   .heading_center {
+    flex-direction: column;
     align-items: center;
   }
 }

@@ -32,7 +32,6 @@ export default function ReviewPills() {
         <SectionHeading
           eyebrow="Customer love"
           title="What people say once it arrives"
-          subtitle="Unedited, from people who bought and kept it."
           id="reviews-heading"
         />
       </div>

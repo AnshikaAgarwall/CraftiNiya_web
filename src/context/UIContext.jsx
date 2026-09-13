@@ -80,26 +80,32 @@ export function UIProvider({ children }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [anyOverlayOpen, searchOpen, menuOpen]);
 
+  const openSearch = useCallback(() => setSearchOpen(true), []);
+  const closeSearch = useCallback(() => setSearchOpen(false), []);
+  const toggleMenu = useCallback(() => setMenuOpen((v) => !v), []);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
+  const closeAll = useCallback(() => {
+    setSearchOpen(false);
+    setMenuOpen(false);
+  }, []);
+
   const value = useMemo(
     () => ({
       searchOpen,
-      openSearch: () => setSearchOpen(true),
-      closeSearch: () => setSearchOpen(false),
+      openSearch,
+      closeSearch,
 
       menuOpen,
-      toggleMenu: () => setMenuOpen((v) => !v),
-      closeMenu: () => setMenuOpen(false),
+      toggleMenu,
+      closeMenu,
 
-      closeAll: () => {
-        setSearchOpen(false);
-        setMenuOpen(false);
-      },
+      closeAll,
 
       toasts,
       toast,
       dismissToast,
     }),
-    [searchOpen, menuOpen, toasts, toast, dismissToast],
+    [searchOpen, openSearch, closeSearch, menuOpen, toggleMenu, closeMenu, closeAll, toasts, toast, dismissToast],
   );
 
   return <UIContext.Provider value={value}>{children}</UIContext.Provider>;

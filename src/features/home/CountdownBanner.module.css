@@ -1,88 +1,101 @@
 .banner {
-  padding-block: var(--sp-9);
+  padding-block: clamp(var(--sp-3), 2vh, var(--sp-5));
   background-color: var(--c-accent-soft);
   border-block: 1px solid var(--c-border);
 }
 
+/* Unified side-by-side grid across Desktop, Tablet, and Mobile — strictly no vertical stacking */
 .inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
   justify-content: space-between;
-  gap: var(--sp-9);
+  gap: clamp(var(--sp-3), 2.5vw, var(--sp-6));
 }
 
 .copy {
-  max-width: 34rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .label {
   display: inline-flex;
   align-items: center;
-  gap: var(--sp-2);
-  margin-bottom: var(--sp-3);
-  /* Terracotta as type must use the darker ink token — --c-accent fails AA as text. */
+  gap: var(--sp-1);
+  margin-bottom: 2px;
   color: var(--c-accent-ink);
-  font-size: var(--fs-xs);
+  font-size: clamp(9px, 1vw, 10.5px);
   font-weight: var(--fw-bold);
   letter-spacing: var(--ls-wider);
   text-transform: uppercase;
 }
 
 .label svg {
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
 }
 
 .headline {
-  font-size: var(--fs-2xl);
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  font-weight: var(--fw-semibold);
   line-height: var(--lh-tight);
 }
 
 .subline {
-  margin-top: var(--sp-3);
+  margin-top: 2px;
   color: var(--c-text-2);
-  font-size: var(--fs-sm);
+  font-size: 11.5px;
+  line-height: var(--lh-snug);
 }
 
 .timerBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-3);
-  flex: 0 0 auto;
+  gap: clamp(3px, 0.6vw, var(--sp-2));
+  flex-shrink: 0;
 }
 
 .timer {
-  display: flex;
-  gap: var(--sp-3);
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: clamp(3px, 0.8vw, var(--sp-2));
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .unit {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-1);
-  min-width: 68px;
-  padding: var(--sp-3) var(--sp-2);
-  border-radius: var(--r-md);
+  justify-content: center;
+  gap: 1px;
+  min-width: clamp(32px, 5vw, 48px);
+  padding: clamp(3px, 0.6vw, 6px) clamp(2px, 0.5vw, 6px);
+  border-radius: var(--r-sm);
   background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
   box-shadow: var(--sh-sm);
+  box-sizing: border-box;
 }
 
 .unitValue {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: clamp(0.9rem, 1.7vw, 1.25rem);
   font-weight: var(--fw-bold);
   line-height: 1;
   letter-spacing: var(--ls-tight);
-  /* Tabular figures stop the digits jittering as the seconds change. */
   font-variant-numeric: tabular-nums;
   color: var(--c-text);
 }
 
 .unitLabel {
   color: var(--c-text-2);
-  font-size: 9px;
+  font-size: 7.5px;
   font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
@@ -90,42 +103,47 @@
 
 .ends {
   color: var(--c-text-2);
-  font-size: var(--fs-xs);
+  font-size: 9.5px;
+  white-space: nowrap;
 }
 
 .cta {
-  margin-top: var(--sp-1);
+  white-space: nowrap;
+  font-size: 11px !important;
+  min-height: 28px !important;
+  padding: 3px 12px !important;
 }
 
-@media (max-width: 900px) {
-  .inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--sp-7);
+@media (max-width: 640px) {
+  .banner {
+    padding-block: var(--sp-2);
   }
 
-  .timerBlock {
-    align-items: flex-start;
-    width: 100%;
+  .headline {
+    font-size: clamp(0.9rem, 3.5vw, 1.05rem);
   }
-}
 
-@media (max-width: 520px) {
-  .timer {
-    gap: var(--sp-2);
-    width: 100%;
+  .subline {
+    font-size: 10.5px;
   }
 
   .unit {
-    flex: 1 1 0;
-    min-width: 0;
+    border-radius: var(--r-sm);
+    padding: 2px 4px;
+    min-width: 30px;
   }
 
   .unitValue {
-    font-size: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .unitLabel {
+    font-size: 7px;
   }
 
   .cta {
-    width: 100%;
+    font-size: 9.5px !important;
+    min-height: 24px !important;
+    padding: 2px 8px !important;
   }
 }

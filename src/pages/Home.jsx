@@ -4,13 +4,13 @@ import Button from "../components/ui/Button.jsx";
 import { SectionHeading } from "../components/ui/Bits.jsx";
 import ProductGrid from "../components/product/ProductGrid.jsx";
 import HeroCarousel from "../features/home/HeroCarousel.jsx";
+import AnnouncementTicker from "../features/home/AnnouncementTicker.jsx";
 import FeaturedCategories from "../features/home/FeaturedCategories.jsx";
 import CountdownBanner from "../features/home/CountdownBanner.jsx";
 import ReelsShowcase from "../features/home/ReelsShowcase.jsx";
 import BudgetTiers from "../features/home/BudgetTiers.jsx";
 import ReviewPills from "../features/home/ReviewPills.jsx";
 import CategoryExplorer from "../features/home/CategoryExplorer.jsx";
-import { WhyCraftiniya } from "../features/home/Highlights.jsx";
 import { useAsync } from "../hooks/useAsync.js";
 import productService from "../services/productService.js";
 import { BRAND } from "../config/site.js";
@@ -21,7 +21,7 @@ export default function Home() {
     loading,
     error,
     refetch,
-  } = useAsync((opts) => productService.getBestSellers({ limit: 8 }, opts), []);
+  } = useAsync((opts) => productService.getBestSellers({ limit: 4 }, opts), []);
 
   return (
     <>
@@ -31,6 +31,7 @@ export default function Home() {
       />
 
       <HeroCarousel />
+      <AnnouncementTicker />
       <FeaturedCategories />
       <CountdownBanner />
 
@@ -49,12 +50,13 @@ export default function Home() {
           />
 
           <ProductGrid
-            products={bestSellers ?? []}
+            products={(bestSellers ?? []).slice(0, 4)}
             loading={loading}
             error={error}
             onRetry={refetch}
             columns={4}
-            skeletonCount={8}
+            skeletonCount={4}
+            compact={true}
           />
         </div>
       </section>
@@ -62,7 +64,6 @@ export default function Home() {
       <ReelsShowcase />
       <BudgetTiers />
       <CategoryExplorer />
-      <WhyCraftiniya />
       <ReviewPills />
     </>
   );

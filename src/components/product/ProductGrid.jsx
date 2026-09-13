@@ -31,7 +31,7 @@ export default function ProductGrid({
     return (
       <div className={gridClass} aria-busy="true" aria-live="polite">
         {Array.from({ length: skeletonCount }, (_, i) => (
-          <ProductCardSkeleton key={i} />
+          <ProductCardSkeleton key={i} compact={compact} />
         ))}
       </div>
     );

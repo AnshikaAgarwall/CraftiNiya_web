@@ -104,14 +104,14 @@ export function SectionHeading({
   eyebrow,
   title,
   subtitle,
-  align = "center",
+  align = "left",
   action,
   className,
   id,
 }) {
   return (
     <div className={cn(s.heading, s[`heading_${align}`], className)}>
-      <div>
+      <div className={s.headingText}>
         {eyebrow && <p className={s.eyebrow}>{eyebrow}</p>}
         {/* id is forwarded to the heading itself so aria-labelledby on the
             surrounding section resolves to real text. */}

@@ -5,47 +5,52 @@
    inside rgba(): translucent colours use the *-rgb channel
    tokens below, so a palette change is a one-file edit.
 
-   Palette: Deep Pine #1F3A2B · Moss Green #4A6B53 ·
-            Muted Laurel #8BA888 · Terracotta #D38B5D ·
-            Linen White #F3E8DB
+   Palette: Deep Green #1F3A2B · Moss Green #4A6B53 ·
+            Soft Green #EEF4ED · Very Muted Pink #E8C9D1 ·
+            Pale Pink #F8EFF2 · White #FFFFFF · Black #0F1115
    All ratios below are WCAG 2.1, measured.
    ========================================================= */
 
 :root {
-  /* ---------------------------------------------------------
-     SURFACE
+   /* ---------------------------------------------------------
+     SURFACE — Clean Pure White grounds
      --------------------------------------------------------- */
-  --c-bg: #f3e8db; /* Linen White — page ground */
-  --c-surface: #fbf6ef; /* lighter linen — cards, panels, footer */
-  --c-sunken: #ede1d0; /* deeper linen — wells, skeletons, inset areas */
+   --c-bg: #ffffff;
+   /* Clean White — page ground */
+   --c-surface: #ffffff;
+   /* Pure White — cards, panels, footer */
+   --c-sunken: #f8f8f8;
+   /* Crisp off-white — wells, skeletons, inset areas */
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      BRAND
      --------------------------------------------------------- */
-  --c-brand: #4a6b53; /* Moss Green — buttons, active states   white on it 5.97:1 */
-  --c-brand-hover: #1f3a2b; /* Deep Pine — hover/pressed            white on it 12.36:1 */
-  --c-brand-soft: #e6ecdf; /* Laurel tint — hover/selected grounds  pine on it 10.27:1 */
+   --c-brand: #4a6b53;
+   /* Moss Green — buttons, active states   white on it 5.97:1 */
+   --c-brand-hover: #1f3a2b;
+   /* Deep Pine — hover/pressed            white on it 12.36:1 */
+   --c-brand-soft: #eef4ed;
+   /* Laurel tint — hover/selected grounds */
 
-  /* ---------------------------------------------------------
-     ACCENT — Terracotta
-     #D38B5D is a FILL ONLY — 2.28:1 as text on Linen (fails AA).
-     Text sitting ON it uses --c-text-on-accent (4.80:1). Plain
-     Deep Pine misses by a hundredth (4.49:1), and white fails
-     outright (2.76:1). For terracotta-coloured text, use
-     --c-accent-ink.
+   /* ---------------------------------------------------------
+     ACCENT — Very Muted Pink #E8C9D1 & Pale Pink #F8EFF2
+     Subtle decorative / secondary accent and background tint.
      --------------------------------------------------------- */
-  --c-accent: #d38b5d; /* badges, star fills, offer tags, underlines */
-  --c-accent-ink: #96512f; /* text-safe terracotta  4.94:1 linen / 5.97:1 white */
-  --c-accent-soft: #f8e8dc; /* offer strips          accent-ink on it 5.00:1 */
+   --c-accent: #e8c9d1;
+   /* Very Muted Pink — subtle decorative/secondary accent */
+   --c-accent-ink: #1f3a2b;
+   /* Deep Green text-safe accent */
+   --c-accent-soft: #f8eff2;
+   /* Pale Pink — very soft pink background */
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      SUPPORT — Muted Laurel
      Decorative only: 2.16:1 as text on Linen. Used for rails,
      rules and ornament, never for words.
      --------------------------------------------------------- */
-  --c-support: #8ba888;
+   --c-support: #8ba888;
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      TEXT
      --c-text-2 is a grey-green rather than Moss on purpose:
      Moss is the link/button colour, and captions in the same
@@ -54,149 +59,180 @@
      every lighter green tested fails AA on Linen (#5E7D66 is
      3.78:1). Differentiate captions by size and weight.
      --------------------------------------------------------- */
-  --c-text: #1f3a2b; /* Deep Pine   10.23:1 linen / 11.50:1 surface */
-  --c-text-2: #4f5e54; /* grey-green   5.68:1 linen /  6.38:1 surface / 5.32:1 sunken */
-  --c-text-on-brand: #ffffff; /* on Moss       5.97:1 */
-  --c-text-on-accent: #1c3527; /* on Terracotta 4.80:1 (never white) */
-  --c-text-on-media: #ffffff; /* over a photo scrim only, never over a surface */
+   --c-text: #1f3a2b;
+   /* Deep Pine */
+   --c-text-2: #4f5e54;
+   /* Grey-green */
+   --c-text-on-brand: #ffffff;
+   /* on Moss       5.97:1 */
+   --c-text-on-accent: #1f3a2b;
+   /* Deep Green on Very Muted Pink (7.8:1 contrast) */
+   --c-text-on-media: #ffffff;
+   /* over a photo scrim only, never over a surface */
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      LINES
-     --c-border is decorative (1.30:1) and must never be the only
+     --c-border is decorative and must never be the only
      boundary of an interactive control — WCAG 1.4.11 needs 3:1.
      Inputs, selects and outlined buttons use --c-border-strong.
      --------------------------------------------------------- */
-  --c-border: #ddccb6; /* dividers, card edges */
-  --c-border-strong: #648468; /* form controls  3.45:1 linen / 3.87:1 surface */
-  --c-focus: #1f3a2b; /* focus ring     10.23:1 linen */
+   --c-border: #e8e8e8;
+   /* dividers, card edges */
+   --c-border-strong: #648468;
+   /* form controls */
+   --c-focus: #1f3a2b;
+   /* focus ring */
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      STATUS
      Error is a deep brick, well clear of Terracotta, so a sale
      badge is never mistaken for a validation failure.
      --------------------------------------------------------- */
-  --c-success: #2f6b3f; /* 5.27:1 linen */
-  --c-success-soft: #e2ede2; /* success on it 5.29:1 */
-  --c-error: #9b2c2c; /* 6.23:1 linen */
-  --c-error-soft: #f6e1dc; /* error on it 5.99:1 */
-  --c-warning: #8a5a0e; /* 4.90:1 linen */
-  --c-warning-soft: #f6e9d2; /* warning on it 4.93:1 */
+   --c-success: #2f6b3f;
+   --c-success-soft: #e2ede2;
+   --c-error: #9b2c2c;
+   --c-error-soft: #f6e1dc;
+   --c-warning: #8a5a0e;
+   --c-warning-soft: #f6e9d2;
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      CHANNELS — for translucency without literal colours.
      Use as: rgb(var(--c-ink-rgb) / 0.4)
      --------------------------------------------------------- */
-  --c-ink-rgb: 31 58 43; /* Deep Pine — scrims, overlays, shadows */
-  --c-bg-rgb: 243 232 219; /* Linen — hero scrim */
-  --c-surface-rgb: 251 246 239; /* frosted buttons over imagery */
-  --c-sunken-rgb: 237 225 208; /* edge fades */
-  --c-on-media-rgb: 255 255 255; /* tracks and rules over video/photos */
+   --c-ink-rgb: 31 58 43;
+   /* Deep Pine — scrims, overlays, shadows */
+   --c-bg-rgb: 255 255 255;
+   /* White ground scrim */
+   --c-surface-rgb: 255 255 255;
+   /* Frosted buttons over imagery */
+   --c-sunken-rgb: 248 248 248;
+   /* Edge fades */
+   --c-accent-rgb: 232 201 209;
+   /* Very Muted Pink #E8C9D1 */
+   --c-on-media-rgb: 255 255 255;
+   /* tracks and rules over video/photos */
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      SPACING — 4px base
      --------------------------------------------------------- */
-  --sp-1: 0.25rem; /*  4px */
-  --sp-2: 0.5rem; /*  8px */
-  --sp-3: 0.75rem; /* 12px */
-  --sp-4: 1rem; /* 16px */
-  --sp-5: 1.25rem; /* 20px */
-  --sp-6: 1.5rem; /* 24px */
-  --sp-7: 2rem; /* 32px */
-  --sp-8: 2.5rem; /* 40px */
-  --sp-9: 3rem; /* 48px */
-  --sp-10: 4rem; /* 64px */
-  --sp-11: 5rem; /* 80px */
-  --sp-12: 6rem; /* 96px */
+   --sp-1: 0.25rem;
+   /*  4px */
+   --sp-2: 0.5rem;
+   /*  8px */
+   --sp-3: 0.75rem;
+   /* 12px */
+   --sp-4: 1rem;
+   /* 16px */
+   --sp-5: 1.25rem;
+   /* 20px */
+   --sp-6: 1.5rem;
+   /* 24px */
+   --sp-7: 2rem;
+   /* 32px */
+   --sp-8: 2.5rem;
+   /* 40px */
+   --sp-9: 3rem;
+   /* 48px */
+   --sp-10: 4rem;
+   /* 64px */
+   --sp-11: 5rem;
+   /* 80px */
+   --sp-12: 6rem;
+   /* 96px */
 
-  /* Vertical rhythm for page sections */
-  --section-y: clamp(3rem, 7vw, 5.5rem);
+   /* Vertical rhythm for page sections */
+   --section-y: clamp(3rem, 7vw, 5.5rem);
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      RADIUS
      --------------------------------------------------------- */
-  --r-sm: 6px;
-  --r-md: 10px;
-  --r-lg: 16px;
-  --r-xl: 24px;
-  --r-pill: 999px;
-  --r-circle: 50%;
+   --r-sm: 6px;
+   --r-md: 10px;
+   --r-lg: 16px;
+   --r-xl: 24px;
+   --r-pill: 999px;
+   --r-circle: 50%;
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      SHADOW — tinted with Deep Pine.
      A neutral grey shadow over warm linen reads as dirt.
      --------------------------------------------------------- */
-  --sh-sm: 0 1px 2px rgb(var(--c-ink-rgb) / 0.07);
-  --sh-md: 0 4px 14px rgb(var(--c-ink-rgb) / 0.09);
-  --sh-lg: 0 12px 32px rgb(var(--c-ink-rgb) / 0.11);
-  --sh-xl: 0 24px 56px rgb(var(--c-ink-rgb) / 0.15);
+   --sh-sm: 0 1px 2px rgb(var(--c-ink-rgb) / 0.07);
+   --sh-md: 0 4px 14px rgb(var(--c-ink-rgb) / 0.09);
+   --sh-lg: 0 12px 32px rgb(var(--c-ink-rgb) / 0.11);
+   --sh-xl: 0 24px 56px rgb(var(--c-ink-rgb) / 0.15);
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      TYPOGRAPHY
-     Fraunces — a soft, organic variable serif for headings and
-     the wordmark; its optical-size axis keeps small card titles
-     sturdy where a display serif would go spindly.
-     DM Sans — a calm geometric sans for UI and body copy.
+     Editorial Display Serif ("Editorial New", "Ogg", "Magz")
+     applied across the entire website.
      --------------------------------------------------------- */
-  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-sans:
-    "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, sans-serif;
+   --font-serif: "Editorial New", "Ogg", "Magz", "Playfair Display", "Fraunces", Georgia, serif;
+   --font-sans:
+      "Editorial New", "Ogg", "Magz", "Playfair Display", "DM Sans", system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  --fs-xs: 0.6875rem; /* 11px */
-  --fs-sm: 0.8125rem; /* 13px */
-  --fs-base: 0.9375rem; /* 15px */
-  --fs-md: 1.0625rem; /* 17px */
-  --fs-lg: 1.25rem; /* 20px */
-  --fs-xl: 1.5rem; /* 24px */
-  --fs-2xl: clamp(1.75rem, 3vw, 2.25rem);
-  --fs-3xl: clamp(2rem, 4vw, 3rem);
-  --fs-4xl: clamp(2.5rem, 6vw, 4.5rem);
+   --fs-xs: 0.5625rem;
+   /* 9px */
+   --fs-sm: 0.625rem;
+   /* 10px */
+   --fs-base: 0.6875rem;
+   /* 11px */
+   --fs-md: 0.75rem;
+   /* 12px */
+   --fs-lg: 0.8125rem;
+   /* 13px */
+   --fs-xl: 0.9375rem;
+   /* 15px */
+   --fs-2xl: clamp(0.95rem, 1.5vw, 1.2rem);
+   --fs-3xl: clamp(1.1rem, 2vw, 1.5rem);
+   --fs-4xl: clamp(1.3rem, 3.2vw, 2.1rem);
 
-  --lh-tight: 1.15;
-  --lh-snug: 1.35;
-  --lh-base: 1.6;
-  --lh-loose: 1.75;
+   --lh-tight: 1.15;
+   --lh-snug: 1.35;
+   --lh-base: 1.6;
+   --lh-loose: 1.75;
 
-  --ls-tight: -0.02em;
-  --ls-wide: 0.08em;
-  --ls-wider: 0.16em;
+   --ls-tight: -0.02em;
+   --ls-wide: 0.08em;
+   --ls-wider: 0.16em;
 
-  --fw-normal: 400;
-  --fw-medium: 500;
-  --fw-semibold: 600;
-  --fw-bold: 700;
+   --fw-normal: 400;
+   --fw-medium: 500;
+   --fw-semibold: 600;
+   --fw-bold: 700;
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      LAYOUT
      One container primitive. Every page uses it — this replaces
      the four competing widths the old stylesheet carried.
      --------------------------------------------------------- */
-  --container: 1200px;
-  --container-wide: 1320px;
-  --container-narrow: 760px;
-  --gutter: clamp(1rem, 4vw, 2rem);
-  /* Measured, not guessed: brand row 78 + 1px rule + nav row 50 + 1px rule.
+   --container: 1200px;
+   --container-wide: 1320px;
+   --container-narrow: 760px;
+   --gutter: clamp(1rem, 4vw, 2rem);
+   /* Measured, not guessed: brand row 78 + 1px rule + nav row 50 + 1px rule.
      Below 900px the nav row is hidden and the brand row shrinks to 64. */
-  --header-h: 130px;
-  --header-h-sm: 65px;
+   --header-h: 130px;
+   --header-h-sm: 65px;
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      MOTION
      --------------------------------------------------------- */
-  --t-fast: 150ms;
-  --t-base: 250ms;
-  --t-slow: 400ms;
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+   --t-fast: 150ms;
+   --t-base: 250ms;
+   --t-slow: 400ms;
+   --ease: cubic-bezier(0.4, 0, 0.2, 1);
+   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* ---------------------------------------------------------
+   /* ---------------------------------------------------------
      Z-INDEX — declared together so stacking stays legible
      --------------------------------------------------------- */
-  --z-base: 1;
-  --z-sticky: 100;
-  --z-header: 200;
-  --z-overlay: 300;
-  --z-drawer: 400;
-  --z-modal: 500;
-  --z-toast: 600;
+   --z-base: 1;
+   --z-sticky: 100;
+   --z-header: 200;
+   --z-overlay: 300;
+   --z-drawer: 400;
+   --z-modal: 500;
+   --z-toast: 600;
 }

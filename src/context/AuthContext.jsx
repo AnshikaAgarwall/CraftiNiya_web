@@ -100,6 +100,7 @@ export function AuthProvider({ children }) {
         setSession((s) => (s ? { ...s, user } : s));
         return user;
       },
+      changePassword: (payload) => authService.changePassword(payload),
     }),
     [session, loading, pending, error, run],
   );

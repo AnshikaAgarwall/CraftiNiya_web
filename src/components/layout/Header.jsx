@@ -47,7 +47,9 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => closeMenu(), [pathname, closeMenu]);
+  useEffect(() => {
+    closeMenu();
+  }, [pathname]);
 
   /* Every link inside the panel closes it through onNavigate, so routing is
      already covered. This handles the rest: a click anywhere outside the
@@ -79,17 +81,6 @@ export default function Header() {
       {/* ---- Row 1: brand + utilities ---- */}
       <div className={s.brandRow}>
         <div className={cn("container", s.brandInner)}>
-          <button
-            type="button"
-            className={s.menuButton}
-            onClick={toggleMenu}
-            aria-expanded={menuOpen}
-            aria-controls="mobile-nav"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-          >
-            {menuOpen ? <X /> : <Menu />}
-          </button>
-
           {/* The name is the logo — no separate icon mark. */}
           <Link to="/" className={s.brand} aria-label={`${BRAND.name} home`}>
             <span className={s.brandName}>{BRAND.name}</span>
@@ -129,8 +120,34 @@ export default function Header() {
               className={cn(s.action, s.accountAction)}
               aria-label={isAuthenticated ? `Account, signed in as ${user?.name}` : "Sign in"}
             >
-              <User />
+              {user?.avatarUrl ? (
+                <img
+                  src={user.avatarUrl}
+                  alt=""
+                  style={{
+                    width: 24,
+                    height: 24,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    border: "1.5px solid var(--c-brand)",
+                  }}
+                />
+              ) : (
+                <User />
+              )}
             </Link>
+
+            {/* Hamburger menu button appears next to cart on mobile/tablet */}
+            <button
+              type="button"
+              className={s.menuButton}
+              onClick={toggleMenu}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+            >
+              {menuOpen ? <X /> : <Menu />}
+            </button>
           </div>
         </div>
       </div>
@@ -157,9 +174,23 @@ export default function Header() {
                 <NavLink
                   to={item.to}
                   end={item.to === "/"}
-                  className={({ isActive }) => cn(s.navLink, isActive && s.navLinkActive)}
+                  className={({ isActive }) =>
+                    cn(
+                      s.navLink,
+                      isActive && s.navLinkActive,
+                      item.to === "/sale" && s.saleNavLink,
+                    )
+                  }
                 >
-                  {item.label}
+                  {item.to === "/sale" ? (
+                    <span className={s.salePill}>
+                      <span className={s.saleDot} aria-hidden="true" />
+                      {item.label}
+                      <span className={s.saleSparkle}>%</span>
+                    </span>
+                  ) : (
+                    item.label
+                  )}
                 </NavLink>
               </li>
             ),
@@ -179,10 +210,20 @@ export default function Header() {
                   to={item.to}
                   end={item.to === "/"}
                   className={({ isActive }) =>
-                    cn(s.mobileLink, isActive && s.mobileLinkActive)
+                    cn(
+                      s.mobileLink,
+                      isActive && s.mobileLinkActive,
+                      item.to === "/sale" && s.mobileSaleLink,
+                    )
                   }
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {item.to === "/sale" && (
+                    <span className={s.mobileSaleBadge}>
+                      <span className={s.saleDot} aria-hidden="true" />
+                      Live Sale 40% Off
+                    </span>
+                  )}
                 </NavLink>
               </li>
             ))}

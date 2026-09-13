@@ -36,6 +36,17 @@
   border-radius: var(--r-md);
 }
 
+.compactSkeleton {
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+
+.compactSkeleton .cardSkeletonImage {
+  margin-bottom: 0;
+  border-radius: var(--r-lg);
+}
+
 /* ---------- loading block ---------- */
 
 .block {

@@ -4,12 +4,13 @@ import { notFound } from "./errors.js";
 
 const DATASET = "reels";
 
-export async function getReels({ limit = 8 } = {}, opts) {
+export async function getReels({ limit = 6 } = {}, opts) {
   const raw = await loadDataset(DATASET, opts);
   return raw
     .map(mapReel)
-    .sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)))
-    .slice(0, limit);
+    .filter((r) => r && r.isFeaturedOnHome)
+    .sort((a, b) => (a.order ?? 99) - (b.order ?? 99))
+    .slice(0, Math.min(limit, 6));
 }
 
 export async function getReelById(id, opts) {

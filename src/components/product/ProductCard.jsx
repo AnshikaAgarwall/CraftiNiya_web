@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Heart, ShoppingBag } from "lucide-react";
 import { cn } from "../../lib/cn.js";
-import { Badge, Price, Rating } from "../ui/Bits.jsx";
+import { Badge, Price } from "../ui/Bits.jsx";
 import LazyImage from "../common/LazyImage.jsx";
 import { useCart } from "../../context/CartContext.jsx";
 import { useWishlist } from "../../context/WishlistContext.jsx";
@@ -105,7 +105,7 @@ export default function ProductCard({ product, eager = false, compact = false })
       </button>
 
       <div className={s.body}>
-        {product.subcategoryTitle && (
+        {!compact && product.subcategoryTitle && (
           <p className={s.eyebrow}>{product.subcategoryTitle}</p>
         )}
 
@@ -115,16 +115,6 @@ export default function ProductCard({ product, eager = false, compact = false })
           </Link>
         </h3>
 
-        {product.reviewCount > 0 && (
-          <Rating
-            value={product.rating}
-            count={product.reviewCount}
-            size={12}
-            showValue={false}
-            className={s.rating}
-          />
-        )}
-
         <div className={s.footer}>
           <Price
             listMinor={product.listPriceMinor}
@@ -133,19 +123,19 @@ export default function ProductCard({ product, eager = false, compact = false })
             size="sm"
             showDiscount={false}
           />
-        </div>
 
-        {!compact && (
           <button
             type="button"
             className={s.add}
             onClick={handleAdd}
             disabled={outOfStock || adding || pending}
+            title={outOfStock ? "Sold out" : adding ? "Adding…" : "Add to bag"}
+            aria-label={outOfStock ? "Sold out" : `Add ${product.title} to bag`}
           >
-            <ShoppingBag />
+            <ShoppingBag size={14} aria-hidden="true" />
             <span>{outOfStock ? "Sold out" : adding ? "Adding…" : "Add to bag"}</span>
           </button>
-        )}
+        </div>
       </div>
     </article>
   );

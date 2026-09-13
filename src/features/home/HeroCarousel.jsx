@@ -109,14 +109,13 @@ export default function HeroCarousel() {
 
       {slides?.map((slide, i) => {
         const isActive = i === current;
-        const titleId = `hero-title-${slide.id}`;
 
         return (
           <Link
             key={slide.id}
             to={slide.href}
             className={cn(s.slide, isActive && s.slideActive)}
-            aria-labelledby={titleId}
+            aria-label={slide.title}
             aria-hidden={!isActive}
             tabIndex={isActive ? undefined : -1}
             inert={!isActive}
@@ -155,18 +154,6 @@ export default function HeroCarousel() {
                   fetchPriority={i === 0 ? "high" : "auto"}
                 />
               )}
-            </div>
-
-            <div className={s.scrim} aria-hidden="true" />
-
-            <div className={cn("container", s.inner)}>
-              <div className={s.content}>
-                {slide.eyebrow && <p className={s.eyebrow}>{slide.eyebrow}</p>}
-                <h2 id={titleId} className={s.title}>
-                  <span className={s.titleText}>{slide.title}</span>
-                </h2>
-                {slide.body && <p className={s.body}>{slide.body}</p>}
-              </div>
             </div>
           </Link>
         );

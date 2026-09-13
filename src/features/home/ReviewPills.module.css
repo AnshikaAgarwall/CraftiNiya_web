@@ -1,20 +1,20 @@
 .section {
-  padding-block: var(--section-y);
-  background-color: var(--c-surface);
+  padding-block: clamp(var(--sp-6), 3vw, var(--sp-8));
+  background-color: var(--c-accent-soft);
   border-block: 1px solid var(--c-border);
   overflow: hidden;
 }
 
 .rail {
   display: flex;
-  gap: var(--sp-4);
+  gap: var(--sp-3);
   width: max-content;
 }
 
 /* Two identical tracks scrolling as one, so the loop has no visible seam. */
 .track {
   display: flex;
-  gap: var(--sp-4);
+  gap: var(--sp-3);
 }
 
 .trackAnimated {
@@ -27,7 +27,7 @@
 
 @keyframes reviewMarquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(calc(-100% - var(--sp-4))); }
+  to   { transform: translateX(calc(-100% - var(--sp-3))); }
 }
 
 /* Reduced motion: a plain horizontal scroller the viewer drives themselves. */
@@ -49,29 +49,33 @@
 .pill {
   display: flex;
   align-items: center;
-  gap: var(--sp-4);
-  width: 400px;
-  padding: var(--sp-3) var(--sp-5) var(--sp-3) var(--sp-3);
+  gap: 12px;
+  width: 340px;
+  padding: 8px 16px 8px 8px;
   border: 1px solid var(--c-border);
   border-radius: var(--r-pill);
   background-color: var(--c-bg);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.03);
   transition:
     border-color var(--t-base) var(--ease),
-    box-shadow var(--t-base) var(--ease);
+    box-shadow var(--t-base) var(--ease),
+    transform var(--t-fast) var(--ease);
 }
 
 .pill:hover {
   border-color: var(--c-brand);
   box-shadow: var(--sh-md);
+  transform: translateY(-1px);
 }
 
 .thumb {
   flex: 0 0 auto;
-  width: 62px;
-  height: 62px;
+  width: 48px;
+  height: 48px;
   overflow: hidden;
   border-radius: var(--r-circle);
   background-color: var(--c-sunken);
+  border: 1px solid var(--c-border);
 }
 
 .body {
@@ -124,22 +128,29 @@
 
 .loading {
   display: flex;
-  gap: var(--sp-4);
+  gap: var(--sp-3);
   overflow: hidden;
 }
 
 .skeleton {
-  flex: 0 0 400px;
-  height: 86px;
+  flex: 0 0 340px;
+  height: 66px;
   border-radius: var(--r-pill);
 }
 
 @media (max-width: 520px) {
   .pill {
-    width: 320px;
+    width: 280px;
+    padding: 6px 12px 6px 6px;
+  }
+
+  .thumb {
+    width: 42px;
+    height: 42px;
   }
 
   .skeleton {
-    flex-basis: 320px;
+    flex-basis: 280px;
+    height: 56px;
   }
 }

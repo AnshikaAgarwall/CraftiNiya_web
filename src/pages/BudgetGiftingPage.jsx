@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import { Gift, Heart, Package, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import SEO from "../components/common/SEO.jsx";
 import PageHeader from "../components/layout/PageHeader.jsx";
 import CatalogView from "../features/catalog/CatalogView.jsx";
@@ -7,27 +7,20 @@ import { Skeleton } from "../components/ui/Feedback.jsx";
 import { useAsync } from "../hooks/useAsync.js";
 import promoService from "../services/promoService.js";
 import { cn } from "../lib/cn.js";
-import { pluralize } from "../lib/format.js";
 import s from "./BudgetGiftingPage.module.css";
 
 /**
- * Budget gifting.
+ * Budget gifting page.
  *
- * The selected tier stays highlighted while the others dim, per the brief.
- * Selection lives in the URL (?tier=), so a tier is shareable and the back
- * button steps between them.
- *
- * Tiers with no stock behind them are not rendered at all — a card that leads
- * to an empty grid is worse than one fewer option.
+ * Displays the same artisan market cart / stall design as the homepage.
+ * Clicking a stall filters the catalog below to that budget tier.
+ * Selected stall stays highlighted with active canopy & brand glow.
  */
-
-const ICONS = [Heart, Gift, Package, Sparkles];
-
 export default function BudgetGiftingPage() {
   const [params, setParams] = useSearchParams();
   const { data: tiers, loading } = useAsync((opts) => promoService.getBudgetTiers(opts), []);
 
-  const visible = (tiers ?? []).filter((t) => t.productCount > 0);
+  const visible = (tiers ?? []).filter((t) => t.productCount > 0).slice(0, 4);
   const requested = params.get("tier");
   const active = visible.find((t) => t.id === requested) ?? visible[0] ?? null;
 
@@ -36,7 +29,6 @@ export default function BudgetGiftingPage() {
       (prev) => {
         const next = new URLSearchParams(prev);
         next.set("tier", id);
-        // Changing the ceiling invalidates any price filter set under the old one.
         next.delete("max");
         next.delete("page");
         return next;
@@ -58,13 +50,12 @@ export default function BudgetGiftingPage() {
         title="Set a number, we will do the rest"
         description="Every piece below is handmade and gift-wrapped as standard."
       >
-        <div className={s.tiers} role="tablist" aria-label="Budget range">
+        <div className={s.cartsRow} role="tablist" aria-label="Budget range">
           {loading
             ? Array.from({ length: 4 }, (_, i) => (
-                <Skeleton key={i} className={s.tierSkeleton} />
+                <Skeleton key={i} className={s.cartSkeleton} />
               ))
-            : visible.map((tier, i) => {
-                const Icon = ICONS[i % ICONS.length];
+            : visible.map((tier) => {
                 const isActive = active?.id === tier.id;
                 return (
                   <button
@@ -73,16 +64,73 @@ export default function BudgetGiftingPage() {
                     role="tab"
                     aria-selected={isActive}
                     onClick={() => selectTier(tier.id)}
-                    className={cn(s.tier, isActive ? s.tierActive : s.tierDim)}
+                    className={cn(s.cart, isActive ? s.cartActive : s.cartDim)}
+                    title={`Filter by ${tier.label}`}
                   >
-                    <span className={s.tierIcon} aria-hidden="true">
-                      <Icon />
-                    </span>
-                    <span className={s.tierTag}>{tier.tag}</span>
-                    <span className={s.tierLabel}>{tier.label}</span>
-                    <span className={s.tierCount}>
-                      {pluralize(tier.productCount, "piece")}
-                    </span>
+                    {/* Top: Striped Market Stall Awning / Canopy */}
+                    <div className={s.awning}>
+                      <div className={s.stripes}>
+                        <span className={s.stripe} />
+                        <span className={s.stripe} />
+                        <span className={s.stripe} />
+                        <span className={s.stripe} />
+                        <span className={s.stripe} />
+                        <span className={s.stripe} />
+                        <span className={s.stripe} />
+                      </div>
+                      {/* Scalloped valance hem */}
+                      <div className={s.valance}>
+                        <span className={s.scallop} />
+                        <span className={s.scallop} />
+                        <span className={s.scallop} />
+                        <span className={s.scallop} />
+                        <span className={s.scallop} />
+                        <span className={s.scallop} />
+                        <span className={s.scallop} />
+                      </div>
+                    </div>
+
+                    {/* Middle: Signboard Frame with Category & Price */}
+                    <div className={s.board}>
+                      <span className={s.tag}>{tier.tag}</span>
+                      <h3 className={s.label}>{tier.label}</h3>
+                    </div>
+
+                    {/* Counter Table Shelf */}
+                    <div className={s.counterShelf} />
+
+                    {/* Bottom: Cart Chassis with Wheel Axle & Arrow Pill */}
+                    <div className={s.cartChassis}>
+                      {/* Left Wheel */}
+                      <div className={s.wheel} aria-hidden="true">
+                        <div className={s.wheelRim}>
+                          <span className={s.spoke} />
+                          <span className={s.spoke} />
+                          <span className={s.spoke} />
+                          <span className={s.spoke} />
+                          <span className={s.wheelHub} />
+                        </div>
+                      </div>
+
+                      {/* Center Action Button */}
+                      <div className={s.ctaPill} aria-hidden="true">
+                        <ArrowRight size={13} className={s.ctaArrow} />
+                      </div>
+
+                      {/* Right Wheel */}
+                      <div className={s.wheel} aria-hidden="true">
+                        <div className={s.wheelRim}>
+                          <span className={s.spoke} />
+                          <span className={s.spoke} />
+                          <span className={s.spoke} />
+                          <span className={s.spoke} />
+                          <span className={s.wheelHub} />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Ground Shadow */}
+                    <div className={s.groundShadow} aria-hidden="true" />
                   </button>
                 );
               })}

@@ -127,7 +127,42 @@ export async function cancelOrder(orderId, opts) {
    --------------------------------------------------------------- */
 
 export async function getAddresses(opts) {
-  return simulate(() => addressStore.read(), opts);
+  return simulate(() => {
+    const list = addressStore.read();
+    if (!list || !list.length) {
+      const initial = [
+        {
+          id: "addr-1",
+          title: "Address 1",
+          fullName: "Anshika Agarwal",
+          phone: "+91 98765 43210",
+          line1: "House No. 12, Street Name",
+          line2: "Near Civil Lines",
+          city: "Jaipur",
+          state: "Rajasthan",
+          pincode: "302001",
+          country: "India",
+          isDefault: true,
+        },
+        {
+          id: "addr-2",
+          title: "Address 2",
+          fullName: "Anshika Agarwal",
+          phone: "+91 98765 43210",
+          line1: "Flat 4B, Another Street",
+          line2: "Opposite High Street",
+          city: "Mumbai",
+          state: "Maharashtra",
+          pincode: "400001",
+          country: "India",
+          isDefault: false,
+        },
+      ];
+      addressStore.write(initial);
+      return initial;
+    }
+    return list;
+  }, opts);
 }
 
 export async function saveAddress(address, opts) {

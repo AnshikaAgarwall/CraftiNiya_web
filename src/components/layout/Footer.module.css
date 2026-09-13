@@ -4,7 +4,7 @@
 .footer {
   margin-top: var(--sp-12);
   border-top: 1px solid var(--c-border);
-  background-color: var(--c-surface);
+  background-color: var(--c-accent-soft);
   color: var(--c-text);
 }
 

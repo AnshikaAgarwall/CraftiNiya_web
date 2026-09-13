@@ -151,8 +151,38 @@ export async function updateProfile(patch, opts) {
   credentialStore.write(
     credentials.map((c) => (c.user.id === user.id ? { ...c, user } : c)),
   );
-
   return user;
+}
+
+export async function changePassword({ currentPassword, newPassword }, opts) {
+  await simulate(() => null, opts);
+  const session = sessionStore.read();
+  if (!session) {
+    throw new ApiError({ code: ERROR_CODES.UNAUTHORIZED, status: 401 });
+  }
+
+  if (!newPassword || newPassword.length < 8) {
+    throw validationError({ newPassword: "New password must be at least 8 characters." });
+  }
+
+  const credentials = credentialStore.read();
+  const currentDigest = digest(currentPassword || "");
+  const record = credentials.find((c) => c.email === session.user.email);
+
+  if (record && record.password && record.password !== currentDigest) {
+    throw new ApiError({
+      code: ERROR_CODES.UNAUTHORIZED,
+      status: 401,
+      message: "Current password does not match.",
+      details: { currentPassword: "Incorrect password." },
+    });
+  }
+
+  const updatedCredentials = credentials.map((c) =>
+    c.email === session.user.email ? { ...c, password: digest(newPassword) } : c,
+  );
+  credentialStore.write(updatedCredentials);
+  return { success: true };
 }
 
 export default {
@@ -162,4 +192,5 @@ export default {
   signOut,
   requestPasswordReset,
   updateProfile,
+  changePassword,
 };

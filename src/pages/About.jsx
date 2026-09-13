@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
+  Calendar,
   Camera,
   Flame,
   Gift,
@@ -9,10 +10,10 @@ import {
   Lamp,
   Leaf,
   Mail,
+  MapPin,
   Package,
   Palette,
   PenLine,
-  Play,
   Sparkles,
   Truck,
   Users,
@@ -98,49 +99,21 @@ export default function About() {
     );
   }
 
-  const { seo, hero, welcome, services, commitment, policies, contact } = page;
+  const { seo, welcome, services, stalls, policies, contact } = page;
 
   return (
     <>
-      <SEO title={seo.title} description={seo.description} image={hero?.image.url} />
-
-      {hero && (
-        <section className={s.hero}>
-          <div className={cn("container", s.split)}>
-            <div className={s.copy}>
-              <Sparkles className={s.heroSparkle} aria-hidden="true" />
-              <h1 className={s.heroTitle}>{hero.title}</h1>
-              {hero.body && <p className={s.body}>{hero.body}</p>}
-              {(hero.cta || hero.videoUrl) && (
-                <div className={s.heroActions}>
-                  {hero.cta && <Button {...linkProps(hero.cta.href)}>{hero.cta.label}</Button>}
-                  {hero.videoUrl && (
-                    <a
-                      href={hero.videoUrl}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className={s.play}
-                      aria-label="Watch our story"
-                    >
-                      <Play />
-                    </a>
-                  )}
-                </div>
-              )}
-            </div>
-            <FramedImage image={hero.image} eager />
-          </div>
-        </section>
-      )}
+      <SEO title={seo.title} description={seo.description} image={welcome?.image?.url} />
 
       {welcome && (
         <section className={s.welcome}>
           <div className={cn("container", s.split, s.splitReverse)}>
-            <FramedImage image={welcome.image} side="left" />
+            <FramedImage image={welcome.image} side="left" eager />
             <div className={s.copy}>
-              <h2 className={s.sectionTitle}>{welcome.title}</h2>
+              <Sparkles className={s.heroSparkle} aria-hidden="true" />
+              <h1 className={s.heroTitle}>{welcome.title}</h1>
               {welcome.body && <p className={s.body}>{welcome.body}</p>}
-              {welcome.stats.length > 0 && (
+              {welcome.stats?.length > 0 && (
                 <ul className={s.stats}>
                   {welcome.stats.map((stat) => {
                     const Icon = iconFor(stat.icon);
@@ -199,29 +172,70 @@ export default function About() {
         </section>
       )}
 
-      {commitment && (
-        <section className={s.commitment}>
-          <div className={cn("container", s.split)}>
-            <div className={s.copy}>
-              <h2 className={s.sectionTitle}>{commitment.title}</h2>
-              {commitment.body && <p className={s.body}>{commitment.body}</p>}
-              {commitment.metrics.length > 0 && (
-                <ul className={s.metrics}>
-                  {commitment.metrics.map((metric) => (
-                    <li key={metric.id} className={s.metric}>
-                      <span className={s.metricHead}>
-                        <span>{metric.label}</span>
-                        <span className={s.metricValue}>{metric.value}%</span>
-                      </span>
-                      <span className={s.metricTrack} aria-hidden="true">
-                        <span className={s.metricFill} style={{ width: `${metric.value}%` }} />
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-            <FramedImage image={commitment.image} />
+      {stalls && (
+        <section className={s.stalls}>
+          <div className="container">
+            <SectionHeading eyebrow={stalls.eyebrow} title={stalls.title} />
+            {stalls.body && <p className={s.stallsIntro}>{stalls.body}</p>}
+
+            {stalls.items?.length > 0 && (
+              <div className={s.mosaicGrid}>
+                {stalls.items.map((item, idx) => (
+                  <div
+                    key={item.id}
+                    className={cn(s.mosaicTile, s[`mosaicTile_${(idx % 6) + 1}`])}
+                  >
+                    {item.imageUrl ? (
+                      <div className={s.tileInner}>
+                        <img
+                          src={item.imageUrl}
+                          alt={item.title || `CraftiNiya stall exhibition ${idx + 1}`}
+                          loading="lazy"
+                          className={s.tileImage}
+                        />
+                        <div className={s.tileScrim} />
+                        {(item.title || item.event || item.location || item.date) && (
+                          <div className={s.tileContent}>
+                            {(item.event || item.date) && (
+                              <div className={s.tileBadges}>
+                                {item.event && <span className={s.tileTag}>{item.event}</span>}
+                                {item.date && (
+                                  <span className={s.tileDate}>
+                                    <Calendar size={11} aria-hidden="true" />
+                                    {item.date}
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                            {item.title && <h3 className={s.tileTitle}>{item.title}</h3>}
+                            {item.location && (
+                              <p className={s.tileLocation}>
+                                <MapPin size={12} aria-hidden="true" />
+                                <span>{item.location}</span>
+                              </p>
+                            )}
+                            {item.caption && <p className={s.tileCaption}>{item.caption}</p>}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <div className={s.placeholderTile}>
+                        <div className={s.placeholderGlow} aria-hidden="true" />
+                        <div className={s.placeholderIcon} aria-hidden="true">
+                          <Camera size={26} />
+                        </div>
+                        <div className={s.placeholderInfo}>
+                          <span className={s.placeholderTitle}>
+                            {item.title || `Stall Photo ${idx + 1}`}
+                          </span>
+                          <span className={s.placeholderHint}>Admin Photo Slot</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
       )}
