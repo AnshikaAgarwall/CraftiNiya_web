@@ -1,11 +1,10 @@
 /* =========================================================
-   CATEGORY CARDS — Full Visibility & Screen-Height Fit
+   CATEGORY CARDS — Extra Tall & Highly Spacious Layout
    ========================================================= */
 
 .section {
-  padding-block: clamp(var(--sp-4), 3vh, var(--section-y));
+  padding-block: clamp(var(--sp-8), 8vh, var(--section-y));
   background-color: var(--c-bg);
-  /* Section ko browser ke vertical scroll se rokne ke liye */
   box-sizing: border-box;
 }
 
@@ -13,8 +12,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: var(--sp-2);
-  margin-bottom: var(--sp-6);
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-8);
 }
 
 /* Centre the rail while it fits */
@@ -23,12 +22,12 @@
   justify-content: safe center;
 }
 
-/* ---------- Grid & Cards Fit Height ---------- */
+/* ---------- Grid & Cards Layout ---------- */
 
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--sp-4);
+  gap: var(--sp-6);
   align-items: stretch;
 }
 
@@ -36,15 +35,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-2);
-  padding: var(--sp-5);
+  gap: var(--sp-4);
+  padding: var(--sp-8); /* Extra roomy internal padding */
   overflow: hidden;
   border: 1px solid var(--c-border);
-  border-radius: var(--r-lg);
+  border-radius: var(--r-xl);
   background-color: var(--c-surface);
 
-  /* Card ki max height constrain ki gayi hai taaki vertical scroll na ho */
-  max-height: clamp(260px, 48vh, 380px);
+  /* Extra long vertical height */
+  min-height: 580px; 
+  height: 100%;
   box-sizing: border-box;
   
   transition:
@@ -58,13 +58,13 @@
   z-index: 1;
 }
 
-/* Text & Icon auto-adjust size for compact frame */
+/* Text & Icon auto-adjust size */
 .icon {
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
-  margin-bottom: var(--sp-2);
+  width: 56px; /* Bigger icon block */
+  height: 56px;
+  margin-bottom: var(--sp-3);
   border-radius: 50%;
   background-color: var(--c-accent);
   color: var(--c-text-on-accent);
@@ -73,25 +73,25 @@
 
 .label {
   font-family: var(--font-serif);
-  font-size: var(--fs-xl);
+  font-size: var(--fs-3xl);
   font-weight: var(--fw-bold);
-  line-height: 1.1;
+  line-height: 1.25;
   
-  /* Text vertical overflow handle karne ke liye clamp */
+  /* Text clamp limit removed to allow natural display */
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .desc {
   color: var(--c-text-2);
-  font-size: var(--fs-xs);
-  line-height: var(--lh-snug);
+  font-size: var(--fs-md);
+  line-height: 1.6;
   
-  /* Paragraph content max 2 lines tak dikhegi */
+  /* Description lines extended */
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 8;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -100,38 +100,34 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--sp-2);
-  margin-top: auto; /* Footer hamesha bottom border par lock rahega */
-  padding-top: var(--sp-3);
+  gap: var(--sp-3);
+  margin-top: auto; /* Footer hamesha bottom baseline par lock rahega */
+  padding-top: var(--sp-5);
   border-top: 1px solid var(--c-border);
   flex-shrink: 0;
 }
 
-/* ---------- Mobile & Small Screen Adjustments ---------- */
+/* ---------- Responsive Layout ---------- */
 
-@media (max-width: 900px) {
-  .tabs {
-    margin-bottom: var(--sp-4);
-  }
-
+@media (max-width: 1100px) {
   .grid {
-    /* Side-by-side horizontal scroll to prevent section breaking */
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: var(--sp-2);
-  }
-
-  .card {
-    min-width: 240px;
-    /* Mobile screen height according fit adjustment */
-    max-height: clamp(240px, 45vh, 340px);
-    padding: var(--sp-4);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5);
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .tabs {
-    margin-bottom: var(--sp-3);
+    margin-bottom: var(--sp-5);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .card {
+    min-height: 480px;
+    padding: var(--sp-6);
   }
 }
