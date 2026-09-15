@@ -49,10 +49,26 @@
   aspect-ratio: 1 / 1;
 }
 
-.card[data-index="1"], .skeleton:nth-child(2) { grid-column: 3; grid-row: 1; }
-.card[data-index="2"], .skeleton:nth-child(3) { grid-column: 4; grid-row: 1; }
-.card[data-index="3"], .skeleton:nth-child(4) { grid-column: 3; grid-row: 2; }
-.card[data-index="4"], .skeleton:nth-child(5) { grid-column: 4; grid-row: 2; }
+.card[data-index="1"],
+.skeleton:nth-child(2) {
+  grid-column: 3;
+  grid-row: 1;
+}
+.card[data-index="2"],
+.skeleton:nth-child(3) {
+  grid-column: 4;
+  grid-row: 1;
+}
+.card[data-index="3"],
+.skeleton:nth-child(4) {
+  grid-column: 3;
+  grid-row: 2;
+}
+.card[data-index="4"],
+.skeleton:nth-child(5) {
+  grid-column: 4;
+  grid-row: 2;
+}
 
 /* 2 Lower Cards (spans 2 columns each in row 3) */
 .card[data-index="5"],
