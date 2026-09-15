@@ -26,19 +26,19 @@ export default function BudgetTiers() {
       <div className="container">
         <SectionHeading
           eyebrow="Gifting by budget"
-          title="Something lovely, whatever you had in mind"
-          subtitle="Pick a stall to explore curated handcrafted creations for your budget."
+          title="Find the perfect gift for every price point !"
+          subtitle="Pick a stall "
         />
 
         {/* Desktop View: Clean 4-Column Grid */}
         <div className={s.desktopGrid}>
           {loading
             ? Array.from({ length: 4 }, (_, i) => (
-                <Skeleton key={i} className={s.skeleton} />
-              ))
+              <Skeleton key={i} className={s.skeleton} />
+            ))
             : visible.map((tier) => (
-                <CartItem key={tier.id} tier={tier} />
-              ))}
+              <CartItem key={tier.id} tier={tier} />
+            ))}
         </div>
 
         {/* Mobile & Tablet View: Smooth Auto-Scrolling Train Marquee */}

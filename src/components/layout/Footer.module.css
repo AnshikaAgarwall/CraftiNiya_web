@@ -1,5 +1,4 @@
-/* The footer stays light: --c-surface ground, with secondary copy in
-   --c-text-2 at 6.38:1. */
+/* Footer */
 
 .footer {
   margin-top: var(--sp-12);
@@ -24,7 +23,6 @@
   gap: var(--sp-4);
 }
 
-/* Same wordmark treatment as the header — the name is the logo. */
 .wordmark {
   font-family: var(--font-serif);
   font-size: 1.75rem;
@@ -131,6 +129,8 @@
   fill: var(--c-brand);
 }
 
+/* ---------- tablet ---------- */
+
 @media (max-width: 900px) {
   .inner {
     grid-template-columns: 1fr 1fr;
@@ -142,14 +142,43 @@
   }
 }
 
+/* ---------- mobile ---------- */
+
 @media (max-width: 560px) {
   .inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-6) var(--sp-4);
     padding-block: var(--sp-8) var(--sp-6);
+  }
+
+  .brandCol {
+    grid-column: 1 / -1;
+  }
+
+  .wordmark {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    max-width: 32ch;
+    font-size: var(--fs-xs);
+  }
+
+  .colHeading {
+    margin-bottom: var(--sp-3);
+  }
+
+  .colList {
+    gap: var(--sp-2);
+  }
+
+  .colLink {
+    font-size: var(--fs-xs);
   }
 
   .bottom {
     flex-direction: column;
     text-align: center;
+    gap: var(--sp-2);
   }
 }

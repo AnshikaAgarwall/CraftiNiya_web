@@ -1,5 +1,5 @@
 .section {
-  padding-block: clamp(2rem, 4.5vh, 3.5rem);
+  padding-block: var(--section-y);
   background-color: var(--c-bg);
   box-sizing: border-box;
 }
@@ -150,8 +150,7 @@
 /* Mobile viewport adjustments */
 @media (max-width: 640px) {
   .section {
-    padding-top: var(--sp-6);
-    padding-bottom: var(--sp-6);
+    padding-block: var(--section-y);
   }
 
   .grid {

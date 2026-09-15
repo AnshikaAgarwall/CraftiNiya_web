@@ -6,11 +6,29 @@
   "welcome": {
     "title": "Welcome to Craftiniya",
     "body": "Explore our collections of home decor, candles, crochet, festive essentials and personalized gifts. Find something that feels like you — or like the person you are gifting.",
-    "image": { "url": "https://plus.unsplash.com/premium_photo-1710595925696-5d644538592d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "alt": "Finishing a handmade piece in the studio" },
+    "image": {
+      "url": "https://plus.unsplash.com/premium_photo-1710595925696-5d644538592d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "alt": "Finishing a handmade piece in the studio"
+    },
     "stats": [
-      { "id": "pieces", "value": "135+", "label": "Handmade pieces", "icon": "package" },
-      { "id": "collections", "value": "7", "label": "Collections", "icon": "palette" },
-      { "id": "customers", "value": "1,000+", "label": "Happy customers", "icon": "heart" }
+      {
+        "id": "pieces",
+        "value": "135+",
+        "label": "Handmade pieces",
+        "icon": "package"
+      },
+      {
+        "id": "collections",
+        "value": "7",
+        "label": "Collections",
+        "icon": "palette"
+      },
+      {
+        "id": "customers",
+        "value": "1,000+",
+        "label": "Happy customers",
+        "icon": "heart"
+      }
     ]
   },
   "services": {

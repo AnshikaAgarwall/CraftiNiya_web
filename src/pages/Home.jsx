@@ -39,7 +39,7 @@ export default function Home() {
         <div className="container">
           <SectionHeading
             eyebrow="Most loved"
-            title="What everyone is buying"
+            title="OUR BEST SELLERS"
             subtitle="The pieces that leave the studio fastest."
             action={
               <Button to="/shop" variant="ghost" endIcon={<ArrowRight size={16} />}>

@@ -58,31 +58,25 @@
   stroke-width: 1.6;
 }
 
-/* Brand sits in the centre column of the 1fr-auto-1fr grid, so it stays
-   optically centred regardless of how wide the icon cluster grows. */
+/* Brand */
+
 .brand {
-  /* 1. Shift from Column 2 (Center) to Column 1 (Left) */
   grid-column: 1;
-
-  /* 2. Align the grid element to the left edge */
   justify-self: start;
-
-  /* 3. Align internal text/tagline items to the left */
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-start; /* Changed from center to flex-start */
-
+  align-items: flex-start;
   line-height: 1;
 }
 
-/* The name is the logo. Fraunces at its largest optical size, with the soft
-   and "wonk" axes on, gives the wordmark a hand-finished warmth that carries
-   the brand without a separate icon. */
 .brandName {
   font-family: var(--font-serif);
   font-size: 2rem;
   font-weight: var(--fw-semibold);
-  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 100,
+    "WONK" 1;
   letter-spacing: -0.02em;
   color: var(--c-text);
   transition: color var(--t-fast) var(--ease);
@@ -153,7 +147,7 @@
 /* ---------- row 2 ---------- */
 
 .navRow {
-  position: relative; /* anchors the mega menu panel */
+  position: relative;
   background-color: var(--c-surface);
 }
 
@@ -219,8 +213,6 @@
   transform: rotate(180deg);
 }
 
-/* The underline is drawn on ::after, which the flexed chevron would otherwise
-   push past the label. Pin it to the whole button instead. */
 .navTrigger::after {
   bottom: 4px;
 }
@@ -234,7 +226,7 @@
 }
 
 .saleNavLink::after {
-  display: none !important; /* Hide regular underline in favour of the glowing pill */
+  display: none !important;
 }
 
 .salePill {
@@ -243,7 +235,11 @@
   gap: 5px;
   padding: 3px 10px;
   border-radius: var(--r-pill);
-  background: linear-gradient(135deg, rgba(220, 53, 69, 0.08), rgba(232, 201, 209, 0.25));
+  background: linear-gradient(
+    135deg,
+    rgba(220, 53, 69, 0.08),
+    rgba(232, 201, 209, 0.25)
+  );
   border: 1.5px solid #dc3545;
   color: #dc3545 !important;
   font-weight: var(--fw-bold);
@@ -292,12 +288,18 @@
 }
 
 @keyframes saleBeaconGlow {
-  0%, 100% {
-    box-shadow: 0 0 6px rgba(220, 53, 69, 0.3), 0 0 0 0 rgba(220, 53, 69, 0.4);
+  0%,
+  100% {
+    box-shadow:
+      0 0 6px rgba(220, 53, 69, 0.3),
+      0 0 0 0 rgba(220, 53, 69, 0.4);
     border-color: #dc3545;
   }
+
   50% {
-    box-shadow: 0 0 16px rgba(220, 53, 69, 0.65), 0 0 0 4px rgba(220, 53, 69, 0.15);
+    box-shadow:
+      0 0 16px rgba(220, 53, 69, 0.65),
+      0 0 0 4px rgba(220, 53, 69, 0.15);
     border-color: #ff4d5e;
   }
 }
@@ -307,6 +309,7 @@
     opacity: 0.25;
     transform: scale(0.8);
   }
+
   100% {
     opacity: 1;
     transform: scale(1.3);
@@ -342,6 +345,7 @@
 }
 
 /* Mobile Glowing Sale Link */
+
 .mobileSaleLink {
   display: flex !important;
   align-items: center;
@@ -364,12 +368,14 @@
   animation: saleBeaconGlow 1.8s infinite ease-in-out;
 }
 
+/* ---------- tablet / mobile ---------- */
+
 @media (max-width: 900px) {
   .brandInner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 64px;
+    min-height: 72px;
     gap: var(--sp-3);
   }
 
@@ -377,6 +383,7 @@
     order: 1;
     justify-self: start;
     align-items: flex-start;
+    flex-shrink: 0;
   }
 
   .brandName {
@@ -384,7 +391,9 @@
   }
 
   .brandTagline {
-    display: none;
+    display: block;
+    margin-top: 5px;
+    font-size: 9px;
   }
 
   .actions {
@@ -394,10 +403,9 @@
     gap: 4px;
   }
 
-  /* Hamburger menu button appears next to cart */
   .menuButton {
     display: grid;
-    order: 99; /* place rightmost next to cart */
+    order: 99;
     margin-left: 0;
     margin-right: -4px;
   }
@@ -411,10 +419,17 @@
   }
 }
 
-/* At small screens: fine-tune sizes */
+/* ---------- small screens ---------- */
+
 @media (max-width: 400px) {
   .brandName {
     font-size: 1.25rem;
+  }
+
+  .brandTagline {
+    display: block;
+    margin-top: 4px;
+    font-size: 8px;
   }
 
   .action,

@@ -4,6 +4,10 @@
     "slug": "macrame-boho-wall-hanging",
     "title": "Macramé Boho Wall Hanging",
     "description": "Hand-knotted cotton cord hanging with a fringed hem, sized for above a bed or sofa.",
+    "image": "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg?v=1754296513",
+    "images": [
+      "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg?v=1754296513"
+    ],
     "category": "home-decor",
     "subcategory": "wall-decor",
     "gender": "unisex",
@@ -28,7 +32,8 @@
     "variants": [
       {
         "id": "prod-wall-decor-01-v1",
-        "name": "Standard"
+        "name": "Standard" 
+        
       }
     ],
     "isBestSeller": true,

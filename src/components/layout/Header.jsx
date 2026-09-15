@@ -23,9 +23,8 @@ const CATEGORIES_PATH = "/categories";
  * because a centred wordmark plus four icons does not fit a 360px viewport
  * without either wrapping or shrinking the tap targets below 44px.
  *
- * "Categories" is a disclosure button rather than a link: it opens the mega
- * menu panel below the nav row. Click-to-open, not hover, so the panel cannot
- * ambush a shopper reaching for the row below it, and so it works on touch.
+ * "Categories" opens the mega menu on hover (and click for accessibility).
+ * Closes when mouse leaves the trigger + panel, or on outside click / Escape.
  */
 export default function Header() {
   const { itemCount } = useCart();
@@ -37,8 +36,24 @@ export default function Header() {
   const [condensed, setCondensed] = useState(false);
   const [isMegaMenuOpen, setMegaMenuOpen] = useState(false);
   const headerRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
 
-  const closeMegaMenu = useCallback(() => setMegaMenuOpen(false), []);
+  const closeMegaMenu = useCallback(() => {
+    clearTimeout(closeTimeoutRef.current);
+    setMegaMenuOpen(false);
+  }, []);
+
+  const openMegaMenu = useCallback(() => {
+    clearTimeout(closeTimeoutRef.current);
+    setMegaMenuOpen(true);
+  }, []);
+
+  const closeMegaMenuDelayed = useCallback(() => {
+    clearTimeout(closeTimeoutRef.current);
+    closeTimeoutRef.current = setTimeout(() => {
+      setMegaMenuOpen(false);
+    }, 150);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setCondensed(window.scrollY > 24);
@@ -161,6 +176,8 @@ export default function Header() {
                 <button
                   type="button"
                   className={cn(s.navLink, s.navTrigger, isMegaMenuOpen && s.navLinkActive)}
+                  onMouseEnter={openMegaMenu}
+                  onMouseLeave={closeMegaMenuDelayed}
                   onClick={() => setMegaMenuOpen((open) => !open)}
                   aria-expanded={isMegaMenuOpen}
                   aria-controls="mega-menu"
@@ -197,7 +214,14 @@ export default function Header() {
           )}
         </ul>
 
-        {isMegaMenuOpen && <MegaMenu onNavigate={closeMegaMenu} />}
+        {isMegaMenuOpen && (
+          <div
+            onMouseEnter={openMegaMenu}
+            onMouseLeave={closeMegaMenuDelayed}
+          >
+            <MegaMenu onNavigate={closeMegaMenu} />
+          </div>
+        )}
       </nav>
 
       {/* ---- Mobile navigation ---- */}

@@ -21,13 +21,18 @@ import s from "./HeroCarousel.module.css";
  *   only the dots change slides). WCAG 2.2.2 asks for an explicit control, so
  *   this is a known shortfall rather than full conformance.
  * - Clips are muted + playsInline: without both, iOS Safari will not play them.
+ * - Supports manual swipe / drag (touch + mouse) in addition to dots.
  */
 
 const SLIDE_MS = 5000;
+const SWIPE_THRESHOLD = 60; // px
 
 export default function HeroCarousel() {
   const reducedMotion = useReducedMotion();
-  const { data: slides, error } = useAsync((opts) => promoService.getHeroSlides(opts), []);
+  const { data: slides, error } = useAsync(
+    (opts) => promoService.getHeroSlides(opts),
+    [],
+  );
 
   const [index, setIndex] = useState(0);
   // Incremented whenever a slide becomes active and folded into its media key,
@@ -37,10 +42,16 @@ export default function HeroCarousel() {
   const [hovered, setHovered] = useState(false);
   const [keyboardFocus, setKeyboardFocus] = useState(false);
   const [pageHidden, setPageHidden] = useState(
-    () => typeof document !== "undefined" && document.visibilityState === "hidden",
+    () =>
+      typeof document !== "undefined" && document.visibilityState === "hidden",
   );
   const [sectionRef, inView] = useInView({ threshold: 0.2 });
   const videoRefs = useRef(new Map());
+
+  // Swipe / drag state
+  const startX = useRef(0);
+  const isDragging = useRef(false);
+  const didDrag = useRef(false);
 
   const count = slides?.length ?? 0;
   const current = count ? index % count : 0;
@@ -59,7 +70,8 @@ export default function HeroCarousel() {
   );
 
   useEffect(() => {
-    const onVisibility = () => setPageHidden(document.visibilityState === "hidden");
+    const onVisibility = () =>
+      setPageHidden(document.visibilityState === "hidden");
     document.addEventListener("visibilitychange", onVisibility);
     return () => document.removeEventListener("visibilitychange", onVisibility);
   }, []);
@@ -83,6 +95,49 @@ export default function HeroCarousel() {
     goTo(current + 1);
   };
 
+  // ---------- Swipe / Drag handlers ----------
+  const onPointerDown = (e) => {
+    // Only primary button / touch
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    isDragging.current = true;
+    didDrag.current = false;
+    startX.current = e.clientX;
+  };
+
+  const onPointerMove = (e) => {
+    if (!isDragging.current) return;
+    const diff = Math.abs(e.clientX - startX.current);
+    if (diff > 8) {
+      didDrag.current = true; // mark as drag so link click is prevented
+    }
+  };
+
+  const onPointerUp = (e) => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+
+    const diff = e.clientX - startX.current;
+
+    if (Math.abs(diff) >= SWIPE_THRESHOLD) {
+      if (diff < 0) {
+        // swipe left → next
+        goTo(current + 1);
+      } else {
+        // swipe right → previous
+        goTo(current - 1);
+      }
+    }
+  };
+
+  // Prevent the <Link> from navigating when the user was dragging
+  const onClickCapture = (e) => {
+    if (didDrag.current) {
+      e.preventDefault();
+      e.stopPropagation();
+      didDrag.current = false;
+    }
+  };
+
   // A hero that failed to load collapses rather than opening the home page
   // with an error card.
   if (error) return null;
@@ -95,12 +150,23 @@ export default function HeroCarousel() {
       aria-roledescription="carousel"
       aria-label="Featured collections"
       onPointerEnter={(e) => e.pointerType === "mouse" && setHovered(true)}
-      onPointerLeave={(e) => e.pointerType === "mouse" && setHovered(false)}
+      onPointerLeave={(e) => {
+        e.pointerType === "mouse" && setHovered(false);
+        // agar drag ke dauran mouse bahar chala jaye to bhi release
+        if (isDragging.current) onPointerUp(e);
+      }}
       // Keyboard focus pauses; a mouse click on a dot must not freeze the carousel.
-      onFocus={(e) => e.target.matches(":focus-visible") && setKeyboardFocus(true)}
+      onFocus={(e) =>
+        e.target.matches(":focus-visible") && setKeyboardFocus(true)
+      }
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget)) setKeyboardFocus(false);
       }}
+      // Swipe support
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerUp}
+      onPointerCancel={onPointerUp}
     >
       {/* Slide titles live inside links, so the page heading is provided here. */}
       <h1 className="sr-only">
@@ -119,6 +185,7 @@ export default function HeroCarousel() {
             aria-hidden={!isActive}
             tabIndex={isActive ? undefined : -1}
             inert={!isActive}
+            onClickCapture={onClickCapture}
           >
             <div
               key={`${slide.id}-${activations[slide.id] ?? 0}`}
@@ -142,7 +209,9 @@ export default function HeroCarousel() {
                   loop
                   playsInline
                   // The visible clip and the next one load; the rest wait.
-                  preload={isActive || i === (current + 1) % count ? "auto" : "none"}
+                  preload={
+                    isActive || i === (current + 1) % count ? "auto" : "none"
+                  }
                   aria-hidden="true"
                 />
               ) : (

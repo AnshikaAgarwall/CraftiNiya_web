@@ -1,6 +1,6 @@
 /* =========================================================
-   ANNOUNCEMENT TICKER STRIP (Immediately below Hero section)
-   Smooth Infinite Marquee with Brand Styling
+   ANNOUNCEMENT TICKER STRIP
+   Immediately below Hero section
    ========================================================= */
 
 .tickerWrapper {
@@ -80,16 +80,13 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
 }
 
-@media (max-width: 900px) {
-  .tickerWrapper {
-    display: none !important;
-  }
-}
+/* Keep ticker visible on mobile */
 
 @media (prefers-reduced-motion: reduce) {
   .track {
