@@ -4,7 +4,7 @@ import Footer from "../components/layout/Footer.jsx";
 import SearchOverlay from "../components/layout/SearchOverlay.jsx";
 import Toaster from "../components/layout/Toaster.jsx";
 import ErrorBoundary from "../components/common/ErrorBoundary.jsx";
-import SalePopup from "../components/common/SalePopup.jsx";
+import TopPromoBanner from "../components/common/TopPromoBanner.jsx";
 
 /**
  * Chrome that wraps every route.
@@ -30,6 +30,8 @@ export default function RootLayout() {
         Skip to content
       </a>
 
+      {!isFullScreen && <TopPromoBanner />}
+
       <Header />
 
       <main id="main">
@@ -42,7 +44,6 @@ export default function RootLayout() {
 
       <SearchOverlay />
       <Toaster />
-      <SalePopup />
     </>
   );
 }

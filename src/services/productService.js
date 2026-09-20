@@ -40,6 +40,7 @@ function matches(p, q) {
   if (q.inStock && !p.inStock) return false;
   if (q.featured && !p.isFeatured) return false;
   if (q.bestSeller && !p.isBestSeller) return false;
+  if (q.partnerPicks && p.productType !== "affiliate") return false;
   if (q.minRating != null && p.rating < q.minRating) return false;
 
   if (q.subcategoryIds?.length && !q.subcategoryIds.includes(p.subcategoryId))

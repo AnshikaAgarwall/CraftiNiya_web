@@ -73,6 +73,9 @@ export function mapProduct(raw) {
     ageGroup: raw.ageGroup ?? null,
     specifications: raw.specifications ?? null,
     gifting: raw.gifting ?? null,
+    productType: raw.productType ?? "own",
+    creator: raw.creator ?? null,
+    affiliate: raw.affiliate ?? null,
     variants,
   };
 }
@@ -148,15 +151,15 @@ export function mapReel(raw) {
 
   const product = raw.product
     ? {
-        id: raw.product.id,
-        title: raw.product.title,
-        slug: raw.product.slug,
-        price: raw.product.price,
-        salePrice: raw.product.salePrice ?? null,
-        category: raw.product.category ?? "",
-        image: raw.product.image ?? raw.posterUrl,
-        inStock: raw.product.inStock ?? true,
-      }
+      id: raw.product.id,
+      title: raw.product.title,
+      slug: raw.product.slug,
+      price: raw.product.price,
+      salePrice: raw.product.salePrice ?? null,
+      category: raw.product.category ?? "",
+      image: raw.product.image ?? raw.posterUrl,
+      inStock: raw.product.inStock ?? true,
+    }
     : null;
 
   return {
@@ -293,11 +296,11 @@ export function mapAboutPage(raw) {
       stats: mapList(w.stats, (st, i) =>
         st?.value != null && st.value !== ""
           ? {
-              id: st.id ?? `stat-${i}`,
-              value: String(st.value),
-              label: st.label ?? "",
-              icon: st.icon ?? null,
-            }
+            id: st.id ?? `stat-${i}`,
+            value: String(st.value),
+            label: st.label ?? "",
+            icon: st.icon ?? null,
+          }
           : null,
       ),
     })),
@@ -308,12 +311,12 @@ export function mapAboutPage(raw) {
       items: mapList(sv.items, (it, i) =>
         it?.title
           ? {
-              id: it.id ?? `service-${i}`,
-              title: it.title,
-              body: it.body ?? "",
-              icon: it.icon ?? null,
-              href: it.href || null,
-            }
+            id: it.id ?? `service-${i}`,
+            title: it.title,
+            body: it.body ?? "",
+            icon: it.icon ?? null,
+            href: it.href || null,
+          }
           : null,
       ),
     })),
@@ -338,10 +341,10 @@ export function mapAboutPage(raw) {
       items: mapList(p.items, (it) =>
         it?.id && it?.title
           ? {
-              id: it.id,
-              title: it.title,
-              body: it.body ?? "",
-            }
+            id: it.id,
+            title: it.title,
+            body: it.body ?? "",
+          }
           : null,
       ),
     })),

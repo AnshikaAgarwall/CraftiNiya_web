@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Heart, Minus, Plus, RotateCcw, ShieldCheck, ShoppingBag, Truck } from "lucide-react";
+import { Check, Heart, Minus, Plus, RotateCcw, ShieldCheck, ShoppingBag, Truck } from "lucide-react";
 import SEO from "../components/common/SEO.jsx";
 import PageHeader from "../components/layout/PageHeader.jsx";
 import Button from "../components/ui/Button.jsx";
@@ -30,7 +30,7 @@ const TABS = [
 
 export default function ProductDetailPage() {
   const { slug } = useParams();
-  const { addItem, pending } = useCart();
+  const { addItem, pending, isInCart } = useCart();
   const { isWishlisted, toggle } = useWishlist();
   const { toast } = useUI();
   const navigate = useNavigate();
@@ -39,6 +39,7 @@ export default function ProductDetailPage() {
   const [imageIndex, setImageIndex] = useState(0);
   const [qty, setQty] = useState(1);
   const [tab, setTab] = useState("details");
+  const [justAdded, setJustAdded] = useState(false);
 
   const { data: product, loading, error, refetch } = useAsync(
     (opts) => productService.getProductBySlug(slug, opts),
@@ -108,9 +109,13 @@ export default function ProductDetailPage() {
   const maxQty = Math.max(variant?.stockCount ?? product.stockCount ?? 0, 0);
   const wishlisted = isWishlisted(product.id);
 
+  const inCart = product ? isInCart(product.id) : false;
+
   const handleAdd = async () => {
     try {
       await addItem({ productId: product.id, variantId: variant?.id, qty });
+      setJustAdded(true);
+      setTimeout(() => setJustAdded(false), 3000);
       toast(`${product.title} added to bag`, {
         type: "success",
         action: { label: "View bag", onClick: () => navigate("/cart") },
@@ -152,7 +157,19 @@ export default function ProductDetailPage() {
               alt={product.title}
               eager
             />
-            {product.isOnSale && product.discountPct ? (
+            {product.productType === "creator" && product.creator?.name ? (
+              <span className={s.mainBadge}>
+                <Badge tone="brand">Artisan Made</Badge>
+              </span>
+            ) : product.productType === "collab_bundle" ? (
+              <span className={s.mainBadge}>
+                <Badge tone="brand">Curated Set</Badge>
+              </span>
+            ) : product.productType === "affiliate" ? (
+              <span className={s.mainBadge}>
+                <Badge tone="neutral">Partner Pick</Badge>
+              </span>
+            ) : product.isOnSale && product.discountPct ? (
               <span className={s.mainBadge}>
                 <Badge tone="accent">{product.discountPct}% off</Badge>
               </span>
@@ -163,10 +180,14 @@ export default function ProductDetailPage() {
               type="button"
               onClick={() => toggle(product.id)}
               aria-pressed={wishlisted}
-              aria-label={wishlisted ? "Remove from wishlist" : "Save to wishlist"}
+              aria-label={
+                wishlisted
+                  ? `Remove ${product.title} from wishlist`
+                  : `Save ${product.title} to wishlist`
+              }
               className={cn(s.imageWishButton, wishlisted && s.imageWishButtonOn)}
             >
-              <Heart size={18} />
+              <Heart />
             </button>
           </div>
 
@@ -190,7 +211,16 @@ export default function ProductDetailPage() {
 
         {/* ---------- purchase panel ---------- */}
         <div className={s.info}>
-          <p className={s.eyebrow}>{product.subcategoryTitle}</p>
+          {product.creator?.slug ? (
+            <p className={s.eyebrow}>
+              Artisan:{" "}
+              <Link to={`/creator/${product.creator.slug}`} style={{ textDecoration: "underline", color: "inherit" }}>
+                {product.creator.name}
+              </Link>
+            </p>
+          ) : (
+            <p className={s.eyebrow}>{product.subcategoryTitle}</p>
+          )}
           <h1 className={s.title}>{product.title}</h1>
 
           <Price
@@ -244,36 +274,66 @@ export default function ProductDetailPage() {
           </div>
 
           <div className={s.purchase}>
-            <div className={s.stepper}>
-              <button
-                type="button"
-                onClick={() => setQty((q) => Math.max(1, q - 1))}
-                disabled={qty <= 1}
-                aria-label="Decrease quantity"
+            {product.productType === "affiliate" ? (
+              <Button
+                size="lg"
+                onClick={() => {
+                  if (product.affiliate?.externalUrl) {
+                    window.open(product.affiliate.externalUrl, "_blank", "noopener,noreferrer");
+                  } else {
+                    navigate(`/partner/${product.slug}`);
+                  }
+                }}
+                className={s.addButton}
               >
-                <Minus />
-              </button>
-              <span aria-live="polite">{qty}</span>
-              <button
-                type="button"
-                onClick={() => setQty((q) => Math.min(maxQty || q + 1, q + 1))}
-                disabled={maxQty > 0 && qty >= maxQty}
-                aria-label="Increase quantity"
-              >
-                <Plus />
-              </button>
-            </div>
+                {product.affiliate?.buttonText || "Buy from Partner"}
+              </Button>
+            ) : (
+              <>
+                <div className={s.stepper}>
+                  <button
+                    type="button"
+                    onClick={() => setQty((q) => Math.max(1, q - 1))}
+                    disabled={qty <= 1}
+                    aria-label="Decrease quantity"
+                  >
+                    <Minus />
+                  </button>
+                  <span aria-live="polite">{qty}</span>
+                  <button
+                    type="button"
+                    onClick={() => setQty((q) => Math.min(maxQty || q + 1, q + 1))}
+                    disabled={maxQty > 0 && qty >= maxQty}
+                    aria-label="Increase quantity"
+                  >
+                    <Plus />
+                  </button>
+                </div>
 
-            <Button
-              size="lg"
-              onClick={handleAdd}
-              disabled={!product.inStock || maxQty === 0}
-              loading={pending}
-              startIcon={<ShoppingBag size={17} />}
-              className={s.addButton}
-            >
-              {product.inStock && maxQty > 0 ? "Add to bag" : "Sold out"}
-            </Button>
+                <Button
+                  size="lg"
+                  onClick={handleAdd}
+                  disabled={!product.inStock || maxQty === 0}
+                  loading={pending}
+                  startIcon={
+                    justAdded ? (
+                      <Check size={18} />
+                    ) : (
+                      <ShoppingBag size={17} />
+                    )
+                  }
+                  className={cn(s.addButton, (justAdded || inCart) && s.addedButton)}
+                >
+                  {!product.inStock || maxQty === 0
+                    ? "Sold out"
+                    : justAdded
+                      ? "Added to bag"
+                      : inCart
+                        ? "Add more to bag"
+                        : "Add to bag"}
+                </Button>
+              </>
+            )}
           </div>
 
           <ul className={s.assurances}>

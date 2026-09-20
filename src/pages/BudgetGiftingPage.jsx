@@ -45,8 +45,8 @@ export default function BudgetGiftingPage() {
       />
 
       <PageHeader
+        align="left"
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Budget gifting" }]}
-        eyebrow="Gifting by budget"
         title="Set a number, we will do the rest"
         description="Every piece below is handmade and gift-wrapped as standard."
       >

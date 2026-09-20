@@ -30,7 +30,6 @@ export default function CategoryExplorer() {
           id="category-explorer-title"
           eyebrow="Browse the collection"
           title="What are you looking for?"
-          subtitle="Pick a category, then head straight to the pieces you are after."
         />
 
         {error ? (

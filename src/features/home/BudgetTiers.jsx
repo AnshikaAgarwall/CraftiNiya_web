@@ -27,7 +27,6 @@ export default function BudgetTiers() {
         <SectionHeading
           eyebrow="Gifting by budget"
           title="Find the perfect gift for every price point !"
-          subtitle="Pick a stall "
         />
 
         {/* Desktop View: Clean 4-Column Grid */}

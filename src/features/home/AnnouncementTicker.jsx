@@ -19,7 +19,7 @@ export default function AnnouncementTicker() {
           const Icon = item.icon;
           return (
             <div key={idx} className={s.item}>
-              <Icon size={13} className={s.icon} aria-hidden="true" />
+              <Icon size={11} className={s.icon} aria-hidden="true" />
               <span className={s.text}>{item.text}</span>
               <span className={s.dot} aria-hidden="true">•</span>
             </div>

@@ -1,8 +1,10 @@
-import { useMemo } from "react";
+import { useState, useMemo } from "react";
+import { ArrowUpDown, SlidersHorizontal } from "lucide-react";
 import Button from "../../components/ui/Button.jsx";
 import { Chip } from "../../components/ui/Bits.jsx";
 import ProductGrid from "../../components/product/ProductGrid.jsx";
 import FilterSidebar from "./FilterSidebar.jsx";
+import SortDrawer from "./SortDrawer.jsx";
 import { useCatalogQuery } from "./useCatalogQuery.js";
 import { useAsync } from "../../hooks/useAsync.js";
 import productService from "../../services/productService.js";
@@ -88,6 +90,9 @@ export default function CatalogView({
       }),
     );
 
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [sortOpen, setSortOpen] = useState(false);
+
   return (
     <div className={`container ${s.layout}`}>
       <FilterSidebar
@@ -97,7 +102,17 @@ export default function CatalogView({
         onChange={update}
         onClear={clear}
         hideSubcategories={hideSubcategoryFilter || Boolean(scope.subcategoryId)}
+        hideSort={true}
+        isOpen={filterOpen}
+        onToggleOpen={setFilterOpen}
         className={s.sidebar}
+      />
+
+      <SortDrawer
+        isOpen={sortOpen}
+        onClose={() => setSortOpen(false)}
+        value={query}
+        onChange={update}
       />
 
       <div className={s.main}>
@@ -107,6 +122,29 @@ export default function CatalogView({
           <p className={s.count} aria-live="polite">
             {loading ? "Loading…" : pluralize(total, "piece")}
           </p>
+
+          <div className={s.toolbarActions}>
+            <button
+              type="button"
+              className={s.actionTrigger}
+              onClick={() => setSortOpen(true)}
+              aria-label="Sort products"
+              title="Sort"
+            >
+              <ArrowUpDown size={17} />
+            </button>
+
+            <button
+              type="button"
+              className={s.actionTrigger}
+              onClick={() => setFilterOpen(true)}
+              aria-label="Filter products"
+              title="Filters"
+            >
+              <SlidersHorizontal size={17} />
+              {hasFilters && <span className={s.filterDot} aria-hidden="true" />}
+            </button>
+          </div>
         </div>
 
         {activeChips.length > 0 && (

@@ -22,9 +22,15 @@ export default function FilterSidebar({
   onChange,
   onClear,
   hideSubcategories = false,
+  hideSort = false,
+  isOpen: controlledOpen,
+  onToggleOpen,
   className,
 }) {
-  const [open, setOpen] = useState(false);
+  const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
+  const isControlled = controlledOpen !== undefined;
+  const open = isControlled ? controlledOpen : uncontrolledOpen;
+  const setOpen = isControlled ? onToggleOpen : setUncontrolledOpen;
 
   const subcategories = hideSubcategories ? [] : (facets?.subcategories ?? []);
   const showSubcategories = subcategories.length > 1;
@@ -56,17 +62,6 @@ export default function FilterSidebar({
 
   return (
     <>
-      <button
-        type="button"
-        className={s.mobileToggle}
-        onClick={() => setOpen(true)}
-        aria-expanded={open}
-      >
-        <SlidersHorizontal />
-        Filters
-        {activeCount > 0 && <span className={s.mobileCount}>{activeCount}</span>}
-      </button>
-
       <aside className={cn(s.sidebar, open && s.sidebarOpen, className)}>
         <div className={s.head}>
           <h2 className={s.heading}>Filters</h2>
@@ -87,20 +82,22 @@ export default function FilterSidebar({
 
         <div className={s.scroll}>
           {/* ---- sort ---- */}
-          <section className={s.group}>
-            <h3 className={s.groupTitle}>Sort by</h3>
-            <div className={s.stack}>
-              {SORT_OPTIONS.map((option) => (
-                <Radio
-                  key={option.value}
-                  name="sort"
-                  label={option.label}
-                  checked={value.sort === option.value}
-                  onChange={() => onChange({ sort: option.value })}
-                />
-              ))}
-            </div>
-          </section>
+          {!hideSort && (
+            <section className={s.group}>
+              <h3 className={s.groupTitle}>Sort by</h3>
+              <div className={s.stack}>
+                {SORT_OPTIONS.map((option) => (
+                  <Radio
+                    key={option.value}
+                    name="sort"
+                    label={option.label}
+                    checked={value.sort === option.value}
+                    onChange={() => onChange({ sort: option.value })}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* ---- subcategories ---- */}
           {showSubcategories && (
@@ -158,6 +155,11 @@ export default function FilterSidebar({
                 label={`In stock${facets?.inStock ? ` (${facets.inStock})` : ""}`}
                 checked={Boolean(value.inStock)}
                 onChange={(e) => onChange({ inStock: e.target.checked || null })}
+              />
+              <Checkbox
+                label="Partner picks"
+                checked={Boolean(value.partnerPicks)}
+                onChange={(e) => onChange({ partnerPicks: e.target.checked || null })}
               />
             </div>
           </section>

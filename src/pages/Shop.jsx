@@ -11,8 +11,8 @@ export default function Shop() {
       />
 
       <PageHeader
+        align="left"
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Shop" }]}
-        eyebrow="The whole studio"
         title="Shop everything"
         description="Every piece we make, in one place. Filter by price, category or what is actually in stock."
       />

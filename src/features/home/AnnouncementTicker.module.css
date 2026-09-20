@@ -1,39 +1,39 @@
 /* =========================================================
    ANNOUNCEMENT TICKER STRIP
-   Immediately below Hero section
+   Slim, clean, boutique white background strip
    ========================================================= */
 
 .tickerWrapper {
   width: 100%;
   overflow: hidden;
-  background: #0f1115;
-  color: #ffffff;
-  padding-block: 10px;
+  background: var(--c-bg, #ffffff);
+  color: var(--c-text, #1f3a2b);
+  padding-block: 5px;
   position: relative;
-  border-block: 1px solid rgb(255 255 255 / 0.08);
+  border-block: 1px solid var(--c-border, #e8e8e8);
   user-select: none;
 }
 
-/* Subtle edge blur vignettes */
+/* Subtle edge blur vignettes for clean white background */
 .tickerWrapper::before,
 .tickerWrapper::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  width: clamp(24px, 5vw, 60px);
+  width: clamp(20px, 4vw, 48px);
   z-index: 2;
   pointer-events: none;
 }
 
 .tickerWrapper::before {
   left: 0;
-  background: linear-gradient(90deg, #0f1115 0%, transparent 100%);
+  background: linear-gradient(90deg, #ffffff 0%, transparent 100%);
 }
 
 .tickerWrapper::after {
   right: 0;
-  background: linear-gradient(270deg, #0f1115 0%, transparent 100%);
+  background: linear-gradient(270deg, #ffffff 0%, transparent 100%);
 }
 
 .track {
@@ -41,7 +41,7 @@
   align-items: center;
   width: max-content;
   will-change: transform;
-  animation: tickerScroll 28s linear infinite;
+  animation: tickerScroll 32s linear infinite;
 }
 
 .tickerWrapper:hover .track {
@@ -51,29 +51,29 @@
 .item {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding-inline: clamp(14px, 2.5vw, 24px);
+  gap: 6px;
+  padding-inline: clamp(12px, 2vw, 20px);
   white-space: nowrap;
 }
 
 .icon {
-  color: #fbbf24;
+  color: var(--c-brand, #4a6b53);
   flex-shrink: 0;
 }
 
 .text {
-  font-size: clamp(11.5px, 1.1vw, 13px);
-  font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-wider);
+  font-size: clamp(10px, 0.82vw, 11px);
+  font-weight: var(--fw-semibold, 600);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ffffff;
-  text-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
+  color: var(--c-text, #1f3a2b);
 }
 
 .dot {
-  margin-left: clamp(12px, 2vw, 20px);
-  color: rgb(255 255 255 / 0.55);
-  font-size: 14px;
+  margin-left: clamp(10px, 1.8vw, 18px);
+  color: var(--c-support, #8ba888);
+  font-size: 11px;
+  opacity: 0.7;
 }
 
 @keyframes tickerScroll {
@@ -85,8 +85,6 @@
     transform: translateX(-50%);
   }
 }
-
-/* Keep ticker visible on mobile */
 
 @media (prefers-reduced-motion: reduce) {
   .track {

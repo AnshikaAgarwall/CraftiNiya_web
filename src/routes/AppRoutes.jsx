@@ -17,6 +17,10 @@ const CategoriesPage = lazy(() => import("../pages/CategoriesPage.jsx"));
 const CategoryPage = lazy(() => import("../pages/CategoryPage.jsx"));
 const SubcategoryPage = lazy(() => import("../pages/SubcategoryPage.jsx"));
 const ProductDetailPage = lazy(() => import("../pages/ProductDetailPage.jsx"));
+const CreatorPage = lazy(() => import("../pages/CreatorPage.jsx"));
+const CollaborationPage = lazy(() => import("../pages/CollaborationPage.jsx"));
+const PartnerPicksPage = lazy(() => import("../pages/PartnerPicksPage.jsx"));
+const PartnerRedirectPage = lazy(() => import("../pages/PartnerRedirectPage.jsx"));
 const BudgetGiftingPage = lazy(() => import("../pages/BudgetGiftingPage.jsx"));
 const SearchPage = lazy(() => import("../pages/SearchPage.jsx"));
 const WishlistPage = lazy(() => import("../pages/WishlistPage.jsx"));
@@ -50,6 +54,8 @@ export default function AppRoutes() {
             <Route path="sale" element={<Sale />} />
             <Route path="search" element={<SearchPage />} />
             <Route path="budget-gifting" element={<BudgetGiftingPage />} />
+            <Route path="partner-picks" element={<PartnerPicksPage />} />
+            <Route path="partner/:slug" element={<PartnerRedirectPage />} />
 
             <Route path="categories" element={<CategoriesPage />} />
             <Route path="category/:categoryId" element={<CategoryPage />} />
@@ -59,6 +65,8 @@ export default function AppRoutes() {
             />
 
             <Route path="product/:slug" element={<ProductDetailPage />} />
+            <Route path="creator/:slug" element={<CreatorPage />} />
+            <Route path="collaboration/:collabSlug" element={<CollaborationPage />} />
 
             <Route path="wishlist" element={<WishlistPage />} />
             <Route path="cart" element={<CartPage />} />

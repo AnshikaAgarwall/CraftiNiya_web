@@ -1,41 +1,44 @@
 /* =========================================================
-   HERO — clickable banners, auto-advancing, zoom-out footage
-   --hero-slide-ms is set inline by the component, so the zoom
-   duration and the advance timing come from a single number.
+   HERO CAROUSEL — 100% Fluid Natural Aspect Ratio
+   Zero hardcoded heights. Scales mathematically across
+   Phone, Tablet, Laptop, and MacBook without any cropping.
    ========================================================= */
 
 .hero {
   position: relative;
-  min-height: clamp(460px, 70vh, 680px);
+  width: 100%;
   overflow: hidden;
-  background-color: var(--c-sunken);
+  background-color: #0f1115;
+  user-select: none;
+  /* aspect-ratio dynamically injected by component from image's true proportions */
 }
 
-/* ---------- slides — each whole banner is the link ---------- */
+/* ---------- Slides Container & Items ---------- */
 
 .slide {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
+  display: block;
   opacity: 0;
-  transition: opacity 900ms var(--ease);
+  visibility: hidden;
+  transition: opacity 700ms cubic-bezier(0.25, 1, 0.5, 1),
+              visibility 700ms cubic-bezier(0.25, 1, 0.5, 1);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .slideActive {
   z-index: 1;
   opacity: 1;
+  visibility: visible;
 }
 
-/* Base :focus-visible draws outside the element, but the hero clips its
-   edges — so the ring is drawn inside the banner instead. */
 .slide:focus-visible {
-  outline: 3px solid var(--c-focus);
-  outline-offset: -6px;
-  border-radius: 0;
+  outline: 3px solid var(--c-accent, #e8c9d1);
+  outline-offset: -4px;
 }
 
-/* ---------- footage ---------- */
+/* ---------- Media / Image & Ken Burns Animation ---------- */
 
 .media {
   position: absolute;
@@ -43,208 +46,152 @@
   overflow: hidden;
 }
 
-.video {
+.image {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  transform: scale(1);
 }
 
-/* Starts close and slowly pulls back over exactly one slide's duration. The
-   end of this animation is what advances the carousel, so pausing the
-   animation pauses the carousel — no separate timer to drift out of step. */
-.zoom {
-  animation: heroZoomOut var(--hero-slide-ms, 5000ms) cubic-bezier(0.25, 0.6, 0.35, 1)
-    forwards;
+/* Pure CSS Ken Burns effect: scale 1.0 to 1.08 over 8-10 seconds, looping ease-in-out */
+.kenBurns {
+  animation: kenBurnsLoop 9s ease-in-out infinite alternate;
   will-change: transform;
 }
 
-/* An outgoing slide freezes mid-zoom while it fades, instead of snapping
-   back to full scale in the middle of the crossfade. */
-.slide:not(.slideActive) .zoom,
-.paused .zoom {
+@keyframes kenBurnsLoop {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+/* Pause animation on hover, focus, or inactive slide */
+.slide:not(.slideActive) .kenBurns,
+.paused .kenBurns {
   animation-play-state: paused;
 }
 
-@keyframes heroZoomOut {
-  from {
-    transform: scale(1.18);
-  }
-  to {
-    transform: scale(1);
+@media (prefers-reduced-motion: reduce) {
+  .kenBurns {
+    animation: none;
   }
 }
 
-/* Reduced white tint scrim to keep video footage clear and vibrant. */
-.scrim {
+/* ---------- Left & Right Manual Arrows ---------- */
+
+.arrowBtn {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    100deg,
-    rgb(var(--c-bg-rgb) / 0.55) 0%,
-    rgb(var(--c-bg-rgb) / 0.3) 35%,
-    rgb(var(--c-bg-rgb) / 0.08) 60%,
-    rgb(var(--c-bg-rgb) / 0) 100%
-  );
-}
-
-/* ---------- copy ---------- */
-
-.inner {
-  position: relative;
-  width: 100%;
-  padding-block: var(--sp-10);
-}
-
-.content {
-  max-width: 40rem;
-  /* Soft drop shadow ensures readability over lighter video scenes */
-  filter: drop-shadow(0 2px 6px rgb(0 0 0 / 0.15));
-}
-
-.slideActive .content {
-  animation: fadeInUp var(--t-slow) var(--ease-out) both;
-}
-
-.eyebrow {
-  margin-bottom: var(--sp-4);
-  color: var(--c-brand);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-wider);
-  text-transform: uppercase;
-}
-
-.title {
-  font-size: var(--fs-4xl);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-}
-
-/* With the buttons gone, the headline carries the "this is clickable" cue:
-   a terracotta rule draws in beneath it on hover and on keyboard focus. */
-.titleText {
-  background-image: linear-gradient(var(--c-accent), var(--c-accent));
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  background-size: 0 3px;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  transition: background-size var(--t-slow) var(--ease-out);
-}
-
-.slide:hover .titleText,
-.slide:focus-visible .titleText {
-  background-size: 100% 3px;
-}
-
-.body {
-  max-width: 34rem;
-  margin-top: var(--sp-5);
-  color: var(--c-text-2);
-  font-size: var(--fs-md);
-  line-height: var(--lh-base);
-}
-
-/* ---------- dots ---------- */
-
-/* Frosted pill so the dots keep their contrast over any frame of footage. */
-.dots {
-  position: absolute;
-  bottom: var(--sp-6);
-  left: 50%;
-  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 6;
+  width: clamp(34px, 3.5vw, 44px);
+  height: clamp(34px, 3.5vw, 44px);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.88);
+  color: #0f1115;
+  border: none;
   display: flex;
   align-items: center;
-  gap: 2px;
-  padding: 4px 8px;
-  border-radius: var(--r-pill);
-  background-color: rgb(var(--c-surface-rgb) / 0.9);
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(6px);
-  box-shadow: var(--sh-sm);
+  transition: all 180ms ease;
+  padding: 0;
+}
+
+.arrowBtn:hover {
+  background-color: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.arrowBtn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.prevBtn {
+  left: clamp(8px, 2vw, 24px);
+}
+
+.nextBtn {
+  right: clamp(8px, 2vw, 24px);
+}
+
+/* ---------- Dot Navigation ---------- */
+
+.dots {
+  position: absolute;
+  bottom: clamp(10px, 2.5vw, 20px);
+  left: 50%;
   transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--r-pill, 999px);
+  background-color: rgba(15, 17, 21, 0.45);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* A 24px hit area (WCAG 2.5.8) around a small visual dot. */
 .dot {
-  display: grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  border-radius: var(--r-pill);
-  transition: width var(--t-base) var(--ease);
+  width: clamp(6px, 0.8vw, 8px);
+  height: clamp(6px, 0.8vw, 8px);
+  border-radius: var(--r-pill, 999px);
+  background-color: rgba(255, 255, 255, 0.45);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.dot::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: var(--r-pill);
-  /* An indicator needs 3:1 — --c-border-strong gives 3.87:1 on the pill. */
-  background-color: var(--c-border-strong);
-  transition:
-    width var(--t-base) var(--ease),
-    background-color var(--t-base) var(--ease);
-}
-
-.dot:hover::before {
-  background-color: var(--c-text-2);
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .dotActive {
-  width: 34px;
+  width: clamp(18px, 2vw, 26px);
+  background-color: #ffffff;
 }
 
-.dotActive::before {
-  width: 22px;
-  background-color: var(--c-brand);
-}
+/* ---------- Mobile: Prevent thin strip, give rich mobile presence ---------- */
 
-.dot:focus-visible {
-  outline-offset: 0;
-}
-
-/* ---------- small screens ---------- */
-
-@media (max-width: 900px) {
+@media (max-width: 640px) {
   .hero {
-    min-height: clamp(440px, 76vh, 600px);
+    /* Mobile screen par banner ko thin strip banne se rokta hai */
+    aspect-ratio: 16 / 11 !important;
+    min-height: 280px;
+    max-height: 380px;
   }
 
-  .slide {
-    align-items: flex-end;
+  .image {
+    object-position: center;
   }
 
-  /* Softened bottom fade for mobile to show more video footage up top */
-  .scrim {
-    background: linear-gradient(
-      180deg,
-      rgb(var(--c-bg-rgb) / 0) 0%,
-      rgb(var(--c-bg-rgb) / 0.25) 42%,
-      rgb(var(--c-bg-rgb) / 0.65) 100%
-    );
+  .arrowBtn {
+    width: 32px;
+    height: 32px;
   }
 
-  .inner {
-    padding-block: var(--sp-8) calc(var(--sp-9) + var(--sp-6));
+  .prevBtn {
+    left: 8px;
   }
 
-  .title {
-    font-size: clamp(1.25rem, 4.8vw, 1.65rem);
-    line-height: 1.08;
+  .nextBtn {
+    right: 8px;
   }
 
-  .body {
-    font-size: var(--fs-base);
-  }
-}
-
-/* No zoom at all under reduced motion — and therefore no animationend, so the
-   carousel cannot advance on its own. The global rule in base.css shortens
-   animations to 0.01ms rather than removing them, which here would fire the
-   advance every frame. */
-@media (prefers-reduced-motion: reduce) {
-  .zoom {
-    animation: none;
+  .dots {
+    bottom: 12px;
+    padding: 3px 8px;
+    gap: 5px;
   }
 }

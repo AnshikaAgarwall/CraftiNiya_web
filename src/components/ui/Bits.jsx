@@ -26,12 +26,14 @@ export function Price({
   discountPct,
   size = "md",
   showDiscount = true,
+  prefix,
   className,
 }) {
   const onSale = effectiveMinor != null && listMinor != null && effectiveMinor < listMinor;
 
   return (
     <span className={cn(s.price, s[`price_${size}`], className)}>
+      {prefix && <span className={s.pricePrefix}>{prefix}</span>}
       <span className={s.priceCurrent}>{formatINR(effectiveMinor ?? listMinor)}</span>
       {onSale && (
         <>

@@ -1,6 +1,7 @@
 .grid {
   display: grid;
-  gap: var(--sp-5);
+  column-gap: var(--sp-5);
+  row-gap: var(--sp-8);
 }
 
 /* auto-fit rather than fixed counts, so the grid degrades smoothly at every
@@ -12,7 +13,8 @@
 
 @media (max-width: 640px) {
   .grid {
-    gap: var(--sp-3);
+    column-gap: var(--sp-3);
+    row-gap: var(--sp-6);
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

@@ -71,6 +71,7 @@ export function CartProvider({ children }) {
       addItem: (payload) => run(() => cartService.addItem(payload)),
       updateQty: (lineId, qty) => run(() => cartService.updateItemQty(lineId, qty)),
       removeItem: (lineId) => run(() => cartService.removeItem(lineId)),
+      removeProduct: (productId) => run(() => cartService.removeByProductId(productId)),
       clearCart: () => run(() => cartService.clearCart()),
       applyCoupon: (code) => run(() => cartService.applyCoupon(code)),
       removeCoupon: () => run(() => cartService.removeCoupon()),

@@ -19,7 +19,6 @@ export const PRIMARY_NAV = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Categories", to: "/categories" },
-  { label: "Shop", to: "/shop" },
   { label: "Sale", to: "/sale" },
 ];
 
@@ -31,6 +30,7 @@ export const FOOTER_NAV = [
       { label: "Shop all", to: "/shop" },
       { label: "Categories", to: "/categories" },
       { label: "Budget gifting", to: "/budget-gifting" },
+      { label: "Partner picks", to: "/partner-picks" },
       { label: "About us", to: "/about" },
     ],
   },

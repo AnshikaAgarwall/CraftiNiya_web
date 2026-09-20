@@ -13,6 +13,16 @@ import s from "./Header.module.css";
 /** The nav entry that opens the mega menu instead of routing. */
 const CATEGORIES_PATH = "/categories";
 
+const TRENDY_SEARCH_PLACEHOLDERS = [
+  "Search 'resin botanical coasters'...",
+  "Search 'hand-poured soy candles'...",
+  "Search 'festive gift hampers'...",
+  "Search 'ceramic coffee mugs'...",
+  "Search 'macrame wall hanging'...",
+  "Search 'pressed floral trays'...",
+  "Search 'curated gift boxes'...",
+];
+
 /**
  * Two-tier header.
  *
@@ -35,8 +45,17 @@ export default function Header() {
 
   const [condensed, setCondensed] = useState(false);
   const [isMegaMenuOpen, setMegaMenuOpen] = useState(false);
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const headerRef = useRef(null);
   const closeTimeoutRef = useRef(null);
+
+  // Rotate trendy search hints every 2.8s
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPlaceholderIndex((prev) => (prev + 1) % TRENDY_SEARCH_PLACEHOLDERS.length);
+    }, 2800);
+    return () => clearInterval(timer);
+  }, []);
 
   const closeMegaMenu = useCallback(() => {
     clearTimeout(closeTimeoutRef.current);
@@ -103,13 +122,23 @@ export default function Header() {
           </Link>
 
           <div className={s.actions}>
+            {/* Expandable Search: sits as search icon in actions; on desktop/tablet, smoothly slides out revealing trendy placeholders array; on mobile remains clean icon */}
             <button
               type="button"
-              className={s.action}
+              className={s.searchExpandable}
               onClick={openSearch}
-              aria-label="Search products"
+              aria-label="Search products and categories"
             >
-              <Search />
+              <span className={s.searchIconWrapper}>
+                <Search size={19} />
+              </span>
+              <span className={s.searchSlideArea}>
+                <span className={s.searchPlaceholderWrapper}>
+                  <span key={placeholderIndex} className={s.searchPlaceholderText}>
+                    {TRENDY_SEARCH_PLACEHOLDERS[placeholderIndex]}
+                  </span>
+                </span>
+              </span>
             </button>
 
             <Link

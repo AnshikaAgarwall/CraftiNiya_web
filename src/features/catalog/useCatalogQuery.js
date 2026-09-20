@@ -31,6 +31,7 @@ export function useCatalogQuery({ pageSize = PAGE_SIZE } = {}) {
       minRating: num(params.get("rating")),
       onSale: params.get("sale") === "1" ? true : null,
       inStock: params.get("stock") === "1" ? true : null,
+      partnerPicks: params.get("partner") === "1" ? true : null,
       subcategoryIds: params.getAll("sub"),
       tier: params.get("tier") ?? null,
       page: num(params.get("page")) ?? 1,
@@ -58,6 +59,7 @@ export function useCatalogQuery({ pageSize = PAGE_SIZE } = {}) {
           if ("minRating" in patch) setOrDelete("rating", patch.minRating);
           if ("onSale" in patch) setOrDelete("sale", patch.onSale ? "1" : null);
           if ("inStock" in patch) setOrDelete("stock", patch.inStock ? "1" : null);
+          if ("partnerPicks" in patch) setOrDelete("partner", patch.partnerPicks ? "1" : null);
           if ("tier" in patch) setOrDelete("tier", patch.tier);
           if ("categoryId" in patch) setOrDelete("category", patch.categoryId);
           if ("page" in patch) setOrDelete("page", patch.page, patch.page === 1);
@@ -100,7 +102,8 @@ export function useCatalogQuery({ pageSize = PAGE_SIZE } = {}) {
     query.subcategoryIds.length > 0 ||
     query.minRating != null ||
     Boolean(query.onSale) ||
-    Boolean(query.inStock);
+    Boolean(query.inStock) ||
+    Boolean(query.partnerPicks);
 
   return { query, update, clear, hasFilters };
 }

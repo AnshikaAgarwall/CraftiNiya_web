@@ -14,8 +14,8 @@ export default function SearchPage() {
       <SEO title={term ? `Search: ${term}` : "Search"} noIndex />
 
       <PageHeader
+        align="left"
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Search" }]}
-        eyebrow="Search"
         title={term ? `Results for “${term}”` : "Search"}
       />
 

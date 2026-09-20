@@ -23,8 +23,8 @@ export default function CategoriesPage() {
       />
 
       <PageHeader
+        align="left"
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Categories" }]}
-        eyebrow="Browse"
         title="Every category"
         description="Every family of handmade goods we make, each with its own makers and materials."
       />

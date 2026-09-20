@@ -40,14 +40,12 @@ export default function CategoryPage() {
       />
 
       <PageHeader
+        align="left"
         breadcrumbs={[
           { label: "Home", to: "/" },
           { label: "Categories", to: "/categories" },
           { label: category?.title ?? "…" },
         ]}
-        eyebrow="Category"
-        title={category?.title ?? " "}
-        description={category?.description}
       >
         <SubcategoryCircles
           categoryId={categoryId}

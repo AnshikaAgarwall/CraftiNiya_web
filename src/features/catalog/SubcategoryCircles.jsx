@@ -62,7 +62,6 @@ export default function SubcategoryCircles({
                 )}
               </span>
               <span className={s.label}>{sub.title}</span>
-              <span className={s.count}>{sub.productCount}</span>
             </NavLink>
           </li>
         ))}

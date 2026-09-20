@@ -35,6 +35,14 @@
         "name": "Standard"
       }
     ],
+    "productType": "creator",
+    "creator": {
+      "name": "Ananya Sharma",
+      "slug": "local-artisans",
+      "creatorCategory": "ngo_artisan",
+      "mediaType": "banner",
+      "mediaUrl": "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg"
+    },
     "isBestSeller": true,
     "inStock": true,
     "stockCount": 23,
@@ -46,7 +54,9 @@
     "title": "Lippan Mirror Mud Art Panel",
     "description": "Kutch-inspired relief work set with hand-cut mirrors on a round base.",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "category": "home-decor",
     "subcategory": "wall-decor",
     "gender": "unisex",
@@ -59,6 +69,7 @@
     "orderCount": 86,
     "createdAt": "2026-06-15",
     "isFeatured": true,
+    "productType": "own",
     "ageGroup": "All ages",
     "specifications": {
       "dimensions": "Diameter (12 inches)",
@@ -208,7 +219,9 @@
     "title": "Crochet Door Knob Hangers (Set of 2)",
     "description": "Soft crocheted hangers that dress up a door handle or cupboard knob.",
     "image": "https://m.media-amazon.com/images/I/71YyvW-X9RL._SL1200_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/71YyvW-X9RL._SL1200_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/71YyvW-X9RL._SL1200_.jpg"
+    ],
     "category": "home-decor",
     "subcategory": "door-decor",
     "gender": "unisex",
@@ -247,7 +260,9 @@
     "title": "Pressed Petal Resin Coasters (Set of 4)",
     "description": "Glossy resin coasters with pressed petals, stacked in a matching holder.",
     "image": "https://m.media-amazon.com/images/I/71+y03pXFGL._SL1500_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/71+y03pXFGL._SL1500_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/71+y03pXFGL._SL1500_.jpg"
+    ],
     "category": "home-decor",
     "subcategory": "table-decor",
     "gender": "unisex",
@@ -327,7 +342,9 @@
     "title": "Brass Urli Centrepiece",
     "description": "Shallow brass urli for floating flowers and tea lights on a dining or coffee table.",
     "image": "https://m.media-amazon.com/images/I/81x-sV+1iTL._SL1500_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/81x-sV+1iTL._SL1500_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/81x-sV+1iTL._SL1500_.jpg"
+    ],
     "category": "home-decor",
     "subcategory": "table-decor",
     "gender": "unisex",
@@ -366,7 +383,9 @@
     "title": "Pressed Flower Glass Frame",
     "description": "Real pressed flowers sealed between two panes in a slim wooden frame.",
     "image": "https://m.media-amazon.com/images/I/71R2H3PZFFL._SL1500_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/71R2H3PZFFL._SL1500_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/71R2H3PZFFL._SL1500_.jpg"
+    ],
     "category": "home-decor",
     "subcategory": "frames",
     "gender": "unisex",
@@ -405,7 +424,9 @@
     "title": "Hand-Carved Wooden Photo Frame",
     "description": "Floral carving around a 4x6 photo window, finished in a warm walnut stain.",
     "image": "https://m.media-amazon.com/images/I/81e5v59AALL._SL1500_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/81e5v59AALL._SL1500_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/81e5v59AALL._SL1500_.jpg"
+    ],
     "category": "home-decor",
     "subcategory": "frames",
     "gender": "unisex",
@@ -444,7 +465,9 @@
     "title": "Resin Floral Border Frame",
     "description": "Photo frame cast in clear resin with dried blooms along the border.",
     "image": "https://m.media-amazon.com/images/I/71uV4d+8FDL._SL1500_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/71uV4d+8FDL._SL1500_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/71uV4d+8FDL._SL1500_.jpg"
+    ],
     "category": "home-decor",
     "subcategory": "frames",
     "gender": "unisex",
@@ -483,7 +506,9 @@
     "title": "Resin Floral Nameplate",
     "description": "Round resin nameplate with pressed flowers and gold lettering for the front door.",
     "image": "https://m.media-amazon.com/images/I/71fD6vU-HGL._SL1500_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/71fD6vU-HGL._SL1500_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/71fD6vU-HGL._SL1500_.jpg"
+    ],
     "category": "home-decor",
     "subcategory": "nameplates",
     "gender": "unisex",
@@ -522,7 +547,9 @@
     "title": "Engraved Mango Wood Nameplate",
     "description": "Laser-engraved nameplate on solid wood, sealed for outdoor walls.",
     "image": "https://m.media-amazon.com/images/I/81xP7nL2TUL._SL1500_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/81xP7nL2TUL._SL1500_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/81xP7nL2TUL._SL1500_.jpg"
+    ],
     "category": "home-decor",
     "subcategory": "nameplates",
     "gender": "unisex",
@@ -561,7 +588,9 @@
     "title": "Mandala Art Nameplate",
     "description": "Hand-painted dot mandala nameplate on a sturdy round base.",
     "image": "https://m.media-amazon.com/images/I/71Y-1vR6l-L._SL1500_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/71Y-1vR6l-L._SL1500_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/71Y-1vR6l-L._SL1500_.jpg"
+    ],
     "category": "home-decor",
     "subcategory": "nameplates",
     "gender": "unisex",
@@ -594,7 +623,6 @@
     "stockCount": 19,
     "lowStock": false
   },
-
   {
     "id": "prod-nameplates-03",
     "slug": "mandala-art-nameplate",
@@ -603,7 +631,9 @@
     "category": "home-decor",
     "subcategory": "nameplates",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 1399,
     "salePrice": null,
@@ -642,8 +672,9 @@
     "category": "home-decor",
     "subcategory": "clocks",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
-
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 2799,
     "salePrice": null,
@@ -682,8 +713,9 @@
     "category": "home-decor",
     "subcategory": "clocks",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
-
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 1499,
     "salePrice": null,
@@ -722,7 +754,9 @@
     "category": "home-decor",
     "subcategory": "clocks",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 1299,
     "salePrice": null,
@@ -761,7 +795,9 @@
     "category": "home-decor",
     "subcategory": "decorative-trays",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 1899,
     "salePrice": 1599,
@@ -804,7 +840,9 @@
     "category": "home-decor",
     "subcategory": "decorative-trays",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 1599,
     "salePrice": null,
@@ -843,7 +881,9 @@
     "category": "home-decor",
     "subcategory": "decorative-trays",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 649,
     "salePrice": null,
@@ -882,7 +922,9 @@
     "category": "home-decor",
     "subcategory": "hanging-decor",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 799,
     "salePrice": null,
@@ -921,7 +963,9 @@
     "category": "home-decor",
     "subcategory": "hanging-decor",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 599,
     "salePrice": null,
@@ -960,7 +1004,9 @@
     "category": "home-decor",
     "subcategory": "hanging-decor",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 899,
     "salePrice": null,
@@ -999,7 +1045,9 @@
     "category": "bags-accessories",
     "subcategory": "tote-bags",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 699,
     "salePrice": 529,
@@ -1042,7 +1090,9 @@
     "category": "bags-accessories",
     "subcategory": "tote-bags",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 899,
     "salePrice": null,
@@ -1118,7 +1168,9 @@
     "category": "bags-accessories",
     "subcategory": "sling-bags",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 1199,
     "salePrice": 899,
@@ -1157,8 +1209,9 @@
     "category": "bags-accessories",
     "subcategory": "sling-bags",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
-
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 1399,
     "salePrice": null,
@@ -1201,8 +1254,9 @@
     "category": "bags-accessories",
     "subcategory": "sling-bags",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
-
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 649,
     "salePrice": 569,
@@ -1241,7 +1295,9 @@
     "category": "bags-accessories",
     "subcategory": "potli-bags",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 899,
     "salePrice": null,
@@ -1280,7 +1336,9 @@
     "category": "bags-accessories",
     "subcategory": "potli-bags",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 749,
     "salePrice": 669,
@@ -1319,7 +1377,9 @@
     "category": "bags-accessories",
     "subcategory": "potli-bags",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 999,
     "salePrice": null,
@@ -1362,7 +1422,9 @@
     "category": "bags-accessories",
     "subcategory": "clutches",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 1499,
     "salePrice": 1329,
@@ -1401,7 +1463,9 @@
     "category": "bags-accessories",
     "subcategory": "clutches",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 1799,
     "salePrice": 1529,
@@ -1438,7 +1502,9 @@
     "title": "Embroidered Envelope Clutch",
     "description": "Soft envelope clutch with thread embroidery and a magnetic flap.",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "category": "bags-accessories",
     "subcategory": "clutches",
     "gender": "women",
@@ -1479,7 +1545,9 @@
     "category": "bags-accessories",
     "subcategory": "pouches",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 449,
     "salePrice": null,
@@ -1518,7 +1586,9 @@
     "category": "bags-accessories",
     "subcategory": "pouches",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 599,
     "salePrice": 469,
@@ -1557,7 +1627,9 @@
     "category": "bags-accessories",
     "subcategory": "pouches",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 199,
     "salePrice": null,
@@ -1596,8 +1668,9 @@
     "category": "bags-accessories",
     "subcategory": "crochet-bags",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
-
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 1299,
     "salePrice": null,
@@ -1636,8 +1709,9 @@
     "category": "bags-accessories",
     "subcategory": "crochet-bags",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
-
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 1099,
     "salePrice": 969,
@@ -1680,7 +1754,9 @@
     "category": "bags-accessories",
     "subcategory": "crochet-bags",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 899,
     "salePrice": null,
@@ -1719,7 +1795,9 @@
     "category": "bags-accessories",
     "subcategory": "bag-charms",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 249,
     "salePrice": 219,
@@ -1758,7 +1836,9 @@
     "category": "bags-accessories",
     "subcategory": "bag-charms",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 299,
     "salePrice": null,
@@ -1797,7 +1877,9 @@
     "category": "bags-accessories",
     "subcategory": "bag-charms",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "women",
     "price": 179,
     "salePrice": 149,
@@ -1836,7 +1918,9 @@
     "category": "candles-fragrance",
     "subcategory": "scented-candles",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 449,
     "salePrice": null,
@@ -1875,7 +1959,9 @@
     "category": "candles-fragrance",
     "subcategory": "scented-candles",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 699,
     "salePrice": null,
@@ -1914,7 +2000,9 @@
     "category": "candles-fragrance",
     "subcategory": "scented-candles",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 599,
     "salePrice": null,
@@ -1953,7 +2041,9 @@
     "category": "candles-fragrance",
     "subcategory": "decorative-candles",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 549,
     "salePrice": 469,
@@ -1996,7 +2086,9 @@
     "category": "candles-fragrance",
     "subcategory": "decorative-candles",
     "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": ["https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"],
+    "images": [
+      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
+    ],
     "gender": "unisex",
     "price": 799,
     "salePrice": null,
@@ -5191,5 +5283,92 @@
     "inStock": true,
     "stockCount": 5,
     "lowStock": true
+  },
+  {
+    "id": "prod-collab-bundle-01",
+    "slug": "dried-eucalyptus-bundle",
+    "title": "Aroma Candle & Ceramic Vase Gift Set",
+    "description": "A curated collaboration pairing: our French Lavender hand-poured soy candle together with a studio-thrown ceramic bud vase. Pre-packaged into a single gift set with botanical matches and seal.",
+    "image": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=800&q=80",
+      "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSN7mrW6ehJg0hsegM-rXYYSDkXvfQQl2VsNAvU12_uSk2-ud0jFwS-4QzwogOzdJanydIB1j5EhXSNK_KlexHHaVeLoaS8OCkGVXVAhbKJkDluL4b2aF6CLiI"
+    ],
+    "category": "gifting",
+    "subcategory": "gift-boxes",
+    "gender": "unisex",
+    "price": 1799,
+    "salePrice": 1499,
+    "isOnSale": true,
+    "discountPercentage": 17,
+    "rating": 4.9,
+    "reviewCount": 18,
+    "orderCount": 140,
+    "createdAt": "2026-08-01",
+    "isFeatured": true,
+    "productType": "collab_bundle",
+    "specifications": {
+      "dimensions": "Gift Box: 10 x 8 x 4 inches",
+      "materials": "100% Pure Soy Wax, Ceramic Clay, Dried Botanicals"
+    },
+    "gifting": {
+      "idealFor": "Festivals, Housewarming, Anniversaries, Corporate Gifts",
+      "targetAudience": "Connoisseurs of artisanal living"
+    },
+    "variants": [
+      {
+        "id": "prod-collab-bundle-01-v1",
+        "name": "Lavender & Sage Duo"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 18,
+    "lowStock": false
+  },
+  {
+    "id": "prod-affiliate-pick-01",
+    "slug": "artisan-brass-diffuser",
+    "title": "Handmade Brass Oil Burner & Diffuser",
+    "description": "Solid hand-cast brass oil burner crafted by heritage brass-smiths of Moradabad. Exclusively offered through our design partner studio.",
+    "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80"
+    ],
+    "category": "home-decor",
+    "subcategory": "table-decor",
+    "gender": "unisex",
+    "price": 2199,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.8,
+    "reviewCount": 12,
+    "orderCount": 88,
+    "createdAt": "2026-08-15",
+    "isFeatured": false,
+    "productType": "affiliate",
+    "affiliate": {
+      "externalUrl": "https://example.com/artisan-brass-diffuser",
+      "buttonText": "Buy from Partner"
+    },
+    "specifications": {
+      "dimensions": "Height (5.5 inches), Width (4 inches)",
+      "materials": "100% Pure Cast Brass"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Housewarming, Self-care",
+      "targetAudience": "Lovers of heritage metallic craft"
+    },
+    "variants": [
+      {
+        "id": "prod-affiliate-pick-01-v1",
+        "name": "Antique Brass"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 50,
+    "lowStock": false
   }
 ]

@@ -23,7 +23,6 @@ export default function FeaturedCategories() {
         <SectionHeading
           eyebrow="Shop by category"
           title="Find your corner of the studio"
-          subtitle="Every family of handmade goods we make, each with its own makers, materials and quirks."
           action={
             <Button to="/categories" variant="ghost" endIcon={<ArrowRight size={16} />}>
               All categories
@@ -38,39 +37,36 @@ export default function FeaturedCategories() {
           <div className={s.grid}>
             {loading
               ? Array.from({ length: 7 }, (_, i) => (
-                  <Skeleton
-                    key={i}
-                    className={s.skeleton}
-                    data-slot={i === 0 ? "primary" : i <= 4 ? "upper" : "lower"}
-                  />
-                ))
+                <Skeleton
+                  key={i}
+                  className={s.skeleton}
+                  data-slot={i === 0 ? "primary" : i <= 4 ? "upper" : "lower"}
+                />
+              ))
               : categories?.map((category, i) => {
-                  const slot = i === 0 ? "primary" : i <= 4 ? "upper" : "lower";
-                  return (
-                    <Link
-                      key={category.id}
-                      to={`/category/${category.id}`}
-                      className={s.card}
-                      data-slot={slot}
-                      data-index={i}
-                    >
-                      <LazyImage
-                        src={category.posterImage}
-                        alt=""
-                        ratio={null}
-                        className={s.cardImage}
-                        eager={i < 2}
-                      />
-                      <span className={s.cardOverlay} aria-hidden="true" />
-                      <span className={s.cardBody}>
-                        <span className={s.cardTitle}>{category.title}</span>
-                        <span className={s.cardMeta}>
-                          {pluralize(category.productCount, "piece")}
-                        </span>
-                      </span>
-                    </Link>
-                  );
-                })}
+                const slot = i === 0 ? "primary" : i <= 4 ? "upper" : "lower";
+                return (
+                  <Link
+                    key={category.id}
+                    to={`/category/${category.id}`}
+                    className={s.card}
+                    data-slot={slot}
+                    data-index={i}
+                  >
+                    <LazyImage
+                      src={category.posterImage}
+                      alt=""
+                      ratio={null}
+                      className={s.cardImage}
+                      eager={i < 2}
+                    />
+                    <span className={s.cardOverlay} aria-hidden="true" />
+                    <span className={s.cardBody}>
+                      <span className={s.cardTitle}>{category.title}</span>
+                    </span>
+                  </Link>
+                );
+              })}
           </div>
         )}
       </div>

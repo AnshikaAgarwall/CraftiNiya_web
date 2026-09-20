@@ -203,6 +203,12 @@ export async function removeItem(lineId, opts) {
   return build(opts);
 }
 
+export async function removeByProductId(productId, opts) {
+  await simulate(() => null, opts);
+  persist(cartStore.read().filter((l) => l.productId !== productId));
+  return build(opts);
+}
+
 export async function clearCart(opts) {
   await simulate(() => null, opts);
   cartStore.clear();
@@ -246,6 +252,7 @@ export default {
   addItem,
   updateItemQty,
   removeItem,
+  removeByProductId,
   clearCart,
   applyCoupon,
   removeCoupon,

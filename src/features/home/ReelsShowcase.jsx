@@ -1,504 +1,314 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ChevronDown,
-  ChevronUp,
-  ChevronLeft,
-  ChevronRight,
   Heart,
-  MessageCircle,
-  Pause,
-  Play,
   Volume2,
   VolumeX,
-  Share2,
   ShoppingBag,
-  BadgeCheck,
-  Check,
   ArrowRight,
+  X,
+  Play,
+  Pause,
+  ExternalLink,
 } from "lucide-react";
 import { cn } from "../../lib/cn.js";
-import { Skeleton } from "../../components/ui/Feedback.jsx";
 import { useAsync } from "../../hooks/useAsync.js";
 import { useInView } from "../../hooks/useInView.js";
-
-function InstagramIcon({ size = 16, className }) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-    </svg>
-  );
-}
-import { useReducedMotion } from "../../hooks/useReducedMotion.js";
 import reelService from "../../services/reelService.js";
-import { formatCount } from "../../lib/format.js";
 import { formatINR, toMinor } from "../../lib/money.js";
 import s from "./ReelsShowcase.module.css";
 
-const ADVANCE_MS = 6500;
 const INSTAGRAM_PROFILE_URL =
   "https://www.instagram.com/manmish_creations?igsi=am9xYjJkejJjOHho";
 
 export default function ReelsShowcase() {
-  const reducedMotion = useReducedMotion();
-  const { data: reels, loading } = useAsync((opts) => reelService.getReels({ limit: 6 }, opts), []);
-  const [containerRef, inView] = useInView({ threshold: 0.3 });
-  const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const [muted, setMuted] = useState(true);
+  const { data: reels, loading } = useAsync((opts) => reelService.getReels({ limit: 8 }, opts), []);
+  const [containerRef, inView] = useInView({ threshold: 0.1 });
+
+  // Selected reel modal (opens when clicked)
+  const [activeModalReel, setActiveModalReel] = useState(null);
+  const [modalMuted, setModalMuted] = useState(false); // Unmuted by default on explicit modal click
+  const [modalPlaying, setModalPlaying] = useState(true);
   const [likedReels, setLikedReels] = useState({});
-  const [copied, setCopied] = useState(false);
-  const [videoProgress, setVideoProgress] = useState(0);
-  const videoRef = useRef(null);
+
+  const modalVideoRef = useRef(null);
 
   const items = reels ?? [];
-  const active = items[index];
 
-  const step = useCallback(
-    (delta) => {
-      if (!items.length) return;
-      setIndex((i) => (i + delta + items.length) % items.length);
-      setVideoProgress(0);
-    },
-    [items.length],
-  );
+  // Toggle like
+  const toggleLike = (e, id) => {
+    e.stopPropagation();
+    setLikedReels((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
 
-  // Keyboard navigation when user is on the section
+  // Close modal on Escape
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (!inView) return;
-      if (e.key === "ArrowDown" || e.key === "ArrowRight") {
-        e.preventDefault();
-        step(1);
-      } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
-        e.preventDefault();
-        step(-1);
-      } else if (
-        e.key === " " &&
-        document.activeElement?.tagName !== "BUTTON" &&
-        document.activeElement?.tagName !== "INPUT"
-      ) {
-        e.preventDefault();
-        setPaused((p) => !p);
+      if (e.key === "Escape") {
+        setActiveModalReel(null);
       }
     };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [inView, step]);
-
-  // Auto-advance
-  useEffect(() => {
-    if (!items.length || reducedMotion || paused || !inView) return undefined;
-    const timer = setInterval(() => {
-      setIndex((i) => (i + 1) % items.length);
-      setVideoProgress(0);
-    }, ADVANCE_MS);
-    return () => clearInterval(timer);
-  }, [items.length, reducedMotion, paused, inView, index]);
-
-  // Handle HTML5 video playback
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = muted;
-
-    if (inView && !paused && !reducedMotion) {
-      video.play?.().catch(() => {});
-    } else {
-      video.pause?.();
+    if (activeModalReel) {
+      document.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
     }
-  }, [inView, paused, reducedMotion, index, muted]);
-
-  // Track video progress
-  const handleTimeUpdate = () => {
-    const video = videoRef.current;
-    if (!video || !video.duration) return;
-    const pct = (video.currentTime / video.duration) * 100;
-    setVideoProgress(pct);
-  };
-
-  const togglePlay = () => {
-    const video = videoRef.current;
-    if (paused) {
-      setPaused(false);
-      video?.play?.().catch(() => {});
-    } else {
-      setPaused(true);
-      video?.pause?.();
-    }
-  };
-
-  const toggleSound = (e) => {
-    e.stopPropagation();
-    setMuted((m) => {
-      const next = !m;
-      if (videoRef.current) {
-        videoRef.current.muted = next;
-      }
-      return next;
-    });
-  };
-
-  const toggleLike = (reelId) => {
-    setLikedReels((prev) => ({
-      ...prev,
-      [reelId]: !prev[reelId],
-    }));
-  };
-
-  const handleShare = async () => {
-    const shareUrl = active?.instagramUrl || INSTAGRAM_PROFILE_URL;
-    if (navigator.clipboard) {
-      try {
-        await navigator.clipboard.writeText(shareUrl);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2400);
-        return;
-      } catch {
-        // fallback
-      }
-    }
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2400);
-  };
-
-  const isLiked = active ? Boolean(likedReels[active.id]) : false;
-  const currentLikes = active ? active.likes + (isLiked ? 1 : 0) : 0;
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [activeModalReel]);
 
   return (
     <section className={s.section} ref={containerRef} aria-labelledby="reels-heading">
-      <div className={`container ${s.container}`}>
-        {/* Section Header */}
+      {/* Section Header */}
+      <div className="container">
         <div className={s.sectionHeader}>
+          <div className={s.headerBadge}>
+            <span>Studio In Motion</span>
+          </div>
           <h2 id="reels-heading" className={s.sectionTitle}>
             Watch It Being Made
           </h2>
           <p className={s.sectionSubtitle}>
-            Direct from our studio feed. Handcrafted resin art, botanical candles, and custom keepsakes.
+            Continuous studio process reels. Hover over any reel to discover attached creations.
           </p>
         </div>
+      </div>
 
-        {/* Laptop/Desktop Style Unified Reel Player Frame */}
-        {loading || !active ? (
-          <div className={s.playerFrameSkeleton}>
-            <Skeleton className={s.videoSkeleton} />
-            <Skeleton className={s.infoSkeleton} />
-          </div>
-        ) : (
-          <div className={s.playerFrame}>
-            {/* ================= LEFT PANE: VIDEO PLAYER ================= */}
-            <div
-              className={s.videoPane}
-              onClick={togglePlay}
-              role="region"
-              aria-label="Instagram Reel video player"
-            >
-              {/* Media element */}
-              <div className={s.mediaWrapper}>
-                {active.videoUrl ? (
-                  <video
-                    ref={videoRef}
-                    key={active.id}
-                    className={s.videoElement}
-                    src={active.videoUrl}
-                    poster={active.posterUrl}
-                    muted={muted}
-                    loop
-                    playsInline
-                    autoPlay
-                    onTimeUpdate={handleTimeUpdate}
-                    preload="auto"
-                  />
-                ) : (
-                  <img
-                    className={cn(s.videoElement, !reducedMotion && s.kenBurns)}
-                    src={active.posterUrl}
-                    alt={active.title}
-                  />
-                )}
+      {/* Full-width Seamless Moving Marquee Track (Moving right to left) */}
+      <div className={s.marqueeContainer}>
+        {/* Subtle Vignette Shadows on left/right screen edges */}
+        <div className={s.fadeLeft} aria-hidden="true" />
+        <div className={s.fadeRight} aria-hidden="true" />
 
-                {/* Subtle Cinematic Vignette Scrim */}
-                <div className={s.videoScrim} aria-hidden="true" />
+        <div className={s.marqueeTrack}>
+          {/* Double array ensures seamless continuous loop across all widescreen resolutions */}
+          {[...items, ...items].map((reel, idx) => {
+            const isLiked = Boolean(likedReels[reel.id]);
 
-                {/* Top Story Progress Bars */}
-                <div className={s.progressContainer} aria-hidden="true">
-                  {items.map((item, i) => (
-                    <div
-                      key={item.id}
-                      className={s.progressBarTrack}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setIndex(i);
-                      }}
+            return (
+              <div
+                key={`${reel.id}-${idx}`}
+                className={s.reelCard}
+                onClick={() => {
+                  setActiveModalReel(reel);
+                  setModalMuted(false); // Unmute option available on click
+                  setModalPlaying(true);
+                }}
+              >
+                {/* Background Video (Silent Auto-loop in marquee stream) */}
+                <div className={s.videoWrapper}>
+                  {inView && reel.videoUrl ? (
+                    <video
+                      src={reel.videoUrl}
+                      poster={reel.image || reel.posterUrl}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className={s.streamVideo}
+                    />
+                  ) : (
+                    <img
+                      src={reel.image || reel.posterUrl}
+                      alt={reel.title}
+                      className={s.streamVideo}
+                    />
+                  )}
+                  <div className={s.videoOverlay} />
+
+                  {/* Top Creator Tag */}
+                  <div className={s.cardTopBar}>
+                    <span className={s.creatorTag}>@manmish_creations</span>
+                    <button
+                      type="button"
+                      className={cn(s.likeBtn, isLiked && s.likeBtnActive)}
+                      onClick={(e) => toggleLike(e, reel.id)}
+                      aria-label="Like reel"
                     >
-                      <div
-                        className={cn(
-                          s.progressBarFill,
-                          i < index && s.progressDone,
-                          i === index && s.progressActive,
-                        )}
-                        style={
-                          i === index
-                            ? { width: active.videoUrl ? `${videoProgress}%` : undefined }
-                            : undefined
-                        }
+                      <Heart size={14} fill={isLiked ? "currentColor" : "none"} />
+                    </button>
+                  </div>
+
+                  {/* Play click indicator on card */}
+                  <div className={s.playIndicator}>
+                    <Play size={18} />
+                  </div>
+                </div>
+
+                {/* Hover Pop-Up: Attached Product Card (Slides up from bottom smoothly on hover) */}
+                {reel.product && (
+                  <div className={s.attachedProductPopup} onClick={(e) => e.stopPropagation()}>
+                    <Link
+                      to={reel.visitUrl || (reel.product.slug ? `/product/${reel.product.slug}` : "/shop")}
+                      className={s.attachedProductLink}
+                    >
+                      <img
+                        src={reel.product.image || reel.image}
+                        alt={reel.product.title}
+                        className={s.productThumb}
                       />
-                    </div>
-                  ))}
-                </div>
-
-                {/* Top Floating Controls on Video */}
-                <div className={s.videoTopControls}>
-                  <a
-                    href={active.instagramUrl || INSTAGRAM_PROFILE_URL}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className={s.reelLiveChip}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <InstagramIcon size={12} />
-                    <span>Instagram Reel</span>
-                  </a>
-                  <div className={s.topButtonsGroup}>
-                    <button
-                      type="button"
-                      className={s.iconButton}
-                      onClick={toggleSound}
-                      title={muted ? "Unmute audio" : "Mute audio"}
-                      aria-label={muted ? "Unmute audio" : "Mute audio"}
-                    >
-                      {muted ? <VolumeX size={17} /> : <Volume2 size={17} />}
-                    </button>
-                    <button
-                      type="button"
-                      className={s.iconButton}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        togglePlay();
-                      }}
-                      title={paused ? "Play video" : "Pause video"}
-                      aria-label={paused ? "Play video" : "Pause video"}
-                    >
-                      {paused ? <Play size={17} /> : <Pause size={17} />}
-                    </button>
-                  </div>
-                </div>
-
-                {/* Paused Center Overlay Indicator */}
-                {paused && (
-                  <div className={s.pausedCenterOverlay} aria-hidden="true">
-                    <div className={s.pausePulseCircle}>
-                      <Play size={28} className={s.playIconGlance} />
-                    </div>
-                  </div>
-                )}
-
-                {/* Bottom Left Floating Handle on Video (No Audio) */}
-                <div className={s.videoBottomLeft}>
-                  <a
-                    href={active.author?.profileUrl || INSTAGRAM_PROFILE_URL}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className={s.videoHandle}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <span>{active.author?.handle || "@manmish_creations"}</span>
-                    <BadgeCheck size={14} className={s.verifiedIcon} />
-                  </a>
-                </div>
-
-                {/* Floating Social Interaction Stack on Video */}
-                <div className={s.videoSocialStack} onClick={(e) => e.stopPropagation()}>
-                  <button
-                    type="button"
-                    className={cn(s.socialBtn, isLiked && s.socialBtnLiked)}
-                    onClick={() => toggleLike(active.id)}
-                    aria-label={isLiked ? "Unlike reel" : "Like reel"}
-                  >
-                    <Heart size={20} className={cn(s.heartIcon, isLiked && s.heartFilled)} />
-                    <span className={s.socialCount}>{formatCount(currentLikes)}</span>
-                  </button>
-
-                  <div className={s.socialItemStatic}>
-                    <MessageCircle size={20} />
-                    <span className={s.socialCount}>
-                      {formatCount(active.commentsCount || 120)}
-                    </span>
-                  </div>
-
-                  <button
-                    type="button"
-                    className={s.socialBtn}
-                    onClick={handleShare}
-                    title="Copy Instagram link"
-                    aria-label="Copy Instagram link"
-                  >
-                    {copied ? <Check size={18} className={s.checkIcon} /> : <Share2 size={18} />}
-                    <span className={s.socialCount}>{copied ? "Copied" : "Share"}</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* ================= RIGHT PANE: INSTAGRAM DESCRIPTION & PRODUCT ================= */}
-            <div className={s.infoPane}>
-              {/* Creator Header Bar */}
-              <div className={s.creatorBar}>
-                <a
-                  href={active.author?.profileUrl || active.instagramUrl || INSTAGRAM_PROFILE_URL}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className={s.creatorProfile}
-                  title="Visit @manmish_creations on Instagram"
-                >
-                  <img
-                    src={active.author?.avatarUrl || active.posterUrl}
-                    alt={active.author?.name || "Manmish Creations"}
-                    className={s.creatorAvatar}
-                  />
-                  <div>
-                    <div className={s.creatorNameRow}>
-                      <span className={s.creatorName}>
-                        {active.author?.name || "Manmish Creations"}
-                      </span>
-                      <BadgeCheck size={14} className={s.verifiedCheck} />
-                    </div>
-                    <span className={s.creatorSubline}>
-                      {active.author?.handle || "@manmish_creations"}
-                    </span>
-                  </div>
-                </a>
-
-                <div className={s.reelCounterPill}>
-                  <span className={s.counterCurrent}>0{index + 1}</span>
-                  <span className={s.counterSlash}>/</span>
-                  <span className={s.counterTotal}>0{items.length}</span>
-                </div>
-              </div>
-
-              {/* Instagram Reel Content & Description (Direct from Instagram) */}
-              <div className={s.contentDetails}>
-                <h3 className={s.reelTitle}>{active.title}</h3>
-
-                <div className={s.captionWrapper}>
-                  <p className={s.reelDescription}>
-                    {active.caption || active.description}
-                  </p>
-                </div>
-
-                {/* Tags from Instagram Post */}
-                {active.tags && active.tags.length > 0 && (
-                  <div className={s.tagsRow}>
-                    {active.tags.slice(0, 4).map((tag) => (
-                      <span key={tag} className={s.tagChip}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Admin-Selected Product Attached to This Reel (Direct Clickable Navigation) */}
-              {active.product && (
-                <Link
-                  to={active.visitUrl || (active.product.slug ? `/product/${active.product.slug}` : "/shop")}
-                  className={s.featuredProductCard}
-                  title={`View product: ${active.product.title}`}
-                >
-                  <img
-                    src={active.product.image || active.posterUrl}
-                    alt={active.product.title}
-                    className={s.productThumb}
-                  />
-                  <div className={s.productDetails}>
-                    <div className={s.productBadge}>
-                      <ShoppingBag size={11} />
-                      <span>Featured Creation</span>
-                    </div>
-                    <h4 className={s.productTitle}>{active.product.title}</h4>
-                    <div className={s.productPriceRow}>
-                      <span className={s.productPrice}>
-                        {formatINR(toMinor(active.product.salePrice || active.product.price))}
-                      </span>
-                      {active.product.salePrice &&
-                        active.product.price > active.product.salePrice && (
-                          <span className={s.productComparePrice}>
-                            {formatINR(toMinor(active.product.price))}
+                      <div className={s.productInfo}>
+                        <div className={s.productBadge}>
+                          <ShoppingBag size={10} />
+                          <span>Featured Piece</span>
+                        </div>
+                        <h4 className={s.productTitle}>{reel.product.title}</h4>
+                        <div className={s.productPriceRow}>
+                          <span className={s.productPrice}>
+                            {formatINR(toMinor(reel.product.salePrice || reel.product.price))}
                           </span>
-                        )}
-                      <span className={s.stockTag}>In Stock</span>
-                    </div>
+                          {reel.product.salePrice && reel.product.price > reel.product.salePrice && (
+                            <span className={s.comparePrice}>
+                              {formatINR(toMinor(reel.product.price))}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <span className={s.viewCtaIcon} title="View Product">
+                        <ArrowRight size={13} />
+                      </span>
+                    </Link>
                   </div>
-                  <div className={s.productNavCta}>
-                    <ArrowRight size={15} />
-                  </div>
-                </Link>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* ================= REEL MODAL (Triggered on Click with Unmute & Full Sound) ================= */}
+      {activeModalReel && (
+        <div className={s.modalBackdrop} onClick={() => setActiveModalReel(null)}>
+          <div className={s.modalContainer} onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className={s.modalCloseBtn}
+              onClick={() => setActiveModalReel(null)}
+              aria-label="Close reel modal"
+            >
+              <X size={20} />
+            </button>
+
+            {/* Modal Video Player with Sound Controls */}
+            <div className={s.modalVideoPane}>
+              <video
+                ref={modalVideoRef}
+                src={activeModalReel.videoUrl}
+                poster={activeModalReel.image || activeModalReel.posterUrl}
+                autoPlay
+                loop
+                muted={modalMuted}
+                playsInline
+                className={s.modalVideo}
+                onClick={() => {
+                  const v = modalVideoRef.current;
+                  if (!v) return;
+                  if (v.paused) {
+                    v.play();
+                    setModalPlaying(true);
+                  } else {
+                    v.pause();
+                    setModalPlaying(false);
+                  }
+                }}
+              />
+
+              {/* Center Play/Pause Indicator if paused */}
+              {!modalPlaying && (
+                <div className={s.modalPausedScrim}>
+                  <Play size={44} />
+                </div>
               )}
 
-              {/* Bottom Switcher / Carousel Controls (Max 6 Admin-Selected Reels) */}
-              <div className={s.switcherBar}>
-                {/* Thumbnails fast switcher */}
-                <div className={s.thumbnailRail}>
-                  {items.map((item, i) => (
-                    <button
-                      key={item.id}
-                      type="button"
-                      className={cn(s.thumbButton, i === index && s.thumbButtonActive)}
-                      onClick={() => {
-                        setIndex(i);
-                        setVideoProgress(0);
-                      }}
-                      title={`Reel ${i + 1}: ${item.title}`}
-                      aria-label={`View Reel ${i + 1}`}
-                    >
-                      <img src={item.posterUrl} alt="" className={s.thumbImg} />
-                      {i === index && <span className={s.thumbGlow} />}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Prev / Next Arrows */}
-                <div className={s.navButtons}>
-                  <button
-                    type="button"
-                    className={s.navArrow}
-                    onClick={() => step(-1)}
-                    title="Previous Reel"
-                    aria-label="Previous Reel"
-                  >
-                    <ChevronUp className={s.arrowDesktop} size={20} />
-                    <ChevronLeft className={s.arrowMobile} size={20} />
-                  </button>
-                  <button
-                    type="button"
-                    className={s.navArrow}
-                    onClick={() => step(1)}
-                    title="Next Reel"
-                    aria-label="Next Reel"
-                  >
-                    <ChevronDown className={s.arrowDesktop} size={20} />
-                    <ChevronRight className={s.arrowMobile} size={20} />
-                  </button>
-                </div>
+              {/* Sound Toggle (Unmute / Mute on click) */}
+              <div className={s.modalControls}>
+                <button
+                  type="button"
+                  className={s.audioBtn}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const v = modalVideoRef.current;
+                    const next = !modalMuted;
+                    setModalMuted(next);
+                    if (v) v.muted = next;
+                  }}
+                  aria-label={modalMuted ? "Unmute video" : "Mute video"}
+                >
+                  {modalMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                  <span>{modalMuted ? "Unmute" : "Sound On"}</span>
+                </button>
               </div>
             </div>
+
+            {/* Modal Right Details & Attached Product */}
+            <div className={s.modalInfoPane}>
+              <div className={s.modalAuthorRow}>
+                <a
+                  href={INSTAGRAM_PROFILE_URL}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={s.authorLink}
+                  title="Visit @manmish_creations on Instagram"
+                >
+                  <div className={s.authorAvatar}>
+                    <img
+                      src={activeModalReel.image || activeModalReel.posterUrl}
+                      alt="Manmish Creations"
+                    />
+                  </div>
+                  <div className={s.authorDetails}>
+                    <span className={s.authorName}>Manmish Creations</span>
+                    <span className={s.authorHandle}>@manmish_creations</span>
+                  </div>
+                </a>
+              </div>
+
+              <div className={s.modalCopy}>
+                <h3 className={s.modalTitle}>{activeModalReel.title}</h3>
+                <p className={s.modalDescription}>
+                  {activeModalReel.caption || activeModalReel.description}
+                </p>
+              </div>
+
+              {activeModalReel.product && (
+                <div className={s.modalProductBox}>
+                  <p className={s.productBoxEyebrow}>Shop This Creation</p>
+                  <Link
+                    to={
+                      activeModalReel.visitUrl ||
+                      (activeModalReel.product.slug
+                        ? `/product/${activeModalReel.product.slug}`
+                        : "/shop")
+                    }
+                    className={s.modalProductCard}
+                    onClick={() => setActiveModalReel(null)}
+                  >
+                    <img
+                      src={activeModalReel.product.image || activeModalReel.image}
+                      alt={activeModalReel.product.title}
+                      className={s.modalProductThumb}
+                    />
+                    <div className={s.modalProductText}>
+                      <h4 className={s.modalProductTitle}>{activeModalReel.product.title}</h4>
+                      <p className={s.modalProductPrice}>
+                        {formatINR(
+                          toMinor(
+                            activeModalReel.product.salePrice || activeModalReel.product.price,
+                          ),
+                        )}
+                      </p>
+                    </div>
+                    <span className={s.shopNowBtn}>
+                      View Piece <ArrowRight size={14} />
+                    </span>
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 }
