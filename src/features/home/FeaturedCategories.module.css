@@ -170,67 +170,102 @@
 }
 
 /* Responsive scaling for smaller screens while keeping the exact same 4-column layout */
+/* Mobile: 2-column grid — cards are large and readable */
 @media (max-width: 768px) {
   .section {
     padding-block: var(--sp-4);
   }
 
   .grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, auto);
+    /* 2-column grid with the primary card spanning full width on its own row */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
     gap: var(--sp-2);
     height: auto;
   }
 
-  .cardBody {
-    right: var(--sp-2);
-    bottom: var(--sp-2);
-    left: var(--sp-2);
-    gap: 1px;
-  }
-
-  .cardTitle {
-    font-size: clamp(10px, 2.5vw, 12px);
-    line-height: 1.15;
-  }
-
-  .card[data-index="0"] .cardTitle {
-    font-size: clamp(11.5px, 2.8vw, 14px);
-  }
-
-  .cardMeta {
-    font-size: 8px;
-    letter-spacing: 0.04em;
-  }
-}
-
-@media (max-width: 480px) {
-  .grid {
-    gap: 6px;
+  /* Card 0: Full-width featured card on its own row */
+  .card[data-index="0"],
+  .skeleton:nth-child(1) {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    aspect-ratio: 16 / 9;
     height: auto;
   }
 
-  .card {
-    border-radius: var(--r-md);
+  /* All other cards: 2-per-row squares */
+  .card[data-index="1"],
+  .skeleton:nth-child(2),
+  .card[data-index="2"],
+  .skeleton:nth-child(3),
+  .card[data-index="3"],
+  .skeleton:nth-child(4),
+  .card[data-index="4"],
+  .skeleton:nth-child(5),
+  .card[data-index="5"],
+  .skeleton:nth-child(6),
+  .card[data-index="6"],
+  .skeleton:nth-child(7) {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 1 / 1;
   }
 
   .cardBody {
-    right: 5px;
-    bottom: 5px;
-    left: 5px;
-    gap: 1px;
+    right: var(--sp-3);
+    bottom: var(--sp-3);
+    left: var(--sp-3);
+    gap: 2px;
   }
 
   .cardTitle {
-    font-size: clamp(9px, 2.4vw, 11px);
-    line-height: 1.1;
+    font-size: clamp(13px, 3.5vw, 16px);
+    line-height: 1.2;
   }
 
   .card[data-index="0"] .cardTitle {
-    font-size: clamp(10.5px, 2.7vw, 12.5px);
+    font-size: clamp(15px, 4vw, 20px);
   }
 
   .cardMeta {
-    font-size: 7.5px;
+    font-size: 9.5px;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Very small phones: single-column, tall cards */
+@media (max-width: 380px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-2);
+  }
+
+  .card[data-index="0"],
+  .skeleton:nth-child(1) {
+    grid-column: 1;
+    aspect-ratio: 16 / 9;
+  }
+
+  .card[data-index="1"],
+  .skeleton:nth-child(2),
+  .card[data-index="2"],
+  .skeleton:nth-child(3),
+  .card[data-index="3"],
+  .skeleton:nth-child(4),
+  .card[data-index="4"],
+  .skeleton:nth-child(5),
+  .card[data-index="5"],
+  .skeleton:nth-child(6),
+  .card[data-index="6"],
+  .skeleton:nth-child(7) {
+    aspect-ratio: 16 / 7;
+  }
+
+  .cardTitle {
+    font-size: 14px;
+  }
+
+  .card[data-index="0"] .cardTitle {
+    font-size: 16px;
   }
 }
