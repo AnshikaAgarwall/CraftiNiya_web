@@ -5,7 +5,7 @@
    ========================================================= */
 
 .section {
-  padding-block: clamp(var(--sp-8), 5vw, var(--sp-12));
+  padding-block: var(--section-y);
   background-color: var(--c-surface);
   position: relative;
   overflow: hidden;
@@ -18,7 +18,7 @@
   text-align: center;
   max-width: 640px;
   margin-inline: auto;
-  margin-bottom: clamp(var(--sp-6), 3.5vw, var(--sp-8));
+  margin-bottom: var(--section-header-mb);
 }
 
 .headerBadge {
@@ -36,7 +36,7 @@
 }
 
 .sectionTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(var(--fs-2xl), 3vw, var(--fs-4xl));
   font-weight: var(--fw-semibold);
   color: var(--c-text);
@@ -280,7 +280,7 @@
 }
 
 .productTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 600;
   line-height: 1.2;
@@ -522,7 +522,7 @@
 }
 
 .modalTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(16px, 1.4vw, 18px);
   font-weight: var(--fw-semibold);
   color: var(--c-text);
@@ -587,7 +587,7 @@
 }
 
 .modalProductTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 600;
   white-space: nowrap;
@@ -619,6 +619,26 @@
 /* ---------- Responsive ---------- */
 
 @media (max-width: 768px) {
+  .section {
+    padding-block: var(--section-y);
+  }
+
+  .sectionHeader {
+    margin-bottom: var(--section-header-mb);
+  }
+
+  .headerBadge {
+    margin-bottom: 6px;
+  }
+
+  .sectionTitle {
+    font-size: clamp(1.15rem, 3.8vw, 1.45rem);
+  }
+
+  .marqueeContainer {
+    padding-block: var(--sp-2) var(--sp-3);
+  }
+
   .modalContainer {
     grid-template-columns: 1fr;
     max-height: 92vh;

@@ -1,5 +1,5 @@
 .wrap {
-  padding-block: var(--sp-9) var(--sp-11);
+  padding-block: var(--section-y);
 }
 
 .list {
@@ -24,16 +24,16 @@
 .poster {
   display: block;
   overflow: hidden;
-  border-radius: var(--r-lg);
+  border-radius: 0;
   background-color: var(--c-sunken);
 }
 
 .poster img {
-  transition: transform var(--t-slow) var(--ease);
+  transform: none;
 }
 
 .poster:hover img {
-  transform: scale(1.04);
+  transform: none;
 }
 
 .title {
@@ -120,6 +120,10 @@
 }
 
 @media (max-width: 900px) {
+  .list {
+    gap: var(--sp-6);
+  }
+
   .block {
     grid-template-columns: 1fr;
     gap: var(--sp-5);

@@ -12,11 +12,15 @@ import {
   Lock,
   LogOut,
   MapPin,
+  MessageCircle,
   Package,
   Plus,
+  RotateCcw,
   Shield,
+  ShieldCheck,
   ShoppingBag,
   Trash2,
+  Truck,
   User,
   X,
 } from "lucide-react";
@@ -698,6 +702,105 @@ export default function AccountPage() {
               </div>
 
               <div className={s.shortcutList}>
+                {/* 1. Track Order */}
+                <Link to="/track-order" className={s.shortcutItem}>
+                  <div className={s.shortcutIconWrap}>
+                    <MapPin size={18} />
+                  </div>
+                  <div className={s.shortcutDetails}>
+                    <span className={s.shortcutTitle}>Track Your Order</span>
+                    <span className={s.shortcutDesc}>
+                      Live courier tracking & delivery status
+                    </span>
+                  </div>
+                  <ChevronRight size={16} className={s.shortcutChevron} />
+                </Link>
+
+                {/* 2. Help & FAQs */}
+                <Link to="/faq" className={s.shortcutItem}>
+                  <div className={s.shortcutIconWrap}>
+                    <HelpCircle size={18} />
+                  </div>
+                  <div className={s.shortcutDetails}>
+                    <span className={s.shortcutTitle}>Help & FAQs</span>
+                    <span className={s.shortcutDesc}>
+                      Answers on handmade art, candles, orders & resin care
+                    </span>
+                  </div>
+                  <ChevronRight size={16} className={s.shortcutChevron} />
+                </Link>
+
+                {/* 3. Shipping & Delivery Policy */}
+                <Link to="/shipping-policy" className={s.shortcutItem}>
+                  <div className={s.shortcutIconWrap}>
+                    <Truck size={18} />
+                  </div>
+                  <div className={s.shortcutDetails}>
+                    <span className={s.shortcutTitle}>Shipping & Delivery Policy</span>
+                    <span className={s.shortcutDesc}>
+                      Pan-India delivery, metro timelines & free shipping info
+                    </span>
+                  </div>
+                  <ChevronRight size={16} className={s.shortcutChevron} />
+                </Link>
+
+                {/* 4. Returns & Refunds Policy */}
+                <Link to="/return-refund-policy" className={s.shortcutItem}>
+                  <div className={s.shortcutIconWrap}>
+                    <RotateCcw size={18} />
+                  </div>
+                  <div className={s.shortcutDetails}>
+                    <span className={s.shortcutTitle}>Returns & Refunds</span>
+                    <span className={s.shortcutDesc}>
+                      7-day easy returns & replacement guarantee
+                    </span>
+                  </div>
+                  <ChevronRight size={16} className={s.shortcutChevron} />
+                </Link>
+
+                {/* 5. Contact Studio Support */}
+                <Link to="/contact" className={s.shortcutItem}>
+                  <div className={s.shortcutIconWrap}>
+                    <MessageCircle size={18} />
+                  </div>
+                  <div className={s.shortcutDetails}>
+                    <span className={s.shortcutTitle}>Contact Us & Studio Help</span>
+                    <span className={s.shortcutDesc}>
+                      WhatsApp, email support & custom order inquiries
+                    </span>
+                  </div>
+                  <ChevronRight size={16} className={s.shortcutChevron} />
+                </Link>
+
+                {/* 6. Terms & Conditions */}
+                <Link to="/terms-and-conditions" className={s.shortcutItem}>
+                  <div className={s.shortcutIconWrap}>
+                    <FileText size={18} />
+                  </div>
+                  <div className={s.shortcutDetails}>
+                    <span className={s.shortcutTitle}>Terms & Conditions</span>
+                    <span className={s.shortcutDesc}>
+                      Store policies, artisan sales terms & legal guidelines
+                    </span>
+                  </div>
+                  <ChevronRight size={16} className={s.shortcutChevron} />
+                </Link>
+
+                {/* 7. Privacy Policy */}
+                <Link to="/privacy-policy" className={s.shortcutItem}>
+                  <div className={s.shortcutIconWrap}>
+                    <ShieldCheck size={18} />
+                  </div>
+                  <div className={s.shortcutDetails}>
+                    <span className={s.shortcutTitle}>Privacy Policy</span>
+                    <span className={s.shortcutDesc}>
+                      256-bit encryption, data protection & checkout security
+                    </span>
+                  </div>
+                  <ChevronRight size={16} className={s.shortcutChevron} />
+                </Link>
+
+                {/* 8. Phone Helpline */}
                 <a
                   href="tel:+919876543210"
                   className={s.shortcutItem}
@@ -706,37 +809,13 @@ export default function AccountPage() {
                     <Headphones size={18} />
                   </div>
                   <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>Customer Care</span>
+                    <span className={s.shortcutTitle}>Direct Phone Helpline</span>
                     <span className={s.shortcutDesc}>
-                      Helpline: +91 98765 43210 (10 AM - 7 PM)
+                      +91 98765 43210 (Mon–Sat: 10 AM – 7 PM IST)
                     </span>
                   </div>
                   <ChevronRight size={16} className={s.shortcutChevron} />
                 </a>
-
-                <Link to="/about#faq" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <HelpCircle size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>FAQ</span>
-                    <span className={s.shortcutDesc}>
-                      Shipping, returns & crafting care
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
-
-                <Link to="/about#terms" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <FileText size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>Terms and Conditions</span>
-                    <span className={s.shortcutDesc}>Privacy & store policies</span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
               </div>
             </section>
 

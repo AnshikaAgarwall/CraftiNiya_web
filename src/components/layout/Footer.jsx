@@ -1,45 +1,33 @@
 import { Link } from "react-router-dom";
-import { Camera, Heart, Mail } from "lucide-react";
+import {
+  Camera,
+  Heart,
+  Mail,
+  MessageCircle,
+} from "lucide-react";
 import { BRAND, FOOTER_NAV } from "../../config/site.js";
 import s from "./Footer.module.css";
 
 export default function Footer() {
   return (
     <footer className={s.footer}>
+      {/* ── Main Footer Grid ── */}
       <div className={`container ${s.inner}`}>
+        {/* Brand Column */}
         <div className={s.brandCol}>
           <Link to="/" className={s.wordmark} aria-label={`${BRAND.name} home`}>
             {BRAND.name}
           </Link>
-
           <p className={s.tagline}>{BRAND.strapline}</p>
-
-          <div className={s.social}>
-            <a
-              href={`mailto:${BRAND.email}`}
-              className={s.socialLink}
-              aria-label={`Email ${BRAND.name}`}
-            >
-              <Mail />
-            </a>
-            <a
-              href={BRAND.instagram}
-              target="_blank"
-              rel="noreferrer noopener"
-              className={s.socialLink}
-              aria-label={`${BRAND.name} on Instagram`}
-            >
-              <Camera />
-            </a>
-          </div>
         </div>
 
+        {/* Dynamic Navigation Columns */}
         {FOOTER_NAV.map((column) => (
           <nav key={column.heading} className={s.col} aria-label={column.heading}>
             <h3 className={s.colHeading}>{column.heading}</h3>
             <ul className={s.colList}>
               {column.links.map((link) => (
-                <li key={link.to}>
+                <li key={`${column.heading}-${link.label}-${link.to}`}>
                   <Link to={link.to} className={s.colLink}>
                     {link.label}
                   </Link>
@@ -50,10 +38,42 @@ export default function Footer() {
         ))}
       </div>
 
+      {/* ── Bottom Legal, Social & Copyright Bar ── */}
       <div className={`container ${s.bottom}`}>
-        <p>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</p>
+        {/* Social Channel Icons */}
+        <div className={s.bottomSocial}>
+          <a
+            href={BRAND.instagram}
+            target="_blank"
+            rel="noreferrer noopener"
+            className={s.socialLink}
+            aria-label={`${BRAND.name} on Instagram`}
+          >
+            <Camera size={18} />
+          </a>
+          <a
+            href={`mailto:${BRAND.email}`}
+            className={s.socialLink}
+            aria-label={`Email ${BRAND.name}`}
+          >
+            <Mail size={18} />
+          </a>
+          <a
+            href="https://wa.me/919876543210?text=Hi%20CraftiNiya,%20I%20have%20an%20enquiry"
+            target="_blank"
+            rel="noreferrer noopener"
+            className={s.socialLink}
+            aria-label="Chat with CraftiNiya on WhatsApp"
+          >
+            <MessageCircle size={18} />
+          </a>
+        </div>
+
+        <p className={s.copyright}>
+          © {new Date().getFullYear()} {BRAND.name}. Handcrafted with love in Jaipur, Rajasthan, India. All rights reserved.
+        </p>
         <p className={s.credit}>
-          Made with <Heart aria-hidden="true" /> for handmade lovers
+          Made with <Heart size={14} aria-hidden="true" /> for lovers of handmade art
         </p>
       </div>
     </footer>

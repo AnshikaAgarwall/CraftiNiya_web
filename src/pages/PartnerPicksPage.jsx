@@ -33,7 +33,7 @@ export default function PartnerPicksPage() {
           <p style={{ textTransform: "uppercase", letterSpacing: "var(--ls-wider)", color: "var(--c-brand)", fontSize: "var(--fs-sm)", fontWeight: 700 }}>
             Curated Collaborations
           </p>
-          <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--fs-3xl)", marginTop: "var(--sp-2)" }}>
+          <h1 style={{ fontFamily: "var(--font-sans)", fontSize: "var(--fs-3xl)", marginTop: "var(--sp-2)" }}>
             Partner Picks
           </h1>
           <p style={{ color: "var(--c-text-2)", maxWidth: "620px", marginTop: "var(--sp-2)", lineHeight: "var(--lh-base)" }}>

@@ -176,7 +176,7 @@
 }
 
 .label {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(11.5px, 1.65vw, 21px);
   font-weight: var(--fw-bold);
   color: var(--c-text);

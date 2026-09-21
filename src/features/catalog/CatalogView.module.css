@@ -23,17 +23,20 @@
   font-weight: var(--fw-medium);
 }
 
-.filterTrigger {
+/* toolbar action buttons — visible on mobile only */
+.actionTrigger {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  padding: 0;
+  gap: 6px;
+  height: 38px;
+  padding: 0 14px;
   border: 1px solid var(--c-border-strong);
-  border-radius: var(--r-circle);
+  border-radius: var(--r-pill);
   background-color: var(--c-surface);
   color: var(--c-text);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
   cursor: pointer;
   position: relative;
   box-shadow: var(--sh-sm);
@@ -43,15 +46,14 @@
     color var(--t-fast) var(--ease);
 }
 
-.filterTrigger:hover {
+.actionTrigger:hover {
   border-color: var(--c-brand);
   color: var(--c-brand);
   background-color: var(--c-brand-soft);
 }
 
-.filterTrigger svg {
-  width: 19px;
-  height: 19px;
+.actionTrigger svg {
+  flex-shrink: 0;
 }
 
 .filterDot {
@@ -65,8 +67,15 @@
   border: 2px solid var(--c-surface);
 }
 
+.toolbarActions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+/* Hide toolbar actions on desktop — sort+filter live in the sidebar */
 @media (min-width: 901px) {
-  .filterTrigger {
+  .toolbarActions {
     display: none;
   }
 }

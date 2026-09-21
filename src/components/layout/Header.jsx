@@ -1,6 +1,18 @@
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ChevronDown, Heart, Menu, Search, ShoppingBag, User, X } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronDown,
+  Heart,
+  HelpCircle,
+  MapPin,
+  Menu,
+  MessageCircle,
+  Search,
+  ShoppingBag,
+  User,
+  X,
+} from "lucide-react";
 import { cn } from "../../lib/cn.js";
 import { BRAND, PRIMARY_NAV } from "../../config/site.js";
 import { useCart } from "../../context/CartContext.jsx";
@@ -225,6 +237,7 @@ export default function Header() {
                       s.navLink,
                       isActive && s.navLinkActive,
                       item.to === "/sale" && s.saleNavLink,
+                      item.isGift && s.giftNavLink,
                     )
                   }
                 >
@@ -233,6 +246,11 @@ export default function Header() {
                       <span className={s.saleDot} aria-hidden="true" />
                       {item.label}
                       <span className={s.saleSparkle}>%</span>
+                    </span>
+                  ) : item.isGift ? (
+                    <span className={s.giftNavText}>
+                      <span className={s.yellowBlinkDot} aria-hidden="true" />
+                      {item.label}
                     </span>
                   ) : (
                     item.label
@@ -253,40 +271,142 @@ export default function Header() {
         )}
       </nav>
 
-      {/* ---- Mobile navigation ---- */}
+      {/* ---- Mobile navigation drawer ---- */}
       {menuOpen && (
-        <nav id="mobile-nav" className={s.mobileNav} aria-label="Mobile">
-          <ul>
-            {PRIMARY_NAV.map((item) => (
-              <li key={item.to}>
-                <NavLink
-                  to={item.to}
-                  end={item.to === "/"}
-                  className={({ isActive }) =>
-                    cn(
-                      s.mobileLink,
-                      isActive && s.mobileLinkActive,
-                      item.to === "/sale" && s.mobileSaleLink,
-                    )
-                  }
-                >
-                  <span>{item.label}</span>
-                  {item.to === "/sale" && (
-                    <span className={s.mobileSaleBadge}>
-                      <span className={s.saleDot} aria-hidden="true" />
-                      Live Sale 40% Off
-                    </span>
+        <div className={s.mobileNavRoot}>
+          {/* Backdrop overlay */}
+          <div
+            className={s.mobileBackdrop}
+            onClick={closeMenu}
+            aria-hidden="true"
+          />
+
+          {/* Drawer panel */}
+          <aside
+            id="mobile-nav"
+            className={s.mobileDrawer}
+            aria-label="Mobile Navigation"
+          >
+            {/* Drawer Header */}
+            <div className={s.drawerHeader}>
+              <div className={s.drawerBrand}>
+                <span className={s.drawerBrandName}>{BRAND.name}</span>
+                <span className={s.drawerBrandTagline}>{BRAND.tagline}</span>
+              </div>
+              <button
+                type="button"
+                className={s.drawerCloseBtn}
+                onClick={closeMenu}
+                aria-label="Close menu"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* User Account Bar */}
+            <div className={s.drawerUserBar}>
+              <Link
+                to={accountTo}
+                className={s.drawerUserLink}
+                onClick={closeMenu}
+              >
+                <div className={s.drawerUserAvatar}>
+                  {user?.avatarUrl ? (
+                    <img src={user.avatarUrl} alt="" className={s.userAvatarImg} />
+                  ) : (
+                    <User size={18} />
                   )}
-                </NavLink>
-              </li>
-            ))}
-            <li>
-              <NavLink to={accountTo} className={s.mobileLink}>
-                {isAuthenticated ? "Your account" : "Sign in"}
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
+                </div>
+                <div className={s.drawerUserInfo}>
+                  <span className={s.drawerUserName}>
+                    {isAuthenticated ? user?.name || "My Account" : "Sign In / Register"}
+                  </span>
+                  <span className={s.drawerUserSub}>
+                    {isAuthenticated ? "View profile & orders" : "10% off your first handcrafted order"}
+                  </span>
+                </div>
+                <ArrowRight size={14} className={s.drawerUserArrow} />
+              </Link>
+            </div>
+
+            {/* Navigation links */}
+            <nav className={s.drawerNav}>
+              <div className={s.drawerSectionTitle}>Explore Studio</div>
+              <ul className={s.drawerList}>
+                {PRIMARY_NAV.map((item) => (
+                  <li key={item.to}>
+                    <NavLink
+                      to={item.to}
+                      end={item.to === "/"}
+                      onClick={closeMenu}
+                      className={({ isActive }) =>
+                        cn(
+                          s.drawerLink,
+                          isActive && s.drawerLinkActive,
+                          item.to === "/sale" && s.drawerSaleLink,
+                        )
+                      }
+                    >
+                      <span className={s.drawerLinkText}>
+                        {item.isGift ? (
+                          <span className={s.giftNavText}>
+                            <span className={s.yellowBlinkDot} aria-hidden="true" />
+                            {item.label}
+                          </span>
+                        ) : (
+                          item.label
+                        )}
+                      </span>
+
+                      {item.to === "/sale" && (
+                        <span className={s.drawerSaleBadge}>
+                          <span className={s.saleDot} aria-hidden="true" />
+                          40% OFF
+                        </span>
+                      )}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Quick Customer Support inside drawer */}
+              <div className={s.drawerSectionTitle}>Customer Care</div>
+              <ul className={s.drawerSecondaryList}>
+                <li>
+                  <Link to="/track-order" className={s.drawerSubLink} onClick={closeMenu}>
+                    <MapPin size={15} className={s.drawerSubIcon} />
+                    <span>Track Your Order</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/faq" className={s.drawerSubLink} onClick={closeMenu}>
+                    <HelpCircle size={15} className={s.drawerSubIcon} />
+                    <span>Help & FAQs</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className={s.drawerSubLink} onClick={closeMenu}>
+                    <MessageCircle size={15} className={s.drawerSubIcon} />
+                    <span>Contact Support</span>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+
+            {/* Bottom studio WhatsApp button in drawer */}
+            <div className={s.drawerFooter}>
+              <a
+                href="https://wa.me/919876543210?text=Hi%20CraftiNiya,%20I%20have%20an%20enquiry"
+                target="_blank"
+                rel="noreferrer noopener"
+                className={s.drawerWhatsappBtn}
+              >
+                <MessageCircle size={16} />
+                <span>Chat on WhatsApp</span>
+              </a>
+            </div>
+          </aside>
+        </div>
       )}
     </header>
   );

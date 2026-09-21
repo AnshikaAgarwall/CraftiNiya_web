@@ -3,7 +3,7 @@
   grid-template-columns: minmax(0, 1fr) 380px;
   gap: var(--sp-8);
   align-items: start;
-  padding-block: var(--sp-8) var(--sp-11);
+  padding-block: var(--section-y);
 }
 
 .main {

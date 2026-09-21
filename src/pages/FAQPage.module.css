@@ -1,0 +1,367 @@
+/* ==========================================================
+   FAQ PAGE — Search, category tabs, and interactive accordions
+   ========================================================== */
+
+.faqWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+/* ── Search Bar ── */
+
+.searchWrap {
+  position: relative;
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--c-text-2);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px 12px 42px;
+  border-radius: var(--r-xl);
+  border: 1.5px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text);
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: var(--sh-sm);
+  transition: border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+
+.searchInput:focus {
+  border-color: var(--c-brand);
+  box-shadow: 0 0 0 3px rgba(74, 107, 83, 0.15);
+}
+
+.clearSearchBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--c-text-2);
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* ── Category Filter Pills ── */
+
+.categoryPills {
+  display: flex;
+  gap: var(--sp-2);
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pillBtn {
+  padding: 7px 16px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text-2);
+  font-size: 0.84rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--t-fast) var(--ease);
+}
+
+.pillBtn:hover {
+  border-color: var(--c-brand);
+  color: var(--c-brand);
+}
+
+.pillActive {
+  background: var(--c-brand) !important;
+  color: var(--c-text-on-brand) !important;
+  border-color: var(--c-brand) !important;
+  font-weight: 600;
+}
+
+/* ── Accordion List ── */
+
+.accordionList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.faqItem {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+
+.faqItem[data-open="true"] {
+  border-color: var(--c-border-strong);
+  box-shadow: var(--sh-sm);
+}
+
+.faqQuestionBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--c-text);
+  cursor: pointer;
+  outline: none;
+  transition: color var(--t-fast) var(--ease);
+}
+
+.faqQuestionBtn:hover {
+  color: var(--c-brand);
+}
+
+.categoryTag {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-brand);
+  margin-bottom: 4px;
+}
+
+.questionTitleGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.chevronIcon {
+  color: var(--c-brand);
+  flex-shrink: 0;
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  padding: 0 var(--sp-5) var(--sp-4);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--c-text-2);
+  border-top: 1px dashed var(--c-border);
+  margin-top: 2px;
+  padding-top: var(--sp-3);
+}
+
+.faqAnswer p {
+  margin: 0 0 var(--sp-2);
+}
+
+.faqAnswer p:last-child {
+  margin-bottom: 0;
+}
+
+.faqAnswer a {
+  color: var(--c-brand);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ── Empty State ── */
+
+.emptyState {
+  text-align: center;
+  padding: var(--sp-8);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  color: var(--c-text-2);
+}
+
+.emptyState h4 {
+  font-family: var(--font-sans);
+  color: var(--c-text);
+  margin: 0 0 var(--sp-2);
+}
+
+/* ── Bottom Help CTA ── */
+
+.stillQuestionsCard {
+  background: var(--c-brand-soft);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-xl);
+  padding: var(--sp-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.stillQuestionsLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 480px;
+}
+
+.stillQuestionsTitle {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--c-brand-hover);
+  margin: 0;
+}
+
+.stillQuestionsText {
+  font-size: 0.88rem;
+  color: var(--c-text-2);
+  margin: 0;
+}
+
+.stillQuestionsActions {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.chatBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: var(--r-lg);
+  background: var(--c-brand);
+  color: var(--c-text-on-brand);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--t-fast) var(--ease);
+}
+
+.chatBtn:hover {
+  background: var(--c-brand-hover);
+}
+
+.contactBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: var(--r-lg);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border-strong);
+  color: var(--c-brand-hover);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--t-fast) var(--ease);
+}
+
+.contactBtn:hover {
+  background: var(--c-brand-soft);
+}
+
+/* ── Mobile Responsive ── */
+
+@media (max-width: 640px) {
+  .faqWrap {
+    gap: var(--sp-4);
+  }
+
+  .searchInput {
+    padding: 9px 12px 9px 36px;
+    font-size: 0.86rem;
+  }
+
+  .searchIcon {
+    left: 12px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .categoryPills {
+    gap: 6px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .categoryPills::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pillBtn {
+    padding: 5px 12px;
+    font-size: 0.76rem;
+  }
+
+  .accordionList {
+    gap: var(--sp-2);
+  }
+
+  .faqQuestionBtn {
+    padding: 11px 12px;
+    font-size: 0.9rem;
+    gap: var(--sp-2);
+  }
+
+  .categoryTag {
+    font-size: 0.68rem;
+    margin-bottom: 2px;
+  }
+
+  .chevronIcon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .faqAnswer {
+    padding: 0 12px 10px;
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  .stillQuestionsCard {
+    padding: var(--sp-4);
+    gap: var(--sp-3);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stillQuestionsTitle {
+    font-size: 0.98rem;
+  }
+
+  .stillQuestionsText {
+    font-size: 0.8rem;
+  }
+
+  .stillQuestionsActions {
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .chatBtn,
+  .contactBtn {
+    justify-content: center;
+    padding: 9px 14px;
+    font-size: 0.82rem;
+  }
+}

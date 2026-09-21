@@ -1,21 +1,52 @@
-/* ---------- shared split layout ---------- */
+/* ==========================================================================
+   ABOUT PAGE STYLES
+   Clean, modern, editorial layout with sharp/unrounded card corners
+   and NO image scale transform on hover.
+   ========================================================================== */
+
+/* ---------- Shared split layout ---------- */
 
 .split {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(var(--sp-7), 6vw, var(--sp-11));
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(var(--sp-6), 5vw, var(--sp-9));
   align-items: center;
 }
 
 .splitReverse {
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
 }
 
 .copy {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-5);
+  gap: var(--sp-4);
+}
+
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--c-brand);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+}
+
+.heroSparkle {
+  width: 18px;
+  height: 18px;
+  color: var(--c-brand);
+}
+
+.heroTitle {
+  font-size: clamp(var(--fs-2xl), 3.5vw, var(--fs-4xl));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--c-text);
 }
 
 .body {
@@ -25,36 +56,29 @@
   line-height: var(--lh-base);
 }
 
-.sectionTitle {
-  font-size: var(--fs-3xl);
-  line-height: var(--lh-tight);
-}
-
-/* ---------- framed image ---------- */
+/* ---------- Framed Image ---------- */
 
 .frame {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 400px;
   justify-self: end;
-  padding-inline: var(--sp-7);
+  padding-inline: var(--sp-5);
 }
 
 .frameLeft {
   justify-self: start;
 }
 
-/* Organic "pebble" outline — percentages, not radius tokens, because the shape
-   is the point. The terracotta ring is the padding showing through. */
 .blob {
   padding: var(--sp-3);
-  border-radius: 38% 62% 46% 54% / 34% 40% 60% 66%;
+  border-radius: 0;
   background-color: var(--c-accent);
-  box-shadow: var(--sh-lg);
+  box-shadow: var(--sh-md);
 }
 
 .blob > span {
-  border-radius: 36% 64% 44% 56% / 32% 38% 62% 68%;
+  border-radius: 0;
 }
 
 .swatches {
@@ -63,7 +87,7 @@
   right: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-3);
+  gap: var(--sp-2);
   transform: translateY(-50%);
 }
 
@@ -73,10 +97,10 @@
 }
 
 .swatches span {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border: 2px solid var(--c-surface);
-  border-radius: var(--r-circle);
+  border-radius: 0;
   box-shadow: var(--sh-sm);
 }
 
@@ -89,15 +113,15 @@
 }
 
 .swatches span:nth-child(3) {
-  background-color: var(--c-brand-hover);
+  background-color: var(--c-brand);
 }
 
 .sparkle {
   position: absolute;
   top: var(--sp-2);
   left: var(--sp-2);
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   color: var(--c-accent-ink);
 }
 
@@ -106,46 +130,50 @@
   left: auto;
 }
 
-/* ---------- hero ---------- */
+/* ---------- 1. Page Hero Banner (Full Banner Style) ---------- */
 
-.hero {
-  padding-block: var(--sp-10) var(--sp-12);
-  border-radius: 0 0 50% 50% / 0 0 var(--sp-10) var(--sp-10);
-  background-color: var(--c-sunken);
+.heroBanner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #7bb5c1;
+  border-bottom: 1px solid var(--c-border);
 }
 
-.heroSparkle {
-  width: 28px;
-  height: 28px;
-  color: var(--c-accent-ink);
+.bannerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-
-.heroTitle {
-  font-size: var(--fs-4xl);
-  line-height: var(--lh-tight);
-  letter-spacing: var(--ls-tight);
-}
-
-/* ---------- welcome (page hero) ---------- */
 
 .welcome {
-  padding-block: var(--sp-10) var(--sp-12);
-  border-radius: 0 0 50% 50% / 0 0 var(--sp-10) var(--sp-10);
+  padding-block: clamp(var(--sp-7), 4.5vw, var(--sp-9));
+  border-radius: 0;
   background-color: var(--c-sunken);
+  border-bottom: 1px solid var(--c-border);
 }
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  margin-top: var(--sp-3);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+  margin-top: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: 0;
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--sh-sm);
 }
 
 .stat {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-1);
-  padding-inline: var(--sp-3);
+  gap: 2px;
+  padding-inline: var(--sp-2);
   text-align: center;
 }
 
@@ -155,56 +183,56 @@
 
 .statValue {
   color: var(--c-text);
-  font-family: var(--font-serif);
-  font-size: var(--fs-2xl);
-  font-weight: var(--fw-semibold);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
   line-height: var(--lh-tight);
 }
 
 .statLabel {
   color: var(--c-text-2);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
+  white-space: nowrap;
 }
 
 .statIcon {
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
-  margin-top: var(--sp-3);
-  border-radius: var(--r-circle);
-  background-color: var(--c-surface);
-  color: var(--c-accent-ink);
-  box-shadow: var(--sh-sm);
+  width: 32px;
+  height: 32px;
+  margin-top: var(--sp-1);
+  border-radius: 0;
+  background-color: var(--c-accent-soft);
+  color: var(--c-brand);
 }
 
 .statIcon svg {
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
 }
 
-/* ---------- services ---------- */
+/* ---------- 2. Services / What We Make ---------- */
 
 .services {
-  padding-block: var(--section-y);
-  border-radius: 50% 50% 0 0 / var(--sp-10) var(--sp-10) 0 0;
+  padding-block: clamp(var(--sp-7), 4vw, var(--sp-9));
   background-color: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
 }
 
 .serviceGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--sp-5);
+  gap: var(--sp-4);
 }
 
 .service {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--sp-3);
-  padding: var(--sp-7) var(--sp-5);
+  gap: var(--sp-2);
+  padding: var(--sp-5) var(--sp-4);
   border: 1px solid var(--c-border);
-  border-radius: var(--r-lg);
+  border-radius: 0;
   background-color: var(--c-bg);
   text-align: center;
   box-shadow: var(--sh-sm);
@@ -219,134 +247,207 @@
 
 .serviceLink:hover {
   border-color: var(--c-brand);
-  box-shadow: var(--sh-lg);
-  transform: translateY(-4px);
+  box-shadow: var(--sh-md);
+  transform: translateY(-3px);
 }
 
 .serviceIcon {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
-  margin-bottom: var(--sp-2);
-  border-radius: var(--r-circle);
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--sp-1);
+  border-radius: 0;
   background-color: var(--c-accent-soft);
   color: var(--c-accent-ink);
 }
 
 .serviceIcon svg {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
 }
 
 .serviceTitle {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-base);
   font-weight: var(--fw-semibold);
+  color: var(--c-text);
 }
 
 .serviceBody {
   color: var(--c-text-2);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-base);
+}
+
+/* ---------- 3. Collaborations, Community & Impact ---------- */
+
+.collaborations {
+  padding-block: clamp(var(--sp-7), 4vw, var(--sp-9));
+  background-color: var(--c-bg);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.collaborationsSubtitle {
+  max-width: 62ch;
+  margin-inline: auto;
+  margin-top: calc(var(--sp-3) * -1);
+  margin-bottom: var(--sp-6);
+  color: var(--c-text-2);
   font-size: var(--fs-sm);
-  line-height: var(--lh-base);
-}
-
-/* ---------- stalls / exhibitions ---------- */
-
-.stalls {
-  padding-block: var(--section-y);
-  background-color: var(--c-bg);
-}
-
-.stallsIntro {
-  max-width: 60ch;
-  margin-inline: auto;
-  margin-top: calc(var(--sp-4) * -1);
-  margin-bottom: var(--sp-8);
-  color: var(--c-text-2);
-  font-size: var(--fs-md);
   text-align: center;
   line-height: var(--lh-base);
 }
 
-/* ---------- stalls / exhibitions (random mosaic photo collage) ---------- */
-
-.stalls {
-  padding-block: var(--section-y);
-  background-color: var(--c-bg);
-}
-
-.stallsIntro {
-  max-width: 60ch;
-  margin-inline: auto;
-  margin-top: calc(var(--sp-4) * -1);
-  margin-bottom: var(--sp-8);
-  color: var(--c-text-2);
-  font-size: var(--fs-md);
-  text-align: center;
-  line-height: var(--lh-base);
-}
-
-/* 12-column dynamic mosaic grid */
-.mosaicGrid {
+.collaborationsGrid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-flow: dense;
-  grid-auto-rows: 190px;
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--sp-4);
 }
 
-/* Base tile */
+.collabCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-5) var(--sp-4);
+  border: 1px solid var(--c-border);
+  border-radius: 0;
+  background-color: var(--c-surface);
+  box-shadow: var(--sh-sm);
+  transition:
+    transform var(--t-base) var(--ease),
+    box-shadow var(--t-base) var(--ease),
+    border-color var(--t-base) var(--ease);
+}
+
+.collabCardInteractive:hover {
+  border-color: var(--c-brand);
+  box-shadow: var(--sh-md);
+  transform: translateY(-3px);
+}
+
+.collabHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-1);
+}
+
+.collabIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  background-color: var(--c-accent-soft);
+  color: var(--c-brand);
+}
+
+.collabTag {
+  padding: 3px 9px;
+  border-radius: 0;
+  background-color: var(--c-sunken);
+  border: 1px solid var(--c-border);
+  color: var(--c-text-2);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.collabTitle {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--c-text);
+  line-height: var(--lh-snug);
+}
+
+.collabBody {
+  color: var(--c-text-2);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-base);
+}
+
+.collabBadgeRow {
+  margin-top: auto;
+  padding-top: var(--sp-2);
+}
+
+.collabBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 0;
+  background-color: var(--c-accent-soft);
+  color: var(--c-brand);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+}
+
+.collabAction {
+  margin-top: auto;
+  padding-top: var(--sp-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--c-brand);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  transition: gap var(--t-fast) var(--ease);
+}
+
+.collabCardInteractive:hover .collabAction {
+  gap: 9px;
+}
+
+/* ---------- 4. Stalls / Live Pop-up Exhibitions ---------- */
+
+.stalls {
+  padding-block: clamp(var(--sp-7), 4vw, var(--sp-9));
+  background-color: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.stallsIntro {
+  max-width: 60ch;
+  margin-inline: auto;
+  margin-top: calc(var(--sp-3) * -1);
+  margin-bottom: var(--sp-6);
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  text-align: center;
+  line-height: var(--lh-base);
+}
+
+.mosaicGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
 .mosaicTile {
   position: relative;
   overflow: hidden;
-  border-radius: var(--r-xl);
+  height: 240px;
+  border-radius: 0;
+  box-shadow: var(--sh-sm);
   transition:
     transform var(--t-base) var(--ease),
     box-shadow var(--t-base) var(--ease);
 }
 
 .mosaicTile:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--sh-xl);
+  transform: translateY(-3px);
+  box-shadow: var(--sh-md);
 }
 
-/* Individual tile spans for an artistic, irregular layout */
-.mosaicTile_1 {
-  grid-column: span 7;
-  grid-row: span 2;
-}
-
-.mosaicTile_2 {
-  grid-column: span 5;
-  grid-row: span 1;
-}
-
-.mosaicTile_3 {
-  grid-column: span 5;
-  grid-row: span 1;
-}
-
-.mosaicTile_4 {
-  grid-column: span 4;
-  grid-row: span 2;
-}
-
-.mosaicTile_5 {
-  grid-column: span 8;
-  grid-row: span 1;
-}
-
-.mosaicTile_6 {
-  grid-column: span 8;
-  grid-row: span 1;
-}
-
-/* When image is provided */
 .tileInner {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 190px;
 }
 
 .tileImage {
@@ -354,11 +455,14 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform var(--t-slow) var(--ease);
+  /* NO scale on hover */
+  transform: none;
+  transition: none;
 }
 
+/* Ensure no scale transform happens on hover */
 .mosaicTile:hover .tileImage {
-  transform: scale(1.05);
+  transform: none;
 }
 
 .tileScrim {
@@ -366,8 +470,8 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.78) 0%,
-    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.3) 55%,
     transparent 100%
   );
   pointer-events: none;
@@ -380,8 +484,8 @@
   right: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-1);
-  padding: var(--sp-4) var(--sp-5);
+  gap: 3px;
+  padding: var(--sp-3) var(--sp-4);
   color: #ffffff;
   z-index: 2;
 }
@@ -391,16 +495,16 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--sp-2);
-  margin-bottom: var(--sp-1);
+  margin-bottom: 2px;
 }
 
 .tileTag {
-  padding: 2px 8px;
-  border-radius: var(--r-pill);
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
+  padding: 2px 7px;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(6px);
   color: #ffffff;
-  font-size: var(--fs-xs);
+  font-size: 10px;
   font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
@@ -411,16 +515,16 @@
   align-items: center;
   gap: 4px;
   color: rgba(255, 255, 255, 0.9);
-  font-size: var(--fs-xs);
+  font-size: 11px;
 }
 
 .tileTitle {
-  font-family: var(--font-serif);
-  font-size: var(--fs-lg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
   line-height: var(--lh-tight);
   color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .tileLocation {
@@ -428,159 +532,185 @@
   align-items: center;
   gap: 4px;
   color: rgba(255, 255, 255, 0.85);
-  font-size: var(--fs-xs);
+  font-size: 11px;
 }
 
 .tileCaption {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  line-height: var(--lh-snug);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---------- 5. The Practical Bits (Customer Support Cards) ---------- */
+
+.policies {
+  padding-block: clamp(var(--sp-7), 4vw, var(--sp-9));
+  background-color: var(--c-bg);
+}
+
+.practicalHeadingWrap {
+  text-align: center;
+  margin-bottom: var(--sp-6);
+}
+
+.practicalSubtitle {
+  max-width: 60ch;
+  margin-inline: auto;
+  margin-top: calc(var(--sp-3) * -1);
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+}
+
+.practicalGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+
+.practicalCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-5) var(--sp-4);
+  border: 1px solid var(--c-border);
+  border-radius: 0;
+  background-color: var(--c-surface);
+  box-shadow: var(--sh-sm);
+  scroll-margin-top: calc(var(--header-h) + var(--sp-4));
+  transition:
+    transform var(--t-base) var(--ease),
+    box-shadow var(--t-base) var(--ease),
+    border-color var(--t-base) var(--ease);
+}
+
+.practicalCard:hover {
+  border-color: var(--c-brand);
+  box-shadow: var(--sh-md);
+  transform: translateY(-3px);
+}
+
+.practicalCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-1);
+}
+
+.practicalIcon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 0;
+  background-color: var(--c-accent-soft);
+  color: var(--c-brand);
+}
+
+.practicalBadge {
+  padding: 3px 8px;
+  border-radius: 0;
+  background-color: var(--c-sunken);
+  color: var(--c-brand);
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  white-space: nowrap;
+}
+
+.practicalTitle {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--c-text);
+  line-height: var(--lh-tight);
+}
+
+.practicalBody {
+  color: var(--c-text-2);
   font-size: var(--fs-xs);
   line-height: var(--lh-base);
 }
 
-/* Placeholder tile when fields are null */
-.placeholderTile {
-  position: relative;
+.practicalFooter {
+  margin-top: auto;
+  padding-top: var(--sp-3);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: var(--sp-3);
-  width: 100%;
-  height: 100%;
-  min-height: 190px;
-  padding: var(--sp-4);
-  border: 2px dashed var(--c-border-strong, var(--c-border));
-  border-radius: inherit;
-  background: linear-gradient(135deg, var(--c-sunken) 0%, var(--c-surface) 100%);
-  text-align: center;
-  transition:
-    border-color var(--t-base) var(--ease),
-    background var(--t-base) var(--ease);
-}
-
-.mosaicTile:hover .placeholderTile {
-  border-color: var(--c-brand);
-  background: linear-gradient(135deg, var(--c-accent-soft) 0%, var(--c-surface) 100%);
-}
-
-.placeholderGlow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
-  border-radius: var(--r-circle);
-  background: radial-gradient(circle, var(--c-accent-soft) 0%, transparent 70%);
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-.placeholderIcon {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: var(--r-circle);
-  background-color: var(--c-surface);
+  justify-content: space-between;
+  border-top: 1px solid var(--c-border);
   color: var(--c-brand);
-  box-shadow: var(--sh-sm);
-  z-index: 1;
-}
-
-.placeholderInfo {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  z-index: 1;
-}
-
-.placeholderTitle {
-  color: var(--c-text);
-  font-family: var(--font-serif);
-  font-size: var(--fs-base);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
   font-weight: var(--fw-semibold);
 }
 
-.placeholderHint {
-  color: var(--c-text-3);
-  font-size: var(--fs-xs);
-  letter-spacing: var(--ls-wide);
-  text-transform: uppercase;
+.practicalArrow {
+  transition: transform var(--t-fast) var(--ease);
 }
 
-/* ---------- policies ---------- */
-
-.policies {
-  padding-block: var(--section-y);
+.practicalCard:hover .practicalArrow {
+  transform: translateX(4px);
 }
 
-.policiesTitle {
-  margin-bottom: var(--sp-8);
-  font-size: var(--fs-2xl);
-  text-align: center;
-}
+/* ---------- Contact Banner ---------- */
 
-.policyGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-5);
-}
-
-.policy {
-  padding: var(--sp-6);
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-top: var(--sp-7);
+  padding: var(--sp-5) var(--sp-6);
   border: 1px solid var(--c-border);
-  border-radius: var(--r-lg);
-  background-color: var(--c-surface);
-  /* Anchored from footer links, so keep the header clear of the target. */
-  scroll-margin-top: calc(var(--header-h) + var(--sp-5));
+  border-radius: 0;
+  background: linear-gradient(135deg, var(--c-sunken) 0%, var(--c-surface) 100%);
+  box-shadow: var(--sh-sm);
 }
 
-.policy h3 {
-  margin-bottom: var(--sp-3);
+.contactCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contactBadge {
   color: var(--c-brand);
-  font-family: var(--font-sans);
   font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
   letter-spacing: var(--ls-wider);
   text-transform: uppercase;
 }
 
-.policy p {
+.contactTitle {
+  font-family: var(--font-sans);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--c-text);
+}
+
+.contactSub {
   color: var(--c-text-2);
-  font-size: var(--fs-sm);
-  line-height: var(--lh-loose);
-}
-
-.contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--sp-4);
-  margin-top: var(--sp-9);
-  padding-top: var(--sp-8);
-  border-top: 1px solid var(--c-border);
-  text-align: center;
-}
-
-.contact p {
-  font-family: var(--font-serif);
-  font-size: var(--fs-xl);
+  font-size: var(--fs-xs);
 }
 
 .contactActions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
   gap: var(--sp-3);
 }
 
-/* ---------- responsive ---------- */
+/* ==========================================================================
+   RESPONSIVE LAYOUT & MOBILE REARRANGEMENT
+   ========================================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .split,
   .splitReverse {
     grid-template-columns: 1fr;
@@ -589,106 +719,160 @@
   .frame,
   .frameLeft {
     justify-self: center;
-    max-width: 380px;
-  }
-
-  /* Copy first on phones, whichever side the picture sits on at desktop. */
-  .splitReverse .frame {
-    order: 2;
+    max-width: 340px;
+    padding-inline: 0;
   }
 
   .serviceGrid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .mosaicGrid {
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 175px;
-  }
-
-  .mosaicTile_1 {
-    grid-column: span 6;
-    grid-row: span 2;
-  }
-
-  .mosaicTile_2 {
-    grid-column: span 3;
-    grid-row: span 1;
-  }
-
-  .mosaicTile_3 {
-    grid-column: span 3;
-    grid-row: span 1;
-  }
-
-  .mosaicTile_4 {
-    grid-column: span 3;
-    grid-row: span 2;
-  }
-
-  .mosaicTile_5 {
-    grid-column: span 3;
-    grid-row: span 1;
-  }
-
-  .mosaicTile_6 {
-    grid-column: span 3;
-    grid-row: span 1;
-  }
-
-  .welcome {
-    padding-block: var(--sp-8) var(--sp-10);
-  }
-}
-
-@media (max-width: 640px) {
-  .serviceGrid,
-  .policyGrid {
-    grid-template-columns: 1fr;
+  .collaborationsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .mosaicGrid {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 155px;
+  }
+
+  .practicalGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contactActions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Tight, neat spacing on mobile aligned with site-wide section-y */
+  .welcome,
+  .services,
+  .collaborations,
+  .stalls,
+  .policies {
+    padding-block: var(--section-y);
+  }
+
+  .splitReverse {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+  }
+
+  .splitReverse .frame {
+    order: 1;
+    max-width: 250px;
+    margin-inline: auto;
+  }
+
+  .splitReverse .copy {
+    order: 2;
+    text-align: center;
+    align-items: center;
+  }
+
+  .heroEyebrow {
+    justify-content: center;
+  }
+
+  .stats {
+    width: 100%;
+    margin-top: var(--sp-2);
+    padding: var(--sp-3) var(--sp-4);
+    gap: var(--sp-2);
+    border-radius: 0;
+  }
+
+  .statIcon {
+    width: 28px;
+    height: 28px;
+    border-radius: 0;
+  }
+
+  .statIcon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .serviceGrid {
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--sp-3);
   }
 
-  .mosaicTile_1 {
-    grid-column: span 2;
-    grid-row: span 2;
+  .service {
+    padding: var(--sp-4) var(--sp-3);
+    border-radius: 0;
   }
 
-  .mosaicTile_2 {
-    grid-column: span 1;
-    grid-row: span 1;
+  .serviceIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 0;
   }
 
-  .mosaicTile_3 {
-    grid-column: span 1;
-    grid-row: span 1;
+  .collaborationsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
   }
 
-  .mosaicTile_4 {
-    grid-column: span 1;
-    grid-row: span 2;
+  .collabCard {
+    padding: var(--sp-5) var(--sp-4);
+    border-radius: 0;
   }
 
-  .mosaicTile_5 {
-    grid-column: span 1;
-    grid-row: span 1;
+  .mosaicGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-2);
   }
 
-  .mosaicTile_6 {
-    grid-column: span 2;
-    grid-row: span 1;
+  .mosaicTile {
+    height: 180px;
+    border-radius: 0;
   }
 
-  .stat {
-    padding-inline: var(--sp-2);
+  .tileContent {
+    padding: var(--sp-3) var(--sp-3);
+  }
+
+  .tileLocation,
+  .tileCaption {
+    display: none;
+  }
+
+  .practicalGrid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  .practicalCard {
+    padding: var(--sp-5) var(--sp-4);
+    border-radius: 0;
+  }
+
+  .contact {
+    padding: var(--sp-4);
+    text-align: center;
+    align-items: center;
+    border-radius: 0;
+  }
+
+  .contactCopy {
+    align-items: center;
   }
 
   .contactActions {
     flex-direction: column;
-    align-self: stretch;
+    width: 100%;
+  }
+
+  .contactActions > * {
+    width: 100%;
+    justify-content: center;
   }
 }

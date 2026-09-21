@@ -41,12 +41,10 @@ export default function FeaturedCollaborations() {
   return (
     <section className={s.section} aria-label="Exclusive Collaborations">
       <div className="container">
-        <div className={s.headerWrapper}>
-          <SectionHeading
-            eyebrow="Special Edits"
-            title="Exclusive Collaborations"
-          />
-        </div>
+        <SectionHeading
+          eyebrow="Special Edits"
+          title="Exclusive Collaborations"
+        />
 
         <div className={s.scrollTrack} role="region" aria-label="Collaborations carousel">
           {COLLAB_BANNERS.map((item) => (

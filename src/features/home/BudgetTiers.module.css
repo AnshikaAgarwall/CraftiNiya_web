@@ -5,7 +5,7 @@
    ========================================================= */
 
 .section {
-  padding-block: clamp(var(--sp-6), 3.5vw, var(--sp-10));
+  padding-block: var(--section-y);
   background-color: var(--c-bg);
   overflow: hidden;
 }
@@ -202,7 +202,7 @@
 }
 
 .label {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(11.5px, 1.65vw, 21px);
   font-weight: var(--fw-bold);
   color: var(--c-text);
@@ -389,12 +389,17 @@
    ========================================================= */
 
 @media (max-width: 900px) {
+  .section {
+    padding-block: var(--section-y);
+  }
+
   .desktopGrid {
     display: none !important;
   }
 
   .mobileMarqueeWrapper {
     display: block !important;
+    padding-block: var(--sp-2);
   }
 
   .mobileCartSlide {

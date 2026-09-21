@@ -4,5 +4,6 @@
    lives in co-located *.module.css files.
    ========================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import "./styles/tokens.css";
 @import "./styles/base.css";

@@ -1,12 +1,9 @@
 .section {
-  padding-block: clamp(var(--sp-6), 4vw, var(--sp-10));
+  padding-top: var(--section-y);
+  padding-bottom: 0;
   background-color: var(--c-bg);
   overflow: hidden;
   position: relative;
-}
-
-.headerWrapper {
-  margin-bottom: var(--sp-6);
 }
 
 /* 
@@ -22,8 +19,8 @@
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: var(--sp-4);
-  padding-top: var(--sp-1);
+  padding-bottom: 4px;
+  padding-top: 2px;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
 }
@@ -33,8 +30,8 @@
 }
 
 .card {
-  flex: 0 0 clamp(260px, 28vw, 380px);
-  width: clamp(260px, 28vw, 380px);
+  flex: 0 0 clamp(300px, 34vw, 440px);
+  width: clamp(300px, 34vw, 440px);
   aspect-ratio: 4 / 5;
   position: relative;
   display: block;
@@ -68,8 +65,8 @@
 /* Tablet view */
 @media (max-width: 1024px) {
   .card {
-    flex: 0 0 clamp(240px, 40vw, 320px);
-    width: clamp(240px, 40vw, 320px);
+    flex: 0 0 clamp(260px, 50vw, 380px);
+    width: clamp(260px, 50vw, 380px);
     aspect-ratio: 4 / 5;
   }
 }
@@ -77,22 +74,19 @@
 /* Mobile view: exactly 2 and a half (2.5) cards visible on screen at once */
 @media (max-width: 640px) {
   .section {
-    padding-block: var(--sp-4);
-  }
-
-  .headerWrapper {
-    margin-bottom: var(--sp-3);
+    padding-top: var(--section-y);
+    padding-bottom: 0;
   }
 
   .scrollTrack {
     gap: 10px;
-    padding-bottom: var(--sp-2);
+    padding-bottom: var(--sp-1);
   }
 
   .card {
-    /* 2.5 cards visible: 2 full + half of 3rd */
-    flex: 0 0 calc((100% - 20px) / 2.45);
-    width: calc((100% - 20px) / 2.45);
+    /* ~1.8 cards visible on mobile for a bigger, more prominent feel */
+    flex: 0 0 calc((100% - 16px) / 1.8);
+    width: calc((100% - 16px) / 1.8);
     aspect-ratio: 4 / 5;
     border-radius: 12px;
   }

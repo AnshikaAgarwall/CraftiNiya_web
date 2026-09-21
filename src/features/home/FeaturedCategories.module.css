@@ -26,7 +26,7 @@
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: var(--r-lg);
+  border-radius: 0;
   background-color: var(--c-sunken);
   box-shadow: var(--sh-sm);
   transition:
@@ -151,7 +151,7 @@
 }
 
 .cardTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1rem, 1.2vw, 1.2rem);
   font-weight: 600;
   line-height: 1.25;
@@ -173,7 +173,7 @@
 /* Mobile: 2-column grid — cards are large and readable */
 @media (max-width: 768px) {
   .section {
-    padding-block: var(--sp-4);
+    padding-block: var(--section-y);
   }
 
   .grid {

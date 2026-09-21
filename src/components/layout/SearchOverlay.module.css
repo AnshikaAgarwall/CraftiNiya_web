@@ -42,7 +42,7 @@
   border: 0;
   background: transparent;
   color: var(--c-text);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--fs-xl);
 }
 
@@ -128,7 +128,7 @@
 }
 
 .resultTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--fs-md);
   font-weight: var(--fw-semibold);
   overflow: hidden;

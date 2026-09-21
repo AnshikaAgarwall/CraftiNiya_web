@@ -53,7 +53,7 @@ export default function PartnerRedirectPage() {
           ) : product?.affiliate?.externalUrl ? (
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "var(--sp-4)" }}>
               <ExternalLink size={36} color="var(--c-brand)" />
-              <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "var(--fs-2xl)" }}>Visiting Partner Atelier</h2>
+              <h2 style={{ fontFamily: "var(--font-sans)", fontSize: "var(--fs-2xl)" }}>Visiting Partner Atelier</h2>
               <p style={{ color: "var(--c-text-2)", fontSize: "var(--fs-sm)", lineHeight: "var(--lh-base)" }}>
                 You are being taken to our partner store to complete your purchase for <strong>{product.title}</strong>.
               </p>

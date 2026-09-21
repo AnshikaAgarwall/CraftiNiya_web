@@ -1,0 +1,24 @@
+/* =========================================================
+   HOME PAGE — Section Rhythm
+   Balanced, consistent vertical spacing between all features
+   ========================================================= */
+
+.bestSellersSection {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+  background-color: var(--c-bg);
+}
+
+@media (max-width: 768px) {
+  .bestSellersSection {
+    padding-top: var(--section-y);
+    padding-bottom: var(--section-y);
+  }
+}
+
+@media (max-width: 480px) {
+  .bestSellersSection {
+    padding-top: var(--section-y);
+    padding-bottom: var(--section-y);
+  }
+}

@@ -1,5 +1,5 @@
 .banner {
-  padding-block: clamp(var(--sp-3), 2vh, var(--sp-5));
+  padding-block: var(--section-y-sm);
   background-color: var(--c-accent-soft);
   border-block: 1px solid var(--c-border);
 }
@@ -84,7 +84,7 @@
 }
 
 .unitValue {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(0.9rem, 1.7vw, 1.25rem);
   font-weight: var(--fw-bold);
   line-height: 1;
@@ -116,7 +116,7 @@
 
 @media (max-width: 640px) {
   .banner {
-    padding-block: var(--sp-2);
+    padding-block: var(--section-y-sm);
   }
 
   .headline {

@@ -3,7 +3,7 @@
    ========================================================= */
 
 .section {
-  padding-block: clamp(var(--sp-8), 8vh, var(--section-y));
+  padding-block: var(--section-y);
   background-color: var(--c-bg);
   box-sizing: border-box;
 }
@@ -72,7 +72,7 @@
 }
 
 .label {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--fs-3xl);
   font-weight: var(--fw-bold);
   line-height: 1.25;

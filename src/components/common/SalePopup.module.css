@@ -179,7 +179,7 @@
 
 .headline {
   margin: 0 0 var(--sp-2);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.25rem, 3.5vw, 1.55rem);
   font-weight: var(--fw-bold);
   line-height: 1.2;
@@ -235,7 +235,7 @@
 }
 
 .timerUnit strong {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.15rem;
   font-weight: var(--fw-bold);
   line-height: 1;
@@ -253,7 +253,7 @@
 }
 
 .timerColon {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: var(--fw-bold);
   color: var(--c-brand);

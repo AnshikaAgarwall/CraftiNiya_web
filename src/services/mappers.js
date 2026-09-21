@@ -336,14 +336,36 @@ export function mapAboutPage(raw) {
       })),
     })),
 
+    collaborations: mapSection(raw.collaborations, (c) => ({
+      eyebrow: c.eyebrow ?? "",
+      title: c.title ?? "",
+      subtitle: c.subtitle ?? "",
+      items: mapList(c.items, (it, i) => ({
+        id: it.id ?? `collab-${i}`,
+        icon: it.icon ?? "sparkles",
+        tag: it.tag ?? "",
+        title: it.title ?? "",
+        body: it.body ?? "",
+        badge: it.badge ?? null,
+        link: it.link ?? null,
+        linkText: it.linkText ?? "",
+        external: Boolean(it.external),
+      })),
+    })),
+
     policies: mapSection(raw.policies, (p) => ({
       title: p.title ?? "",
+      eyebrow: p.eyebrow ?? "",
+      subtitle: p.subtitle ?? "",
       items: mapList(p.items, (it) =>
         it?.id && it?.title
           ? {
             id: it.id,
             title: it.title,
+            highlight: it.highlight ?? "",
             body: it.body ?? "",
+            link: it.link ?? null,
+            linkText: it.linkText ?? "",
           }
           : null,
       ),

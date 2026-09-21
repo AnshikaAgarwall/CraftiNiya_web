@@ -1,7 +1,7 @@
 /* ---------- why ---------- */
 
 .why {
-  padding-block: clamp(var(--sp-4), 4vh, var(--section-y));
+  padding-block: var(--section-y-sm);
   background-color: var(--c-surface);
   border-block: 1px solid var(--c-border);
   overflow: hidden;

@@ -52,7 +52,7 @@
 .textCircle {
   background-color: var(--c-brand-soft);
   color: var(--c-brand-hover);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--fs-md);
   font-weight: var(--fw-bold);
 }

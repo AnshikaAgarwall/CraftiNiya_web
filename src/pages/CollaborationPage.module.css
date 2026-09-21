@@ -40,7 +40,7 @@
 .heroBannerCard {
   width: 100%;
   max-width: 100%;
-  border-radius: var(--r-xl);
+  border-radius: 0;
   overflow: hidden;
   box-shadow: var(--sh-lg);
   background-color: var(--c-sunken);
@@ -84,7 +84,7 @@
 }
 
 .collabTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(var(--fs-2xl), 3vw, var(--fs-4xl));
   font-weight: 600;
   color: var(--c-text);
@@ -108,7 +108,7 @@
 }
 
 .productsHeadingTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--fs-xl);
   font-weight: 600;
   color: var(--c-text);
@@ -207,7 +207,7 @@
 }
 
 .drawerTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--fs-lg);
   font-weight: 600;
   color: var(--c-text);
@@ -316,7 +316,7 @@
 /* Mobile viewport adjustments */
 @media (max-width: 640px) {
   .heroBannerCard {
-    border-radius: var(--r-lg);
+    border-radius: 0;
     max-height: 280px;
   }
 

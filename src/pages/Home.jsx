@@ -12,10 +12,11 @@ import FeaturedCollaborations from "../features/home/FeaturedCollaborations.jsx"
 import ReelsShowcase from "../features/home/ReelsShowcase.jsx";
 import BudgetTiers from "../features/home/BudgetTiers.jsx";
 import ReviewPills from "../features/home/ReviewPills.jsx";
-import CategoryExplorer from "../features/home/CategoryExplorer.jsx";
+
 import { useAsync } from "../hooks/useAsync.js";
 import productService from "../services/productService.js";
 import { BRAND } from "../config/site.js";
+import s from "./Home.module.css";
 
 export default function Home() {
   const {
@@ -40,7 +41,7 @@ export default function Home() {
       <CountdownBanner />
       <FeaturedCollaborations />
 
-      <section style={{ paddingBlock: "var(--section-y)" }}>
+      <section className={s.bestSellersSection}>
         <div className="container">
           <SectionHeading
             eyebrow="Most loved"
@@ -66,7 +67,7 @@ export default function Home() {
 
       <ReelsShowcase />
       <BudgetTiers />
-      <CategoryExplorer />
+
       <ReviewPills />
     </>
   );

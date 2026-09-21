@@ -1,0 +1,371 @@
+/* ==========================================================
+   TRACK ORDER PAGE — Order ID lookup and status timeline
+   ========================================================== */
+
+.trackContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+/* ── Lookup Form Card ── */
+
+.lookupCard {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  box-shadow: var(--sh-sm);
+}
+
+.lookupHeader {
+  margin-bottom: var(--sp-4);
+}
+
+.lookupTitle {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--c-text);
+  margin: 0 0 var(--sp-1);
+}
+
+.lookupSubtitle {
+  font-size: 0.88rem;
+  color: var(--c-text-2);
+  margin: 0;
+}
+
+.lookupForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: var(--sp-3);
+  align-items: flex-end;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--c-border);
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color var(--t-fast) var(--ease);
+}
+
+.input:focus {
+  border-color: var(--c-brand);
+}
+
+.trackBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 22px;
+  border-radius: var(--r-md);
+  background: var(--c-brand);
+  color: var(--c-text-on-brand);
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  outline: none;
+  transition: background var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+
+.trackBtn:hover {
+  background: var(--c-brand-hover);
+  transform: translateY(-1px);
+}
+
+.trackBtn:disabled {
+  opacity: 0.7;
+}
+
+/* ── Result Card ── */
+
+.resultCard {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  box-shadow: var(--sh-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.resultTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--c-border);
+  padding-bottom: var(--sp-4);
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.resultOrderId {
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--c-text);
+  margin: 0;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--r-pill);
+  background: var(--c-brand-soft);
+  color: var(--c-brand-hover);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--sp-4);
+  background: var(--c-sunken);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.infoLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--c-text-2);
+}
+
+.infoValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+/* ── Timeline ── */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: var(--sp-8);
+  margin-block: var(--sp-2);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--c-border);
+}
+
+.timelineStep {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-bottom: var(--sp-6);
+}
+
+.timelineStep:last-child {
+  padding-bottom: 0;
+}
+
+.stepDot {
+  position: absolute;
+  left: calc(var(--sp-8) * -1 + 5px);
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--r-circle);
+  background: var(--c-sunken);
+  border: 2px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.stepDotCompleted {
+  background: var(--c-brand);
+  border-color: var(--c-brand);
+  color: #fff;
+}
+
+.stepDotCurrent {
+  background: var(--c-brand);
+  border-color: var(--c-brand);
+  box-shadow: 0 0 0 4px rgba(74, 107, 83, 0.2);
+}
+
+.stepTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--c-text);
+  margin: 0;
+}
+
+.stepDesc {
+  font-size: 0.82rem;
+  color: var(--c-text-2);
+  margin: 0;
+}
+
+.stepDate {
+  font-size: 0.75rem;
+  color: var(--c-text-2);
+  opacity: 0.8;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .lookupForm {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .trackContainer {
+    gap: var(--sp-4);
+  }
+
+  .lookupCard {
+    padding: var(--sp-4) var(--sp-3);
+    border-radius: var(--r-lg);
+  }
+
+  .lookupHeader {
+    margin-bottom: var(--sp-3);
+  }
+
+  .lookupTitle {
+    font-size: 1.15rem;
+  }
+
+  .lookupSubtitle {
+    font-size: 0.8rem;
+  }
+
+  .lookupForm {
+    gap: var(--sp-2);
+  }
+
+  .label {
+    font-size: 0.76rem;
+  }
+
+  .input {
+    padding: 9px 12px;
+    font-size: 0.85rem;
+  }
+
+  .trackBtn {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+
+  .resultCard {
+    padding: var(--sp-4) var(--sp-3);
+    border-radius: var(--r-lg);
+    gap: var(--sp-4);
+  }
+
+  .resultTop {
+    padding-bottom: var(--sp-3);
+  }
+
+  .resultOrderId {
+    font-size: 1.1rem;
+  }
+
+  .statusBadge {
+    padding: 4px 10px;
+    font-size: 0.72rem;
+  }
+
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-2);
+    padding: var(--sp-3);
+  }
+
+  .infoLabel {
+    font-size: 0.68rem;
+  }
+
+  .infoValue {
+    font-size: 0.82rem;
+  }
+
+  .timeline {
+    padding-left: var(--sp-6);
+  }
+
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timelineStep {
+    padding-bottom: var(--sp-4);
+  }
+
+  .stepDot {
+    left: calc(var(--sp-6) * -1 + 2px);
+    width: 16px;
+    height: 16px;
+  }
+
+  .stepTitle {
+    font-size: 0.88rem;
+  }
+
+  .stepDesc {
+    font-size: 0.78rem;
+  }
+
+  .stepDate {
+    font-size: 0.7rem;
+  }
+}

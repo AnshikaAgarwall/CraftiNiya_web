@@ -1,0 +1,328 @@
+/* ==========================================================
+   CONTACT PAGE — Studio info cards, direct channels, and form
+   ========================================================== */
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-8);
+}
+
+/* ── Top Channels Strip ── */
+
+.channelsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-4);
+}
+
+.channelCard {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-4) var(--sp-5);
+  box-shadow: var(--sh-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  transition: transform var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+}
+
+.channelCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--c-border-strong);
+}
+
+.channelIconWrap {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-circle);
+  background: var(--c-brand-soft);
+  color: var(--c-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-1);
+}
+
+.channelTitle {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--c-text);
+  margin: 0;
+}
+
+.channelText {
+  font-size: 0.82rem;
+  color: var(--c-text-2);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.channelLink {
+  margin-top: auto;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--c-brand);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.channelLink:hover {
+  color: var(--c-brand-hover);
+  text-decoration: underline;
+}
+
+/* ── Form Card ── */
+
+.formCard {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--sh-sm);
+}
+
+.formHeader {
+  margin-bottom: var(--sp-6);
+}
+
+.formTitle {
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--c-text);
+  margin: 0 0 var(--sp-1);
+}
+
+.formSubtitle {
+  font-size: 0.88rem;
+  color: var(--c-text-2);
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--c-border);
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--c-brand);
+  box-shadow: 0 0 0 3px rgba(74, 107, 83, 0.12);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: var(--r-lg);
+  background: var(--c-brand);
+  color: var(--c-text-on-brand);
+  font-size: 0.92rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-top: var(--sp-2);
+  transition: background var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+
+.submitBtn:hover {
+  background: var(--c-brand-hover);
+  transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── Success Message ── */
+
+.successCard {
+  text-align: center;
+  padding: var(--sp-8) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.successIconWrap {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-circle);
+  background: var(--c-success-soft);
+  color: var(--c-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.successTitle {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--c-text);
+  margin: 0;
+}
+
+.successText {
+  font-size: 0.9rem;
+  color: var(--c-text-2);
+  max-width: 440px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.resetBtn {
+  margin-top: var(--sp-2);
+  padding: 8px 18px;
+  border-radius: var(--r-pill);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border-strong);
+  color: var(--c-brand-hover);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .contactGrid {
+    gap: var(--sp-4);
+  }
+
+  /* Compact 2x2 Channels on Mobile */
+  .channelsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-2);
+  }
+
+  .channelCard {
+    padding: var(--sp-3);
+    gap: 4px;
+  }
+
+  .channelIconWrap {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 2px;
+  }
+
+  .channelIconWrap svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .channelTitle {
+    font-size: 0.88rem;
+  }
+
+  .channelText {
+    font-size: 0.74rem;
+    line-height: 1.3;
+  }
+
+  .channelLink {
+    font-size: 0.76rem;
+    margin-top: 4px;
+  }
+
+  /* Compact Form Card */
+  .formCard {
+    padding: var(--sp-4) var(--sp-3);
+    border-radius: var(--r-lg);
+  }
+
+  .formHeader {
+    margin-bottom: var(--sp-3);
+  }
+
+  .formTitle {
+    font-size: 1.15rem;
+  }
+
+  .formSubtitle {
+    font-size: 0.8rem;
+  }
+
+  .form {
+    gap: var(--sp-3);
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  .label {
+    font-size: 0.76rem;
+  }
+
+  .input,
+  .select,
+  .textarea {
+    padding: 9px 12px;
+    font-size: 0.85rem;
+  }
+
+  .textarea {
+    min-height: 95px;
+  }
+
+  .submitBtn {
+    width: 100%;
+    padding: 11px 18px;
+    font-size: 0.88rem;
+    justify-content: center;
+  }
+}

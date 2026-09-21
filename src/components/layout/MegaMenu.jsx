@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { ErrorState, Skeleton } from "../ui/Feedback.jsx";
 import { useAsync } from "../../hooks/useAsync.js";
 import categoryService from "../../services/categoryService.js";
-import { catalogPathFor } from "../../lib/catalogLink.js";
 import s from "./MegaMenu.module.css";
 
 /**
@@ -12,9 +11,7 @@ import s from "./MegaMenu.module.css";
  * Reads the same cached categories dataset as the home explorer, so opening
  * the menu costs no extra request after the first paint of either.
  *
- * Every link lands on the catalog with the selection carried in the URL —
- * the same query the sidebar writes — so a shopper can share, refresh or step
- * back through exactly what they were looking at.
+ * Every link routes directly to the dedicated category and subcategory pages.
  */
 export default function MegaMenu({ onNavigate }) {
   const { data: categories, loading, error, refetch } = useAsync(
@@ -43,7 +40,7 @@ export default function MegaMenu({ onNavigate }) {
             {categories?.map((category) => (
               <div key={category.id} className={s.column}>
                 <Link
-                  to={catalogPathFor({ categoryId: category.slug })}
+                  to={`/category/${category.id}`}
                   className={s.columnTitle}
                   onClick={onNavigate}
                 >
@@ -54,10 +51,7 @@ export default function MegaMenu({ onNavigate }) {
                   {category.subcategories.map((sub) => (
                     <li key={sub.id}>
                       <Link
-                        to={catalogPathFor({
-                          categoryId: category.slug,
-                          subcategoryId: sub.slug,
-                        })}
+                        to={`/category/${category.id}/subcategory/${sub.id}`}
                         className={s.link}
                         onClick={onNavigate}
                       >
@@ -68,7 +62,7 @@ export default function MegaMenu({ onNavigate }) {
                 </ul>
 
                 <Link
-                  to={catalogPathFor({ categoryId: category.slug })}
+                  to={`/category/${category.id}`}
                   className={s.viewAll}
                   onClick={onNavigate}
                 >

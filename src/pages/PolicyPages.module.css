@@ -1,0 +1,376 @@
+/* ==========================================================
+   POLICY PAGES — Shared styles for Shipping, Returns, Terms, Privacy
+   ========================================================== */
+
+.policyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.lastUpdatedBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  font-size: 0.82rem;
+  color: var(--c-text-2);
+}
+
+.lastUpdatedText strong {
+  color: var(--c-text);
+}
+
+/* ── Section Card ── */
+
+.policyCard {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  box-shadow: var(--sh-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  border-bottom: 1px solid var(--c-border);
+  padding-bottom: var(--sp-3);
+}
+
+.cardIconWrap {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-circle);
+  background: var(--c-brand-soft);
+  color: var(--c-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--c-text);
+  margin: 0;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--c-text-2);
+}
+
+.cardBody p {
+  margin: 0;
+}
+
+.cardBody strong {
+  color: var(--c-text);
+}
+
+/* ── Highlight / Callout Box ── */
+
+.callout {
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  background: var(--c-brand-soft);
+  border-left: 3px solid var(--c-brand);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  color: var(--c-brand-hover);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.calloutIcon {
+  color: var(--c-brand);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.calloutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.calloutTitle {
+  font-weight: 700;
+  color: var(--c-brand-hover);
+  margin: 0;
+}
+
+/* ── Warning / Alert Box ── */
+
+.alert {
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  background: var(--c-error-soft);
+  border-left: 3px solid var(--c-error);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  color: var(--c-text);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.alertIcon {
+  color: var(--c-error);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Styled Lists ── */
+
+.bulletList {
+  margin: 0;
+  padding-left: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.bulletList li {
+  padding-left: var(--sp-1);
+}
+
+.stepList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin: var(--sp-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stepItem {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+}
+
+.stepNumber {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--r-circle);
+  background: var(--c-brand);
+  color: var(--c-text-on-brand);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.stepText {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--c-text-2);
+  line-height: 1.5;
+}
+
+.stepText strong {
+  color: var(--c-text);
+}
+
+/* ── Table ── */
+
+.tableWrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  margin-top: var(--sp-2);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.table th {
+  background: var(--c-sunken);
+  padding: var(--sp-3) var(--sp-4);
+  font-weight: 600;
+  color: var(--c-text);
+  border-bottom: 1px solid var(--c-border);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--c-border);
+  color: var(--c-text-2);
+  line-height: 1.4;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background: var(--c-brand-soft);
+}
+
+/* ── Quick Links Strip ── */
+
+.quickNavStrip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--c-border);
+  margin-top: var(--sp-4);
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: var(--r-lg);
+  background: var(--c-brand);
+  color: var(--c-text-on-brand);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--t-fast) var(--ease);
+}
+
+.actionBtn:hover {
+  background: var(--c-brand-hover);
+}
+
+.actionBtnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: var(--r-lg);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border-strong);
+  color: var(--c-brand-hover);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--t-fast) var(--ease);
+}
+
+.actionBtnSecondary:hover {
+  background: var(--c-brand-soft);
+}
+
+/* ── Mobile Responsive ── */
+
+@media (max-width: 640px) {
+  .policyContainer {
+    gap: var(--sp-4);
+  }
+
+  .lastUpdatedBar {
+    padding: var(--sp-2) var(--sp-3);
+    font-size: 0.74rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .policyCard {
+    padding: var(--sp-4) var(--sp-3);
+    border-radius: var(--r-lg);
+    gap: var(--sp-3);
+  }
+
+  .cardHeader {
+    gap: var(--sp-2);
+    padding-bottom: var(--sp-2);
+  }
+
+  .cardIconWrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  .cardIconWrap svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cardTitle {
+    font-size: 1.05rem;
+  }
+
+  .cardBody {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    gap: var(--sp-2);
+  }
+
+  .callout,
+  .alert {
+    padding: var(--sp-3);
+    font-size: 0.8rem;
+    gap: var(--sp-2);
+  }
+
+  .bulletList {
+    padding-left: var(--sp-4);
+    gap: 4px;
+  }
+
+  .stepItem {
+    gap: var(--sp-2);
+  }
+
+  .stepNumber {
+    width: 22px;
+    height: 22px;
+    font-size: 0.72rem;
+  }
+
+  .stepText {
+    font-size: 0.82rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+  }
+
+  .quickNavStrip {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding-top: var(--sp-3);
+  }
+
+  .actionBtn,
+  .actionBtnSecondary {
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    width: 100%;
+  }
+}

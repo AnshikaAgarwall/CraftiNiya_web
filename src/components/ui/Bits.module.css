@@ -178,7 +178,7 @@ button.chip:hover {
   align-items: flex-end;
   justify-content: space-between;
   gap: var(--sp-4);
-  margin-bottom: var(--sp-6);
+  margin-bottom: var(--section-header-mb);
 }
 
 .heading_split {
@@ -242,8 +242,19 @@ button.chip:hover {
 
 @media (max-width: 640px) {
   .heading {
-    margin-bottom: var(--sp-4);
-    gap: var(--sp-2);
+    margin-bottom: var(--section-header-mb);
+    gap: var(--sp-3);
+  }
+
+  .eyebrow {
+    margin-bottom: 6px;
+    font-size: clamp(9.5px, 2.4vw, 10.5px);
+  }
+
+  .headingTitle {
+    font-size: clamp(1.15rem, 3.8vw, 1.45rem);
+    line-height: 1.2;
+    letter-spacing: var(--ls-tight);
   }
 
   .heading_split {
@@ -253,13 +264,14 @@ button.chip:hover {
   }
 
   .heading_split .eyebrow {
-    margin-bottom: 2px;
-    font-size: 9.5px;
+    margin-bottom: 6px;
+    font-size: clamp(9.5px, 2.4vw, 10.5px);
   }
 
   .heading_split .headingTitle {
-    font-size: clamp(1rem, 3.8vw, 1.2rem);
-    line-height: 1.15;
+    font-size: clamp(1.15rem, 3.8vw, 1.45rem);
+    line-height: 1.2;
+    letter-spacing: var(--ls-tight);
   }
 
   .heading_split .headingSub {
@@ -272,8 +284,8 @@ button.chip:hover {
 
   .headingAction a,
   .headingAction button {
-    padding: 3px 8px !important;
-    font-size: 11px !important;
+    padding: 3px 10px !important;
+    font-size: 11.5px !important;
     min-height: 28px !important;
   }
 

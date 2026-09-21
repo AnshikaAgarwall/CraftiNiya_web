@@ -23,6 +23,7 @@ const PartnerPicksPage = lazy(() => import("../pages/PartnerPicksPage.jsx"));
 const PartnerRedirectPage = lazy(() => import("../pages/PartnerRedirectPage.jsx"));
 const BudgetGiftingPage = lazy(() => import("../pages/BudgetGiftingPage.jsx"));
 const SearchPage = lazy(() => import("../pages/SearchPage.jsx"));
+const GiftBoxPage = lazy(() => import("../pages/GiftBoxPage.jsx"));
 const WishlistPage = lazy(() => import("../pages/WishlistPage.jsx"));
 const CartPage = lazy(() => import("../pages/CartPage.jsx"));
 const AuthPage = lazy(() => import("../pages/AuthPage.jsx"));
@@ -31,6 +32,15 @@ const OrderConfirmationPage = lazy(() => import("../pages/OrderConfirmationPage.
 const AccountPage = lazy(() => import("../pages/AccountPage.jsx"));
 const OrderHistoryPage = lazy(() => import("../pages/OrderHistoryPage.jsx"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage.jsx"));
+
+/* Customer Support & Policy Pages */
+const FAQPage = lazy(() => import("../pages/FAQPage.jsx"));
+const ShippingPolicyPage = lazy(() => import("../pages/ShippingPolicyPage.jsx"));
+const ReturnRefundPolicyPage = lazy(() => import("../pages/ReturnRefundPolicyPage.jsx"));
+const TermsPage = lazy(() => import("../pages/TermsPage.jsx"));
+const PrivacyPolicyPage = lazy(() => import("../pages/PrivacyPolicyPage.jsx"));
+const ContactPage = lazy(() => import("../pages/ContactPage.jsx"));
+const TrackOrderPage = lazy(() => import("../pages/TrackOrderPage.jsx"));
 
 function RouteFallback() {
   return (
@@ -54,6 +64,7 @@ export default function AppRoutes() {
             <Route path="sale" element={<Sale />} />
             <Route path="search" element={<SearchPage />} />
             <Route path="budget-gifting" element={<BudgetGiftingPage />} />
+            <Route path="gift-box" element={<GiftBoxPage />} />
             <Route path="partner-picks" element={<PartnerPicksPage />} />
             <Route path="partner/:slug" element={<PartnerRedirectPage />} />
 
@@ -71,6 +82,20 @@ export default function AppRoutes() {
             <Route path="wishlist" element={<WishlistPage />} />
             <Route path="cart" element={<CartPage />} />
             <Route path="auth" element={<AuthPage />} />
+
+            {/* Customer Support & Policies */}
+            <Route path="faq" element={<FAQPage />} />
+            <Route path="shipping" element={<ShippingPolicyPage />} />
+            <Route path="shipping-policy" element={<ShippingPolicyPage />} />
+            <Route path="returns" element={<ReturnRefundPolicyPage />} />
+            <Route path="return-refund-policy" element={<ReturnRefundPolicyPage />} />
+            <Route path="terms" element={<TermsPage />} />
+            <Route path="terms-and-conditions" element={<TermsPage />} />
+            <Route path="privacy" element={<PrivacyPolicyPage />} />
+            <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="contact-us" element={<ContactPage />} />
+            <Route path="track-order" element={<TrackOrderPage />} />
 
             <Route element={<ProtectedRoute />}>
               <Route path="checkout" element={<CheckoutPage />} />

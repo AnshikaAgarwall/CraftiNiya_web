@@ -468,7 +468,7 @@
 
 .reviewTitle {
   margin-top: var(--sp-1);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--fs-md);
   font-weight: var(--fw-semibold);
 }
@@ -492,7 +492,7 @@
 }
 
 .related {
-  padding-block: var(--sp-9) var(--sp-11);
+  padding-block: var(--section-y);
   border-top: 1px solid var(--c-border);
 }
 

@@ -7,7 +7,7 @@
     "title": "Welcome to Craftiniya",
     "body": "Explore our collections of home decor, candles, crochet, festive essentials and personalized gifts. Find something that feels like you — or like the person you are gifting.",
     "image": {
-      "url": "https://plus.unsplash.com/premium_photo-1710595925696-5d644538592d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "url": "/assets/ABOUTIMAGE.png",
       "alt": "Finishing a handmade piece in the studio"
     },
     "stats": [
@@ -73,82 +73,122 @@
     "items": [
       {
         "id": "stall-1",
-        "title": null,
-        "event": null,
-        "location": null,
-        "date": null,
-        "imageUrl": null,
-        "caption": null
+        "title": "Botanical Resin & Decor Stall",
+        "event": "Dastkar Craft Fair",
+        "location": "Nature Bazaar, New Delhi",
+        "date": "Nov 2025",
+        "imageUrl": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80",
+        "caption": "Live display of preserved floral resin clocks, coasters and tabletop decor."
       },
       {
         "id": "stall-2",
-        "title": null,
-        "event": null,
-        "location": null,
-        "date": null,
-        "imageUrl": null,
-        "caption": null
+        "title": "Aesthetic Soy Candle Studio",
+        "event": "Sunday Soul Sante",
+        "location": "Jaymahal Palace, Bengaluru",
+        "date": "Jan 2026",
+        "imageUrl": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=800&q=80",
+        "caption": "Hand-poured dessert and botanical soy candles collection."
       },
       {
         "id": "stall-3",
-        "title": null,
-        "event": null,
-        "location": null,
-        "date": null,
-        "imageUrl": null,
-        "caption": null
+        "title": "Festive Gifting Pop-up",
+        "event": "The Lil Flea",
+        "location": "BKC Grounds, Mumbai",
+        "date": "Dec 2025",
+        "imageUrl": "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80",
+        "caption": "Make Your Gift Box counter and personalized hampers."
       },
       {
         "id": "stall-4",
-        "title": null,
-        "event": null,
-        "location": null,
-        "date": null,
-        "imageUrl": null,
-        "caption": null
+        "title": "Artisan Collective Showcase",
+        "event": "Craft Roots Expo",
+        "location": "Vastrapur, Ahmedabad",
+        "date": "Feb 2026",
+        "imageUrl": "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=800&q=80",
+        "caption": "Showcasing women artisan crochet bags and traditional wooden resin work."
+      }
+    ]
+  },
+  "collaborations": {
+    "active": true,
+    "eyebrow": "Beyond The Studio",
+    "title": "Collaborations, Community & Impact",
+    "subtitle": "Partnering with conscious brands, grassroots artisan NGOs, design creators, and affiliate curators.",
+    "items": [
+      {
+        "id": "brand-collab",
+        "icon": "briefcase",
+        "tag": "Corporate & Co-Branding",
+        "title": "Brand Collaborations",
+        "body": "Custom corporate hampers, luxury wedding favours, and co-branded handmade pieces for conscious brands and milestone events.",
+        "link": "/contact",
+        "linkText": "Inquire for Collaborations"
       },
       {
-        "id": "stall-5",
-        "title": null,
-        "event": null,
-        "location": null,
-        "date": null,
-        "imageUrl": null,
-        "caption": null
+        "id": "ngo-impact",
+        "icon": "heart-handshake",
+        "tag": "Grassroots Impact",
+        "title": "NGO & Artisan Collective",
+        "body": "Partnered with local grassroots artisan clusters and women self-help craft initiatives, ensuring fair living wages and preserving traditional Indian handcrafts.",
+        "badge": "Women-Led • Fair Living Wages"
       },
       {
-        "id": "stall-6",
-        "title": null,
-        "event": null,
-        "location": null,
-        "date": null,
-        "imageUrl": null,
-        "caption": null
+        "id": "influencer-network",
+        "icon": "camera",
+        "tag": "50+ Stylists",
+        "title": "Creator & Influencer Circle",
+        "body": "Leading home decor curators and aesthetic lifestyle influencers styling CraftiNiya botanicals, candles, and resin pieces in everyday living spaces.",
+        "link": "https://www.instagram.com/manmish_creations?igsi=am9xYjJkejJjOHho",
+        "linkText": "See on Instagram @craftiniya",
+        "external": true
+      },
+      {
+        "id": "affiliate-picks",
+        "icon": "shopping-bag",
+        "tag": "Curated Storefronts",
+        "title": "Affiliate & Partner Picks",
+        "body": "Discover specially curated collections hand-selected by design tastemakers and affiliate partners, highlighting standout studio originals.",
+        "link": "/partner-picks",
+        "linkText": "Explore Partner Picks"
       }
     ]
   },
   "policies": {
     "title": "The practical bits",
+    "eyebrow": "Customer Care & Guarantees",
+    "subtitle": "Transparent policies and friendly studio support for an effortless shopping experience.",
     "items": [
       {
         "id": "shipping",
-        "title": "Shipping",
-        "body": "Everything is made to order, so allow 2–4 days in the studio before dispatch. Delivery is 3–6 days across India. Orders over ₹1,499 ship free; below that it is a flat ₹99."
+        "title": "Shipping & Delivery",
+        "highlight": "Free over ₹1,499 • 3–6 Days",
+        "body": "Made to order in our studio. Dispatched in 2–4 days with 4-layer shockproof packaging.",
+        "link": "/shipping-policy",
+        "linkText": "View Shipping Policy"
       },
       {
         "id": "returns",
-        "title": "Returns",
-        "body": "Unused pieces can come back within 7 days of delivery for a full refund. Personalized and made-to-order commissions cannot be returned unless they arrive damaged — tell us within 48 hours and we will remake or refund."
+        "title": "Returns & Refunds",
+        "highlight": "7-Day Easy Returns Guarantee",
+        "body": "Unused non-custom pieces can come back in 7 days. Transit damage is promptly replaced or refunded.",
+        "link": "/return-refund-policy",
+        "linkText": "View Returns Policy"
       },
       {
         "id": "care",
-        "title": "Care",
-        "body": "Keep resin out of prolonged direct sun. Trim candle wicks to 5mm before each burn and never leave one unattended. Spot-clean crochet in cold water and dry flat."
+        "title": "Studio Care Guide",
+        "highlight": "Resin, Soy Wax & Crochet",
+        "body": "Keep resin away from harsh sun, trim candle wicks to 5mm, spot-clean crochet gently.",
+        "link": "/faq#resin-care-guide",
+        "linkText": "Read Care Guide"
       },
       {
         "id": "contact",
-        "title": "Contact",
-        "body": "Questions about an order, a custom brief, or a wholesale enquiry — email us and a person will reply, usually within a day."
+        "title": "Help & Quick Contact",
+        "highlight": "Human Replies • WhatsApp & Email",
+        "body": "Questions on a custom brief, order tracking, or corporate order? We reply within 24 hours.",
+        "link": "/contact",
+        "linkText": "Get in Touch"
       }
     ]
   },
