@@ -1,4 +1,4 @@
-.header {
+﻿.header {
   position: sticky;
   top: 0;
   z-index: var(--z-header);
@@ -72,7 +72,7 @@
 
 .brandName {
   font-family: var(--font-serif) !important;
-  font-size: 1.55rem;
+  font-size: 1.35rem;
   font-weight: var(--fw-semibold);
   letter-spacing: -0.015em;
   color: var(--c-text);
@@ -556,7 +556,7 @@
 
   .brandName {
     font-family: var(--font-serif) !important;
-    font-size: 1.55rem;
+    font-size: 1.35rem;
     font-weight: var(--fw-semibold);
     letter-spacing: -0.015em;
     line-height: 1;
@@ -642,7 +642,7 @@
 @media (max-width: 400px) {
   .brandName {
     font-family: var(--font-serif) !important;
-    font-size: 1.55rem;
+    font-size: 1.35rem;
     font-weight: var(--fw-semibold);
     letter-spacing: -0.015em;
     line-height: 1;

@@ -6,7 +6,8 @@ import productService from "../../services/productService.js";
 import s from "./FilmstripShowcase.module.css";
 
 /**
- * Two vertical film strips scrolling in opposite directions, endlessly.
+ * Two vertical marquees of product imagery scrolling in opposite directions,
+ * endlessly. Plain images — no film-strip rail, sprockets, frames or borders.
  *
  * Imagery only — no titles, prices or badges. This sits beside a sign-in form
  * as texture, and product copy here would compete with the thing the page is

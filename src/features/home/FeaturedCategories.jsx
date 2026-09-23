@@ -22,7 +22,7 @@ export default function FeaturedCategories() {
       <div className="container">
         <SectionHeading
           eyebrow="Shop by category"
-          title="Find your corner of the studio"
+          title="Find your interest"
           action={
             <Button to="/categories" variant="ghost" endIcon={<ArrowRight size={16} />}>
               All categories

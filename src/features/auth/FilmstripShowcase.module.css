@@ -1,60 +1,26 @@
 /* Fills the locked auth viewport and never scrolls with the page — only the
-   two tracks inside it move. */
+   two tracks inside it move. Plain imagery: no rails, no borders, no frames. */
 .showcase {
   position: relative;
   height: 100%;
   min-height: 0;
   overflow: hidden;
-  border-radius: var(--r-lg);
-  background-color: var(--c-sunken);
+  background-color: transparent;
+  /* Decoration only — nothing in here is clickable. */
+  pointer-events: none;
+  user-select: none;
 }
 
 .columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--sp-4);
+  gap: var(--sp-3);
   height: 100%;
-  padding: var(--sp-4);
 }
 
-/* Each column is a strip of film: a darker rail with sprocket perforations
-   punched down both edges. */
 .strip {
   position: relative;
   overflow: hidden;
-  border-radius: var(--r-sm);
-  background-color: var(--c-support);
-  padding-inline: 14px;
-}
-
-/* Sprocket holes: one 7×26px tile holding an 11px bar over 15px of nothing,
-   tiled down the rail. The laurel rail is only 14px wide on each edge, so the
-   panel still reads light overall. */
-.strip::before,
-.strip::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 2;
-  width: 14px;
-  background-image: linear-gradient(
-    to bottom,
-    var(--c-bg) 0 11px,
-    transparent 11px 26px
-  );
-  background-size: 7px 26px;
-  background-repeat: repeat-y;
-  background-position: center top;
-  pointer-events: none;
-}
-
-.strip::before {
-  left: 0;
-}
-
-.strip::after {
-  right: 0;
 }
 
 .track {
@@ -64,29 +30,55 @@
 }
 
 /* Opposite directions, endlessly. Long durations because this is ambient
-   texture beside a form, not something to watch. */
+   texture beside a form, not something to watch.
+
+   The keyframes are declared here rather than reused from base.css: CSS
+   Modules scopes `animation-name`, so a global keyframe name referenced from
+   inside a module silently resolves to nothing and the track sits still. */
 .trackUp {
-  animation: marqueeUp 48s linear infinite;
+  animation: stripUp 48s linear infinite;
 }
 
 .trackDown {
-  animation: marqueeDown 48s linear infinite;
+  animation: stripDown 48s linear infinite;
+}
+
+@keyframes stripUp {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes stripDown {
+  from {
+    transform: translateY(-50%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }
 
 /* Spacing as margin, not gap — see the note in the component. Half the track
    height must equal exactly one set of frames or the loop jumps. */
 .frame {
-  margin-bottom: 6px;
+  margin-bottom: var(--sp-3);
   overflow: hidden;
-  background-color: var(--c-surface);
+  border: none;
+  border-radius: var(--r-sm);
 }
 
 .frameImage {
   display: block;
+  pointer-events: none;
 }
 
-/* Fades top and bottom so frames enter and leave the strip rather than being
-   sliced off at the edge. */
+/* Fades top and bottom so images enter and leave rather than being sliced off
+   at the edge. */
 .fadeTop,
 .fadeBottom {
   position: absolute;
@@ -101,8 +93,8 @@
   top: 0;
   background: linear-gradient(
     180deg,
-    var(--c-sunken) 0%,
-    rgb(var(--c-sunken-rgb) / 0) 100%
+    var(--c-bg) 0%,
+    rgb(var(--c-bg-rgb) / 0) 100%
   );
 }
 
@@ -110,7 +102,7 @@
   bottom: 0;
   background: linear-gradient(
     0deg,
-    var(--c-sunken) 0%,
-    rgb(var(--c-sunken-rgb) / 0) 100%
+    var(--c-bg) 0%,
+    rgb(var(--c-bg-rgb) / 0) 100%
   );
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Check, Copy, Sparkles, Tag, X } from "lucide-react";
+import { Sparkles, X } from "lucide-react";
 import { useAsync } from "../../hooks/useAsync.js";
 import { useCountdown } from "../../hooks/useCountdown.js";
 import promoService from "../../services/promoService.js";
@@ -17,8 +17,6 @@ export default function TopPromoBanner() {
       return false;
     }
   });
-
-  const [copied, setCopied] = useState(false);
 
   const { data: promo } = useAsync((opts) => promoService.getActivePromotion(opts), []);
   const { data: serverTime } = useAsync((opts) => promoService.getServerTime(opts), []);
@@ -44,15 +42,6 @@ export default function TopPromoBanner() {
     }
   };
 
-  const handleCopyCode = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const code = promo.couponCode || "FESTIVE40";
-    navigator.clipboard?.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   const handleBannerClick = () => {
     navigate(promo.ctaHref || "/sale");
   };
@@ -70,9 +59,8 @@ export default function TopPromoBanner() {
           {promo.headline || "Festive Sale — Up to 40% Off Handmade Gifting"}
         </span>
 
-        {/* Timer & Coupon grouped side-by-side on 2nd line */}
+        {/* Countdown timer */}
         <div className={s.group}>
-          {/* Simple plain-text countdown */}
           <span className={s.timer}>
             <Sparkles size={11} color="#b45309" aria-hidden="true" />
             <span className={s.timerLabel}>Ends in:</span>
@@ -81,27 +69,6 @@ export default function TopPromoBanner() {
               {String(minutes).padStart(2, "0")}m {String(seconds).padStart(2, "0")}s
             </strong>
           </span>
-
-          <span className={s.divider} aria-hidden="true">
-            •
-          </span>
-
-          {/* Coupon Code Pill */}
-          <button
-            type="button"
-            onClick={handleCopyCode}
-            title="Click to copy coupon code"
-            className={s.couponBtn}
-          >
-            <Tag size={11} color="#b45309" />
-            <span className={s.couponCode}>
-              {promo.couponCode || "FESTIVE40"}
-            </span>
-            {copied ? <Check size={11} color="#15803d" /> : <Copy size={11} color="#6b7280" />}
-            <span className={copied ? s.copiedLabel : s.copyLabel}>
-              {copied ? "Copied" : "Copy"}
-            </span>
-          </button>
         </div>
       </div>
 

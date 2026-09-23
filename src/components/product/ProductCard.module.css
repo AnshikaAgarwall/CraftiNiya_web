@@ -1,4 +1,6 @@
 .card {
+  /* One height shared by the flag pills and the wishlist button so they line up. */
+  --pc-pill-h: 20px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -58,22 +60,29 @@
 
 .flags :global(.badge),
 .flags span {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--pc-pill-h);
   border-radius: 2px !important;
   font-size: 9px;
   font-weight: 600;
+  line-height: 1;
   letter-spacing: 0.04em;
-  padding: 3px 6px;
+  padding: 0 6px;
   text-transform: uppercase;
 }
 
 .wishlist {
   position: absolute;
-  top: var(--sp-3);
-  right: var(--sp-3);
+  /* Sits directly opposite the flag pills: same top edge, same height. */
+  top: 8px;
+  right: 8px;
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  box-sizing: border-box;
+  width: var(--pc-pill-h);
+  height: var(--pc-pill-h);
   border-radius: var(--r-circle);
   background-color: var(--c-surface);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -85,8 +94,8 @@
 }
 
 .wishlist svg {
-  width: 17px;
-  height: 17px;
+  width: 12px;
+  height: 12px;
 }
 
 .wishlist:hover {

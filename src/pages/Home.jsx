@@ -45,7 +45,7 @@ export default function Home() {
         <div className="container">
           <SectionHeading
             eyebrow="Most loved"
-            title="OUR BEST SELLERS"
+            title="Our Best Sellers"
             action={
               <Button to="/shop" variant="ghost" endIcon={<ArrowRight size={16} />}>
                 Shop all
