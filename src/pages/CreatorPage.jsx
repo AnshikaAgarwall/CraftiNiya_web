@@ -5,34 +5,13 @@ import LazyImage from "../components/common/LazyImage.jsx";
 import { useAsync } from "../hooks/useAsync.js";
 import productService from "../services/productService.js";
 import { BRAND } from "../config/site.js";
+import { getCreator } from "../data/partners.js";
 import s from "./CreatorPage.module.css";
-
-// Registry of creators supporting both "influencer" (reel) and "ngo_artisan" (banner)
-const CREATOR_PROFILES = {
-  "local-artisans": {
-    name: "Ananya Sharma & Local Artisans",
-    bio: "Empowering rural women artisans and preserving traditional macramé and mud-relief heritage craft across Rajasthan and Gujarat.",
-    category: "ngo_artisan",
-    mediaType: "banner",
-    mediaUrl: "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg",
-    location: "Jaipur, Rajasthan",
-    founded: "Heritage Studio Collective",
-  },
-  "priya-crafts": {
-    name: "Priya Creations",
-    bio: "Studio creator specializing in crystal-clear botanical resin pour, preserved floral keepsakes, and calming aromatherapy essentials.",
-    category: "influencer",
-    mediaType: "reel",
-    mediaUrl: "https://videos.pexels.com/video-files/34428330/14585482_1280_720_50fps.mp4",
-    posterUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-    location: "Bengaluru, India",
-    instagramHandle: "@priyacrafts.studio",
-  },
-};
 
 export default function CreatorPage() {
   const { slug } = useParams();
-  const profile = CREATOR_PROFILES[slug] || {
+  const foundCreator = getCreator(slug);
+  const profile = foundCreator || {
     name: slug ? slug.replace(/-/g, " ") : "Featured Creator",
     bio: "Handcrafted in small batches with heartfelt attention to detail and pure sustainable materials.",
     category: "influencer",
@@ -41,14 +20,11 @@ export default function CreatorPage() {
   };
 
   const { data: catalog, loading, error, refetch } = useAsync(
-    (opts) => productService.getProducts({ pageSize: 8 }, opts),
+    (opts) => productService.getProducts({ creatorSlug: slug, pageSize: 12 }, opts),
     [slug],
   );
 
-  const creatorProducts = (catalog?.items ?? []).filter(
-    (p) => p.creator?.slug === slug || p.productType === "creator",
-  );
-  const displayProducts = creatorProducts.length > 0 ? creatorProducts : (catalog?.items ?? []).slice(0, 4);
+  const displayProducts = catalog?.items ?? [];
 
   return (
     <>
@@ -61,7 +37,9 @@ export default function CreatorPage() {
         <nav aria-label="Breadcrumb" className={s.breadcrumb}>
           <Link to="/" className={s.crumbLink}>Home</Link>
           <span className={s.crumbDivider}>/</span>
-          <span>Creator Spotlight</span>
+          <Link to="/creators" className={s.crumbLink}>Creators</Link>
+          <span className={s.crumbDivider}>/</span>
+          <span>{profile.name}</span>
         </nav>
 
         {/* Unified Dynamic Media Block: Swaps based on profile.mediaType */}
@@ -123,6 +101,8 @@ export default function CreatorPage() {
             error={error}
             onRetry={refetch}
             columns={4}
+            emptyTitle={`No pieces currently listed for ${profile.name}`}
+            emptyMessage="New handcrafted pieces from this creator studio will be arriving soon."
           />
         </section>
       </div>

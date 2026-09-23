@@ -30,6 +30,12 @@ async function allProducts(opts) {
 function matches(p, q) {
   if (q.categoryId && p.categoryId !== q.categoryId) return false;
   if (q.subcategoryId && p.subcategoryId !== q.subcategoryId) return false;
+  if (q.collaborationSlug && p.collaborationSlug !== q.collaborationSlug) return false;
+  if (
+    q.creatorSlug &&
+    p.creator?.slug?.toLowerCase() !== q.creatorSlug.toLowerCase()
+  )
+    return false;
 
   // Price comparisons always use the effective (sale-aware) price, so a
   // discounted item lands in exactly one budget tier everywhere in the app.

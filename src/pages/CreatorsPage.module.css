@@ -1,0 +1,166 @@
+.wrap {
+  padding-block: var(--section-y);
+  min-height: 60vh;
+}
+
+/* Responsive grid designed to support 1, 2, or many creators as the studio expands */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--sp-8);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform var(--t-base) var(--ease),
+    box-shadow var(--t-base) var(--ease),
+    border-color var(--t-base) var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-md);
+  border-color: var(--c-brand);
+}
+
+.mediaWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: var(--c-sunken);
+  overflow: hidden;
+}
+
+.mediaImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-slow) var(--ease);
+}
+
+.card:hover .mediaImage {
+  transform: scale(1.04);
+}
+
+.categoryBadge {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  color: var(--c-brand);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--r-pill);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--sp-6);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--fs-xs);
+  color: var(--c-text-2);
+  margin-bottom: var(--sp-2);
+}
+
+.creatorName {
+  font-family: var(--font-serif);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+  color: var(--c-text);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--sp-2);
+}
+
+.bio {
+  font-size: var(--fs-sm);
+  color: var(--c-text-2);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-4);
+  flex: 1;
+}
+
+.craftTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: var(--sp-5);
+}
+
+.craftTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: var(--r-pill);
+  background-color: var(--c-sunken);
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
+  font-size: 11px;
+  font-weight: var(--fw-medium);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--c-border);
+  font-size: var(--fs-xs);
+}
+
+.handle {
+  color: var(--c-text-2);
+  font-weight: var(--fw-medium);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--c-brand);
+  font-weight: var(--fw-semibold);
+  transition: gap var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+
+.card:hover .cta {
+  gap: 10px;
+  color: var(--c-brand-hover);
+}
+
+@media (max-width: 820px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-6);
+  }
+
+  .creatorName {
+    font-size: var(--fs-xl);
+  }
+
+  .body {
+    padding: var(--sp-5);
+  }
+}

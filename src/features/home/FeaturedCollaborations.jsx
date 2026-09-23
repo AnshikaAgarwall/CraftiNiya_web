@@ -1,43 +1,11 @@
 import { Link } from "react-router-dom";
 import { SectionHeading } from "../../components/ui/Bits.jsx";
-import rangsajjaImg from "../../assets/rangsajja.png";
-import sugandhitImg from "../../assets/sugandhit.png";
-import crochetkariImg from "../../assets/crochetkari.png";
-import mittiImg from "../../assets/CraftiNiya x Mitti Se.png";
+import { getCollaborations } from "../../data/partners.js";
 import s from "./FeaturedCollaborations.module.css";
 
-const COLLAB_BANNERS = [
-  {
-    id: "rangsajja",
-    slug: "rangsajja",
-    title: "CraftiNiya x RangSajja",
-    image: rangsajjaImg,
-    href: "/collaboration/rangsajja",
-  },
-  {
-    id: "sugandhit",
-    slug: "sugandhit",
-    title: "CraftiNiya x Sugandhit",
-    image: sugandhitImg,
-    href: "/collaboration/sugandhit",
-  },
-  {
-    id: "crochetkari",
-    slug: "crochetkari",
-    title: "CraftiNiya x CrochetKari",
-    image: crochetkariImg,
-    href: "/collaboration/crochetkari",
-  },
-  {
-    id: "mitti-se",
-    slug: "mitti-se",
-    title: "CraftiNiya x Mitti Se",
-    image: mittiImg,
-    href: "/collaboration/mitti-se",
-  },
-];
-
 export default function FeaturedCollaborations() {
+  const collaborations = getCollaborations();
+
   return (
     <section className={s.section} aria-label="Exclusive Collaborations">
       <div className="container">
@@ -47,15 +15,15 @@ export default function FeaturedCollaborations() {
         />
 
         <div className={s.scrollTrack} role="region" aria-label="Collaborations carousel">
-          {COLLAB_BANNERS.map((item) => (
+          {collaborations.map((item) => (
             <Link
               key={item.id}
-              to={item.href}
+              to={`/collaboration/${item.slug}`}
               className={s.card}
               title={item.title}
             >
               <img
-                src={item.image}
+                src={item.bannerImage}
                 alt={item.title}
                 className={s.cardImage}
                 loading="lazy"

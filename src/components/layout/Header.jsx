@@ -20,6 +20,7 @@ import { useWishlist } from "../../context/WishlistContext.jsx";
 import { useAuth } from "../../context/AuthContext.jsx";
 import { useUI } from "../../context/UIContext.jsx";
 import MegaMenu from "./MegaMenu.jsx";
+import PartnersMegaMenu from "./PartnersMegaMenu.jsx";
 import s from "./Header.module.css";
 
 /** The nav entry that opens the mega menu instead of routing. */
@@ -56,10 +57,14 @@ export default function Header() {
   const { pathname } = useLocation();
 
   const [condensed, setCondensed] = useState(false);
-  const [isMegaMenuOpen, setMegaMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null); // 'categories' | 'partners' | null
+  const [mobilePartnersOpen, setMobilePartnersOpen] = useState(false);
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const headerRef = useRef(null);
   const closeTimeoutRef = useRef(null);
+
+  const isCategoryMenuOpen = activeMenu === "categories";
+  const isPartnersMenuOpen = activeMenu === "partners";
 
   // Rotate trendy search hints every 2.8s
   useEffect(() => {
@@ -69,20 +74,25 @@ export default function Header() {
     return () => clearInterval(timer);
   }, []);
 
-  const closeMegaMenu = useCallback(() => {
+  const closeAllMenus = useCallback(() => {
     clearTimeout(closeTimeoutRef.current);
-    setMegaMenuOpen(false);
+    setActiveMenu(null);
   }, []);
 
-  const openMegaMenu = useCallback(() => {
+  const openCategoriesMenu = useCallback(() => {
     clearTimeout(closeTimeoutRef.current);
-    setMegaMenuOpen(true);
+    setActiveMenu("categories");
   }, []);
 
-  const closeMegaMenuDelayed = useCallback(() => {
+  const openPartnersMenu = useCallback(() => {
+    clearTimeout(closeTimeoutRef.current);
+    setActiveMenu("partners");
+  }, []);
+
+  const closeMenuDelayed = useCallback(() => {
     clearTimeout(closeTimeoutRef.current);
     closeTimeoutRef.current = setTimeout(() => {
-      setMegaMenuOpen(false);
+      setActiveMenu(null);
     }, 150);
   }, []);
 
@@ -95,21 +105,19 @@ export default function Header() {
 
   useEffect(() => {
     closeMenu();
-  }, [pathname]);
+    closeAllMenus();
+    setMobilePartnersOpen(false);
+  }, [pathname, closeMenu, closeAllMenus]);
 
-  /* Every link inside the panel closes it through onNavigate, so routing is
-     already covered. This handles the rest: a click anywhere outside the
-     header, and Escape. Bound on
-     pointerdown so a click that both closes the panel and hits something
-     underneath still does the second thing. */
+  /* Close mega menus on pointerdown outside or Escape key */
   useEffect(() => {
-    if (!isMegaMenuOpen) return undefined;
+    if (!activeMenu) return undefined;
 
     const onPointerDown = (event) => {
-      if (!headerRef.current?.contains(event.target)) closeMegaMenu();
+      if (!headerRef.current?.contains(event.target)) closeAllMenus();
     };
     const onKeyDown = (event) => {
-      if (event.key === "Escape") closeMegaMenu();
+      if (event.key === "Escape") closeAllMenus();
     };
 
     document.addEventListener("pointerdown", onPointerDown);
@@ -118,7 +126,7 @@ export default function Header() {
       document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("keydown", onKeyDown);
     };
-  }, [isMegaMenuOpen, closeMegaMenu]);
+  }, [activeMenu, closeAllMenus]);
 
   const accountTo = isAuthenticated ? "/account" : "/auth?mode=signin";
 
@@ -211,23 +219,69 @@ export default function Header() {
       {/* ---- Row 2: primary navigation ---- */}
       <nav className={s.navRow} aria-label="Primary">
         <ul className={cn("container", s.navList)}>
-          {PRIMARY_NAV.map((item) =>
-            item.to === CATEGORIES_PATH ? (
-              <li key={item.to}>
-                <button
-                  type="button"
-                  className={cn(s.navLink, s.navTrigger, isMegaMenuOpen && s.navLinkActive)}
-                  onMouseEnter={openMegaMenu}
-                  onMouseLeave={closeMegaMenuDelayed}
-                  onClick={() => setMegaMenuOpen((open) => !open)}
-                  aria-expanded={isMegaMenuOpen}
-                  aria-controls="mega-menu"
-                >
-                  {item.label}
-                  <ChevronDown aria-hidden="true" />
-                </button>
-              </li>
-            ) : (
+          {PRIMARY_NAV.map((item) => {
+            const isCategories = item.to === CATEGORIES_PATH;
+            const isPartners =
+              item.isTrigger || item.to === "#partners" || item.label === "Partners";
+
+            if (isCategories) {
+              return (
+                <li key={item.to}>
+                  <button
+                    type="button"
+                    className={cn(
+                      s.navLink,
+                      s.navTrigger,
+                      isCategoryMenuOpen && s.navLinkActive,
+                    )}
+                    onMouseEnter={openCategoriesMenu}
+                    onMouseLeave={closeMenuDelayed}
+                    onFocus={openCategoriesMenu}
+                    onClick={() =>
+                      setActiveMenu((cur) =>
+                        cur === "categories" ? null : "categories",
+                      )
+                    }
+                    aria-expanded={isCategoryMenuOpen}
+                    aria-controls="mega-menu"
+                  >
+                    {item.label}
+                    <ChevronDown aria-hidden="true" />
+                  </button>
+                </li>
+              );
+            }
+
+            if (isPartners) {
+              return (
+                <li key={item.to || item.label}>
+                  <button
+                    type="button"
+                    className={cn(
+                      s.navLink,
+                      s.navTrigger,
+                      isPartnersMenuOpen && s.navLinkActive,
+                    )}
+                    onMouseEnter={openPartnersMenu}
+                    onMouseLeave={closeMenuDelayed}
+                    onFocus={openPartnersMenu}
+                    onClick={() =>
+                      setActiveMenu((cur) =>
+                        cur === "partners" ? null : "partners",
+                      )
+                    }
+                    aria-haspopup="menu"
+                    aria-expanded={isPartnersMenuOpen}
+                    aria-controls="partners-mega-menu"
+                  >
+                    {item.label}
+                    <ChevronDown aria-hidden="true" />
+                  </button>
+                </li>
+              );
+            }
+
+            return (
               <li key={item.to}>
                 <NavLink
                   to={item.to}
@@ -237,7 +291,6 @@ export default function Header() {
                       s.navLink,
                       isActive && s.navLinkActive,
                       item.to === "/sale" && s.saleNavLink,
-                      item.isGift && s.giftNavLink,
                     )
                   }
                 >
@@ -247,26 +300,30 @@ export default function Header() {
                       {item.label}
                       <span className={s.saleSparkle}>%</span>
                     </span>
-                  ) : item.isGift ? (
-                    <span className={s.giftNavText}>
-                      <span className={s.yellowBlinkDot} aria-hidden="true" />
-                      {item.label}
-                    </span>
                   ) : (
                     item.label
                   )}
                 </NavLink>
               </li>
-            ),
-          )}
+            );
+          })}
         </ul>
 
-        {isMegaMenuOpen && (
+        {isCategoryMenuOpen && (
           <div
-            onMouseEnter={openMegaMenu}
-            onMouseLeave={closeMegaMenuDelayed}
+            onMouseEnter={openCategoriesMenu}
+            onMouseLeave={closeMenuDelayed}
           >
-            <MegaMenu onNavigate={closeMegaMenu} />
+            <MegaMenu onNavigate={closeAllMenus} />
+          </div>
+        )}
+
+        {isPartnersMenuOpen && (
+          <div
+            onMouseEnter={openPartnersMenu}
+            onMouseLeave={closeMenuDelayed}
+          >
+            <PartnersMegaMenu onNavigate={closeAllMenus} />
           </div>
         )}
       </nav>
@@ -333,40 +390,99 @@ export default function Header() {
             <nav className={s.drawerNav}>
               <div className={s.drawerSectionTitle}>Explore Studio</div>
               <ul className={s.drawerList}>
-                {PRIMARY_NAV.map((item) => (
-                  <li key={item.to}>
-                    <NavLink
-                      to={item.to}
-                      end={item.to === "/"}
-                      onClick={closeMenu}
-                      className={({ isActive }) =>
-                        cn(
-                          s.drawerLink,
-                          isActive && s.drawerLinkActive,
-                          item.to === "/sale" && s.drawerSaleLink,
-                        )
-                      }
-                    >
-                      <span className={s.drawerLinkText}>
-                        {item.isGift ? (
-                          <span className={s.giftNavText}>
-                            <span className={s.yellowBlinkDot} aria-hidden="true" />
-                            {item.label}
-                          </span>
-                        ) : (
-                          item.label
-                        )}
-                      </span>
+                {PRIMARY_NAV.map((item) => {
+                  const isPartners =
+                    item.isTrigger || item.to === "#partners" || item.label === "Partners";
 
-                      {item.to === "/sale" && (
-                        <span className={s.drawerSaleBadge}>
-                          <span className={s.saleDot} aria-hidden="true" />
-                          40% OFF
-                        </span>
-                      )}
-                    </NavLink>
-                  </li>
-                ))}
+                  if (isPartners) {
+                    return (
+                      <li key={item.to || item.label}>
+                        <button
+                          type="button"
+                          className={cn(
+                            s.drawerLink,
+                            s.drawerTrigger,
+                            mobilePartnersOpen && s.drawerLinkActive,
+                          )}
+                          onClick={() => setMobilePartnersOpen((prev) => !prev)}
+                          aria-expanded={mobilePartnersOpen}
+                          aria-controls="mobile-partners-submenu"
+                        >
+                          <span className={s.drawerLinkText}>{item.label}</span>
+                          <ChevronDown
+                            size={15}
+                            className={cn(
+                              s.drawerChevron,
+                              mobilePartnersOpen && s.drawerChevronOpen,
+                            )}
+                            aria-hidden="true"
+                          />
+                        </button>
+
+                        {mobilePartnersOpen && (
+                          <ul id="mobile-partners-submenu" className={s.drawerSubMenu}>
+                            <li>
+                              <Link
+                                to="/collaborations"
+                                className={s.drawerSubItem}
+                                onClick={closeMenu}
+                              >
+                                <span>Brand Collaborations</span>
+                                <span className={s.drawerSubItemTag}>Editions</span>
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                to="/creators"
+                                className={s.drawerSubItem}
+                                onClick={closeMenu}
+                              >
+                                <span>Creators</span>
+                                <span className={s.drawerSubItemTag}>Artisans</span>
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                to="/partner-picks"
+                                className={s.drawerSubItem}
+                                onClick={closeMenu}
+                              >
+                                <span>Partner Picks</span>
+                                <span className={s.drawerSubItemTag}>Affiliate</span>
+                              </Link>
+                            </li>
+                          </ul>
+                        )}
+                      </li>
+                    );
+                  }
+
+                  return (
+                    <li key={item.to}>
+                      <NavLink
+                        to={item.to}
+                        end={item.to === "/"}
+                        onClick={closeMenu}
+                        className={({ isActive }) =>
+                          cn(
+                            s.drawerLink,
+                            isActive && s.drawerLinkActive,
+                            item.to === "/sale" && s.drawerSaleLink,
+                          )
+                        }
+                      >
+                        <span className={s.drawerLinkText}>{item.label}</span>
+
+                        {item.to === "/sale" && (
+                          <span className={s.drawerSaleBadge}>
+                            <span className={s.saleDot} aria-hidden="true" />
+                            40% OFF
+                          </span>
+                        )}
+                      </NavLink>
+                    </li>
+                  );
+                })}
               </ul>
 
               {/* Quick Customer Support inside drawer */}

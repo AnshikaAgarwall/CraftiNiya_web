@@ -7,13 +7,11 @@ import { BRAND } from "../config/site.js";
 
 export default function PartnerPicksPage() {
   const { data: catalog, loading, error, refetch } = useAsync(
-    (opts) => productService.getProducts({ pageSize: 12 }, opts),
+    (opts) => productService.getProducts({ partnerPicks: true, pageSize: 12 }, opts),
     [],
   );
 
-  const affiliateProducts = (catalog?.items ?? []).filter(
-    (p) => p.productType === "affiliate",
-  );
+  const products = catalog?.items ?? [];
 
   return (
     <>
@@ -42,7 +40,7 @@ export default function PartnerPicksPage() {
         </header>
 
         <ProductGrid
-          products={affiliateProducts}
+          products={products}
           loading={loading}
           error={error}
           onRetry={refetch}

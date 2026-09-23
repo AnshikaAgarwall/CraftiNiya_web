@@ -8,58 +8,10 @@ import { SORT_OPTIONS } from "../config/site.js";
 import { useAsync } from "../hooks/useAsync.js";
 import { getProducts } from "../services/productService.js";
 import { BRAND } from "../config/site.js";
+import { getCollaboration } from "../data/partners.js";
 
-// Banner imports
 import rangsajjaImg from "../assets/rangsajja.png";
-import sugandhitImg from "../assets/sugandhit.png";
-import crochetkariImg from "../assets/crochetkari.png";
-import mittiImg from "../assets/CraftiNiya x Mitti Se.png";
-import collabBannerWide from "../assets/COLLABBRAND.png";
-import bundleBannerWide from "../assets/BRANDPROMOTION.png";
-
 import s from "./CollaborationPage.module.css";
-
-// 4 Collaboration Brand Configurations
-const COLLAB_CONFIG = {
-  rangsajja: {
-    title: "CraftiNiya x RangSajja",
-    eyebrow: "Festive Gifting Edition",
-    tagline:
-      "A limited-edition fusion of natural textures, hand-painted festive trays, and celebratory gifts.",
-    bannerImage: rangsajjaImg,
-    heroImage: collabBannerWide,
-    categoryQuery: "festive-pooja",
-    searchFallback: "festive",
-  },
-  sugandhit: {
-    title: "CraftiNiya x Sugandhit",
-    eyebrow: "Sacred Scents Festive Box",
-    tagline:
-      "Curated home fragrance rituals with artisanal soy candles, premium agarbatti, and aroma diffusers.",
-    bannerImage: sugandhitImg,
-    categoryQuery: "candles-fragrance",
-    searchFallback: "candle",
-  },
-  crochetkari: {
-    title: "CraftiNiya x CrochetKari",
-    eyebrow: "Handmade Floral Keepsakes",
-    tagline:
-      "Exclusive handmade crochet flower bouquets, handcrafted plushies, and forever-blooming gifting sets.",
-    bannerImage: crochetkariImg,
-    heroImage: bundleBannerWide,
-    categoryQuery: "handmade-crochet",
-    searchFallback: "crochet",
-  },
-  "mitti-se": {
-    title: "CraftiNiya x Mitti Se",
-    eyebrow: "Artisan Hamper Collection",
-    tagline:
-      "Chai ritual sets, glazed ceramic kulhads, and heartfelt small-batch artisan tableware.",
-    bannerImage: mittiImg,
-    categoryQuery: "home-decor",
-    searchFallback: "table",
-  },
-};
 
 export default function CollaborationPage() {
   const { collabSlug } = useParams();
@@ -69,21 +21,21 @@ export default function CollaborationPage() {
   const [inStockOnly, setInStockOnly] = useState(false);
   const [onSaleOnly, setOnSaleOnly] = useState(false);
 
-  // Match either exact key or fallback
-  const collab = COLLAB_CONFIG[slug] || {
+  // Match collaboration metadata from single source of truth
+  const foundCollab = getCollaboration(slug);
+  const collab = foundCollab || {
     title: slug.replace(/-/g, " "),
     eyebrow: "Special Collaboration",
     tagline: "Limited run artisan collaboration edition.",
     bannerImage: rangsajjaImg,
-    categoryQuery: "home-decor",
   };
 
-  // Fetch relevant products for this collaboration edition
+  // Fetch relevant products for this collaboration edition using dedicated collaborationSlug
   const { data: productEnvelope, loading, error, refetch } = useAsync(
     (opts) =>
       getProducts(
         {
-          categoryId: collab.categoryQuery,
+          collaborationSlug: slug,
           sort,
           inStock: inStockOnly ? true : undefined,
           onSale: onSaleOnly ? true : undefined,
@@ -91,7 +43,7 @@ export default function CollaborationPage() {
         },
         opts,
       ),
-    [collab.categoryQuery, sort, inStockOnly, onSaleOnly],
+    [slug, sort, inStockOnly, onSaleOnly],
   );
 
   const products = productEnvelope?.items ?? [];
@@ -111,7 +63,9 @@ export default function CollaborationPage() {
             Home
           </Link>
           <span className={s.breadcrumbSep}>/</span>
-          <span className={s.breadcrumbLink}>Collaboration</span>
+          <Link to="/collaborations" className={s.breadcrumbLink}>
+            Collaborations
+          </Link>
           <span className={s.breadcrumbSep}>/</span>
           <span className={s.breadcrumbCurrent}>{collab.title}</span>
         </nav>

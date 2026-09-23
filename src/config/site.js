@@ -19,8 +19,8 @@ export const PRIMARY_NAV = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Categories", to: "/categories" },
+  { label: "Partners", to: "#partners", isTrigger: true },
   { label: "Sale", to: "/sale" },
-  { label: "Gift Box", to: "/gift-box", isGift: true },
 ];
 
 export const FOOTER_NAV = [

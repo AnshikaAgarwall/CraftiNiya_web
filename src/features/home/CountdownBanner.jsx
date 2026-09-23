@@ -1,89 +1,57 @@
-import { Sparkles } from "lucide-react";
+import { Gift } from "lucide-react";
 import Button from "../../components/ui/Button.jsx";
-import { useAsync } from "../../hooks/useAsync.js";
-import { useCountdown } from "../../hooks/useCountdown.js";
-import promoService from "../../services/promoService.js";
 import s from "./CountdownBanner.module.css";
 
 /**
- * Festival countdown.
+ * Build-your-own gift box banner.
  *
- * Driven entirely by promoService, so switching a sale on or off is data, not
- * a deploy. Three details that matter:
+ * This slot used to hold the festival countdown; it now carries the gift box
+ * entry point that previously lived in the primary navigation. The layout is
+ * unchanged — copy on the left, a compact tile row plus CTA on the right — so
+ * the four timer tiles simply became the four steps of the builder.
  *
- *  - When no promotion is running the component renders NOTHING — not an empty
- *    shell. A banner that reserves height while invisible pushes the page down
- *    and shows up as layout shift.
- *  - The deadline is a UTC instant, formatted in the viewer's own zone. A bare
- *    "ends 11:59 PM" is wrong for every customer outside IST.
- *  - The clock runs off a server-time offset, because a device whose system
- *    clock is wrong would otherwise show a wrong timer, or a live sale as
- *    already expired.
- *
- * The one-second tick lives in this component alone, so the rest of the home
- * page is not re-rendered every second.
+ * It renders unconditionally: unlike a sale, the builder is always available,
+ * so there is no empty-state to guard against.
  */
+const STEPS = [
+  { value: "01", label: "Pick Box" },
+  { value: "02", label: "Add Gifts" },
+  { value: "03", label: "Personalise" },
+  { value: "04", label: "We Ship" },
+];
+
 export default function CountdownBanner() {
-  const { data: promo } = useAsync((opts) => promoService.getActivePromotion(opts), []);
-  const { data: serverTime } = useAsync((opts) => promoService.getServerTime(opts), []);
-
-  const { days, hours, minutes, seconds, isExpired } = useCountdown(
-    promo?.endsAt,
-    serverTime?.nowIso,
-  );
-
-  if (!promo || isExpired) return null;
-
-  const endsLocal = promo.endsAt
-    ? new Intl.DateTimeFormat("en-IN", {
-        dateStyle: "medium",
-        timeStyle: "short",
-      }).format(new Date(promo.endsAt))
-    : null;
-
-  const units = [
-    { value: days, label: days === 1 ? "Day" : "Days" },
-    { value: hours, label: "Hours" },
-    { value: minutes, label: "Mins" },
-    { value: seconds, label: "Secs" },
-  ];
-
   return (
-    <section className={s.banner} aria-labelledby="countdown-heading">
+    <section className={s.banner} aria-labelledby="giftbox-banner-heading">
       <div className={`container ${s.inner}`}>
         <div className={s.copy}>
           <p className={s.label}>
-            <Sparkles aria-hidden="true" />
-            {promo.label}
+            <Gift aria-hidden="true" />
+            Build Your Own
           </p>
-          <h2 id="countdown-heading" className={s.headline}>
-            {promo.headline}
+          <h2 id="giftbox-banner-heading" className={s.headline}>
+            Curate a gift box, exactly the way you want it
           </h2>
-          {promo.subline && <p className={s.subline}>{promo.subline}</p>}
+          <p className={s.subline}>
+            Choose a box, fill it with handpicked treats, add a note — we wrap
+            and deliver.
+          </p>
         </div>
 
         <div className={s.timerBlock}>
-          {/* The live region is polite and coarse: announcing every second
-              would make a screen reader unusable. */}
-          <p className="sr-only" aria-live="polite">
-            {days} days and {hours} hours left in this sale.
-          </p>
-
-          <ul className={s.timer} aria-hidden="true">
-            {units.map((unit) => (
-              <li key={unit.label} className={s.unit}>
-                <span className={s.unitValue}>
-                  {String(unit.value).padStart(2, "0")}
-                </span>
-                <span className={s.unitLabel}>{unit.label}</span>
+          <ul className={s.timer}>
+            {STEPS.map((step) => (
+              <li key={step.label} className={s.unit}>
+                <span className={s.unitValue}>{step.value}</span>
+                <span className={s.unitLabel}>{step.label}</span>
               </li>
             ))}
           </ul>
 
-          {endsLocal && <p className={s.ends}>Ends {endsLocal}</p>}
+          <p className={s.ends}>Starting at ₹499 · Ready in 2 days</p>
 
-          <Button to={promo.ctaHref} variant="accent" size="sm" className={s.cta}>
-            {promo.ctaLabel}
+          <Button to="/gift-box" variant="accent" size="sm" className={s.cta}>
+            Start Building
           </Button>
         </div>
       </div>

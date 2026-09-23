@@ -47,7 +47,11 @@ export default function Home() {
             eyebrow="Most loved"
             title="Our Best Sellers"
             action={
-              <Button to="/shop" variant="ghost" endIcon={<ArrowRight size={16} />}>
+              <Button
+                to="/shop"
+                variant="ghost"
+                endIcon={<ArrowRight size={16} />}
+              >
                 Shop all
               </Button>
             }

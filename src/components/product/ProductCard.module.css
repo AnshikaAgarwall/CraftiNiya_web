@@ -5,9 +5,9 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: none;
-  border-radius: 0;
-  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  background-color: var(--c-surface);
   outline: none;
   -webkit-tap-highlight-color: transparent;
   transition: transform var(--t-base) var(--ease);

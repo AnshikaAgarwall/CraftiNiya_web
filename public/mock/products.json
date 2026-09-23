@@ -5307,6 +5307,7 @@
     "createdAt": "2026-08-01",
     "isFeatured": true,
     "productType": "collab_bundle",
+    "collaborationSlug": "sugandhit",
     "specifications": {
       "dimensions": "Gift Box: 10 x 8 x 4 inches",
       "materials": "100% Pure Soy Wax, Ceramic Clay, Dried Botanicals"
@@ -5369,6 +5370,448 @@
     "isBestSeller": false,
     "inStock": true,
     "stockCount": 50,
+    "lowStock": false
+  },
+  {
+    "id": "prod-affiliate-pick-02",
+    "slug": "handwoven-jute-storage-basket",
+    "title": "Handwoven Jute Storage Basket",
+    "description": "Eco-friendly woven jute basket for organizing and storing household items. Crafted by artisan weavers.",
+    "image": null,
+    "images": [null],
+    "category": "home-decor",
+    "subcategory": "decorative-trays",
+    "gender": "unisex",
+    "price": 1599,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.6,
+    "reviewCount": 8,
+    "orderCount": 45,
+    "createdAt": "2026-08-20",
+    "isFeatured": false,
+    "productType": "affiliate",
+    "affiliate": {
+      "externalUrl": "https://example.com/jute-storage-basket",
+      "buttonText": "Buy from Partner"
+    },
+    "specifications": {
+      "dimensions": "Height (12 inches), Diameter (10 inches)",
+      "materials": "100% Natural Jute"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Festivals, Home Organization",
+      "targetAudience": "Eco-conscious home organizers"
+    },
+    "variants": [
+      {
+        "id": "prod-affiliate-pick-02-v1",
+        "name": "Natural"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 35,
+    "lowStock": false
+  },
+  {
+    "id": "prod-affiliate-pick-03",
+    "slug": "ceramic-hand-painted-dinner-set",
+    "title": "Ceramic Hand-Painted Dinner Set (6 pieces)",
+    "description": "Artisanal ceramic dinner set with hand-painted traditional motifs. Food-safe and microwave friendly.",
+    "image": null,
+    "images": [null],
+    "category": "home-decor",
+    "subcategory": "table-decor",
+    "gender": "unisex",
+    "price": 3499,
+    "salePrice": 2799,
+    "isOnSale": true,
+    "discountPercentage": 20,
+    "rating": 4.9,
+    "reviewCount": 15,
+    "orderCount": 62,
+    "createdAt": "2026-08-18",
+    "isFeatured": true,
+    "productType": "affiliate",
+    "affiliate": {
+      "externalUrl": "https://example.com/ceramic-dinner-set",
+      "buttonText": "Buy from Partner"
+    },
+    "specifications": {
+      "dimensions": "Plate Diameter (10 inches)",
+      "materials": "Ceramic, Food-safe glazes"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Weddings, Anniversaries",
+      "targetAudience": "Home enthusiasts who appreciate handcrafted dinnerware"
+    },
+    "variants": [
+      {
+        "id": "prod-affiliate-pick-03-v1",
+        "name": "Blue Motif"
+      },
+      {
+        "id": "prod-affiliate-pick-03-v2",
+        "name": "Red Motif"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 28,
+    "lowStock": false
+  },
+  {
+    "id": "prod-affiliate-pick-04",
+    "slug": "sustainable-bamboo-cutlery-set",
+    "title": "Sustainable Bamboo Cutlery & Travel Case",
+    "description": "Eco-friendly portable cutlery set in sustainable bamboo with carrying case. Perfect for lunch, travel, and picnics.",
+    "image": null,
+    "images": [null],
+    "category": "bags-accessories",
+    "subcategory": "pouches",
+    "gender": "unisex",
+    "price": 899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.4,
+    "reviewCount": 9,
+    "orderCount": 78,
+    "createdAt": "2026-08-12",
+    "isFeatured": false,
+    "productType": "affiliate",
+    "affiliate": {
+      "externalUrl": "https://example.com/bamboo-cutlery-set",
+      "buttonText": "Buy from Partner"
+    },
+    "specifications": {
+      "dimensions": "Case Length (8 inches), Width (3 inches)",
+      "materials": "100% Sustainable Bamboo, Canvas carry case"
+    },
+    "gifting": {
+      "idealFor": "Eco-lovers, Travel, Outdoor activities",
+      "targetAudience": "Environmentally conscious travelers"
+    },
+    "variants": [
+      {
+        "id": "prod-affiliate-pick-04-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 55,
+    "lowStock": false
+  },
+  {
+    "id": "prod-affiliate-pick-05",
+    "slug": "indigo-block-printed-bedsheet",
+    "title": "Indigo Block-Printed Bedsheet (Double)",
+    "description": "Traditional indigo block-printed cotton bedsheet with hand-carved wooden block stamps. 100% organic cotton.",
+    "image": null,
+    "images": [null],
+    "category": "home-decor",
+    "subcategory": "wall-decor",
+    "gender": "unisex",
+    "price": 2499,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.7,
+    "reviewCount": 11,
+    "orderCount": 51,
+    "createdAt": "2026-08-16",
+    "isFeatured": true,
+    "productType": "affiliate",
+    "affiliate": {
+      "externalUrl": "https://example.com/indigo-bedsheet",
+      "buttonText": "Buy from Partner"
+    },
+    "specifications": {
+      "dimensions": "Length (90 inches), Width (60 inches)",
+      "materials": "100% Organic Cotton, Natural indigo dye"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Weddings, New Home",
+      "targetAudience": "Eco-conscious home decor enthusiasts"
+    },
+    "variants": [
+      {
+        "id": "prod-affiliate-pick-05-v1",
+        "name": "Classic Indigo"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 22,
+    "lowStock": false
+  },
+  {
+    "id": "prod-affiliate-pick-06",
+    "slug": "macrame-wall-tapestry",
+    "title": "Macramé Wall Tapestry Hanging",
+    "description": "Hand-knotted macramé wall hanging with geometric patterns. Perfect for bohemian and minimalist interiors.",
+    "image": null,
+    "images": [null],
+    "category": "home-decor",
+    "subcategory": "hanging-decor",
+    "gender": "unisex",
+    "price": 1799,
+    "salePrice": 1499,
+    "isOnSale": true,
+    "discountPercentage": 17,
+    "rating": 4.5,
+    "reviewCount": 13,
+    "orderCount": 67,
+    "createdAt": "2026-08-14",
+    "isFeatured": false,
+    "productType": "affiliate",
+    "affiliate": {
+      "externalUrl": "https://example.com/macrame-tapestry",
+      "buttonText": "Buy from Partner"
+    },
+    "specifications": {
+      "dimensions": "Length (36 inches), Width (28 inches)",
+      "materials": "100% Cotton cord, wooden dowel"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Room decor, Festivals",
+      "targetAudience": "Bohemian interior design lovers"
+    },
+    "variants": [
+      {
+        "id": "prod-affiliate-pick-06-v1",
+        "name": "Cream"
+      },
+      {
+        "id": "prod-affiliate-pick-06-v2",
+        "name": "Beige"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 40,
+    "lowStock": false
+  },
+  {
+    "id": "prod-affiliate-pick-07",
+    "slug": "natural-rubber-yoga-mat",
+    "title": "Natural Rubber Eco Yoga Mat",
+    "description": "Premium natural rubber yoga mat with non-slip surface. Biodegradable and eco-friendly. Comes with carrying strap.",
+    "image": null,
+    "images": [null],
+    "category": "bags-accessories",
+    "subcategory": "crochet-bags",
+    "gender": "unisex",
+    "price": 2299,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.8,
+    "reviewCount": 10,
+    "orderCount": 43,
+    "createdAt": "2026-08-17",
+    "isFeatured": false,
+    "productType": "affiliate",
+    "affiliate": {
+      "externalUrl": "https://example.com/yoga-mat",
+      "buttonText": "Buy from Partner"
+    },
+    "specifications": {
+      "dimensions": "Length (72 inches), Width (24 inches), Thickness (0.25 inches)",
+      "materials": "100% Natural Rubber, natural fabric"
+    },
+    "gifting": {
+      "idealFor": "Fitness enthusiasts, Wellness gifts",
+      "targetAudience": "Yoga and fitness lovers"
+    },
+    "variants": [
+      {
+        "id": "prod-affiliate-pick-07-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 18,
+    "lowStock": false
+  },
+  {
+    "id": "prod-affiliate-pick-08",
+    "slug": "terracotta-oil-lamp-set",
+    "title": "Traditional Terracotta Oil Lamp Set (12)",
+    "description": "Handmade terracotta diyas (oil lamps) for Diwali and festive celebrations. Set of 12 traditional lamps.",
+    "image": null,
+    "images": [null],
+    "category": "home-decor",
+    "subcategory": "frames",
+    "gender": "unisex",
+    "price": 449,
+    "salePrice": 349,
+    "isOnSale": true,
+    "discountPercentage": 22,
+    "rating": 4.3,
+    "reviewCount": 7,
+    "orderCount": 125,
+    "createdAt": "2026-08-10",
+    "isFeatured": true,
+    "productType": "affiliate",
+    "affiliate": {
+      "externalUrl": "https://example.com/terracotta-diyas",
+      "buttonText": "Buy from Partner"
+    },
+    "specifications": {
+      "dimensions": "Height (2.5 inches), Diameter (3 inches)",
+      "materials": "100% Handmade Terracotta"
+    },
+    "gifting": {
+      "idealFor": "Diwali, Festivals, Home decoration",
+      "targetAudience": "Festival and tradition lovers"
+    },
+    "variants": [
+      {
+        "id": "prod-affiliate-pick-08-v1",
+        "name": "Natural"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 100,
+    "lowStock": false
+  },
+  {
+    "id": "prod-affiliate-pick-09",
+    "slug": "silk-scarf-hand-dyed",
+    "title": "Hand-Dyed Silk Scarf 36\"",
+    "description": "Luxurious silk scarf with hand-dyed natural colors. Versatile accessory for any season and style.",
+    "image": null,
+    "images": [null],
+    "category": "bags-accessories",
+    "subcategory": "tote-bags",
+    "gender": "women",
+    "price": 1899,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.9,
+    "reviewCount": 6,
+    "orderCount": 38,
+    "createdAt": "2026-08-19",
+    "isFeatured": false,
+    "productType": "affiliate",
+    "affiliate": {
+      "externalUrl": "https://example.com/silk-scarf",
+      "buttonText": "Buy from Partner"
+    },
+    "specifications": {
+      "dimensions": "Length (36 inches), Width (36 inches)",
+      "materials": "100% Pure Silk, natural dyes"
+    },
+    "gifting": {
+      "idealFor": "Birthdays, Anniversaries, Fashion gifts",
+      "targetAudience": "Luxury accessory lovers"
+    },
+    "variants": [
+      {
+        "id": "prod-affiliate-pick-09-v1",
+        "name": "Sunrise Orange"
+      },
+      {
+        "id": "prod-affiliate-pick-09-v2",
+        "name": "Ocean Blue"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 15,
+    "lowStock": false
+  },
+  {
+    "id": "prod-affiliate-pick-10",
+    "slug": "wooden-serving-board-carved",
+    "title": "Wooden Serving Board with Hand Carving",
+    "description": "Handcrafted wooden serving or charcuterie board with intricate hand-carved designs. Food-safe finish.",
+    "image": null,
+    "images": [null],
+    "category": "home-decor",
+    "subcategory": "decorative-trays",
+    "gender": "unisex",
+    "price": 2099,
+    "salePrice": null,
+    "isOnSale": false,
+    "discountPercentage": 0,
+    "rating": 4.7,
+    "reviewCount": 9,
+    "orderCount": 52,
+    "createdAt": "2026-08-13",
+    "isFeatured": true,
+    "productType": "affiliate",
+    "affiliate": {
+      "externalUrl": "https://example.com/wooden-board",
+      "buttonText": "Buy from Partner"
+    },
+    "specifications": {
+      "dimensions": "Length (16 inches), Width (12 inches), Thickness (0.75 inches)",
+      "materials": "Solid Sheesham wood, food-safe finish"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Entertaining, Weddings",
+      "targetAudience": "Culinary enthusiasts and entertainers"
+    },
+    "variants": [
+      {
+        "id": "prod-affiliate-pick-10-v1",
+        "name": "Standard"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 25,
+    "lowStock": false
+  },
+  {
+    "id": "prod-affiliate-pick-11",
+    "slug": "recycled-fabric-cushion-cover",
+    "title": "Recycled Fabric Cushion Covers (Set of 4)",
+    "description": "Sustainable cushion covers made from recycled fabrics with unique patchwork designs. Zippered for easy removal.",
+    "image": null,
+    "images": [null],
+    "category": "home-decor",
+    "subcategory": "hanging-decor",
+    "gender": "unisex",
+    "price": 1299,
+    "salePrice": 999,
+    "isOnSale": true,
+    "discountPercentage": 23,
+    "rating": 4.6,
+    "reviewCount": 8,
+    "orderCount": 39,
+    "createdAt": "2026-08-11",
+    "isFeatured": false,
+    "productType": "affiliate",
+    "affiliate": {
+      "externalUrl": "https://example.com/cushion-covers",
+      "buttonText": "Buy from Partner"
+    },
+    "specifications": {
+      "dimensions": "Length (18 inches), Width (18 inches)",
+      "materials": "Recycled fabric blend, natural dyes"
+    },
+    "gifting": {
+      "idealFor": "Housewarming, Home refresh, Eco-gifts",
+      "targetAudience": "Eco-conscious home decor enthusiasts"
+    },
+    "variants": [
+      {
+        "id": "prod-affiliate-pick-11-v1",
+        "name": "Multi-color"
+      }
+    ],
+    "isBestSeller": false,
+    "inStock": true,
+    "stockCount": 32,
     "lowStock": false
   }
 ]

@@ -76,6 +76,7 @@ export function mapProduct(raw) {
     productType: raw.productType ?? "own",
     creator: raw.creator ?? null,
     affiliate: raw.affiliate ?? null,
+    collaborationSlug: raw.collaborationSlug ?? null,
     variants,
   };
 }
