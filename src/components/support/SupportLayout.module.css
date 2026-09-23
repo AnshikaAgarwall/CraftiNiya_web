@@ -6,6 +6,9 @@
   background-color: var(--c-bg);
   min-height: 80vh;
   padding-bottom: var(--sp-12);
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;
 }
 
 /* ── Top Header Banner ── */
@@ -23,6 +26,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--sp-2);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .breadcrumbs {
@@ -89,9 +94,12 @@
 
 .mainContainer {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 280px minmax(0, 1fr);
   gap: var(--sp-8);
   align-items: start;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
 }
 
 /* ── Sidebar ── */
@@ -99,12 +107,17 @@
 .sidebar {
   position: sticky;
   top: 90px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .sidebarNavWrap {
   display: flex;
   flex-direction: column;
   gap: var(--sp-5);
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
 }
 
 .navTitle {
@@ -262,6 +275,10 @@
   padding-top: var(--sp-2);
 }
 
+.mobileHelpCard {
+  display: none;
+}
+
 /* ── Content Area ── */
 
 .contentArea {
@@ -272,29 +289,55 @@
 
 @media (max-width: 900px) {
   .mainContainer {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--sp-5);
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .sidebar {
     position: static;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .sidebarNavWrap {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
   }
 
   .navTitle {
     display: none;
   }
 
+  /* Scrollable pills: ONLY this nav element scrolls horizontally, screen is strictly locked */
   .nav {
+    display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
-    padding: 4px;
-    gap: 4px;
-    background: var(--c-surface);
-    border-radius: var(--r-pill);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    gap: var(--sp-2);
+    padding: 2px 2px 6px 2px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
   }
 
   .nav::-webkit-scrollbar {
@@ -302,16 +345,43 @@
   }
 
   .navLink {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-    border-radius: var(--r-pill);
-    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
     gap: 6px;
+    padding: 7px 16px;
+    border-radius: var(--r-pill);
+    border: 1px solid var(--c-border);
+    background: var(--c-surface);
+    color: var(--c-text-2);
+    font-size: 0.84rem;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: all var(--t-fast) var(--ease);
+  }
+
+  .navLink:hover {
+    border-color: var(--c-brand);
+    color: var(--c-brand);
+    background: var(--c-surface);
+  }
+
+  .navLinkActive {
+    background: var(--c-brand) !important;
+    border-color: var(--c-brand) !important;
+    color: var(--c-text-on-brand) !important;
+    font-weight: 600;
+  }
+
+  .navLinkActive .navIcon {
+    color: var(--c-text-on-brand) !important;
   }
 
   .navIcon {
     width: 14px;
     height: 14px;
+    flex-shrink: 0;
   }
 
   .navArrow {
@@ -319,7 +389,105 @@
   }
 
   .helpCard {
-    display: none; /* Desktop only to prevent clutter on mobile */
+    display: none; /* Replaced by mobileHelpCard beneath content */
+  }
+
+  /* Direct Help Card shown neatly beneath content on tablet/mobile */
+  .mobileHelpCard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-xl);
+    padding: var(--sp-4);
+    margin-top: var(--sp-6);
+    box-shadow: var(--sh-sm);
+  }
+
+  .mobileHelpTop {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .mobileHelpHeader {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .mobileHelpHeading {
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--c-text);
+    margin: 0;
+  }
+
+  .mobileHelpText {
+    font-size: 0.78rem;
+    color: var(--c-text-2);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .mobileHelpActions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 2px;
+  }
+
+  .mobileWhatsappBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 12px;
+    border-radius: var(--r-md);
+    background: #25d366;
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    min-height: 38px;
+    transition: opacity var(--t-fast) var(--ease);
+  }
+
+  .mobileWhatsappBtn:hover {
+    opacity: 0.9;
+  }
+
+  .mobileEmailLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 12px;
+    border-radius: var(--r-md);
+    background: var(--c-brand-soft);
+    border: 1px solid var(--c-border);
+    color: var(--c-brand-hover);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    min-height: 38px;
+    transition: background var(--t-fast) var(--ease);
+  }
+
+  .mobileEmailLink:hover {
+    background: var(--c-surface);
+  }
+
+  .mobileHours {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    color: var(--c-text-2);
+    border-top: 1px dashed var(--c-border);
+    padding-top: 8px;
   }
 }
 
@@ -335,18 +503,18 @@
   }
 
   .headerContainer {
-    gap: 6px;
+    gap: 5px;
   }
 
   .breadcrumbs {
-    font-size: 0.72rem;
+    font-size: 0.70rem;
     gap: 4px;
     margin-bottom: 0;
   }
 
   .badge {
-    font-size: 0.68rem;
-    padding: 2px 8px;
+    font-size: 0.66rem;
+    padding: 2px 7px;
     gap: 4px;
   }
 
@@ -356,21 +524,68 @@
   }
 
   .pageTitle {
-    font-size: 1.35rem;
+    font-size: clamp(1.15rem, 4.2vw, 1.35rem);
     line-height: 1.25;
   }
 
   .pageSubtitle {
-    font-size: 0.82rem;
-    line-height: 1.45;
+    font-size: 0.78rem;
+    line-height: 1.4;
   }
 
   .mainContainer {
     gap: var(--sp-4);
   }
 
+  .nav {
+    gap: 6px;
+    padding-bottom: 4px;
+  }
+
   .navLink {
-    padding: 6px 10px;
+    padding: 5px 12px;
     font-size: 0.76rem;
+    gap: 5px;
+  }
+
+  .navIcon {
+    width: 13px;
+    height: 13px;
+  }
+
+  .mobileHelpCard {
+    padding: var(--sp-3);
+    margin-top: var(--sp-4);
+  }
+
+  .mobileHelpHeading {
+    font-size: 0.88rem;
+  }
+
+  .mobileHelpText {
+    font-size: 0.74rem;
+  }
+
+  .mobileWhatsappBtn,
+  .mobileEmailLink {
+    font-size: 0.74rem;
+    padding: 8px 10px;
+    min-height: 36px;
+  }
+
+  .mobileHours {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .navLink {
+    padding: 4px 10px;
+    font-size: 0.72rem;
+  }
+
+  .mobileHelpActions {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 }

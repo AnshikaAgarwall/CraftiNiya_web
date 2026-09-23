@@ -1,17 +1,13 @@
-import { Gift } from "lucide-react";
+import { Gift, ArrowRight } from "lucide-react";
 import Button from "../../components/ui/Button.jsx";
 import s from "./CountdownBanner.module.css";
 
 /**
  * Build-your-own gift box banner.
  *
- * This slot used to hold the festival countdown; it now carries the gift box
- * entry point that previously lived in the primary navigation. The layout is
- * unchanged — copy on the left, a compact tile row plus CTA on the right — so
- * the four timer tiles simply became the four steps of the builder.
- *
- * It renders unconditionally: unlike a sale, the builder is always available,
- * so there is no empty-state to guard against.
+ * This slot carries the gift box entry point:
+ * copy on the left, a 4-step builder roadmap plus CTA on the right on desktop,
+ * and an ergonomically balanced, responsive stacked layout on mobile.
  */
 const STEPS = [
   { value: "01", label: "Pick Box" },
@@ -30,7 +26,7 @@ export default function CountdownBanner() {
             Build Your Own
           </p>
           <h2 id="giftbox-banner-heading" className={s.headline}>
-            Curate a gift box, exactly the way you want it
+            Personalize Your GiftBox
           </h2>
           <p className={s.subline}>
             Choose a box, fill it with handpicked treats, add a note — we wrap
@@ -48,11 +44,19 @@ export default function CountdownBanner() {
             ))}
           </ul>
 
-          <p className={s.ends}>Starting at ₹499 · Ready in 2 days</p>
+          <div className={s.actionArea}>
+            <p className={s.ends}>Starting at ₹499 · Ready in 2 days</p>
 
-          <Button to="/gift-box" variant="accent" size="sm" className={s.cta}>
-            Start Building
-          </Button>
+            <Button
+              to="/gift-box"
+              variant="accent"
+              size="sm"
+              className={s.cta}
+              endIcon={<ArrowRight size={14} aria-hidden="true" />}
+            >
+              Start Building
+            </Button>
+          </div>
         </div>
       </div>
     </section>

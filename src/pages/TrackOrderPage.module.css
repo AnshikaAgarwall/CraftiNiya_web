@@ -369,3 +369,36 @@
     font-size: 0.7rem;
   }
 }
+
+@media (max-width: 400px) {
+  .lookupCard,
+  .resultCard {
+    padding: var(--sp-3) 10px;
+  }
+
+  .lookupTitle {
+    font-size: 1.05rem;
+  }
+
+  .lookupSubtitle {
+    font-size: 0.76rem;
+  }
+
+  .input {
+    padding: 8px 10px;
+    font-size: 0.82rem;
+  }
+
+  .resultOrderId {
+    font-size: 1.0rem;
+  }
+
+  .infoLabel {
+    font-size: 0.65rem;
+  }
+
+  .infoValue {
+    font-size: 0.78rem;
+  }
+}
+

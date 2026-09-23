@@ -365,3 +365,21 @@
     font-size: 0.82rem;
   }
 }
+
+@media (max-width: 400px) {
+  .pillBtn {
+    padding: 4px 10px;
+    font-size: 0.72rem;
+  }
+
+  .faqQuestionBtn {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .faqAnswer {
+    padding: 0 10px 8px;
+    font-size: 0.80rem;
+  }
+}
+

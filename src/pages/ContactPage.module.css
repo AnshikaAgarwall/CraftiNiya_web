@@ -248,32 +248,33 @@
   }
 
   .channelCard {
-    padding: var(--sp-3);
+    padding: var(--sp-3) 10px;
     gap: 4px;
+    border-radius: var(--r-lg);
   }
 
   .channelIconWrap {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     margin-bottom: 2px;
   }
 
   .channelIconWrap svg {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
   }
 
   .channelTitle {
-    font-size: 0.88rem;
+    font-size: 0.84rem;
   }
 
   .channelText {
-    font-size: 0.74rem;
-    line-height: 1.3;
+    font-size: 0.72rem;
+    line-height: 1.35;
   }
 
   .channelLink {
-    font-size: 0.76rem;
+    font-size: 0.74rem;
     margin-top: 4px;
   }
 
@@ -292,7 +293,7 @@
   }
 
   .formSubtitle {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 
   .form {
@@ -305,14 +306,14 @@
   }
 
   .label {
-    font-size: 0.76rem;
+    font-size: 0.75rem;
   }
 
   .input,
   .select,
   .textarea {
     padding: 9px 12px;
-    font-size: 0.85rem;
+    font-size: 0.84rem;
   }
 
   .textarea {
@@ -322,7 +323,18 @@
   .submitBtn {
     width: 100%;
     padding: 11px 18px;
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     justify-content: center;
   }
 }
+
+@media (max-width: 380px) {
+  .channelsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .channelCard {
+    padding: var(--sp-3);
+  }
+}
+

@@ -318,11 +318,11 @@
   }
 
   .cardTitle {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
   }
 
   .cardBody {
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     line-height: 1.5;
     gap: var(--sp-2);
   }
@@ -330,7 +330,7 @@
   .callout,
   .alert {
     padding: var(--sp-3);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     gap: var(--sp-2);
   }
 
@@ -350,13 +350,13 @@
   }
 
   .stepText {
-    font-size: 0.82rem;
+    font-size: 0.80rem;
   }
 
   .table th,
   .table td {
-    padding: 8px 10px;
-    font-size: 0.78rem;
+    padding: 7px 8px;
+    font-size: 0.75rem;
   }
 
   .quickNavStrip {
@@ -374,3 +374,30 @@
     width: 100%;
   }
 }
+
+@media (max-width: 400px) {
+  .policyCard {
+    padding: var(--sp-3) 10px;
+  }
+
+  .cardTitle {
+    font-size: 0.95rem;
+  }
+
+  .cardBody {
+    font-size: 0.78rem;
+  }
+
+  .callout,
+  .alert {
+    padding: 8px 10px;
+    font-size: 0.75rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 6px 7px;
+    font-size: 0.70rem;
+  }
+}
+

@@ -126,6 +126,7 @@ export default function FAQPage() {
       badge="Help & FAQs"
       seoTitle="Frequently Asked Questions (FAQs) — Craftiniya"
       seoDescription="Find answers to common questions about Craftiniya handmade resin art, candles, custom gift boxes, shipping, returns, and care."
+      showMobileHelp={false}
     >
       <div className={s.faqWrap}>
         {/* Search Input */}

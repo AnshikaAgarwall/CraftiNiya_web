@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { Lock, Mail, User } from "lucide-react";
 import SEO from "../components/common/SEO.jsx";
 import Button from "../components/ui/Button.jsx";
@@ -77,6 +77,14 @@ export default function AuthPage() {
       <SEO title={isSignUp ? "Create an account" : "Sign in"} noIndex />
 
       <div className={s.page}>
+        {/* Brand name on top middle so user can get back home by clicking it */}
+        <header className={s.brandBar}>
+          <Link to="/" className={s.brandLogo} aria-label={`${BRAND.name} Home`}>
+            <span className={s.brandName}>{BRAND.name}</span>
+            <span className={s.brandTagline}>{BRAND.tagline}</span>
+          </Link>
+        </header>
+
         <div className={s.panel}>
           <div className={s.formWrap}>
             <div className={s.toggle} role="tablist" aria-label="Account">

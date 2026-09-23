@@ -32,7 +32,7 @@ export default function RootLayout() {
 
       {!isFullScreen && <TopPromoBanner />}
 
-      <Header />
+      {!isFullScreen && <Header />}
 
       <main id="main">
         <ErrorBoundary>
@@ -42,7 +42,7 @@ export default function RootLayout() {
 
       {!isFullScreen && <Footer />}
 
-      <SearchOverlay />
+      {!isFullScreen && <SearchOverlay />}
       <Toaster />
     </>
   );

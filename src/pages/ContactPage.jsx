@@ -58,6 +58,7 @@ export default function ContactPage() {
       badge="Direct Support"
       seoTitle="Contact Us — Craftiniya Studio"
       seoDescription="Get in touch with the Craftiniya artisan studio via WhatsApp, Email, or our support form for custom orders, tracking, and bulk gifting."
+      showMobileHelp={false}
     >
       <div className={s.contactGrid}>
         {/* Top Direct Channels Strip */}
