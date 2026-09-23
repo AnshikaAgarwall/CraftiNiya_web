@@ -184,7 +184,6 @@ export default function ProductCard({ product, eager = false, compact = false })
 
         <div className={s.footer}>
           <Price
-            prefix="MRP :"
             listMinor={product.listPriceMinor}
             effectiveMinor={product.effectivePriceMinor}
             discountPct={product.discountPct}

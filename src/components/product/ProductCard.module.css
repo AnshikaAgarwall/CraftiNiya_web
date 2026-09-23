@@ -1,29 +1,32 @@
 .card {
   /* One height shared by the flag pills and the wishlist button so they line up. */
-  --pc-pill-h: 20px;
+  --pc-pill-h: 22px;
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 10px;
+  border: 1px solid var(--c-border);
+  border-radius: 12px;
   background-color: var(--c-surface);
   outline: none;
   -webkit-tap-highlight-color: transparent;
-  transition: transform var(--t-base) var(--ease);
+  transition:
+    transform var(--t-base) var(--ease),
+    box-shadow var(--t-base) var(--ease),
+    border-color var(--t-base) var(--ease);
 }
 
 .card:hover {
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border-color: var(--c-border-strong);
 }
 
-/* Remove border/line on click or focus */
+/* Remove outline on click or focus without collapsing border */
 .card:focus,
 .card:focus-within,
 .card:active {
   outline: none !important;
-  box-shadow: none !important;
-  border: none !important;
 }
 
 .disabled .image img {
@@ -115,15 +118,16 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: 3px;
-  padding: var(--sp-3) 0 0 0;
+  justify-content: space-between;
+  padding: 12px 14px 14px 14px;
+  gap: 8px;
 }
 
 .title {
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.4;
   letter-spacing: -0.01em;
   color: var(--c-text);
   margin: 0;
@@ -167,9 +171,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--sp-2);
-  margin-top: 0;
-  padding-top: 0;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
 }
 
 .add {
@@ -178,8 +182,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   padding: 0;
   border-radius: var(--r-circle);
   background-color: var(--c-brand-soft);
@@ -191,7 +195,8 @@
     background-color var(--t-fast) var(--ease),
     color var(--t-fast) var(--ease),
     border-color var(--t-fast) var(--ease),
-    transform var(--t-fast) var(--ease);
+    transform var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
 }
 
 .add svg {
@@ -202,8 +207,9 @@
 
 .add:hover:not(:disabled) {
   background-color: var(--c-brand);
-  color: var(--c-text-on-brand);
-  transform: scale(1.08);
+  color: #ffffff;
+  transform: scale(1.06);
+  box-shadow: 0 4px 10px rgba(179, 57, 115, 0.25);
 }
 
 /* When item is in cart: swap icon to tick without filled background */
@@ -301,18 +307,33 @@
 }
 
 @media (max-width: 640px) {
+  .card {
+    border-radius: 10px;
+  }
+
   .body {
-    padding: var(--sp-2) 0 0 0;
+    padding: 10px 10px 12px 10px;
+    gap: 6px;
   }
 
   .title {
-    font-size: 0.88rem;
+    font-size: 0.84rem;
+    line-height: 1.35;
+  }
+
+  .footer {
+    gap: 6px;
+    padding-top: 2px;
   }
 
   .add {
-    min-height: 28px;
-    padding: 4px 8px;
-    font-size: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .add svg {
+    width: 14px;
+    height: 14px;
   }
 
   .compact .body {

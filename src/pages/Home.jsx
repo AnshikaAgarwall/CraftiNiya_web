@@ -1,7 +1,4 @@
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import SEO from "../components/common/SEO.jsx";
-import Button from "../components/ui/Button.jsx";
 import { SectionHeading } from "../components/ui/Bits.jsx";
 import ProductGrid from "../components/product/ProductGrid.jsx";
 import HeroCarousel from "../features/home/HeroCarousel.jsx";
@@ -46,16 +43,6 @@ export default function Home() {
           <SectionHeading
             eyebrow="Most loved"
             title="Our Best Sellers"
-            action={
-              <Button
-                to="/shop"
-                variant="ghost"
-                endIcon={<ArrowRight size={16} />}
-              >
-                Shop all
-              </Button>
-            }
-            align="split"
           />
 
           <ProductGrid

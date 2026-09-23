@@ -69,7 +69,14 @@
     "orderCount": 86,
     "createdAt": "2026-06-15",
     "isFeatured": true,
-    "productType": "own",
+    "productType": "creator",
+    "creator": {
+      "name": "Ananya Sharma",
+      "slug": "local-artisans",
+      "creatorCategory": "ngo_artisan",
+      "mediaType": "banner",
+      "mediaUrl": "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg"
+    },
     "ageGroup": "All ages",
     "specifications": {
       "dimensions": "Diameter (12 inches)",
@@ -111,6 +118,14 @@
     "orderCount": 95,
     "createdAt": "2026-07-27",
     "isFeatured": false,
+    "productType": "creator",
+    "creator": {
+      "name": "Priya Creations",
+      "slug": "priya-crafts",
+      "creatorCategory": "influencer",
+      "mediaType": "reel",
+      "mediaUrl": "https://videos.pexels.com/video-files/34428330/14585482_1280_720_50fps.mp4"
+    },
     "ageGroup": "All ages",
     "specifications": {
       "dimensions": "Length (18 inches), Width (12 inches)",
@@ -275,6 +290,14 @@
     "orderCount": 250,
     "createdAt": "2026-03-16",
     "isFeatured": false,
+    "productType": "creator",
+    "creator": {
+      "name": "Priya Creations",
+      "slug": "priya-crafts",
+      "creatorCategory": "influencer",
+      "mediaType": "reel",
+      "mediaUrl": "https://videos.pexels.com/video-files/34428330/14585482_1280_720_50fps.mp4"
+    },
     "ageGroup": "All ages",
     "specifications": {
       "dimensions": "Diameter (4 inches) each",
@@ -480,6 +503,14 @@
     "orderCount": 94,
     "createdAt": "2026-05-16",
     "isFeatured": false,
+    "productType": "creator",
+    "creator": {
+      "name": "Priya Creations",
+      "slug": "priya-crafts",
+      "creatorCategory": "influencer",
+      "mediaType": "reel",
+      "mediaUrl": "https://videos.pexels.com/video-files/34428330/14585482_1280_720_50fps.mp4"
+    },
     "ageGroup": "All ages",
     "specifications": {
       "dimensions": "Length (8 inches), Width (8 inches)",
@@ -935,6 +966,14 @@
     "orderCount": 198,
     "createdAt": "2026-03-19",
     "isFeatured": false,
+    "productType": "creator",
+    "creator": {
+      "name": "Ananya Sharma",
+      "slug": "local-artisans",
+      "creatorCategory": "ngo_artisan",
+      "mediaType": "banner",
+      "mediaUrl": "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg"
+    },
     "ageGroup": "All ages",
     "specifications": {
       "dimensions": "Diameter (8 inches), Length (22 inches)",

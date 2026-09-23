@@ -63,15 +63,9 @@ export default function ReelsShowcase() {
       {/* Section Header */}
       <div className="container">
         <div className={s.sectionHeader}>
-          <div className={s.headerBadge}>
-            <span>Studio In Motion</span>
-          </div>
           <h2 id="reels-heading" className={s.sectionTitle}>
-            Watch It Being Made
+            CraftiNiya Studio
           </h2>
-          <p className={s.sectionSubtitle}>
-            Continuous studio process reels. Hover over any reel to discover attached creations.
-          </p>
         </div>
       </div>
 

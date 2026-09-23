@@ -127,18 +127,67 @@ export async function getProductsByIds(ids = [], opts) {
     .filter((p) => p && wanted.has(p.id));
 }
 
-/** Same subcategory first, then the rest of the category. */
+/**
+ * Partner-aware product recommendations.
+ * - Affiliate products ONLY suggest other affiliate products.
+ * - Creator/artisan products ONLY suggest products from that creator.
+ * - Collaboration products ONLY suggest products from that collaboration.
+ * - Standard catalog products suggest from the same subcategory/category.
+ */
 export async function getRelatedProducts(productId, { limit = 8 } = {}, opts) {
   const list = await allProducts(opts);
   const product = list.find((p) => p.id === productId);
   if (!product) return [];
 
+  // 1. Affiliate / Partner Picks: ONLY suggest other affiliate products
+  if (product.productType === "affiliate" || product.affiliate) {
+    const affiliatePicks = list.filter(
+      (p) =>
+        p.id !== productId &&
+        (p.productType === "affiliate" || Boolean(p.affiliate)),
+    );
+    return sortProducts(affiliatePicks, "popular").slice(0, limit);
+  }
+
+  // 2. Creator / Artisan Products: ONLY suggest products from that creator
+  if (product.creator?.slug || product.productType === "creator") {
+    const creatorSlug = product.creator?.slug?.toLowerCase();
+    const creatorProducts = list.filter(
+      (p) =>
+        p.id !== productId &&
+        p.creator?.slug &&
+        p.creator.slug.toLowerCase() === creatorSlug,
+    );
+    return sortProducts(creatorProducts, "popular").slice(0, limit);
+  }
+
+  // 3. Collaboration Products: ONLY suggest products from that collaboration
+  if (product.collaborationSlug) {
+    const collabSlug = product.collaborationSlug.toLowerCase();
+    const collabProducts = list.filter(
+      (p) =>
+        p.id !== productId &&
+        p.collaborationSlug &&
+        p.collaborationSlug.toLowerCase() === collabSlug,
+    );
+    return sortProducts(collabProducts, "popular").slice(0, limit);
+  }
+
+  // 4. Default: Standard craft products (exclude partner items from general suggestions)
   const sameSub = list.filter(
-    (p) => p.id !== productId && p.subcategoryId === product.subcategoryId,
+    (p) =>
+      p.id !== productId &&
+      p.productType !== "affiliate" &&
+      !p.creator?.slug &&
+      !p.collaborationSlug &&
+      p.subcategoryId === product.subcategoryId,
   );
   const sameCat = list.filter(
     (p) =>
       p.id !== productId &&
+      p.productType !== "affiliate" &&
+      !p.creator?.slug &&
+      !p.collaborationSlug &&
       p.categoryId === product.categoryId &&
       p.subcategoryId !== product.subcategoryId,
   );

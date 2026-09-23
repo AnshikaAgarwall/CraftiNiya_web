@@ -473,8 +473,24 @@ export default function ProductDetailPage() {
       {related?.length > 0 && (
         <section className={`container ${s.related}`}>
           <SectionHeading
-            eyebrow="You might also like"
-            title={`More from ${product.subcategoryTitle}`}
+            eyebrow={
+              product.productType === "affiliate" || product.affiliate
+                ? "Curated Partner Picks"
+                : product.creator?.name
+                  ? "Artisan Spotlight"
+                  : product.collaborationSlug
+                    ? "Brand Collaboration"
+                    : "You might also like"
+            }
+            title={
+              product.productType === "affiliate" || product.affiliate
+                ? "More Partner Picks"
+                : product.creator?.name
+                  ? `More by ${product.creator.name}`
+                  : product.collaborationSlug
+                    ? "More from this Collaboration"
+                    : `More from ${product.subcategoryTitle || "this category"}`
+            }
             align="split"
           />
           <ProductGrid products={related} columns={4} />
