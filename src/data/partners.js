@@ -4,6 +4,7 @@ import crochetkariImg from "../assets/crochetkari.png";
 import mittiImg from "../assets/CraftiNiya x Mitti Se.png";
 import collabBannerWide from "../assets/COLLABBRAND.png";
 import bundleBannerWide from "../assets/BRANDPROMOTION.png";
+import ananyaCreatorImg from "../assets/ananya creator.png";
 
 /**
  * Three partner types supported by CraftiNiya:
@@ -126,16 +127,41 @@ export const CREATORS = [
     name: "Ananya Sharma & Local Artisans",
     shortName: "Ananya Sharma",
     bio: "Empowering rural women artisans and preserving traditional macramé and mud-relief heritage craft across Rajasthan and Gujarat.",
+    tagline: "Creator & Social Impact Champion for Rural Women Artisans",
     category: "ngo_artisan",
     categoryLabel: "Artisan Collective & NGO",
     mediaType: "banner",
-    mediaUrl:
-      "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg",
-    posterUrl:
-      "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg",
+    mediaUrl: ananyaCreatorImg,
+    posterUrl: ananyaCreatorImg,
     location: "Jaipur, Rajasthan",
     founded: "Heritage Studio Collective",
     crafts: ["Macramé", "Mud Art", "Heritage Weaving"],
+    instagramHandle: "@ananya_artisancraft",
+    instagramUrl: "https://www.instagram.com",
+    missionTitle: "Why Ananya Does This: A Mission of Social Service",
+    missionSubtitle: "Transforming social media influence into direct livelihood & dignity for rural women",
+    missionStory: [
+      "As an Instagram creator passionate about Indian art and rural heritage, Ananya saw firsthand that hundreds of incredibly skilled women artisans in remote villages of Rajasthan and Gujarat were struggling to survive against cheap factory-made plastic replicas.",
+      "Instead of using social media purely for entertainment, Ananya decided to dedicate her platform to social service. She formed this creator-artisan collective to eliminate middlemen and provide 45+ rural women with fair living wages, safe workspaces, and direct access to craft lovers across India.",
+      "Every macramé wall hanging and Lippan mud-mirror panel in this collection is handcrafted with generational patience. When you purchase from this storefront, you are directly funding healthcare, children's schooling, and female financial independence in artisan villages."
+    ],
+    whySupportTitle: "Why You Should Support This Initiative",
+    supportPoints: [
+      {
+        title: "100% Fair Living Wages",
+        desc: "Zero exploitation or middlemen commissions. Earnings go directly into the bank accounts of rural women makers."
+      },
+      {
+        title: "Keeping Ancient Heritage Alive",
+        desc: "Preserving sacred Lippan mud art and intricate hand-knotting techniques passed down through generations."
+      },
+      {
+        title: "Dignity & Child Education",
+        desc: "Your support enables mothers to send their daughters to school and become respected breadwinners in their homes."
+      }
+    ],
+    quote: "“When you buy from a rural woman artisan, you aren't just buying decor — you are educating a child and giving an entire family the dignity they deserve.”",
+    quoteAuthor: "Ananya Sharma (Creator & Social Activist)"
   },
   {
     id: "priya-crafts",
@@ -143,16 +169,42 @@ export const CREATORS = [
     name: "Priya Creations",
     shortName: "Priya Creations",
     bio: "Studio creator specializing in crystal-clear botanical resin pour, preserved floral keepsakes, and calming aromatherapy essentials.",
+    tagline: "Independent Botanical Studio Maker & Slow Living Artisan",
     category: "influencer",
     categoryLabel: "Independent Maker",
     mediaType: "reel",
     mediaUrl:
       "https://videos.pexels.com/video-files/34428330/14585482_1280_720_50fps.mp4",
     posterUrl:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80",
     location: "Bengaluru, India",
-    instagramHandle: "@priyacrafts.studio",
     crafts: ["Botanical Resin", "Floral Keepsakes", "Aromatherapy"],
+    instagramHandle: "@priyacrafts.studio",
+    instagramUrl: "https://www.instagram.com",
+    missionTitle: "The Creator Story: Slow Art in a Fast World",
+    missionSubtitle: "Why Priya creates small-batch botanical keepsakes with human touch",
+    missionStory: [
+      "Priya started documenting her botanical resin experiments on Instagram as a creative outlet, but it quickly resonated with thousands of people who craved mindful, genuine art in a world flooded with cheap mass production.",
+      "Every piece in Priya's studio is made through slow, deliberate craftsmanship. Real seasonal florals are hand-foraged, dried naturally for weeks, and cured in eco-friendly resin over 72 hours of multi-layered hand pouring and diamond polishing.",
+      "Supporting independent creators like Priya keeps soulful studio arts alive. Every order directly funds independent women creators who pour their personal heart, patience, and love into everything they make."
+    ],
+    whySupportTitle: "Why You Should Support Independent Makers",
+    supportPoints: [
+      {
+        title: "Slow, Conscious Creation",
+        desc: "Never mass-produced. Each piece takes days of meticulous layering, curing, and hand-finishing."
+      },
+      {
+        title: "Real Preserved Nature",
+        desc: "Sustainably sourced real seasonal flowers and botanicals preserved to last for years."
+      },
+      {
+        title: "Fueling Homegrown Creative Studios",
+        desc: "Backing independent women artists who build ethical, creative small businesses with heart."
+      }
+    ],
+    quote: "“In a world of conveyor belts and duplicates, handmade art is a quiet rebellion that celebrates human patience and soul.”",
+    quoteAuthor: "Priya (Independent Studio Creator)"
   },
 ];
 

@@ -1,82 +1,98 @@
-import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Sparkles, X } from "lucide-react";
-import { useAsync } from "../../hooks/useAsync.js";
-import { useCountdown } from "../../hooks/useCountdown.js";
-import promoService from "../../services/promoService.js";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { X, ChevronRight } from "lucide-react";
 import s from "./TopPromoBanner.module.css";
+
+const TICKER_ITEMS = [
+  {
+    id: "festive-sale",
+    badge: "Festive Sale",
+    text: "Festive Sale — Up to 40% Off Handcrafted Gifting",
+    cta: "Shop Sale",
+    link: "/sale",
+  },
+  {
+    id: "partner-picks",
+    badge: "Partner Picks",
+    text: "Find Partner Picks — Handpicked Heritage Art & Décor",
+    cta: "Explore",
+    link: "/partner-picks",
+  },
+  {
+    id: "collab-rangsajja",
+    badge: "Collaboration",
+    text: "CraftiNiya x RangSajja — Limited Festive Edition",
+    cta: "Discover",
+    link: "/collaboration/rangsajja",
+  },
+];
 
 export default function TopPromoBanner() {
   const navigate = useNavigate();
-  const location = useLocation();
-
+  const [activeIndex, setActiveIndex] = useState(0);
   const [dismissed, setDismissed] = useState(() => {
     try {
-      return sessionStorage.getItem("craftiniya:sale_banner_dismissed") === "true";
+      return sessionStorage.getItem("craftiniya:promo_ticker_dismissed") === "true";
     } catch {
       return false;
     }
   });
 
-  const { data: promo } = useAsync((opts) => promoService.getActivePromotion(opts), []);
-  const { data: serverTime } = useAsync((opts) => promoService.getServerTime(opts), []);
+  // Cycle along Y-axis every 3.8 seconds
+  useEffect(() => {
+    if (dismissed) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % TICKER_ITEMS.length);
+    }, 3800);
 
-  const { days, hours, minutes, seconds, isExpired } = useCountdown(
-    promo?.endsAt,
-    serverTime?.nowIso,
-  );
+    return () => clearInterval(interval);
+  }, [dismissed]);
 
-  // If dismissed, expired, no promo, or already on /sale page, don't show
-  if (dismissed || !promo || isExpired || location.pathname === "/sale") {
+  if (dismissed) {
     return null;
   }
+
+  const currentItem = TICKER_ITEMS[activeIndex];
 
   const handleDismiss = (e) => {
     e.preventDefault();
     e.stopPropagation();
     setDismissed(true);
     try {
-      sessionStorage.setItem("craftiniya:sale_banner_dismissed", "true");
+      sessionStorage.setItem("craftiniya:promo_ticker_dismissed", "true");
     } catch {
       // ignore
     }
   };
 
-  const handleBannerClick = () => {
-    navigate(promo.ctaHref || "/sale");
+  const handleItemClick = () => {
+    if (currentItem?.link) {
+      navigate(currentItem.link);
+    }
   };
 
   return (
     <aside
       role="complementary"
-      aria-label="Promotional announcement"
-      onClick={handleBannerClick}
+      aria-label="Promotional announcement ticker"
       className={s.banner}
+      onClick={handleItemClick}
     >
-      <div className={s.inner}>
-        {/* Headline / Offer text */}
-        <span className={s.headline}>
-          {promo.headline || "Festive Sale — Up to 40% Off Handmade Gifting"}
-        </span>
-
-        {/* Countdown timer */}
-        <div className={s.group}>
-          <span className={s.timer}>
-            <Sparkles size={11} color="#b45309" aria-hidden="true" />
-            <span className={s.timerLabel}>Ends in:</span>
-            <strong className={s.timerValues}>
-              {String(days).padStart(2, "0")}d {String(hours).padStart(2, "0")}h{" "}
-              {String(minutes).padStart(2, "0")}m {String(seconds).padStart(2, "0")}s
-            </strong>
+      <div className={s.trackWrapper}>
+        <div key={currentItem.id} className={s.tickerItem}>
+          <span className={s.text}>{currentItem.text}</span>
+          <span className={s.ctaLink}>
+            <span>{currentItem.cta}</span>
+            <ChevronRight size={13} aria-hidden="true" />
           </span>
         </div>
       </div>
 
-      {/* Dismiss (X) button */}
+      {/* Dismiss All (X) button */}
       <button
         type="button"
         onClick={handleDismiss}
-        aria-label="Dismiss sale banner"
+        aria-label="Dismiss all announcements"
         className={s.closeBtn}
       >
         <X size={14} />

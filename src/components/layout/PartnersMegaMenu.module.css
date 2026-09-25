@@ -24,13 +24,13 @@
 
 .inner {
   padding-block: var(--sp-6) var(--sp-7);
-  max-height: min(75vh, 600px);
+  max-height: min(78vh, 660px);
   overflow-y: auto;
 }
 
 .layout {
   display: grid;
-  grid-template-columns: 310px 1fr;
+  grid-template-columns: 340px 1fr;
   gap: var(--sp-8);
   align-items: stretch;
 }
@@ -54,16 +54,16 @@
 
 .sectionHeader {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: var(--sp-2);
 }
 
 .sectionTitle {
   color: var(--c-text);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-wider);
+  font-size: 0.8125rem; /* ~13px uppercase */
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
   transition: color var(--t-fast) var(--ease);
@@ -74,18 +74,18 @@
 }
 
 .sectionBadge {
-  font-size: 10px;
-  font-weight: var(--fw-semibold);
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--c-brand);
   background-color: var(--c-brand-soft);
-  padding: 2px 7px;
+  padding: 3px 8px;
   border-radius: var(--r-pill);
 }
 
 .sectionDesc {
-  font-size: var(--fs-xs);
+  font-size: 0.78125rem; /* ~12.5px */
   color: var(--c-text-2);
   line-height: var(--lh-snug);
   margin: 0;
@@ -97,14 +97,14 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .subLink {
   display: inline-block;
   padding-block: 3px;
   color: var(--c-text-2);
-  font-size: var(--fs-sm);
+  font-size: 0.84375rem; /* ~13.5px */
   text-decoration: none;
   transition: color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
@@ -118,18 +118,18 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  margin-top: 2px;
+  margin-top: 3px;
   color: var(--c-brand);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-semibold);
+  font-size: 0.78125rem; /* ~12.5px */
+  font-weight: 600;
   letter-spacing: var(--ls-wide);
   text-decoration: none;
   transition: color var(--t-fast) var(--ease), gap var(--t-fast) var(--ease);
 }
 
 .viewAll svg {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   transition: transform var(--t-fast) var(--ease);
 }
 
@@ -165,16 +165,16 @@
 }
 
 .rightTitle {
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-wider);
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--c-brand);
   margin: 0;
 }
 
 .rightTagline {
-  font-size: var(--fs-xs);
+  font-size: 0.78125rem; /* ~12.5px */
   color: var(--c-text-2);
 }
 
@@ -231,12 +231,12 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 3px 8px;
+  padding: 4px 9px;
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
   color: var(--c-brand);
-  font-size: 10px;
-  font-weight: var(--fw-bold);
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: var(--r-pill);
@@ -251,24 +251,24 @@
 }
 
 .cardCategory {
-  font-size: 10px;
-  font-weight: var(--fw-semibold);
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 600;
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: var(--c-brand);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .cardTitle {
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-semibold);
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 600;
   color: var(--c-text);
   line-height: var(--lh-snug);
-  margin: 0 0 4px;
+  margin: 0 0 5px;
 }
 
 .cardSubtitle {
-  font-size: var(--fs-xs);
+  font-size: 0.78125rem; /* ~12.5px */
   color: var(--c-text-2);
   line-height: var(--lh-base);
   margin: 0 0 var(--sp-2);
@@ -282,22 +282,22 @@
 .cardAction {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-semibold);
+  gap: 5px;
+  font-size: 0.78125rem; /* ~12.5px */
+  font-weight: 600;
   color: var(--c-brand);
   margin-top: auto;
   transition: gap var(--t-fast) var(--ease);
 }
 
 .featuredCard:hover .cardAction {
-  gap: 7px;
+  gap: 8px;
   color: var(--c-brand-hover);
 }
 
 .cardAction svg {
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
 }
 
 /* -------------------------------------------------------------
@@ -305,7 +305,7 @@
    ------------------------------------------------------------- */
 @media (max-width: 1080px) {
   .layout {
-    grid-template-columns: 270px 1fr;
+    grid-template-columns: 290px 1fr;
     gap: var(--sp-6);
   }
 

@@ -1,5 +1,5 @@
 import { BRAND } from "../../config/site.js";
-import posterInsta from "../../assets/BRANDPROMOTION.png";
+import posterInsta from "../../assets/instaforniyacommunity.png";
 import posterWa from "../../assets/LOCALSHOPS.png";
 import s from "./SocialCommunityBanners.module.css";
 
