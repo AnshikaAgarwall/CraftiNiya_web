@@ -9,6 +9,7 @@ import FeaturedCollaborations from "../features/home/FeaturedCollaborations.jsx"
 import ReelsShowcase from "../features/home/ReelsShowcase.jsx";
 import BudgetTiers from "../features/home/BudgetTiers.jsx";
 import ReviewPills from "../features/home/ReviewPills.jsx";
+import SocialCommunityBanners from "../features/home/SocialCommunityBanners.jsx";
 
 import { useAsync } from "../hooks/useAsync.js";
 import productService from "../services/productService.js";
@@ -60,6 +61,7 @@ export default function Home() {
       <BudgetTiers />
 
       <ReviewPills />
+      <SocialCommunityBanners />
     </>
   );
 }

@@ -73,6 +73,7 @@ export function mapProduct(raw) {
     ageGroup: raw.ageGroup ?? null,
     specifications: raw.specifications ?? null,
     gifting: raw.gifting ?? null,
+    tags: raw.tags ?? null,
     productType: raw.productType ?? "own",
     creator: raw.creator ?? null,
     affiliate: raw.affiliate ?? null,

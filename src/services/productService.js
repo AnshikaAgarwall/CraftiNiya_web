@@ -60,6 +60,13 @@ function matches(p, q) {
       p.categoryTitle,
       p.subcategoryTitle,
       p.specifications?.materials,
+      p.gifting?.idealFor,
+      p.gifting?.targetAudience,
+      p.ageGroup,
+      ...(Array.isArray(p.tags?.relations) ? p.tags.relations : []),
+      ...(Array.isArray(p.tags?.occasions) ? p.tags.occasions : []),
+      ...(Array.isArray(p.tags?.useCases) ? p.tags.useCases : []),
+      ...(Array.isArray(p.tags?.colors) ? p.tags.colors : []),
     ]
       .filter(Boolean)
       .join(" ")

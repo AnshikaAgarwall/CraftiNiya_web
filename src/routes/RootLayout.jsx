@@ -5,6 +5,7 @@ import SearchOverlay from "../components/layout/SearchOverlay.jsx";
 import Toaster from "../components/layout/Toaster.jsx";
 import ErrorBoundary from "../components/common/ErrorBoundary.jsx";
 import TopPromoBanner from "../components/common/TopPromoBanner.jsx";
+import ChatBot from "../components/chatbot/ChatBot.jsx";
 
 /**
  * Chrome that wraps every route.
@@ -43,6 +44,7 @@ export default function RootLayout() {
       {!isFullScreen && <Footer />}
 
       {!isFullScreen && <SearchOverlay />}
+      {!isFullScreen && <ChatBot />}
       <Toaster />
     </>
   );

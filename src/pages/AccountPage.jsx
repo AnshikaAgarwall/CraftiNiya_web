@@ -346,7 +346,6 @@ export default function AccountPage() {
 
       <PageHeader
         breadcrumbs={[{ label: "Home", to: "/" }, { label: "Account" }]}
-
         title="Your Account"
         description="Manage your profile details, delivery addresses, orders and preferences."
       />

@@ -142,29 +142,13 @@
   box-shadow: var(--sh-sm);
 }
 
-/* ---------- copy ---------- */
-
-.title {
-  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
-  line-height: 1.2;
-  margin: 0;
-}
-
-.subtitle {
-  margin-top: 5px;
-  color: var(--c-text-2);
-  font-size: 0.82rem;
-  line-height: 1.45;
-  margin-bottom: 0;
-}
-
 /* ---------- form ---------- */
 
 .form {
   display: flex;
   flex-direction: column;
   gap: clamp(0.6rem, 1.5vh, 0.95rem);
-  margin-top: clamp(0.65rem, 1.8vh, 1rem);
+  margin-top: 0;
 }
 
 .formError {
@@ -293,4 +277,159 @@
     font-size: 0.70rem;
   }
 }
+
+/* =========================================================
+   3-Line Centered Dynamic Typography Composition (Mobile Only on Auth Page)
+   ========================================================= */
+
+.mobileCompositionBanner {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileCompositionBanner {
+    display: block;
+    width: 100%;
+    flex: 0 0 auto;
+    background: linear-gradient(180deg, var(--c-accent-soft) 0%, var(--c-bg) 100%);
+    border-bottom: 1px solid var(--c-border);
+    padding: clamp(0.7rem, 2vh, 1.1rem) 0.75rem clamp(0.6rem, 1.8vh, 0.95rem);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .compositionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 440px;
+    margin-inline: auto;
+    position: relative;
+  }
+
+  /* Line 1 (Top, Centered): Fixed static text */
+  .compLine1 {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(0.72rem, 2.5vw, 0.86rem);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-brand);
+    margin-bottom: 3px;
+    opacity: 0.92;
+  }
+
+  /* Line 2 (Middle, Centered Alignment): Dynamic rotating text line */
+  .compLine2Track {
+    position: relative;
+    width: 100%;
+    height: clamp(30px, 6vh, 38px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Soft gradient mask on canvas edges to truncate incoming and outgoing keywords */
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 16%,
+      black 84%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 16%,
+      black 84%,
+      transparent 100%
+    );
+  }
+
+  .compSlotsWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    animation: compSlideTicker 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Left Slot: Outgoing Keyword (faded, off-focus) */
+  .compSlotLeft {
+    flex: 1 1 0%;
+    text-align: right;
+    padding-right: clamp(0.4rem, 2vw, 0.75rem);
+    font-family: var(--font-serif);
+    font-size: clamp(0.85rem, 3.2vw, 1.05rem);
+    font-weight: 500;
+    color: var(--c-text-2);
+    opacity: 0.35;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+    transform: scale(0.92);
+  }
+
+  /* Center Slot: Active Keyword (main focus, 100% opacity) */
+  .compSlotCenter {
+    flex: 0 0 auto;
+    max-width: 58%;
+    text-align: center;
+    padding-inline: clamp(0.35rem, 1.5vw, 0.65rem);
+    font-family: var(--font-serif);
+    font-size: clamp(1.15rem, 4.2vw, 1.48rem);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--c-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 2px rgb(var(--c-ink-rgb) / 0.05);
+  }
+
+  /* Right Slot: Incoming Keyword (faded, off-focus) */
+  .compSlotRight {
+    flex: 1 1 0%;
+    text-align: left;
+    padding-left: clamp(0.4rem, 2vw, 0.75rem);
+    font-family: var(--font-serif);
+    font-size: clamp(0.85rem, 3.2vw, 1.05rem);
+    font-weight: 500;
+    color: var(--c-text-2);
+    opacity: 0.35;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+    transform: scale(0.92);
+  }
+
+  /* Line 3 (Bottom, Centered): Fixed static text */
+  .compLine3 {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(0.84rem, 2.9vw, 1rem);
+    font-weight: 600;
+    color: var(--c-brand-hover);
+    margin-top: 3px;
+    letter-spacing: 0.06em;
+    opacity: 0.95;
+  }
+}
+
+@keyframes compSlideTicker {
+  0% {
+    opacity: 0.4;
+    transform: translateX(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 

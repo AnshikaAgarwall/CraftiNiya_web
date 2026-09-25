@@ -19,6 +19,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -58,6 +66,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -99,6 +115,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -138,6 +162,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -179,6 +211,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -217,6 +257,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -257,6 +305,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -300,6 +356,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -339,6 +403,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -380,6 +452,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -419,6 +499,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -460,6 +548,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -500,6 +596,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -539,6 +643,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -582,6 +694,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -621,6 +741,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -662,6 +790,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -701,6 +837,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -742,6 +886,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -782,6 +934,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -821,6 +981,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -864,6 +1032,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -903,6 +1079,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -944,6 +1128,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -984,6 +1176,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -1023,6 +1223,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -1065,6 +1273,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -1104,6 +1320,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -1147,6 +1371,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -1186,6 +1418,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -1227,6 +1467,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -1267,6 +1515,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -1305,6 +1561,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
@@ -1346,6 +1610,14 @@ export const allSubcategoryProducts = [
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
   },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
+  },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",
     targetAudience: "Suitable for adults, family members, and friends"
@@ -1384,6 +1656,14 @@ export const allSubcategoryProducts = [
   specifications: {
     dimensions: "Length (12 inches), Width (8 inches), Depth (0.5 inches)",
     materials: "Premium Clear Epoxy Resin, Dried Gold Leaves, Small Florals"
+  },
+  tags: {
+    relations: [],
+    occasions: [],
+    useCases: [],
+    colors: [],
+    relevantMonths: [],
+    ageGroup: []
   },
   gifting: {
     idealFor: "Housewarming, Weddings, Anniversaries, Birthdays",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { Lock, Mail, User } from "lucide-react";
 import SEO from "../components/common/SEO.jsx";
@@ -71,6 +71,31 @@ export default function AuthPage() {
       else setFormError(err?.message ?? "Something went wrong. Please try again.");
     }
   };
+  // Mobile 3-line rotating composition subcategories
+  const tickerSubcategories = [
+    "Wall Decor",
+    "Scented Candles",
+    "Crochet Bouquets",
+    "Nameplates",
+    "Pooja Thalis",
+    "Tote Bags",
+    "Decorative Clocks",
+    "Resin Frames",
+    "Festive Torans",
+    "Wax Melts",
+    "Gift Hampers",
+    "Plushies",
+    "Bubble Candles",
+    "Keychains",
+  ];
+  const [tickerIndex, setTickerIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTickerIndex((prev) => (prev + 1) % tickerSubcategories.length);
+    }, 2400);
+    return () => clearInterval(timer);
+  }, [tickerSubcategories.length]);
 
   return (
     <>
@@ -84,6 +109,39 @@ export default function AuthPage() {
             <span className={s.brandTagline}>{BRAND.tagline}</span>
           </Link>
         </header>
+
+        {/* Mobile-only 3-Line Centered Rotating Typography Composition */}
+        <div className={s.mobileCompositionBanner} aria-label="CraftiNiya Category Spotlight">
+          <div className={s.compositionContainer}>
+            {/* Line 1: Top, Centered, Fixed Static Text */}
+
+            {/* Line 2: Middle, Dynamic Rotating Text with Left (outgoing), Center (active), Right (incoming) slots */}
+            <div className={s.compLine2Track}>
+              <div
+                key={tickerIndex}
+                className={s.compSlotsWrapper}
+                aria-live="polite"
+              >
+                {/* Left Slot: Outgoing Keyword (faded, off-focus) */}
+                <span className={s.compSlotLeft} aria-hidden="true">
+                  {tickerSubcategories[(tickerIndex - 1 + tickerSubcategories.length) % tickerSubcategories.length]}
+                </span>
+
+                {/* Center Slot: Active Keyword (main focus, 100% opacity) */}
+                <span className={s.compSlotCenter}>
+                  {tickerSubcategories[tickerIndex]}
+                </span>
+
+                {/* Right Slot: Incoming Keyword (faded, off-focus) */}
+                <span className={s.compSlotRight} aria-hidden="true">
+                  {tickerSubcategories[(tickerIndex + 1) % tickerSubcategories.length]}
+                </span>
+              </div>
+            </div>
+
+            {/* Line 3: Bottom, Centered, Fixed Static Text */}
+          </div>
+        </div>
 
         <div className={s.panel}>
           <div className={s.formWrap}>
@@ -111,15 +169,6 @@ export default function AuthPage() {
             {/* Announced so the mode change is not silent for screen readers. */}
             <p className="sr-only" aria-live="polite">
               {isSignUp ? "Create account form" : "Sign in form"}
-            </p>
-
-            <h1 className={s.title}>
-              {isSignUp ? "Make yourself at home." : "Good to see you again."}
-            </h1>
-            <p className={s.subtitle}>
-              {isSignUp
-                ? "An account keeps your bag, your wishlist and your order history in one place."
-                : "Sign in to pick up where you left off."}
             </p>
 
             <form className={s.form} onSubmit={submit} noValidate>

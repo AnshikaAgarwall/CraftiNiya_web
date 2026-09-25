@@ -14,7 +14,7 @@
 
 .inner {
   display: grid;
-  grid-template-columns: 1.2fr repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-8);
   padding-block: var(--sp-8) var(--sp-6);
 }
@@ -278,12 +278,8 @@
 
 @media (max-width: 1024px) {
   .inner {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--sp-7);
-  }
-
-  .brandCol {
-    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-6);
   }
 }
 
@@ -292,28 +288,11 @@
     margin-top: var(--sp-6);
   }
 
-  /* Compact Main Grid */
+  /* Compact Main Grid: 3 columns side-by-side in one row */
   .inner {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--sp-4) var(--sp-3);
-    padding-block: var(--sp-5) var(--sp-4);
-  }
-
-  .brandCol {
-    grid-column: 1 / -1;
-    gap: var(--sp-2);
-    border-bottom: 1px solid var(--c-border);
-    padding-bottom: var(--sp-4);
-    margin-bottom: var(--sp-1);
-  }
-
-  .wordmark {
-    font-size: 1.45rem;
-  }
-
-  .tagline {
-    font-size: 0.78rem;
-    line-height: 1.4;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding-block: var(--sp-4) var(--sp-3);
   }
 
   .newsletterBox {
@@ -350,17 +329,25 @@
   }
 
   .colHeading {
-    font-size: 0.78rem;
-    margin-bottom: var(--sp-2);
+    font-size: 0.68rem;
+    margin-bottom: 5px;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .colList {
-    gap: 6px;
+    gap: 2.5px;
   }
 
   .colLink {
-    font-size: 0.76rem;
-    padding-block: 2px;
+    font-size: 0.58rem;
+    line-height: 1.22;
+    padding-block: 1px;
+    display: block;
+    word-break: break-word;
   }
 
   /* Compact Copyright & Social Bar */

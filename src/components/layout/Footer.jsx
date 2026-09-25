@@ -13,14 +13,6 @@ export default function Footer() {
     <footer className={s.footer}>
       {/* ── Main Footer Grid ── */}
       <div className={`container ${s.inner}`}>
-        {/* Brand Column */}
-        <div className={s.brandCol}>
-          <Link to="/" className={s.wordmark} aria-label={`${BRAND.name} home`}>
-            {BRAND.name}
-          </Link>
-          <p className={s.tagline}>{BRAND.strapline}</p>
-        </div>
-
         {/* Dynamic Navigation Columns */}
         {FOOTER_NAV.map((column) => (
           <nav key={column.heading} className={s.col} aria-label={column.heading}>
