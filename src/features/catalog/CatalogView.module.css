@@ -73,12 +73,28 @@
   gap: var(--sp-2);
 }
 
-/* Hide toolbar actions on desktop — sort+filter live in the sidebar */
+/* Hide toolbar actions on desktop in normal layout — sort+filter live in the sidebar */
 @media (min-width: 901px) {
   .toolbarActions {
     display: none;
   }
 }
+
+.actionText {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Full-width layout when filters are in drawer mode */
+.drawerLayout {
+  display: block;
+}
+
+.drawerLayout .toolbarActions {
+  display: flex !important;
+}
+
 
 .chips {
   display: flex;

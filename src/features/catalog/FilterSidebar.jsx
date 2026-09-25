@@ -25,6 +25,7 @@ export default function FilterSidebar({
   hideSort = false,
   isOpen: controlledOpen,
   onToggleOpen,
+  isDrawerMode = false,
   className,
 }) {
   const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
@@ -62,7 +63,14 @@ export default function FilterSidebar({
 
   return (
     <>
-      <aside className={cn(s.sidebar, open && s.sidebarOpen, className)}>
+      <aside
+        className={cn(
+          s.sidebar,
+          isDrawerMode && s.drawerMode,
+          open && s.sidebarOpen,
+          className,
+        )}
+      >
         <div className={s.head}>
           <h2 className={s.heading}>Filters</h2>
           {activeCount > 0 && (
@@ -175,7 +183,7 @@ export default function FilterSidebar({
       {open && (
         <button
           type="button"
-          className={s.scrim}
+          className={cn(s.scrim, isDrawerMode && s.scrimVisible)}
           onClick={() => setOpen(false)}
           aria-label="Close filters"
           tabIndex={-1}

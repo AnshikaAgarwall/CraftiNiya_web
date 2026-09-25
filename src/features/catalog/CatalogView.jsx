@@ -25,6 +25,7 @@ import s from "./CatalogView.module.css";
 export default function CatalogView({
   scope = {},
   hideSubcategoryFilter = false,
+  drawerFilter = false,
   emptyTitle,
   emptyMessage,
   children,
@@ -94,7 +95,7 @@ export default function CatalogView({
   const [sortOpen, setSortOpen] = useState(false);
 
   return (
-    <div className={`container ${s.layout}`}>
+    <div className={cn("container", s.layout, drawerFilter && s.drawerLayout)}>
       <FilterSidebar
         facets={facets}
         loading={facetsLoading && !facets}
@@ -105,6 +106,7 @@ export default function CatalogView({
         hideSort={true}
         isOpen={filterOpen}
         onToggleOpen={setFilterOpen}
+        isDrawerMode={drawerFilter}
         className={s.sidebar}
       />
 
@@ -131,7 +133,8 @@ export default function CatalogView({
               aria-label="Sort products"
               title="Sort"
             >
-              <ArrowUpDown size={17} />
+              <ArrowUpDown size={16} />
+              <span className={s.actionText}>Sort</span>
             </button>
 
             <button
@@ -141,7 +144,8 @@ export default function CatalogView({
               aria-label="Filter products"
               title="Filters"
             >
-              <SlidersHorizontal size={17} />
+              <SlidersHorizontal size={16} />
+              <span className={s.actionText}>Filters</span>
               {hasFilters && <span className={s.filterDot} aria-hidden="true" />}
             </button>
           </div>
@@ -165,8 +169,8 @@ export default function CatalogView({
           loading={loading}
           error={error}
           onRetry={refetch}
-          columns={3}
-          skeletonCount={9}
+          columns={drawerFilter ? 4 : 3}
+          skeletonCount={drawerFilter ? 12 : 9}
           emptyTitle={emptyTitle}
           emptyMessage={emptyMessage}
           emptyAction={

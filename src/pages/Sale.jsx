@@ -16,6 +16,7 @@ export default function Sale() {
       <div className="container" style={{ paddingBottom: "var(--sp-12)" }}>
         <CatalogView
           scope={{ onSale: true }}
+          drawerFilter={true}
           emptyTitle="No sale pieces right now"
           emptyMessage="Nothing is reduced at the moment. New batches go up most weeks."
         />

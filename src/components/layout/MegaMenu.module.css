@@ -11,18 +11,28 @@
   animation: fadeIn var(--t-fast) var(--ease);
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .inner {
   padding-block: var(--sp-6) var(--sp-7);
-  max-height: min(70vh, 560px);
+  max-height: min(78vh, 660px);
   overflow-y: auto;
 }
 
-/* auto-fit rather than a fixed count: the taxonomy is data, and a seventh
-   category should reflow the grid instead of overflowing it. */
+/* Auto-fit columns with balanced gaps */
 .columns {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--sp-6) var(--sp-5);
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: var(--sp-5) var(--sp-6);
 }
 
 .column {
@@ -34,46 +44,55 @@
 
 .columnTitle {
   color: var(--c-text);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-wider);
+  font-size: 0.8125rem; /* Exactly matches Partners Mega Menu heading (~13px uppercase) */
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-decoration: none;
+  margin-bottom: 2px;
+  transition: color var(--t-fast) var(--ease);
 }
 
 .columnTitle:hover {
-  color: var(--c-brand-hover);
+  color: var(--c-brand);
 }
 
+/* Reduced line gap between subcategory links */
 .links {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .link {
-  display: block;
-  padding: 5px 0;
+  display: inline-block;
+  padding: 2.5px 0; /* Reduced vertical padding for tighter line spacing */
   color: var(--c-text-2);
-  font-size: var(--fs-sm);
-  transition: color var(--t-fast) var(--ease);
+  font-size: 0.84375rem; /* Exactly matches Partners Mega Menu sub-link (~13.5px) */
+  line-height: 1.35;
+  text-decoration: none;
+  transition: color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
 
 .link:hover {
   color: var(--c-brand-hover);
+  transform: translateX(2px);
 }
 
 .viewAll {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: var(--sp-1);
+  gap: 5px;
+  margin-top: 4px;
   color: var(--c-brand);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-semibold);
+  font-size: 0.78125rem; /* Exactly matches Partners Mega Menu viewAll (~12.5px) */
+  font-weight: 600;
   letter-spacing: var(--ls-wide);
+  text-decoration: none;
+  transition: color var(--t-fast) var(--ease), gap var(--t-fast) var(--ease);
 }
 
 .viewAll svg {
@@ -82,8 +101,13 @@
   transition: transform var(--t-fast) var(--ease);
 }
 
+.viewAll:hover {
+  color: var(--c-brand-hover);
+  gap: 8px;
+}
+
 .viewAll:hover svg {
-  transform: translateX(3px);
+  transform: translateX(2px);
 }
 
 @media (max-width: 900px) {
