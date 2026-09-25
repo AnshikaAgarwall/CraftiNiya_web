@@ -23,12 +23,16 @@ export default function FeaturedCollaborations() {
               title={item.title}
             >
               <img
-                src={item.bannerImage}
+                src={item.posterImage || item.bannerImage}
                 alt={item.title}
                 className={s.cardImage}
                 loading="lazy"
                 draggable={false}
               />
+
+              {item.badge && (
+                <span className={s.badgePill}>{item.badge}</span>
+              )}
             </Link>
           ))}
         </div>

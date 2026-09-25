@@ -40,12 +40,13 @@
 .heroBannerCard {
   width: 100%;
   max-width: 100%;
-  border-radius: 0;
+  border-radius: var(--r-lg);
   overflow: hidden;
-  box-shadow: var(--sh-lg);
-  background-color: var(--c-sunken);
+  box-shadow: var(--sh-md);
+  background-color: var(--hero-bg, var(--c-sunken));
   position: relative;
-  max-height: clamp(340px, 48vh, 520px);
+  aspect-ratio: 2.2 / 1;
+  max-height: 480px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,11 +55,12 @@
 .heroBannerImage {
   width: 100%;
   height: 100%;
-  max-height: clamp(340px, 48vh, 520px);
-  object-fit: contain;
-  background-color: #faf9f6;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
+
+
 
 /* Collab Details bar below banner */
 .collabInfoBar {
@@ -316,13 +318,16 @@
 /* Mobile viewport adjustments */
 @media (max-width: 640px) {
   .heroBannerCard {
-    border-radius: 0;
-    max-height: 280px;
+    border-radius: var(--r-md);
+    aspect-ratio: 16 / 9;
+    max-height: 240px;
   }
 
   .heroBannerImage {
-    max-height: 280px;
+    max-height: 240px;
   }
+
+
 
   .collabInfoBar {
     margin-bottom: var(--sp-6);

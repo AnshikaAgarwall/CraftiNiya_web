@@ -46,6 +46,12 @@
   overflow: hidden;
 }
 
+.picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .image {
   display: block;
   width: 100%;
@@ -167,10 +173,10 @@
 
 @media (max-width: 640px) {
   .hero {
-    /* Mobile screen par banner ko thin strip banne se rokta hai */
-    aspect-ratio: 16 / 11 !important;
-    min-height: 280px;
-    max-height: 380px;
+    /* Mobile screen par rich 4:5 portrait card presence */
+    aspect-ratio: 4 / 5 !important;
+    min-height: 380px;
+    max-height: 520px;
   }
 
   .image {

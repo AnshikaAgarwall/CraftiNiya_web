@@ -141,14 +141,19 @@ export default function HeroCarousel() {
           >
             {/* Background Media with Ken Burns effect */}
             <div className={s.media}>
-              <img
-                src={slide.image}
-                alt={slide.alt || "Promotional banner"}
-                className={cn(s.image, isActive && !reducedMotion && s.kenBurns)}
-                loading={i === 0 ? "eager" : "lazy"}
-                fetchPriority={i === 0 ? "high" : "auto"}
-                onLoad={i === 0 ? handleImageLoad : undefined}
-              />
+              <picture className={s.picture}>
+                {slide.imageMobile && (
+                  <source media="(max-width: 640px)" srcSet={slide.imageMobile} />
+                )}
+                <img
+                  src={slide.imageDesktop || slide.image}
+                  alt={slide.alt || "Promotional banner"}
+                  className={cn(s.image, isActive && !reducedMotion && s.kenBurns)}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  fetchPriority={i === 0 ? "high" : "auto"}
+                  onLoad={i === 0 ? handleImageLoad : undefined}
+                />
+              </picture>
             </div>
           </article>
         );

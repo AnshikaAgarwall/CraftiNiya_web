@@ -35,13 +35,17 @@ export default function CreatorsPage() {
               title={`View ${creator.name}`}
             >
               <div className={s.mediaWrap}>
-                <LazyImage
-                  src={creator.posterUrl || creator.mediaUrl}
-                  alt={creator.name}
-                  ratio="16 / 10"
-                  eager={i === 0}
-                  imgClassName={s.mediaImage}
-                />
+                <picture className={s.picture}>
+                  {creator.mediaUrlMobile && (
+                    <source media="(max-width: 640px)" srcSet={creator.mediaUrlMobile} />
+                  )}
+                  <img
+                    src={creator.mediaUrlDesktop || creator.mediaUrl || creator.posterUrl}
+                    alt={creator.name}
+                    className={s.mediaImage}
+                    loading={i === 0 ? "eager" : "lazy"}
+                  />
+                </picture>
                 <span className={s.categoryBadge}>
                   <Sparkles size={11} aria-hidden="true" />
                   {creator.categoryLabel || "Artisan Maker"}

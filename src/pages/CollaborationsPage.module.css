@@ -141,3 +141,10 @@
     padding: var(--sp-5);
   }
 }
+
+@media (max-width: 640px) {
+  .imageWrap {
+    aspect-ratio: 16 / 9;
+  }
+}
+

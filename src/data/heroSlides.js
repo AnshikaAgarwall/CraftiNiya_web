@@ -1,12 +1,21 @@
+// Desktop Banners (Landscape)
 import saleBanner from "../assets/SALE.png";
 import creatorBanner from "../assets/LOCALSHOPS.png";
 import collabBanner from "../assets/COLLABBRAND.png";
 import bundleBanner from "../assets/BRANDPROMOTION.png";
 
+// Mobile Banners (Portrait / Vertical)
+import saleBannerMobile from "../assets/SALE_mobile.jpg";
+import creatorBannerMobile from "../assets/LOCALSHOPS_mobile.jpg";
+import collabBannerMobile from "../assets/COLLABBRAND_mobile.jpg";
+import bundleBannerMobile from "../assets/BRANDPROMOTION_mobile.jpg";
+
 export const heroSlides = [
   {
     id: "sale-banner",
     image: saleBanner,
+    imageDesktop: saleBanner,
+    imageMobile: saleBannerMobile,
     alt: "Handcrafted Festive Studio Sale — Up to 40% Off",
     eyebrow: "Limited Time Offer",
     heading: "Festive Studio Sale",
@@ -18,6 +27,8 @@ export const heroSlides = [
   {
     id: "creator-spotlight",
     image: creatorBanner,
+    imageDesktop: creatorBanner,
+    imageMobile: creatorBannerMobile,
     alt: "Creator Spotlight — Independent Artisan Works",
     eyebrow: "Artisan Showcase",
     heading: "Creator Spotlight",
@@ -29,6 +40,8 @@ export const heroSlides = [
   {
     id: "collab-brand",
     image: collabBanner,
+    imageDesktop: collabBanner,
+    imageMobile: collabBannerMobile,
     alt: "CraftiNiya x RangSajja Collaboration",
     eyebrow: "Exclusive Edition",
     heading: "CraftiNiya x RangSajja",
@@ -40,6 +53,8 @@ export const heroSlides = [
   {
     id: "brand-bundle",
     image: bundleBanner,
+    imageDesktop: bundleBanner,
+    imageMobile: bundleBannerMobile,
     alt: "CraftiNiya x CrochetKari Collaboration",
     eyebrow: "Curated Sets",
     heading: "CraftiNiya x CrochetKari",

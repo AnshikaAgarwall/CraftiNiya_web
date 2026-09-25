@@ -34,7 +34,7 @@ import contentService from "../services/contentService.js";
 import { BRAND } from "../config/site.js";
 import { cn } from "../lib/cn.js";
 import aboutDesktopImg from "../assets/ABOUTIMAGE.png";
-import aboutMobileImg from "C:/Users/anshi/.gemini/antigravity-ide/brain/5245d55d-9c9c-434b-90f1-f8ea9d7ae0ef/about_mobile_vertical_1790351368504.jpg";
+import aboutMobileImg from "../assets/ABOUTIMAGE_mobile.jpg";
 import s from "./About.module.css";
 
 function InstagramIcon({ size = 18, className = "" }) {

@@ -1,10 +1,15 @@
 import rangsajjaImg from "../assets/rangsajja.png";
+import rangsajjaPosterImg from "../assets/rangsajja_vertical.jpg";
 import sugandhitImg from "../assets/sugandhit.png";
+import sugandhitBannerImg from "../assets/sugandhit_horizontal.jpg";
 import crochetkariImg from "../assets/crochetkari.png";
+import crochetBannerImg from "../assets/crochetkari_horizontal.jpg";
 import mittiImg from "../assets/CraftiNiya x Mitti Se.png";
+import mittiPosterImg from "../assets/mitti_se_vertical.jpg";
 import collabBannerWide from "../assets/COLLABBRAND.png";
 import bundleBannerWide from "../assets/BRANDPROMOTION.png";
 import ananyaCreatorImg from "../assets/ananya creator.png";
+import ananyaCreatorLandscape from "../assets/ananya_creator_horizontal.jpg";
 
 /**
  * Three partner types supported by CraftiNiya:
@@ -41,6 +46,9 @@ export const PARTNER_TYPES = [
 
 /**
  * Single source of truth for Brand Collaborations (4 current collaborations).
+ * Every collaboration has:
+ * - bannerImage: 16:9 / wide landscape artwork for /collaborations hub grid and detail banners
+ * - posterImage: 4:5 / 3:4 portrait poster for Homepage carousel and mobile vertical features
  */
 export const BRAND_COLLABORATIONS = [
   {
@@ -54,7 +62,11 @@ export const BRAND_COLLABORATIONS = [
     description:
       "A limited-edition fusion of natural textures, hand-painted festive trays, and celebratory gifts crafted for joyful celebrations.",
     bannerImage: rangsajjaImg,
+    posterImage: rangsajjaPosterImg,
     heroImage: collabBannerWide,
+    orientation: "landscape",
+    aspectRatio: "2.48 / 1",
+    bgColor: "#f7efe6",
     badge: "Festive Edition",
     categoryQuery: "festive-pooja",
     searchFallback: "festive",
@@ -71,8 +83,12 @@ export const BRAND_COLLABORATIONS = [
       "Curated home fragrance rituals with artisanal soy candles, premium agarbatti, and aroma diffusers.",
     description:
       "Curated home fragrance rituals with artisanal soy candles, premium agarbatti, and aroma diffusers crafted with pure botanical extracts.",
-    bannerImage: sugandhitImg,
+    bannerImage: sugandhitBannerImg,
+    posterImage: sugandhitImg,
     heroImage: collabBannerWide,
+    orientation: "portrait",
+    aspectRatio: "3 / 4",
+    bgColor: "#fbf6f0",
     badge: "Fragrance Rituals",
     categoryQuery: "candles-fragrance",
     searchFallback: "candle",
@@ -89,8 +105,12 @@ export const BRAND_COLLABORATIONS = [
       "Exclusive handmade crochet flower bouquets, handcrafted plushies, and forever-blooming gifting sets.",
     description:
       "Exclusive handmade crochet flower bouquets, handcrafted plushies, and forever-blooming gifting sets knitted with organic cotton yarn.",
-    bannerImage: crochetkariImg,
+    bannerImage: crochetBannerImg,
+    posterImage: crochetkariImg,
     heroImage: bundleBannerWide,
+    orientation: "portrait",
+    aspectRatio: "3 / 4",
+    bgColor: "#f5f3ee",
     badge: "Handmade Florals",
     categoryQuery: "handmade-crochet",
     searchFallback: "crochet",
@@ -108,7 +128,11 @@ export const BRAND_COLLABORATIONS = [
     description:
       "Chai ritual sets, glazed ceramic kulhads, and heartfelt small-batch artisan tableware hand-thrown on potters' wheels in Khurja.",
     bannerImage: mittiImg,
+    posterImage: mittiPosterImg,
     heroImage: collabBannerWide,
+    orientation: "landscape",
+    aspectRatio: "1.83 / 1",
+    bgColor: "#f5ede3",
     badge: "Artisan Ceramics",
     categoryQuery: "home-decor",
     searchFallback: "table",
@@ -131,7 +155,9 @@ export const CREATORS = [
     category: "ngo_artisan",
     categoryLabel: "Artisan Collective & NGO",
     mediaType: "banner",
-    mediaUrl: ananyaCreatorImg,
+    mediaUrl: ananyaCreatorLandscape,
+    mediaUrlDesktop: ananyaCreatorLandscape,
+    mediaUrlMobile: ananyaCreatorImg,
     posterUrl: ananyaCreatorImg,
     location: "Jaipur, Rajasthan",
     founded: "Heritage Studio Collective",

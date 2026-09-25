@@ -221,7 +221,8 @@
   transition: transform var(--t-slow) var(--ease);
 }
 
-.featuredCard:hover .cardImage {
+.featuredCard:hover .cardImage,
+.featuredCard:hover .cardImagePortrait {
   transform: scale(1.05);
 }
 

@@ -124,12 +124,17 @@ export default function CreatorPage() {
               </div>
             ) : (
               <div className={s.imageHeroCard}>
-                <img
-                  src={profile.mediaUrl}
-                  alt={`${profile.name} Creator Banner`}
-                  className={s.heroBannerImg}
-                  loading="eager"
-                />
+                <picture className={s.heroPicture}>
+                  {profile.mediaUrlMobile && (
+                    <source media="(max-width: 640px)" srcSet={profile.mediaUrlMobile} />
+                  )}
+                  <img
+                    src={profile.mediaUrlDesktop || profile.mediaUrl}
+                    alt={`${profile.name} Creator Banner`}
+                    className={s.heroBannerImg}
+                    loading="eager"
+                  />
+                </picture>
                 <div className={s.bannerOverlayBadge}>
                   <Sparkles size={12} aria-hidden="true" />
                   <span>{profile.categoryLabel || "Artisan Spotlight"}</span>
