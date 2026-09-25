@@ -34,28 +34,100 @@
 .menuButton {
   display: none;
   position: relative;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--r-circle);
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   color: var(--c-text);
-  background: none;
-  border: none;
+  background-color: var(--c-surface, #ffffff);
+  border: 1.5px solid var(--c-border, #e0e6e1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   cursor: pointer;
+  padding: 0;
   transition:
     background-color var(--t-fast) var(--ease),
-    color var(--t-fast) var(--ease);
+    border-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease),
+    transform 0.15s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menuButton:hover {
-  background-color: var(--c-brand-soft);
-  color: var(--c-brand-hover);
+  border-color: var(--c-brand, #4a6b53);
+  background-color: var(--c-brand-soft, #f0f5f2);
+  color: var(--c-brand-hover, #1f3a2b);
+  box-shadow: 0 2px 8px rgba(74, 107, 83, 0.12);
 }
 
-.menuButton svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 1.6;
+.menuButton:active {
+  transform: scale(0.92);
+}
+
+.menuButtonOpen {
+  background-color: var(--c-brand-soft, #f0f5f2);
+  border-color: var(--c-brand, #4a6b53);
+  color: var(--c-brand-hover, #1f3a2b);
+  box-shadow: 0 2px 8px rgba(74, 107, 83, 0.16);
+}
+
+/* Crafted Animated Hamburger Icon */
+.hamburgerIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.5px;
+  width: 18px;
+  height: 18px;
+  position: relative;
+}
+
+.hamburgerBar {
+  display: block;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 999px;
+  transition:
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.2s ease,
+    width 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+.hamburgerBarTop {
+  width: 18px;
+}
+
+.hamburgerBarMid {
+  width: 13px;
+  align-self: flex-start;
+}
+
+.menuButton:hover .hamburgerBarMid {
+  width: 18px;
+}
+
+.hamburgerBarBot {
+  width: 18px;
+}
+
+/* Pristine, buttery-smooth transform into cross when open */
+.menuButtonOpen .hamburgerBarTop {
+  width: 18px;
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.menuButtonOpen .hamburgerBarMid {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menuButtonOpen .hamburgerBarBot {
+  width: 18px;
+  transform: translateY(-6.5px) rotate(-45deg);
 }
 
 /* Brand */
@@ -492,10 +564,10 @@
   }
 
   .menuButton {
-    display: grid;
+    display: inline-flex;
     order: 99;
-    margin-left: 0;
-    margin-right: -4px;
+    margin-left: 2px;
+    margin-right: 0;
   }
 
   .navRow {
@@ -619,24 +691,35 @@
 .mobileBackdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(15, 23, 42, 0.45);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  animation: drawerFadeIn 0.22s ease-out;
+  background-color: rgba(15, 23, 20, 0.52);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: drawerFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobileDrawer {
   position: relative;
-  width: min(320px, 84vw);
+  width: min(336px, 85vw);
   height: 100%;
-  background-color: var(--c-surface);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  border-radius: 0 24px 24px 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 12px 0 36px -4px rgba(18, 30, 22, 0.22);
   display: flex;
   flex-direction: column;
   z-index: 1;
-  animation: drawerSlideIn 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: drawerSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.mobileDrawer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobileDrawer::-webkit-scrollbar-thumb {
+  background-color: rgba(74, 107, 83, 0.2);
+  border-radius: 4px;
 }
 
 @keyframes drawerSlideIn {
@@ -661,9 +744,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--sp-4) var(--sp-5);
-  background-color: var(--c-accent-soft);
-  border-bottom: 1px solid var(--c-border);
+  padding: 18px 20px;
+  background: linear-gradient(135deg, #f7f9f7 0%, #edf3ef 100%);
+  border-bottom: 1px solid var(--c-border, #e0e6e1);
 }
 
 .drawerBrand {
@@ -673,19 +756,20 @@
 
 .drawerBrandName {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: var(--fw-semibold);
-  color: var(--c-brand-hover);
-  letter-spacing: -0.015em;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--c-brand-hover, #1f3a2b);
+  letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
 .drawerBrandTagline {
   font-size: 9px;
-  color: var(--c-text-2);
-  letter-spacing: 0.04em;
+  color: var(--c-brand, #4a6b53);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-top: 2px;
+  margin-top: 3px;
+  font-weight: 600;
 }
 
 .drawerCloseBtn {
@@ -694,40 +778,63 @@
   width: 36px;
   height: 36px;
   border-radius: var(--r-circle);
-  border: 1px solid var(--c-border);
-  background: var(--c-surface);
+  border: 1.5px solid var(--c-border);
+  background: #ffffff;
   color: var(--c-text);
   cursor: pointer;
-  transition: background var(--t-fast) var(--ease);
+  transition:
+    background-color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .drawerCloseBtn:hover {
-  background: var(--c-brand-soft);
+  background-color: var(--c-brand-soft);
+  border-color: var(--c-brand);
+  color: var(--c-brand-hover);
+  transform: rotate(90deg) scale(1.06);
 }
 
 .drawerUserBar {
-  padding: var(--sp-3) var(--sp-5);
-  border-bottom: 1px solid var(--c-border);
-  background: var(--c-sunken);
+  padding: 14px 16px 8px 16px;
+  background: transparent;
 }
 
 .drawerUserLink {
   display: flex;
   align-items: center;
-  gap: var(--sp-3);
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(74, 107, 83, 0.06) 0%, rgba(232, 148, 90, 0.08) 100%);
+  border: 1px solid rgba(74, 107, 83, 0.14);
   text-decoration: none;
+  transition:
+    background var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease),
+    transform 0.15s ease,
+    box-shadow var(--t-fast) var(--ease);
+}
+
+.drawerUserLink:hover {
+  background: linear-gradient(135deg, rgba(74, 107, 83, 0.1) 0%, rgba(232, 148, 90, 0.12) 100%);
+  border-color: var(--c-brand, #4a6b53);
+  box-shadow: 0 4px 12px rgba(74, 107, 83, 0.08);
+  transform: translateY(-1px);
 }
 
 .drawerUserAvatar {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--r-circle);
-  background: var(--c-brand-soft);
-  color: var(--c-brand);
+  background: #ffffff;
+  color: var(--c-brand, #4a6b53);
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  border: 1px solid var(--c-border);
+  border: 1.5px solid rgba(74, 107, 83, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
 }
 
 .userAvatarImg {
@@ -745,41 +852,58 @@
 }
 
 .drawerUserName {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--c-text);
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .drawerUserSub {
   font-size: 0.72rem;
-  color: var(--c-text-2);
+  color: var(--c-brand, #4a6b53);
+  font-weight: 500;
+  margin-top: 1px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .drawerUserArrow {
-  color: var(--c-text-2);
+  color: var(--c-brand, #4a6b53);
   flex-shrink: 0;
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.drawerUserLink:hover .drawerUserArrow {
+  transform: translateX(3px);
 }
 
 .drawerNav {
   flex: 1;
-  padding: var(--sp-4) var(--sp-4);
+  padding: 10px 16px 20px 16px;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-3);
+  gap: 14px;
 }
 
 .drawerSectionTitle {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--c-brand);
-  padding-inline: var(--sp-2);
-  margin-top: var(--sp-1);
+  color: var(--c-text-2, #6b7280);
+  padding-inline: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.drawerSectionTitle::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--c-border, #e5e7eb);
+  opacity: 0.7;
 }
 
 .drawerList {
@@ -788,33 +912,38 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
 .drawerLink {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 14px;
-  border-radius: var(--r-md);
+  padding: 11px 14px;
+  border-radius: 10px;
   color: var(--c-text);
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
   transition:
-    background var(--t-fast) var(--ease),
-    color var(--t-fast) var(--ease);
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    transform 0.15s ease,
+    padding-left var(--t-fast) var(--ease);
 }
 
 .drawerLink:hover {
-  background-color: var(--c-brand-soft);
-  color: var(--c-brand-hover);
+  background-color: var(--c-brand-soft, #f0f5f2);
+  color: var(--c-brand-hover, #1f3a2b);
+  padding-left: 18px;
 }
 
 .drawerLinkActive {
-  background-color: var(--c-brand-soft);
-  color: var(--c-brand-hover);
-  font-weight: 700;
+  background-color: var(--c-brand-soft, #f0f5f2);
+  color: var(--c-brand-hover, #1f3a2b);
+  font-weight: 600;
+  border-left: 3px solid var(--c-brand, #4a6b53);
+  padding-left: 15px;
 }
 
 .drawerLinkText {
@@ -827,13 +956,14 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 2px 7px;
+  padding: 2.5px 8px;
   border-radius: var(--r-pill);
   background: #fef2f2;
   border: 1px solid #fecaca;
   color: #dc2626;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .drawerSecondaryList {
@@ -842,37 +972,57 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .drawerSubLink {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 14px;
-  border-radius: var(--r-md);
-  color: var(--c-text-2);
-  font-size: 0.84rem;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: var(--c-text-2, #475569);
+  font-size: 0.85rem;
+  font-weight: 500;
   text-decoration: none;
   transition:
-    background var(--t-fast) var(--ease),
-    color var(--t-fast) var(--ease);
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    transform 0.15s ease;
 }
 
 .drawerSubLink:hover {
-  background-color: var(--c-brand-soft);
-  color: var(--c-brand-hover);
+  background-color: var(--c-brand-soft, #f0f5f2);
+  color: var(--c-brand-hover, #1f3a2b);
+  transform: translateX(3px);
 }
 
 .drawerSubIcon {
-  color: var(--c-brand);
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(74, 107, 83, 0.08);
+  color: var(--c-brand, #4a6b53);
   flex-shrink: 0;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+
+.drawerSubLink:hover .drawerSubIcon {
+  background: var(--c-brand, #4a6b53);
+  color: #ffffff;
 }
 
 .drawerFooter {
-  padding: var(--sp-4);
-  border-top: 1px solid var(--c-border);
-  background-color: var(--c-sunken);
+  padding: 16px;
+  border-top: 1px solid var(--c-border, #e0e6e1);
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9f7 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .drawerWhatsappBtn {
@@ -881,19 +1031,36 @@
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 10px 14px;
-  border-radius: var(--r-md);
-  background-color: #25d366;
+  padding: 11px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #25d366 0%, #1ea952 100%);
   color: #ffffff;
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: var(--sh-sm);
-  transition: opacity var(--t-fast) var(--ease);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  transition:
+    transform 0.15s ease,
+    box-shadow var(--t-fast) var(--ease),
+    opacity var(--t-fast) var(--ease);
 }
 
 .drawerWhatsappBtn:hover {
-  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+  opacity: 0.96;
+}
+
+.drawerWhatsappBtn:active {
+  transform: translateY(0);
+}
+
+.drawerFooterNote {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--c-text-2, #6b7280);
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 /* -------------------------------------------------------------

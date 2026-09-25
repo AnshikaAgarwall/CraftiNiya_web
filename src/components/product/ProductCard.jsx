@@ -187,8 +187,9 @@ export default function ProductCard({ product, eager = false, compact = false })
             listMinor={product.listPriceMinor}
             effectiveMinor={product.effectivePriceMinor}
             discountPct={product.discountPct}
-            size="sm"
+            size="card"
             showDiscount={true}
+            className={s.price}
           />
 
           <button

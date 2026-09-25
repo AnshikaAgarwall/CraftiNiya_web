@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   column-gap: var(--sp-5);
-  row-gap: var(--sp-8);
+  row-gap: var(--sp-6);
 }
 
 /* On desktop, enforce strict column counts */
@@ -21,8 +21,8 @@
 
 @media (max-width: 640px) {
   .grid {
-    column-gap: var(--sp-3);
-    row-gap: var(--sp-6);
+    column-gap: var(--sp-2-5, 10px);
+    row-gap: var(--sp-4);
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }

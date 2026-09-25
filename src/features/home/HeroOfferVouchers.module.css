@@ -1,0 +1,365 @@
+/* =========================================================
+   HERO OFFER VOUCHERS STRIP
+   Sits directly below Hero Banner on the Home page.
+   Features 3 authentic perforated ticket coupons:
+   1. First User Offer
+   2. Birthday Special
+   3. Mega Sale Offer
+   ========================================================= */
+
+.voucherSection {
+  padding-top: clamp(14px, 1.8vw, 20px);
+  padding-bottom: clamp(10px, 1.2vw, 14px);
+  background-color: var(--c-bg, #ffffff);
+}
+
+.voucherGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 18px);
+}
+
+/* ---------- Card Base & Perforated Ticket Notches ---------- */
+
+.card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 10px 14px 10px 12px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  transition:
+    transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.13);
+}
+
+.card:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Semi-circular scalloped cutouts creating ticket notch */
+.notchTop {
+  position: absolute;
+  top: -7px;
+  left: 60px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--c-bg, #ffffff);
+  box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.06);
+  z-index: 4;
+}
+
+.notchBottom {
+  position: absolute;
+  bottom: -7px;
+  left: 60px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--c-bg, #ffffff);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+  z-index: 4;
+}
+
+.dashedDivider {
+  position: absolute;
+  top: 7px;
+  bottom: 7px;
+  left: 66px;
+  width: 1px;
+  border-left: 1.5px dashed rgba(255, 255, 255, 0.35);
+  z-index: 2;
+}
+
+/* ---------- Theme Color Gradients (Soft Luxury Pastels) ---------- */
+
+/* 1. First User — Pastel Blush Rose */
+.themePink {
+  background: linear-gradient(135deg, #fff2f5 0%, #ffe8ed 52%, #fedde4 100%);
+  border: 1px solid #f6c8d2;
+  --theme-heading: #581829;
+  --theme-sub: #7d3345;
+  --theme-dashed: rgba(140, 40, 65, 0.22);
+  --theme-terms: #8c4254;
+  --theme-pill-bg: #581829;
+  --theme-pill-color: #ffffff;
+}
+
+/* 2. Birthday Special — Pastel Sage Mint */
+.themeGreen {
+  background: linear-gradient(135deg, #f2f8f4 0%, #e6f1e9 52%, #d7e8dc 100%);
+  border: 1px solid #bddcc5;
+  --theme-heading: #143721;
+  --theme-sub: #335940;
+  --theme-dashed: rgba(25, 75, 45, 0.22);
+  --theme-terms: #426b50;
+  --theme-pill-bg: #143721;
+  --theme-pill-color: #ffffff;
+}
+
+/* 3. Festive / Mega Sale — Pastel Apricot Peach */
+.themePeach {
+  background: linear-gradient(135deg, #fff7ef 0%, #ffeedd 52%, #fde3ca 100%);
+  border: 1px solid #f6cda8;
+  --theme-heading: #542510;
+  --theme-sub: #7a4228;
+  --theme-dashed: rgba(120, 55, 20, 0.22);
+  --theme-terms: #874b2f;
+  --theme-pill-bg: #542510;
+  --theme-pill-color: #ffffff;
+}
+
+/* ---------- Left Badge / Ticket Icon ---------- */
+
+.badgeCol {
+  flex-shrink: 0;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.ticketWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-7deg);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+  transition: transform 0.22s ease;
+}
+
+.card:hover .ticketWrap {
+  transform: rotate(-3deg) scale(1.06);
+}
+
+.ticketSvg {
+  display: block;
+}
+
+.ticketIconInner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  user-select: none;
+}
+
+.ticketGlyph {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.ticketEmoji {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+/* ---------- Center Content ---------- */
+
+.contentCol {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-left: 20px;
+  padding-right: 10px;
+  z-index: 3;
+}
+
+.headline {
+  font-family: var(--font-sans);
+  font-size: clamp(0.8125rem, 0.95vw, 0.9375rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--theme-heading);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.subline {
+  font-family: var(--font-sans);
+  font-size: clamp(0.6875rem, 0.78vw, 0.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--theme-sub);
+  margin: 2px 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Right Action / Code Pill ---------- */
+
+.actionCol {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  z-index: 3;
+}
+
+.codePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 11px;
+  border-radius: var(--r-pill, 999px);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  background-color: var(--theme-pill-bg);
+  color: var(--theme-pill-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.18s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+  white-space: nowrap;
+}
+
+.card:hover .codePill {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.codePrefix {
+  font-weight: 600;
+  font-size: 0.625rem;
+  opacity: 0.88;
+}
+
+.codeText {
+  font-weight: 800;
+  font-family: var(--font-sans);
+  letter-spacing: 0.03em;
+}
+
+.codePillCopied {
+  background-color: #24683a !important;
+  color: #ffffff !important;
+  animation: popSuccess 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.checkIcon {
+  color: #ffffff;
+  animation: checkBounce 0.25s ease;
+}
+
+@keyframes popSuccess {
+  0% { transform: scale(0.92); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes checkBounce {
+  0% { transform: scale(0.6); }
+  100% { transform: scale(1); }
+}
+
+.termsText {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--theme-terms);
+  padding-right: 2px;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 960px) {
+  .voucherGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding-inline: 4px;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .voucherGrid::-webkit-scrollbar {
+    display: none; /* Safari/Chrome */
+  }
+
+  .card {
+    flex: 0 0 clamp(285px, 86vw, 340px);
+    scroll-snap-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .voucherSection {
+    padding-top: var(--sp-3, 12px);
+    padding-bottom: var(--sp-2, 8px);
+  }
+
+  .card {
+    flex: 0 0 calc(100vw - 44px);
+    max-width: 325px;
+    padding: 9px 10px 9px 10px;
+    border-radius: 10px;
+  }
+
+  .notchTop,
+  .notchBottom {
+    left: 52px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .dashedDivider {
+    left: 57px;
+  }
+
+  .badgeCol {
+    width: 44px;
+  }
+
+  .contentCol {
+    padding-left: 14px;
+    padding-right: 6px;
+  }
+
+  .headline {
+    font-size: 0.78125rem;
+  }
+
+  .subline {
+    font-size: 0.65625rem;
+  }
+
+  .codePill {
+    padding: 4px 8px;
+    font-size: 0.625rem;
+  }
+
+  .codePrefix {
+    font-size: 0.5625rem;
+  }
+
+  .termsText {
+    font-size: 0.5rem;
+  }
+}

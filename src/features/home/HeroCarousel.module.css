@@ -21,8 +21,8 @@
   display: block;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 700ms cubic-bezier(0.25, 1, 0.5, 1),
-              visibility 700ms cubic-bezier(0.25, 1, 0.5, 1);
+  transition: opacity 380ms cubic-bezier(0.25, 1, 0.5, 1),
+              visibility 380ms cubic-bezier(0.25, 1, 0.5, 1);
   text-decoration: none;
   cursor: pointer;
 }
@@ -55,9 +55,9 @@
   transform: scale(1);
 }
 
-/* Pure CSS Ken Burns effect: scale 1.0 to 1.08 over 8-10 seconds, looping ease-in-out */
+/* Pure CSS Ken Burns effect: scale 1.0 to 1.07 over 5 seconds, looping ease-in-out */
 .kenBurns {
-  animation: kenBurnsLoop 9s ease-in-out infinite alternate;
+  animation: kenBurnsLoop 5s ease-in-out infinite alternate;
   will-change: transform;
 }
 

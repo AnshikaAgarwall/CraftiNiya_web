@@ -1,16 +1,15 @@
-/* The auth screen fits strictly to viewport with adjusted space.
-   No global navbar or footer; brand name is centered on top middle so the user
-   can easily return home with one click. Desktop features ambient filmstrip on the right. */
+/* The auth screen fits comfortably on all viewports (desktop, tablet, mobile).
+   Clean, centered layout with brand wordmark, category rotating spotlight ticker,
+   and focused sign in / create account card. No scrolling product showcases. */
 
 .page {
-  height: 100dvh;
   min-height: 100dvh;
-  max-height: 100dvh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   background-color: var(--c-bg);
   box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* ---------- brand header (top middle) ---------- */
@@ -73,38 +72,180 @@
   color: var(--c-text-2);
 }
 
-/* ---------- main panel ---------- */
+/* =========================================================
+   3-Line Centered Dynamic Typography Composition Banner
+   (Visible on both Desktop & Mobile for unified brand feel)
+   ========================================================= */
+
+.mobileCompositionBanner {
+  display: block;
+  width: 100%;
+  flex: 0 0 auto;
+  background: linear-gradient(180deg, var(--c-accent-soft) 0%, var(--c-bg) 100%);
+  border-bottom: 1px solid var(--c-border);
+  padding: clamp(0.7rem, 2vh, 1.1rem) 0.75rem clamp(0.6rem, 1.8vh, 0.95rem);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.compositionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 460px;
+  margin-inline: auto;
+  position: relative;
+}
+
+/* Line 1 (Top, Centered): Fixed static text */
+.compLine1 {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(0.72rem, 1.2vw, 0.86rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-brand);
+  margin-bottom: 3px;
+  opacity: 0.92;
+}
+
+/* Line 2 (Middle, Centered Alignment): Dynamic rotating text line */
+.compLine2Track {
+  position: relative;
+  width: 100%;
+  height: clamp(32px, 5.5vh, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Soft gradient mask on canvas edges to truncate incoming and outgoing keywords */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 16%,
+    black 84%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 16%,
+    black 84%,
+    transparent 100%
+  );
+}
+
+.compSlotsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  animation: compSlideTicker 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Left Slot: Outgoing Keyword (faded, off-focus) */
+.compSlotLeft {
+  flex: 1 1 0%;
+  text-align: right;
+  padding-right: clamp(0.4rem, 2vw, 0.75rem);
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+  font-weight: 500;
+  color: var(--c-text-2);
+  opacity: 0.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  transform: scale(0.92);
+}
+
+/* Center Slot: Active Keyword (main focus, 100% opacity) */
+.compSlotCenter {
+  flex: 0 0 auto;
+  max-width: 58%;
+  text-align: center;
+  padding-inline: clamp(0.35rem, 1.5vw, 0.65rem);
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2vw, 1.48rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--c-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgb(var(--c-ink-rgb) / 0.05);
+}
+
+/* Right Slot: Incoming Keyword (faded, off-focus) */
+.compSlotRight {
+  flex: 1 1 0%;
+  text-align: left;
+  padding-left: clamp(0.4rem, 2vw, 0.75rem);
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+  font-weight: 500;
+  color: var(--c-text-2);
+  opacity: 0.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  transform: scale(0.92);
+}
+
+/* Line 3 (Bottom, Centered): Fixed static text */
+.compLine3 {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(0.84rem, 1.3vw, 1rem);
+  font-weight: 600;
+  color: var(--c-brand-hover);
+  margin-top: 3px;
+  letter-spacing: 0.06em;
+  opacity: 0.95;
+}
+
+@keyframes compSlideTicker {
+  0% {
+    opacity: 0.4;
+    transform: translateX(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- main panel (centered across all viewports) ---------- */
 
 .panel {
   flex: 1 1 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: clamp(1.5rem, 4vw, 3.5rem);
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
-  max-width: var(--container);
+  max-width: 26rem;
   margin-inline: auto;
-  padding: 0 var(--gutter) clamp(0.5rem, 2vh, 1.25rem);
+  padding: clamp(0.75rem, 2.5vh, 1.75rem) var(--gutter) clamp(1rem, 3vh, 2.25rem);
   min-height: 0;
-  align-items: stretch;
+  box-sizing: border-box;
 }
 
 .formWrap {
+  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 100%;
-  max-width: 25.5rem;
   margin-inline: auto;
-  min-height: 0;
-  overflow-y: auto;
-  scrollbar-width: none;
-  padding-top: clamp(0.25rem, 1vh, 0.75rem);
+  padding-top: clamp(0.25rem, 1vh, 0.5rem);
   padding-bottom: var(--sp-2);
-}
-
-.formWrap::-webkit-scrollbar {
-  display: none;
 }
 
 /* ---------- mode toggle ---------- */
@@ -114,7 +255,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 4px;
   padding: 3px;
-  margin-bottom: clamp(0.6rem, 1.8vh, 1rem);
+  margin-bottom: clamp(0.75rem, 2vh, 1.15rem);
   border-radius: var(--r-pill);
   background-color: var(--c-sunken);
   flex: 0 0 auto;
@@ -147,7 +288,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.6rem, 1.5vh, 0.95rem);
+  gap: clamp(0.65rem, 1.6vh, 0.95rem);
   margin-top: 0;
 }
 
@@ -162,9 +303,9 @@
 }
 
 .switch {
-  margin-top: clamp(0.5rem, 1.4vh, 0.85rem);
+  margin-top: clamp(0.65rem, 1.8vh, 1rem);
   color: var(--c-text-2);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   text-align: center;
   margin-bottom: 0;
 }
@@ -177,8 +318,8 @@
 }
 
 .legal {
-  margin-top: clamp(0.5rem, 1.4vh, 0.85rem);
-  padding-top: clamp(0.4rem, 1vh, 0.65rem);
+  margin-top: clamp(0.65rem, 1.8vh, 1rem);
+  padding-top: clamp(0.5rem, 1.2vh, 0.75rem);
   border-top: 1px solid var(--c-border);
   color: var(--c-text-2);
   font-size: 0.72rem;
@@ -186,250 +327,3 @@
   text-align: center;
   margin-bottom: 0;
 }
-
-/* ---------- Responsive (Tablet & Mobile) ---------- */
-
-@media (max-width: 900px) {
-  .page {
-    height: 100dvh;
-    min-height: 100dvh;
-    max-height: 100dvh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .brandBar {
-    flex: 0 0 auto;
-    padding-top: clamp(0.75rem, 2.2vh, 1.1rem);
-    padding-bottom: clamp(0.55rem, 1.5vh, 0.85rem);
-  }
-
-  .brandName {
-    font-size: 1.35rem;
-  }
-
-  .brandTagline {
-    font-size: 0.65rem;
-  }
-
-  .panel {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    max-width: 25rem;
-    margin-inline: auto;
-    padding: clamp(0.25rem, 1vh, 0.5rem) var(--gutter) clamp(0.75rem, 2vh, 1.25rem);
-    min-height: 0;
-  }
-
-  .panel > aside {
-    display: none;
-  }
-
-  .formWrap {
-    width: 100%;
-    max-width: 100%;
-    padding-top: clamp(0.25rem, 1vh, 0.5rem);
-    padding-bottom: var(--sp-2);
-    margin-inline: auto;
-    overflow-y: visible;
-    justify-content: flex-start;
-  }
-
-  .toggle {
-    margin-bottom: var(--sp-3);
-  }
-
-  .toggleButton {
-    min-height: 36px;
-    font-size: 0.80rem;
-  }
-
-  .title {
-    font-size: 1.22rem;
-  }
-
-  .subtitle {
-    font-size: 0.78rem;
-    line-height: 1.35;
-    margin-top: 4px;
-  }
-
-  .form {
-    gap: 9px;
-    margin-top: var(--sp-3);
-  }
-
-  .switch {
-    margin-top: 9px;
-    font-size: 0.78rem;
-  }
-
-  .legal {
-    margin-top: 9px;
-    padding-top: 7px;
-    font-size: 0.70rem;
-  }
-}
-
-/* =========================================================
-   3-Line Centered Dynamic Typography Composition (Mobile Only on Auth Page)
-   ========================================================= */
-
-.mobileCompositionBanner {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .mobileCompositionBanner {
-    display: block;
-    width: 100%;
-    flex: 0 0 auto;
-    background: linear-gradient(180deg, var(--c-accent-soft) 0%, var(--c-bg) 100%);
-    border-bottom: 1px solid var(--c-border);
-    padding: clamp(0.7rem, 2vh, 1.1rem) 0.75rem clamp(0.6rem, 1.8vh, 0.95rem);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .compositionContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 440px;
-    margin-inline: auto;
-    position: relative;
-  }
-
-  /* Line 1 (Top, Centered): Fixed static text */
-  .compLine1 {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: clamp(0.72rem, 2.5vw, 0.86rem);
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--c-brand);
-    margin-bottom: 3px;
-    opacity: 0.92;
-  }
-
-  /* Line 2 (Middle, Centered Alignment): Dynamic rotating text line */
-  .compLine2Track {
-    position: relative;
-    width: 100%;
-    height: clamp(30px, 6vh, 38px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    /* Soft gradient mask on canvas edges to truncate incoming and outgoing keywords */
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 16%,
-      black 84%,
-      transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 16%,
-      black 84%,
-      transparent 100%
-    );
-  }
-
-  .compSlotsWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    animation: compSlideTicker 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  /* Left Slot: Outgoing Keyword (faded, off-focus) */
-  .compSlotLeft {
-    flex: 1 1 0%;
-    text-align: right;
-    padding-right: clamp(0.4rem, 2vw, 0.75rem);
-    font-family: var(--font-serif);
-    font-size: clamp(0.85rem, 3.2vw, 1.05rem);
-    font-weight: 500;
-    color: var(--c-text-2);
-    opacity: 0.35;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    user-select: none;
-    transform: scale(0.92);
-  }
-
-  /* Center Slot: Active Keyword (main focus, 100% opacity) */
-  .compSlotCenter {
-    flex: 0 0 auto;
-    max-width: 58%;
-    text-align: center;
-    padding-inline: clamp(0.35rem, 1.5vw, 0.65rem);
-    font-family: var(--font-serif);
-    font-size: clamp(1.15rem, 4.2vw, 1.48rem);
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    color: var(--c-text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-shadow: 0 1px 2px rgb(var(--c-ink-rgb) / 0.05);
-  }
-
-  /* Right Slot: Incoming Keyword (faded, off-focus) */
-  .compSlotRight {
-    flex: 1 1 0%;
-    text-align: left;
-    padding-left: clamp(0.4rem, 2vw, 0.75rem);
-    font-family: var(--font-serif);
-    font-size: clamp(0.85rem, 3.2vw, 1.05rem);
-    font-weight: 500;
-    color: var(--c-text-2);
-    opacity: 0.35;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    user-select: none;
-    transform: scale(0.92);
-  }
-
-  /* Line 3 (Bottom, Centered): Fixed static text */
-  .compLine3 {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: clamp(0.84rem, 2.9vw, 1rem);
-    font-weight: 600;
-    color: var(--c-brand-hover);
-    margin-top: 3px;
-    letter-spacing: 0.06em;
-    opacity: 0.95;
-  }
-}
-
-@keyframes compSlideTicker {
-  0% {
-    opacity: 0.4;
-    transform: translateX(18px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-

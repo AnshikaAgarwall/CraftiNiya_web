@@ -1,15 +1,16 @@
 .section {
-  padding-block: var(--section-y);
+  padding-top: clamp(16px, 2.4vw, 26px);
+  padding-bottom: clamp(28px, 4vw, 44px);
   background-color: var(--c-bg);
   box-sizing: border-box;
 }
 
-/* Desktop: 4-column, 2-row grid */
+/* Desktop: 4-column, 2-row grid with strictly identical gap between all cards */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: var(--sp-3);
+  grid-template-rows: repeat(2, 1fr);
+  gap: clamp(12px, 1.4vw, 16px);
   width: 100%;
   align-items: stretch;
 }
@@ -171,13 +172,14 @@
 
 @media (max-width: 1024px) {
   .section {
-    padding-block: var(--section-y);
+    padding-top: clamp(14px, 2.5vw, 22px);
+    padding-bottom: clamp(24px, 3.8vw, 36px);
   }
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-    gap: var(--sp-2);
+    gap: clamp(10px, 2.5vw, 14px);
     height: auto;
   }
 

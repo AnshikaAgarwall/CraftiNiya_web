@@ -4,7 +4,6 @@ import { Lock, Mail, User } from "lucide-react";
 import SEO from "../components/common/SEO.jsx";
 import Button from "../components/ui/Button.jsx";
 import { Input } from "../components/ui/Field.jsx";
-import FilmstripShowcase from "../features/auth/FilmstripShowcase.jsx";
 import { useAuth } from "../context/AuthContext.jsx";
 import { useUI } from "../context/UIContext.jsx";
 import { BRAND } from "../config/site.js";
@@ -18,6 +17,23 @@ import s from "./AuthPage.module.css";
  * calls for toggling without a reload and because the typed email must survive
  * the switch — two routes would unmount the form and throw it away.
  */
+const TICKER_SUBCATEGORIES = [
+  "Wall Decor",
+  "Scented Candles",
+  "Crochet Bouquets",
+  "Nameplates",
+  "Pooja Thalis",
+  "Tote Bags",
+  "Decorative Clocks",
+  "Resin Frames",
+  "Festive Torans",
+  "Wax Melts",
+  "Gift Hampers",
+  "Plushies",
+  "Bubble Candles",
+  "Keychains",
+];
+
 export default function AuthPage() {
   const [params, setParams] = useSearchParams();
   const navigate = useNavigate();
@@ -32,10 +48,14 @@ export default function AuthPage() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [errors, setErrors] = useState({});
   const [formError, setFormError] = useState(null);
+  const [tickerIndex, setTickerIndex] = useState(0);
 
-  if (!loading && isAuthenticated) {
-    return <Navigate to={redirect} replace />;
-  }
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTickerIndex((prev) => (prev + 1) % TICKER_SUBCATEGORIES.length);
+    }, 2400);
+    return () => clearInterval(timer);
+  }, []);
 
   const setMode = (next) => {
     setErrors({});
@@ -71,31 +91,11 @@ export default function AuthPage() {
       else setFormError(err?.message ?? "Something went wrong. Please try again.");
     }
   };
-  // Mobile 3-line rotating composition subcategories
-  const tickerSubcategories = [
-    "Wall Decor",
-    "Scented Candles",
-    "Crochet Bouquets",
-    "Nameplates",
-    "Pooja Thalis",
-    "Tote Bags",
-    "Decorative Clocks",
-    "Resin Frames",
-    "Festive Torans",
-    "Wax Melts",
-    "Gift Hampers",
-    "Plushies",
-    "Bubble Candles",
-    "Keychains",
-  ];
-  const [tickerIndex, setTickerIndex] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTickerIndex((prev) => (prev + 1) % tickerSubcategories.length);
-    }, 2400);
-    return () => clearInterval(timer);
-  }, [tickerSubcategories.length]);
+  // Safe redirect check after all hooks have been called
+  if (!loading && isAuthenticated) {
+    return <Navigate to={redirect} replace />;
+  }
 
   return (
     <>
@@ -124,17 +124,17 @@ export default function AuthPage() {
               >
                 {/* Left Slot: Outgoing Keyword (faded, off-focus) */}
                 <span className={s.compSlotLeft} aria-hidden="true">
-                  {tickerSubcategories[(tickerIndex - 1 + tickerSubcategories.length) % tickerSubcategories.length]}
+                  {TICKER_SUBCATEGORIES[(tickerIndex - 1 + TICKER_SUBCATEGORIES.length) % TICKER_SUBCATEGORIES.length]}
                 </span>
 
                 {/* Center Slot: Active Keyword (main focus, 100% opacity) */}
                 <span className={s.compSlotCenter}>
-                  {tickerSubcategories[tickerIndex]}
+                  {TICKER_SUBCATEGORIES[tickerIndex]}
                 </span>
 
                 {/* Right Slot: Incoming Keyword (faded, off-focus) */}
                 <span className={s.compSlotRight} aria-hidden="true">
-                  {tickerSubcategories[(tickerIndex + 1) % tickerSubcategories.length]}
+                  {TICKER_SUBCATEGORIES[(tickerIndex + 1) % TICKER_SUBCATEGORIES.length]}
                 </span>
               </div>
             </div>
@@ -233,8 +233,6 @@ export default function AuthPage() {
               email about your orders.
             </p>
           </div>
-
-          <FilmstripShowcase />
         </div>
       </div>
     </>

@@ -274,9 +274,9 @@
     "slug": "pressed-petal-resin-coasters-set-of-4",
     "title": "Pressed Petal Resin Coasters (Set of 4)",
     "description": "Glossy resin coasters with pressed petals, stacked in a matching holder.",
-    "image": "https://m.media-amazon.com/images/I/71+y03pXFGL._SL1500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/71%2By03pXFGL._SL1500_.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/71+y03pXFGL._SL1500_.jpg"
+      "https://m.media-amazon.com/images/I/71%2By03pXFGL._SL1500_.jpg"
     ],
     "category": "home-decor",
     "subcategory": "table-decor",
@@ -364,9 +364,9 @@
     "slug": "brass-urli-centrepiece",
     "title": "Brass Urli Centrepiece",
     "description": "Shallow brass urli for floating flowers and tea lights on a dining or coffee table.",
-    "image": "https://m.media-amazon.com/images/I/81x-sV+1iTL._SL1500_.jpg",
+    "image": "https://m.media-amazon.com/images/I/81x-sV%2B1iTL._SL1500_.jpg",
     "images": [
-      "https://m.media-amazon.com/images/I/81x-sV+1iTL._SL1500_.jpg"
+      "https://m.media-amazon.com/images/I/81x-sV%2B1iTL._SL1500_.jpg"
     ],
     "category": "home-decor",
     "subcategory": "table-decor",
@@ -652,47 +652,6 @@
     "isBestSeller": false,
     "inStock": true,
     "stockCount": 19,
-    "lowStock": false
-  },
-  {
-    "id": "prod-nameplates-03",
-    "slug": "mandala-art-nameplate",
-    "title": "Mandala Art Nameplate",
-    "description": "Hand-painted dot mandala nameplate on a sturdy round base.",
-    "category": "home-decor",
-    "subcategory": "nameplates",
-    "image": "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg",
-    "images": [
-      "https://m.media-amazon.com/images/I/61oa0HYASAL._SX425_.jpg"
-    ],
-    "gender": "unisex",
-    "price": 1399,
-    "salePrice": null,
-    "isOnSale": false,
-    "discountPercentage": 0,
-    "rating": 4,
-    "reviewCount": 3,
-    "orderCount": 193,
-    "createdAt": "2026-07-07",
-    "isFeatured": false,
-    "ageGroup": "All ages",
-    "specifications": {
-      "dimensions": "Diameter (10 inches)",
-      "materials": "MDF, acrylic paint, varnish"
-    },
-    "gifting": {
-      "idealFor": "Housewarming, Festivals, Anniversaries",
-      "targetAudience": "Anyone setting up or refreshing a home"
-    },
-    "variants": [
-      {
-        "id": "prod-nameplates-03-v1",
-        "name": "Standard"
-      }
-    ],
-    "isBestSeller": false,
-    "inStock": true,
-    "stockCount": 18,
     "lowStock": false
   },
   {

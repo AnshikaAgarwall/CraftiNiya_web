@@ -2,6 +2,7 @@ import SEO from "../components/common/SEO.jsx";
 import { SectionHeading } from "../components/ui/Bits.jsx";
 import ProductGrid from "../components/product/ProductGrid.jsx";
 import HeroCarousel from "../features/home/HeroCarousel.jsx";
+import HeroOfferVouchers from "../features/home/HeroOfferVouchers.jsx";
 import AnnouncementTicker from "../features/home/AnnouncementTicker.jsx";
 import FeaturedCategories from "../features/home/FeaturedCategories.jsx";
 import CountdownBanner from "../features/home/CountdownBanner.jsx";
@@ -35,6 +36,7 @@ export default function Home() {
       <AnnouncementTicker />
 
       <HeroCarousel />
+      <HeroOfferVouchers />
       <FeaturedCategories />
       <CountdownBanner />
       <FeaturedCollaborations />
@@ -61,7 +63,8 @@ export default function Home() {
       <BudgetTiers />
 
       <ReviewPills />
-      <SocialCommunityBanners />
+      {/* Social community section temporarily disabled for later reconsideration */}
+      {/* <SocialCommunityBanners /> */}
     </>
   );
 }

@@ -6,7 +6,7 @@ import { useReducedMotion } from "../../hooks/useReducedMotion.js";
 import heroSlides from "../../data/heroSlides.js";
 import s from "./HeroCarousel.module.css";
 
-const SLIDE_DURATION_MS = 8000;
+const SLIDE_DURATION_MS = 4000;
 const SWIPE_THRESHOLD = 50; // px
 
 export default function HeroCarousel() {

@@ -6,7 +6,6 @@ import {
   Heart,
   HelpCircle,
   MapPin,
-  Menu,
   MessageCircle,
   Search,
   ShoppingBag,
@@ -204,13 +203,17 @@ export default function Header() {
             {/* Hamburger menu button appears next to cart on mobile/tablet */}
             <button
               type="button"
-              className={s.menuButton}
+              className={cn(s.menuButton, menuOpen && s.menuButtonOpen)}
               onClick={toggleMenu}
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
-              {menuOpen ? <X /> : <Menu />}
+              <span className={s.hamburgerIcon} aria-hidden="true">
+                <span className={cn(s.hamburgerBar, s.hamburgerBarTop)} />
+                <span className={cn(s.hamburgerBar, s.hamburgerBarMid)} />
+                <span className={cn(s.hamburgerBar, s.hamburgerBarBot)} />
+              </span>
             </button>
           </div>
         </div>
@@ -490,19 +493,25 @@ export default function Header() {
               <ul className={s.drawerSecondaryList}>
                 <li>
                   <Link to="/track-order" className={s.drawerSubLink} onClick={closeMenu}>
-                    <MapPin size={15} className={s.drawerSubIcon} />
+                    <span className={s.drawerSubIcon}>
+                      <MapPin size={15} />
+                    </span>
                     <span>Track Your Order</span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/faq" className={s.drawerSubLink} onClick={closeMenu}>
-                    <HelpCircle size={15} className={s.drawerSubIcon} />
+                    <span className={s.drawerSubIcon}>
+                      <HelpCircle size={15} />
+                    </span>
                     <span>Help & FAQs</span>
                   </Link>
                 </li>
                 <li>
                   <Link to="/contact" className={s.drawerSubLink} onClick={closeMenu}>
-                    <MessageCircle size={15} className={s.drawerSubIcon} />
+                    <span className={s.drawerSubIcon}>
+                      <MessageCircle size={15} />
+                    </span>
                     <span>Contact Support</span>
                   </Link>
                 </li>
@@ -520,6 +529,9 @@ export default function Header() {
                 <MessageCircle size={16} />
                 <span>Chat on WhatsApp</span>
               </a>
+              <div className={s.drawerFooterNote}>
+                <span>🌿 Handcrafted with love in India</span>
+              </div>
             </div>
           </aside>
         </div>
