@@ -46,8 +46,9 @@ export default function SaleBanner() {
           </h1>
 
           <p className={s.description}>
-            {promo?.subline ||
-              "Hand-poured soy wax candles, dried botanical resin art, and keepsake gift boxes crafted in small studio batches."}
+            {promo?.subline && promo.subline.trim().toLowerCase() !== "shop now"
+              ? promo.subline
+              : "Hand-poured soy wax candles, dried botanical resin art, and keepsake gift boxes crafted in small studio batches."}
           </p>
 
           <div className={s.metaRow}>

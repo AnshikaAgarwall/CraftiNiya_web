@@ -229,10 +229,108 @@
   }
 }
 
+@media (max-width: 768px) {
+  .banner {
+    padding-block: var(--sp-5) var(--sp-6);
+    margin-bottom: var(--sp-5);
+  }
+
+  .layout {
+    gap: var(--sp-4);
+  }
+
+  .kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+
+  .title {
+    font-size: clamp(1.22rem, 5.2vw, 1.55rem);
+    line-height: 1.22;
+    margin-bottom: 8px;
+    letter-spacing: -0.015em;
+  }
+
+  .description {
+    font-size: 0.86rem;
+    line-height: 1.48;
+    margin-bottom: var(--sp-4);
+  }
+
+  .metaRow {
+    gap: var(--sp-3);
+    padding-top: 0;
+  }
+
+  .countdownGroup {
+    gap: 6px;
+  }
+
+  .metaLabel {
+    font-size: 0.625rem;
+  }
+
+  .countdownValue {
+    font-size: 0.80rem;
+    padding: 4px 10px;
+  }
+
+  .voucherCard {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .voucherCode {
+    font-size: 0.95rem;
+  }
+
+  .voucherOffer {
+    font-size: 0.65rem;
+  }
+
+  .voucherActionBtn {
+    font-size: 0.70rem;
+    padding: 5px 10px;
+  }
+
+  .image {
+    height: 190px;
+    border-radius: var(--r-md);
+  }
+}
+
 @media (max-width: 500px) {
   .metaRow {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--sp-3);
+  }
+
+  .title {
+    font-size: clamp(1.15rem, 5vw, 1.35rem);
+    line-height: 1.25;
+  }
+
+  .description {
+    font-size: 0.82rem;
+  }
+
+  .voucherCard {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .voucherLeft {
+    padding: 6px 10px;
+  }
+
+  .voucherRight {
+    padding: 6px 10px;
+  }
+
+  .voucherActionBtn {
+    padding: 4px 10px;
+    font-size: 0.68rem;
   }
 }
