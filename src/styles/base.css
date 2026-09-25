@@ -57,14 +57,19 @@ h6 {
   color: var(--c-text);
 }
 
-/* Brand / Logo elements ONLY use --font-serif */
+/* Brand / Logo wordmark ONLY uses --font-serif */
 [class*="brandName"],
-[class*="brandLogo"],
+[class*="drawerBrandName"],
 [class*="wordmark"],
-.brandLogo,
 .brandName,
+.drawerBrandName,
 .wordmark {
   font-family: var(--font-serif) !important;
+}
+
+[class*="brandTagline"],
+.brandTagline {
+  font-family: var(--font-sans) !important;
 }
 
 /* Navigation links, buttons, dialogs, popups, and UI text strictly use --font-sans */

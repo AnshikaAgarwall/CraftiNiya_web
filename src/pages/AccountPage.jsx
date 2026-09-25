@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {
   Camera,
   Check,
+  ChevronDown,
   ChevronRight,
   Edit2,
   FileText,
@@ -24,6 +25,7 @@ import {
   User,
   X,
 } from "lucide-react";
+import { cn } from "../lib/cn.js";
 import SEO from "../components/common/SEO.jsx";
 import PageHeader from "../components/layout/PageHeader.jsx";
 import Button from "../components/ui/Button.jsx";
@@ -340,6 +342,18 @@ export default function AccountPage() {
     }
   };
 
+  const [collapsed, setCollapsed] = useState({
+    details: false, // Personal Details open by default
+    addresses: true, // Addresses collapsed by default
+    security: true, // Security collapsed by default
+    orders: false, // Recent Orders open by default
+    support: true, // Support collapsed by default
+  });
+
+  const toggleSection = (key) => {
+    setCollapsed((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
   return (
     <>
       <SEO title="Your Account — CraftiNiya" noIndex />
@@ -394,442 +408,581 @@ export default function AccountPage() {
           </div>
         </section>
 
-        {/* Main 2-Column Responsive Grid */}
-        <div className={s.mainGrid}>
-          {/* Left Column: Edit Details + Addresses + Security */}
-          <div className={s.leftCol}>
-            {/* 1. Edit Account Details */}
-            <section className={s.card}>
-              <div className={s.cardHeader}>
-                <div>
-                  <h2 className={s.cardTitle}>Edit Account Details</h2>
-                  <p className={s.cardSubtitle}>
-                    Personal information and contact preferences
-                  </p>
+        {/* Main Single-Column Stack Layout */}
+        <div className={s.mainStack}>
+          {/* 1. Edit Account Details (Collapsible) */}
+          <section className={s.card}>
+            <div
+              className={s.cardHeaderClickable}
+              onClick={() => toggleSection("details")}
+              role="button"
+              tabIndex={0}
+              aria-expanded={!collapsed.details}
+            >
+              <div>
+                <h2 className={s.cardTitle}>Edit Account Details</h2>
+                <p className={s.cardSubtitle}>
+                  Personal information and contact preferences
+                </p>
+              </div>
+              <div className={s.cardHeaderActions}>
+                <span className={s.collapseTag}>
+                  {!collapsed.details ? "Collapse" : "Edit Details"}
+                </span>
+                <div className={s.collapseBtn}>
+                  <ChevronDown
+                    size={16}
+                    className={cn(s.collapseChevron, !collapsed.details && s.collapseChevronOpen)}
+                  />
                 </div>
               </div>
+            </div>
 
-              <form onSubmit={handleSaveProfile} className={s.form}>
-                <div className={s.formGrid2}>
-                  <Input
-                    label="Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Anshika Agarwal"
-                    required
-                  />
+            {!collapsed.details && (
+              <div className={s.collapsibleBody}>
+                <form onSubmit={handleSaveProfile} className={s.form}>
+                  <div className={s.formGrid2}>
+                    <Input
+                      label="Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Anshika Agarwal"
+                      required
+                    />
 
-                  <Input
-                    label="Email"
-                    value={email || user?.email || "anshika@gmail.com"}
-                    readOnly
-                    hint="Associated with your login credentials"
-                  />
-                </div>
+                    <Input
+                      label="Email"
+                      value={email || user?.email || "anshika@gmail.com"}
+                      readOnly
+                      hint="Associated with your login credentials"
+                    />
+                  </div>
 
-                <div className={s.formGrid2}>
-                  <Input
-                    label="Phone Number"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+91 98765 43210"
-                    autoComplete="tel"
-                  />
+                  <div className={s.formGrid2}>
+                    <Input
+                      label="Phone Number"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="+91 98765 43210"
+                      autoComplete="tel"
+                    />
 
-                  <Input
-                    label="Alternate Phone Number"
-                    value={alternatePhone}
-                    onChange={(e) => setAlternatePhone(e.target.value)}
-                    placeholder="+91 98765 43211"
-                    autoComplete="tel"
-                  />
-                </div>
+                    <Input
+                      label="Alternate Phone Number"
+                      value={alternatePhone}
+                      onChange={(e) => setAlternatePhone(e.target.value)}
+                      placeholder="+91 98765 43211"
+                      autoComplete="tel"
+                    />
+                  </div>
 
-                <div className={s.formGrid3}>
-                  <Input
-                    label="Date of Birth (DOB)"
-                    type="date"
-                    value={dob}
-                    onChange={handleDobChange}
-                  />
+                  <div className={s.formGrid3}>
+                    <Input
+                      label="Date of Birth (DOB)"
+                      type="date"
+                      value={dob}
+                      onChange={handleDobChange}
+                    />
 
-                  <Input
-                    label="Age"
-                    type="number"
-                    value={age}
-                    onChange={(e) => setAge(e.target.value)}
-                    placeholder="24"
-                  />
+                    <Input
+                      label="Age"
+                      type="number"
+                      value={age}
+                      onChange={(e) => setAge(e.target.value)}
+                      placeholder="24"
+                    />
 
-                  <div className={s.genderField}>
-                    <label className={s.fieldLabel}>Gender</label>
-                    <div className={s.genderPills}>
-                      {GENDER_OPTIONS.map((g) => (
-                        <button
-                          key={g}
-                          type="button"
-                          className={`${s.genderPill} ${gender === g ? s.genderPillActive : ""}`}
-                          onClick={() => setGender(g)}
-                        >
-                          {g}
-                        </button>
-                      ))}
+                    <div className={s.genderField}>
+                      <label className={s.fieldLabel}>Gender</label>
+                      <div className={s.genderPills}>
+                        {GENDER_OPTIONS.map((g) => (
+                          <button
+                            key={g}
+                            type="button"
+                            className={`${s.genderPill} ${gender === g ? s.genderPillActive : ""}`}
+                            onClick={() => setGender(g)}
+                          >
+                            {g}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className={s.formActions}>
-                  <Button type="submit" loading={savingProfile} variant="primary">
-                    Save Changes
-                  </Button>
-                </div>
-              </form>
-            </section>
+                  <div className={s.formActions}>
+                    <Button type="submit" loading={savingProfile} variant="primary">
+                      Save Changes
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            )}
+          </section>
 
-            {/* 2. Saved Addresses */}
-            <section className={s.card}>
-              <div className={s.cardHeader}>
-                <div>
-                  <h2 className={s.cardTitle}>Saved Addresses</h2>
-                  <p className={s.cardSubtitle}>
-                    Default shipping destinations for fast checkout
-                  </p>
-                </div>
+          {/* 2. Saved Addresses (Collapsible) */}
+          <section className={s.card}>
+            <div
+              className={s.cardHeaderClickable}
+              onClick={() => toggleSection("addresses")}
+              role="button"
+              tabIndex={0}
+              aria-expanded={!collapsed.addresses}
+            >
+              <div>
+                <h2 className={s.cardTitle}>Saved Addresses</h2>
+                <p className={s.cardSubtitle}>
+                  {addresses?.length
+                    ? `${addresses.length} saved address${addresses.length === 1 ? "" : "es"} for doorstep delivery`
+                    : "No address added yet"}
+                </p>
+              </div>
+              <div className={s.cardHeaderActions}>
                 <Button
                   type="button"
                   variant="secondary"
                   size="sm"
-                  startIcon={<Plus size={15} />}
-                  onClick={openNewAddressModal}
+                  startIcon={<Plus size={14} />}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openNewAddressModal();
+                  }}
                 >
-                  Add New Address
+                  Add New
                 </Button>
+                <div className={s.collapseBtn}>
+                  <ChevronDown
+                    size={16}
+                    className={cn(s.collapseChevron, !collapsed.addresses && s.collapseChevronOpen)}
+                  />
+                </div>
               </div>
+            </div>
 
-              <div className={s.addressList}>
-                {addresses?.length ? (
-                  addresses.map((addr, idx) => (
-                    <div key={addr.id} className={s.addressCard}>
-                      <div className={s.addressHead}>
-                        <div className={s.addressTitleRow}>
-                          <span className={s.addressIndexBadge}>
-                            {addr.title || `Address ${idx + 1}`}
-                          </span>
-                          {addr.isDefault && (
-                            <span className={s.defaultBadge}>Default</span>
+            {!collapsed.addresses && (
+              <div className={s.collapsibleBody}>
+                <div className={s.addressList}>
+                  {addresses?.length ? (
+                    addresses.map((addr, idx) => (
+                      <div key={addr.id} className={s.addressCard}>
+                        <div className={s.addressHead}>
+                          <div className={s.addressTitleRow}>
+                            <span className={s.addressIndexBadge}>
+                              {addr.title || `Address ${idx + 1}`}
+                            </span>
+                            {addr.isDefault && (
+                              <span className={s.defaultBadge}>Default</span>
+                            )}
+                          </div>
+                          <div className={s.addressActions}>
+                            <button
+                              type="button"
+                              className={s.actionIconBtn}
+                              onClick={() => openEditAddressModal(addr)}
+                              title="Edit Address"
+                              aria-label="Edit Address"
+                            >
+                              <Edit2 size={16} />
+                            </button>
+                            <button
+                              type="button"
+                              className={`${s.actionIconBtn} ${s.deleteIconBtn}`}
+                              onClick={() => handleDeleteAddress(addr.id)}
+                              title="Delete Address"
+                              aria-label="Delete Address"
+                            >
+                              <Trash2 size={16} />
+                            </button>
+                          </div>
+                        </div>
+
+                        <p className={s.addressBody}>
+                          <strong className={s.recipientName}>
+                            {addr.fullName || name}
+                          </strong>
+                          {addr.phone && (
+                            <span className={s.recipientPhone}> · {addr.phone}</span>
                           )}
-                        </div>
-                        <div className={s.addressActions}>
-                          <button
-                            type="button"
-                            className={s.actionIconBtn}
-                            onClick={() => openEditAddressModal(addr)}
-                            title="Edit Address"
-                            aria-label="Edit Address"
-                          >
-                            <Edit2 size={16} />
-                          </button>
-                          <button
-                            type="button"
-                            className={`${s.actionIconBtn} ${s.deleteIconBtn}`}
-                            onClick={() => handleDeleteAddress(addr.id)}
-                            title="Delete Address"
-                            aria-label="Delete Address"
-                          >
-                            <Trash2 size={16} />
-                          </button>
-                        </div>
+                          <br />
+                          {addr.line1}
+                          {addr.line2 && `, ${addr.line2}`}, {addr.city},{" "}
+                          {addr.state}, {addr.pincode}, {addr.country || "India"}
+                        </p>
                       </div>
-
-                      <p className={s.addressBody}>
-                        <strong className={s.recipientName}>
-                          {addr.fullName || name}
-                        </strong>
-                        {addr.phone && (
-                          <span className={s.recipientPhone}> · {addr.phone}</span>
-                        )}
-                        <br />
-                        {addr.line1}
-                        {addr.line2 && `, ${addr.line2}`}, {addr.city},{" "}
-                        {addr.state}, {addr.pincode}, {addr.country || "India"}
-                      </p>
+                    ))
+                  ) : (
+                    <div className={s.emptyAddress}>
+                      <MapPin size={24} className={s.emptyIcon} />
+                      <p>No addresses saved yet.</p>
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="sm"
+                        onClick={openNewAddressModal}
+                      >
+                        + Add your first address
+                      </Button>
                     </div>
-                  ))
-                ) : (
-                  <div className={s.emptyAddress}>
-                    <MapPin size={24} className={s.emptyIcon} />
-                    <p>No addresses saved yet.</p>
+                  )}
+                </div>
+              </div>
+            )}
+          </section>
+
+          {/* 3. Security Details (Collapsible) */}
+          <section className={s.card}>
+            <div
+              className={s.cardHeaderClickable}
+              onClick={() => toggleSection("security")}
+              role="button"
+              tabIndex={0}
+              aria-expanded={!collapsed.security}
+            >
+              <div>
+                <h2 className={s.cardTitle}>Security Details</h2>
+                <p className={s.cardSubtitle}>
+                  Password management and account protection
+                </p>
+              </div>
+              <div className={s.cardHeaderActions}>
+                <Button
+                  type="button"
+                  variant="secondary"
+                  size="sm"
+                  startIcon={<Lock size={14} />}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setPasswordModalOpen(true);
+                  }}
+                >
+                  Change Password
+                </Button>
+                <div className={s.collapseBtn}>
+                  <ChevronDown
+                    size={16}
+                    className={cn(s.collapseChevron, !collapsed.security && s.collapseChevronOpen)}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {!collapsed.security && (
+              <div className={s.collapsibleBody}>
+                <div className={s.securityExpandedInfo}>
+                  <div className={s.securityItem}>
+                    <div className={s.securityItemDetails}>
+                      <ShieldCheck size={20} className={s.securityIconGood} />
+                      <div>
+                        <strong className={s.securityItemTitle}>Account Protected</strong>
+                        <p className={s.securityItemDesc}>
+                          Session encrypted with TLS 1.3 standards.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={s.securityItem}>
+                    <div className={s.securityItemDetails}>
+                      <Lock size={20} className={s.securityIconGood} />
+                      <div>
+                        <strong className={s.securityItemTitle}>Password</strong>
+                        <p className={s.securityItemDesc}>
+                          Protect your account by updating your password periodically.
+                        </p>
+                      </div>
+                    </div>
                     <Button
                       type="button"
                       variant="ghost"
                       size="sm"
-                      onClick={openNewAddressModal}
+                      onClick={() => setPasswordModalOpen(true)}
                     >
-                      + Add your first address
+                      Update
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </section>
+
+          {/* 4. Wishlist, Orders & Bag (Starts directly below Security!) */}
+          <section className={s.card}>
+            <div className={s.cardHeader}>
+              <div>
+                <h2 className={s.cardTitle}>Wishlist, Orders & Bag</h2>
+                <p className={s.cardSubtitle}>Direct shortcuts to your saved items</p>
+              </div>
+            </div>
+
+            <div className={s.quickGrid}>
+              {/* 1. Wishlist */}
+              <Link to="/wishlist" className={s.quickTile}>
+                <div className={s.quickIconWrap}>
+                  <Heart size={20} />
+                  {wishlistCount > 0 && (
+                    <span className={s.quickBadge}>{wishlistCount}</span>
+                  )}
+                </div>
+                <span className={s.quickTitle}>Wishlist</span>
+                <span className={s.quickDesc}>
+                  {wishlistCount} {wishlistCount === 1 ? "item" : "items"}
+                </span>
+              </Link>
+
+              {/* 2. Orders */}
+              <Link to="/account/orders" className={s.quickTile}>
+                <div className={s.quickIconWrap}>
+                  <Package size={20} />
+                  {(orders?.total ?? 0) > 0 && (
+                    <span className={s.quickBadge}>{orders?.total}</span>
+                  )}
+                </div>
+                <span className={s.quickTitle}>Orders</span>
+                <span className={s.quickDesc}>
+                  {orders?.total ?? 0} {orders?.total === 1 ? "order" : "orders"}
+                </span>
+              </Link>
+
+              {/* 3. Bag / Cart */}
+              <Link to="/cart" className={s.quickTile}>
+                <div className={s.quickIconWrap}>
+                  <ShoppingBag size={20} />
+                  {itemCount > 0 && (
+                    <span className={s.quickBadge}>{itemCount}</span>
+                  )}
+                </div>
+                <span className={s.quickTitle}>Bag</span>
+                <span className={s.quickDesc}>
+                  {itemCount} {itemCount === 1 ? "item" : "items"}
+                </span>
+              </Link>
+            </div>
+          </section>
+
+          {/* 5. Recent Orders (Collapsible) */}
+          <section className={s.card}>
+            <div
+              className={s.cardHeaderClickable}
+              onClick={() => toggleSection("orders")}
+              role="button"
+              tabIndex={0}
+              aria-expanded={!collapsed.orders}
+            >
+              <div>
+                <h2 className={s.cardTitle}>Recent Orders</h2>
+                <p className={s.cardSubtitle}>
+                  {orders?.items?.length
+                    ? `${orders.items.length} recent order${orders.items.length === 1 ? "" : "s"}`
+                    : "Your latest purchases"}
+                </p>
+              </div>
+              <div className={s.cardHeaderActions}>
+                <Link
+                  to="/account/orders"
+                  className={s.cardLink}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  View all
+                </Link>
+                <div className={s.collapseBtn}>
+                  <ChevronDown
+                    size={16}
+                    className={cn(s.collapseChevron, !collapsed.orders && s.collapseChevronOpen)}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {!collapsed.orders && (
+              <div className={s.collapsibleBody}>
+                {orders?.items?.length ? (
+                  <ul className={s.ordersList}>
+                    {orders.items.map((order) => (
+                      <li key={order.id}>
+                        <Link to={`/order/${order.id}`} className={s.orderItem}>
+                          <div className={s.orderInfo}>
+                            <span className={s.orderNumber}>{order.orderNumber}</span>
+                            <span className={s.orderMeta}>
+                              {formatDate(order.placedAt)} · {order.lines.length} item
+                              {order.lines.length === 1 ? "" : "s"}
+                            </span>
+                          </div>
+                          <span className={s.orderStatusBadge}>
+                            {order.status}
+                          </span>
+                          <ChevronRight size={16} className={s.chevronIcon} />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className={s.emptyOrders}>
+                    <Package size={28} className={s.emptyIcon} />
+                    <p>No orders placed yet.</p>
+                    <Button to="/shop" variant="ghost" size="sm">
+                      Explore Handcrafted Shop
                     </Button>
                   </div>
                 )}
               </div>
-            </section>
+            )}
+          </section>
 
-            {/* 3. Security Details */}
-            <section className={s.card}>
-              <div className={s.securityRow}>
-                <div>
-                  <h2 className={s.cardTitle}>Security Details</h2>
-                  <p className={s.cardSubtitle}>
-                    Password management and account protection
-                  </p>
-                </div>
-                <Button
-                  type="button"
-                  variant="secondary"
-                  size="sm"
-                  startIcon={<Lock size={15} />}
-                  onClick={() => setPasswordModalOpen(true)}
-                >
-                  Change Password
-                </Button>
+          {/* 6. Support & Policies (Collapsible) */}
+          <section className={s.card}>
+            <div
+              className={s.cardHeaderClickable}
+              onClick={() => toggleSection("support")}
+              role="button"
+              tabIndex={0}
+              aria-expanded={!collapsed.support}
+            >
+              <div>
+                <h2 className={s.cardTitle}>Support & Policies</h2>
+                <p className={s.cardSubtitle}>Help center and boutique guidelines</p>
               </div>
-            </section>
-          </div>
-
-          {/* Right Column: Recent Orders + Wishlist & Bag below it + Support + Logout */}
-          <div className={s.rightCol}>
-            {/* 1. Recent Orders */}
-            <section className={s.card}>
-              <div className={s.cardHeader}>
-                <div>
-                  <h2 className={s.cardTitle}>Recent Orders</h2>
-                  <p className={s.cardSubtitle}>Your latest purchases</p>
-                </div>
-                <Link to="/account/orders" className={s.cardLink}>
-                  View all
-                </Link>
-              </div>
-
-              {orders?.items?.length ? (
-                <ul className={s.ordersList}>
-                  {orders.items.map((order) => (
-                    <li key={order.id}>
-                      <Link to={`/order/${order.id}`} className={s.orderItem}>
-                        <div className={s.orderInfo}>
-                          <span className={s.orderNumber}>{order.orderNumber}</span>
-                          <span className={s.orderMeta}>
-                            {formatDate(order.placedAt)} · {order.lines.length} item
-                            {order.lines.length === 1 ? "" : "s"}
-                          </span>
-                        </div>
-                        <span className={s.orderStatusBadge}>
-                          {order.status}
-                        </span>
-                        <ChevronRight size={16} className={s.chevronIcon} />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <div className={s.emptyOrders}>
-                  <Package size={28} className={s.emptyIcon} />
-                  <p>No orders placed yet.</p>
-                  <Button to="/shop" variant="ghost" size="sm">
-                    Explore Handcrafted Shop
-                  </Button>
-                </div>
-              )}
-            </section>
-
-            {/* 2. Wishlist, Orders & Saved Bag (Positioned directly below Recent Orders!) */}
-            <section className={s.card}>
-              <div className={s.cardHeader}>
-                <div>
-                  <h2 className={s.cardTitle}>Wishlist, Orders & Bag</h2>
-                  <p className={s.cardSubtitle}>Direct shortcuts to your saved items</p>
+              <div className={s.cardHeaderActions}>
+                <span className={s.collapseTag}>
+                  {!collapsed.support ? "Collapse" : "8 Topics"}
+                </span>
+                <div className={s.collapseBtn}>
+                  <ChevronDown
+                    size={16}
+                    className={cn(s.collapseChevron, !collapsed.support && s.collapseChevronOpen)}
+                  />
                 </div>
               </div>
-
-              <div className={s.shortcutList}>
-                <Link to="/wishlist" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <Heart size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>My Wishlist</span>
-                    <span className={s.shortcutDesc}>
-                      {wishlistCount} {wishlistCount === 1 ? "item" : "items"} saved
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
-
-                <Link to="/cart" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <ShoppingBag size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>Shopping Cart</span>
-                    <span className={s.shortcutDesc}>
-                      {itemCount} {itemCount === 1 ? "item" : "items"} in saved bag
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
-
-                <Link to="/account/orders" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <Package size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>My Orders</span>
-                    <span className={s.shortcutDesc}>
-                      {orders?.total ?? 0} {orders?.total === 1 ? "order" : "orders"} tracked
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
-              </div>
-            </section>
-
-            {/* 3. Support & Policies */}
-            <section className={s.card}>
-              <div className={s.cardHeader}>
-                <div>
-                  <h2 className={s.cardTitle}>Support & Policies</h2>
-                  <p className={s.cardSubtitle}>Help center and boutique guidelines</p>
-                </div>
-              </div>
-
-              <div className={s.shortcutList}>
-                {/* 1. Track Order */}
-                <Link to="/track-order" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <MapPin size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>Track Your Order</span>
-                    <span className={s.shortcutDesc}>
-                      Live courier tracking & delivery status
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
-
-                {/* 2. Help & FAQs */}
-                <Link to="/faq" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <HelpCircle size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>Help & FAQs</span>
-                    <span className={s.shortcutDesc}>
-                      Answers on handmade art, candles, orders & resin care
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
-
-                {/* 3. Shipping & Delivery Policy */}
-                <Link to="/shipping-policy" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <Truck size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>Shipping & Delivery Policy</span>
-                    <span className={s.shortcutDesc}>
-                      Pan-India delivery, metro timelines & free shipping info
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
-
-                {/* 4. Returns & Refunds Policy */}
-                <Link to="/return-refund-policy" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <RotateCcw size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>Returns & Refunds</span>
-                    <span className={s.shortcutDesc}>
-                      7-day easy returns & replacement guarantee
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
-
-                {/* 5. Contact Studio Support */}
-                <Link to="/contact" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <MessageCircle size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>Contact Us & Studio Help</span>
-                    <span className={s.shortcutDesc}>
-                      WhatsApp, email support & custom order inquiries
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
-
-                {/* 6. Terms & Conditions */}
-                <Link to="/terms-and-conditions" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <FileText size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>Terms & Conditions</span>
-                    <span className={s.shortcutDesc}>
-                      Store policies, artisan sales terms & legal guidelines
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
-
-                {/* 7. Privacy Policy */}
-                <Link to="/privacy-policy" className={s.shortcutItem}>
-                  <div className={s.shortcutIconWrap}>
-                    <ShieldCheck size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>Privacy Policy</span>
-                    <span className={s.shortcutDesc}>
-                      256-bit encryption, data protection & checkout security
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </Link>
-
-                {/* 8. Phone Helpline */}
-                <a
-                  href="tel:+919876543210"
-                  className={s.shortcutItem}
-                >
-                  <div className={s.shortcutIconWrap}>
-                    <Headphones size={18} />
-                  </div>
-                  <div className={s.shortcutDetails}>
-                    <span className={s.shortcutTitle}>Direct Phone Helpline</span>
-                    <span className={s.shortcutDesc}>
-                      +91 98765 43210 (Mon–Sat: 10 AM – 7 PM IST)
-                    </span>
-                  </div>
-                  <ChevronRight size={16} className={s.shortcutChevron} />
-                </a>
-              </div>
-            </section>
-
-            {/* 4. Sign Out */}
-            <div className={s.signOutBlock}>
-              <Button
-                type="button"
-                variant="danger"
-                className={s.signOutBtn}
-                startIcon={<LogOut size={16} />}
-                onClick={signOut}
-                loading={pending}
-              >
-                Log Out Account
-              </Button>
             </div>
+
+            {!collapsed.support && (
+              <div className={s.collapsibleBody}>
+                <div className={s.shortcutList}>
+                  {/* 1. Track Order */}
+                  <Link to="/track-order" className={s.shortcutItem}>
+                    <div className={s.shortcutIconWrap}>
+                      <MapPin size={18} />
+                    </div>
+                    <div className={s.shortcutDetails}>
+                      <span className={s.shortcutTitle}>Track Your Order</span>
+                      <span className={s.shortcutDesc}>
+                        Live courier tracking & delivery status
+                      </span>
+                    </div>
+                    <ChevronRight size={16} className={s.shortcutChevron} />
+                  </Link>
+
+                  {/* 2. Help & FAQs */}
+                  <Link to="/faq" className={s.shortcutItem}>
+                    <div className={s.shortcutIconWrap}>
+                      <HelpCircle size={18} />
+                    </div>
+                    <div className={s.shortcutDetails}>
+                      <span className={s.shortcutTitle}>Help & FAQs</span>
+                      <span className={s.shortcutDesc}>
+                        Answers on handmade art, candles, orders & resin care
+                      </span>
+                    </div>
+                    <ChevronRight size={16} className={s.shortcutChevron} />
+                  </Link>
+
+                  {/* 3. Shipping & Delivery Policy */}
+                  <Link to="/shipping-policy" className={s.shortcutItem}>
+                    <div className={s.shortcutIconWrap}>
+                      <Truck size={18} />
+                    </div>
+                    <div className={s.shortcutDetails}>
+                      <span className={s.shortcutTitle}>Shipping & Delivery Policy</span>
+                      <span className={s.shortcutDesc}>
+                        Pan-India delivery, metro timelines & free shipping info
+                      </span>
+                    </div>
+                    <ChevronRight size={16} className={s.shortcutChevron} />
+                  </Link>
+
+                  {/* 4. Returns & Refunds Policy */}
+                  <Link to="/return-refund-policy" className={s.shortcutItem}>
+                    <div className={s.shortcutIconWrap}>
+                      <RotateCcw size={18} />
+                    </div>
+                    <div className={s.shortcutDetails}>
+                      <span className={s.shortcutTitle}>Returns & Refunds</span>
+                      <span className={s.shortcutDesc}>
+                        7-day easy returns & replacement guarantee
+                      </span>
+                    </div>
+                    <ChevronRight size={16} className={s.shortcutChevron} />
+                  </Link>
+
+                  {/* 5. Contact Studio Support */}
+                  <Link to="/contact" className={s.shortcutItem}>
+                    <div className={s.shortcutIconWrap}>
+                      <MessageCircle size={18} />
+                    </div>
+                    <div className={s.shortcutDetails}>
+                      <span className={s.shortcutTitle}>Contact Us & Studio Help</span>
+                      <span className={s.shortcutDesc}>
+                        WhatsApp, email support & custom order inquiries
+                      </span>
+                    </div>
+                    <ChevronRight size={16} className={s.shortcutChevron} />
+                  </Link>
+
+                  {/* 6. Terms & Conditions */}
+                  <Link to="/terms-and-conditions" className={s.shortcutItem}>
+                    <div className={s.shortcutIconWrap}>
+                      <FileText size={18} />
+                    </div>
+                    <div className={s.shortcutDetails}>
+                      <span className={s.shortcutTitle}>Terms & Conditions</span>
+                      <span className={s.shortcutDesc}>
+                        Store policies, artisan sales terms & legal guidelines
+                      </span>
+                    </div>
+                    <ChevronRight size={16} className={s.shortcutChevron} />
+                  </Link>
+
+                  {/* 7. Privacy Policy */}
+                  <Link to="/privacy-policy" className={s.shortcutItem}>
+                    <div className={s.shortcutIconWrap}>
+                      <ShieldCheck size={18} />
+                    </div>
+                    <div className={s.shortcutDetails}>
+                      <span className={s.shortcutTitle}>Privacy Policy</span>
+                      <span className={s.shortcutDesc}>
+                        256-bit encryption, data protection & checkout security
+                      </span>
+                    </div>
+                    <ChevronRight size={16} className={s.shortcutChevron} />
+                  </Link>
+
+                  {/* 8. Phone Helpline */}
+                  <a href="tel:+919876543210" className={s.shortcutItem}>
+                    <div className={s.shortcutIconWrap}>
+                      <Headphones size={18} />
+                    </div>
+                    <div className={s.shortcutDetails}>
+                      <span className={s.shortcutTitle}>Direct Phone Helpline</span>
+                      <span className={s.shortcutDesc}>
+                        +91 98765 43210 (Mon–Sat: 10 AM – 7 PM IST)
+                      </span>
+                    </div>
+                    <ChevronRight size={16} className={s.shortcutChevron} />
+                  </a>
+                </div>
+              </div>
+            )}
+          </section>
+
+          {/* 7. Sign Out */}
+          <div className={s.signOutBlock}>
+            <Button
+              type="button"
+              variant="danger"
+              className={s.signOutBtn}
+              startIcon={<LogOut size={16} />}
+              onClick={signOut}
+              loading={pending}
+            >
+              Log Out Account
+            </Button>
           </div>
         </div>
       </div>

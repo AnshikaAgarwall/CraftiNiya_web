@@ -1,5 +1,6 @@
 .wrap {
-  padding-block: var(--section-y);
+  padding-top: clamp(12px, 1.6vw, 20px);
+  padding-bottom: var(--section-y);
 }
 
 .list {

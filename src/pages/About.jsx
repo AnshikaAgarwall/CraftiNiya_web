@@ -33,6 +33,8 @@ import { useAsync } from "../hooks/useAsync.js";
 import contentService from "../services/contentService.js";
 import { BRAND } from "../config/site.js";
 import { cn } from "../lib/cn.js";
+import aboutDesktopImg from "../assets/ABOUTIMAGE.png";
+import aboutMobileImg from "C:/Users/anshi/.gemini/antigravity-ide/brain/5245d55d-9c9c-434b-90f1-f8ea9d7ae0ef/about_mobile_vertical_1790351368504.jpg";
 import s from "./About.module.css";
 
 function InstagramIcon({ size = 18, className = "" }) {
@@ -153,18 +155,19 @@ export default function About() {
     <>
       <SEO title={seo.title} description={seo.description} image={welcome?.image?.url} />
 
-      {/* 1. Page Hero Banner (Full Banner Style) */}
-      {welcome?.image?.url && (
-        <section className={s.heroBanner} aria-label="About CraftiNiya Banner">
+      {/* 1. Page Hero Banner (Full Banner Style with Desktop/Mobile Responsive Picture) */}
+      <section className={s.heroBanner} aria-label="About CraftiNiya Banner">
+        <picture className={s.bannerPicture}>
+          <source media="(max-width: 640px)" srcSet={aboutMobileImg} />
           <img
-            src={welcome.image.url}
-            alt={welcome.image.alt || "About CraftiNiya"}
+            src={aboutDesktopImg || welcome?.image?.url}
+            alt={welcome?.image?.alt || "About CraftiNiya"}
             className={s.bannerImage}
             loading="eager"
             fetchPriority="high"
           />
-        </section>
-      )}
+        </picture>
+      </section>
 
       {/* 2. What We Make (Services / Collections) */}
       {services && services.items.length > 0 && (

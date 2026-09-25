@@ -116,8 +116,9 @@
 }
 
 .heroTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-weight: 700;
   color: var(--c-text);
   margin: 0;
   line-height: 1.2;
@@ -180,9 +181,9 @@
 }
 
 .creatorMainName {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--c-text);
   margin: 0;
   line-height: 1.18;
@@ -259,8 +260,9 @@
 }
 
 .missionTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-weight: 700;
   color: var(--c-text);
   margin: 0 0 var(--sp-2) 0;
   line-height: 1.25;
@@ -305,7 +307,7 @@
 }
 
 .quoteText {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-style: italic;
   font-size: clamp(0.95rem, 1.2vw, 1.1rem);
   color: var(--c-text);
@@ -341,8 +343,9 @@
 }
 
 .supportTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+  font-weight: 700;
   color: var(--c-text);
   margin: 0;
 }
@@ -422,8 +425,9 @@
 }
 
 .catalogTitle {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 700;
   color: var(--c-text);
   margin: 0;
   line-height: 1.2;

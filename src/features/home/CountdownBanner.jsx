@@ -1,64 +1,75 @@
-import { Gift, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Gift, ArrowRight, Sparkles } from "lucide-react";
 import Button from "../../components/ui/Button.jsx";
+import giftBoxBanner from "C:/Users/anshi/.gemini/antigravity-ide/brain/5245d55d-9c9c-434b-90f1-f8ea9d7ae0ef/giftbox_banner_1790337468853.jpg";
 import s from "./CountdownBanner.module.css";
 
-/**
- * Build-your-own gift box banner.
- *
- * This slot carries the gift box entry point:
- * copy on the left, a 4-step builder roadmap plus CTA on the right on desktop,
- * and an ergonomically balanced, responsive stacked layout on mobile.
- */
-const STEPS = [
-  { value: "01", label: "Pick Box" },
-  { value: "02", label: "Add Gifts" },
-  { value: "03", label: "Personalise" },
-  { value: "04", label: "We Ship" },
-];
+const FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1200&q=85";
 
 export default function CountdownBanner() {
+  const [imgSrc, setImgSrc] = useState(giftBoxBanner);
+
   return (
     <section className={s.banner} aria-labelledby="giftbox-banner-heading">
-      <div className={`container ${s.inner}`}>
-        <div className={s.copy}>
-          <p className={s.label}>
-            <Gift aria-hidden="true" />
-            Build Your Own
-          </p>
-          <h2 id="giftbox-banner-heading" className={s.headline}>
-            Personalize Your GiftBox
-          </h2>
-          <p className={s.subline}>
-            Choose a box, fill it with handpicked treats, add a note — we wrap
-            and deliver.
-          </p>
-        </div>
+      <div className="container">
+        <div className={s.card}>
+          {/* Content Column */}
+          <div className={s.contentCol}>
+            <div className={s.headerRow}>
+              <div className={s.label}>
+                <Gift size={12} aria-hidden="true" />
+                <span>Build Your Own</span>
+              </div>
+              <span className={s.priceBadge}>From ₹499</span>
+            </div>
 
-        <div className={s.timerBlock}>
-          <ul className={s.timer}>
-            {STEPS.map((step) => (
-              <li key={step.label} className={s.unit}>
-                <span className={s.unitValue}>{step.value}</span>
-                <span className={s.unitLabel}>{step.label}</span>
-              </li>
-            ))}
-          </ul>
+            <h2 id="giftbox-banner-heading" className={s.headline}>
+              Personalize Your GiftBox
+            </h2>
 
-          <div className={s.actionArea}>
-            <p className={s.ends}>Starting at ₹499 · Ready in 2 days</p>
+            <div className={s.perksRow}>
+              <span className={s.perkItem}>✨ Custom note included</span>
+              <span className={s.perkDot}>•</span>
+              <span className={s.perkItem}>🌿 Handcrafted pieces</span>
+              <span className={s.perkDot}>•</span>
+              <span className={s.perkItem}>📦 Ready in 2 days</span>
+            </div>
 
-            <Button
-              to="/gift-box"
-              variant="accent"
-              size="sm"
-              className={s.cta}
-              endIcon={<ArrowRight size={14} aria-hidden="true" />}
-            >
-              Start Building
-            </Button>
+            {/* Action Area */}
+            <div className={s.actionArea}>
+              <Button
+                to="/gift-box"
+                variant="accent"
+                size="sm"
+                className={s.cta}
+                endIcon={<ArrowRight size={14} aria-hidden="true" />}
+              >
+                Start Building Your Box
+              </Button>
+            </div>
+          </div>
+
+          {/* Media Column */}
+          <div className={s.mediaCol}>
+            <div className={s.imageCard}>
+              <img
+                src={imgSrc}
+                alt="Artisanal Handcrafted Gift Box with Scented Candle and Floral Resin Coaster"
+                className={s.image}
+                loading="lazy"
+                onError={() => setImgSrc(FALLBACK_IMAGE)}
+              />
+              <div className={s.imageBadge}>
+                <Sparkles size={11} aria-hidden="true" />
+                <span>Studio Keepsake Box</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+

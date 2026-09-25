@@ -35,7 +35,7 @@ export default function WishlistPage() {
         )}
       </PageHeader>
 
-      <div className="container" style={{ paddingBlock: "var(--sp-8) var(--sp-11)" }}>
+      <div className="container" style={{ paddingTop: "clamp(12px, 1.6vw, 20px)", paddingBottom: "var(--section-y)" }}>
         <ProductGrid
           products={products}
           loading={loading}

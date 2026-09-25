@@ -1,5 +1,6 @@
 .wrap {
-  padding-block: var(--section-y);
+  padding-top: clamp(12px, 1.6vw, 20px);
+  padding-bottom: var(--section-y);
   min-height: 60vh;
 }
 
@@ -87,7 +88,7 @@
 }
 
 .creatorName {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--fs-2xl);
   font-weight: var(--fw-semibold);
   color: var(--c-text);
