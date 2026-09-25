@@ -205,57 +205,75 @@ export default function About() {
         </section>
       )}
 
-      {/* 3. Community, Collaborations, NGOs & Affiliate Picks */}
+      {/* 3. Beyond The Studio (Interactive Impact & Ecosystem Deck) */}
       {collaborations && collaborations.items?.length > 0 && (
         <section className={s.collaborations}>
           <div className="container">
             <SectionHeading
-              eyebrow={collaborations.eyebrow || "Beyond The Studio"}
-              title={collaborations.title || "Collaborations, Community & Impact"}
+              title={collaborations.eyebrow || "Beyond The Studio"}
             />
-            {collaborations.subtitle && (
-              <p className={s.collaborationsSubtitle}>{collaborations.subtitle}</p>
-            )}
 
-            <div className={s.collaborationsGrid}>
+            <div className={s.impactDeck}>
               {collaborations.items.map((item) => {
                 const Icon = iconFor(item.icon);
                 const hasLink = Boolean(item.link);
                 const isExt = Boolean(item.external);
+                const isNgo = item.id === "ngo-impact";
+                const isCreator = item.id === "influencer-network";
+                const isBrand = item.id === "brand-collab";
+                const isPartner = item.id === "affiliate-picks";
 
                 const CardContent = (
                   <>
-                    <div className={s.collabHeader}>
-                      <span className={s.collabIcon} aria-hidden="true">
-                        <Icon size={19} />
+                    <div className={s.impactMetaRow}>
+                      <span className={cn(s.impactIconPill, isNgo && s.ngoIconPill, isCreator && s.creatorIconPill)} aria-hidden="true">
+                        <Icon size={20} />
                       </span>
-                      {item.tag && <span className={s.collabTag}>{item.tag}</span>}
+                      {item.tag && (
+                        <span className={cn(s.impactTagBadge, isNgo && s.ngoTagBadge, isCreator && s.creatorTagBadge)}>
+                          {item.tag}
+                        </span>
+                      )}
                     </div>
-                    <h3 className={s.collabTitle}>{item.title}</h3>
-                    <p className={s.collabBody}>{item.body}</p>
+
+                    <div className={s.impactTextWrap}>
+                      <h3 className={s.impactHeading}>{item.title}</h3>
+                      <p className={s.impactParagraph}>{item.body}</p>
+                    </div>
+
                     {item.badge && (
-                      <div className={s.collabBadgeRow}>
-                        <span className={s.collabBadge}>
-                          <Sparkles size={11} /> {item.badge}
+                      <div className={s.impactBadgeRow}>
+                        <span className={s.impactHighlightBadge}>
+                          <Sparkles size={12} /> {item.badge}
                         </span>
                       </div>
                     )}
+
                     {item.linkText && (
-                      <div className={s.collabAction}>
+                      <div className={s.impactActionBtn}>
                         <span>{item.linkText}</span>
                         {isExt ? (
-                          <ExternalLink size={13} aria-hidden="true" />
+                          <ExternalLink size={14} aria-hidden="true" />
                         ) : (
-                          <ArrowRight size={13} aria-hidden="true" className={s.collabArrow} />
+                          <ArrowRight size={14} aria-hidden="true" className={s.impactArrow} />
                         )}
                       </div>
                     )}
                   </>
                 );
 
+                const cardClass = cn(
+                  s.impactCard,
+                  isNgo && s.ngoCard,
+                  isCreator && s.creatorCard,
+                  isBrand && s.brandCard,
+                  isPartner && s.partnerCard,
+                  hasLink && s.impactCardClickable
+                );
+
                 if (!hasLink) {
                   return (
-                    <div key={item.id} className={s.collabCard}>
+                    <div key={item.id} className={cardClass}>
                       {CardContent}
                     </div>
                   );
@@ -267,7 +285,7 @@ export default function About() {
                     href={item.link}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className={cn(s.collabCard, s.collabCardInteractive)}
+                    className={cardClass}
                   >
                     {CardContent}
                   </a>
@@ -275,7 +293,7 @@ export default function About() {
                   <Link
                     key={item.id}
                     to={item.link}
-                    className={cn(s.collabCard, s.collabCardInteractive)}
+                    className={cardClass}
                   >
                     {CardContent}
                   </Link>
@@ -291,7 +309,6 @@ export default function About() {
         <section className={s.stalls}>
           <div className="container">
             <SectionHeading eyebrow={stalls.eyebrow} title={stalls.title} />
-            {stalls.body && <p className={s.stallsIntro}>{stalls.body}</p>}
 
             <div className={s.mosaicGrid}>
               {validStalls.map((item, idx) => (
@@ -344,15 +361,10 @@ export default function About() {
           <div className="container">
             {policies?.items?.length > 0 && (
               <>
-                <div className={s.practicalHeadingWrap}>
-                  <SectionHeading
-                    eyebrow={policies.eyebrow || "Customer Care & Guarantees"}
-                    title={policies.title || "The practical bits"}
-                  />
-                  {policies.subtitle && (
-                    <p className={s.practicalSubtitle}>{policies.subtitle}</p>
-                  )}
-                </div>
+                <SectionHeading
+                  eyebrow={policies.eyebrow || "Customer Care & Guarantees"}
+                  title={policies.title || "The practical bits"}
+                />
 
                 <div className={s.practicalGrid}>
                   {policies.items.map((policy) => {

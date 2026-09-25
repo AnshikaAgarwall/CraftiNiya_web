@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Check, Copy, Flame, Gift, Sparkles, Tag, Timer } from "lucide-react";
+import { Check, Copy, Tag } from "lucide-react";
 import { useAsync } from "../../hooks/useAsync.js";
 import { useCountdown } from "../../hooks/useCountdown.js";
 import promoService from "../../services/promoService.js";
+import { cn } from "../../lib/cn.js";
 import s from "./SaleBanner.module.css";
 
 const BANNER_IMAGE =
@@ -11,8 +12,14 @@ const BANNER_IMAGE =
 export default function SaleBanner() {
   const [copied, setCopied] = useState(false);
 
-  const { data: promo } = useAsync((opts) => promoService.getActivePromotion(opts), []);
-  const { data: serverTime } = useAsync((opts) => promoService.getServerTime(opts), []);
+  const { data: promo } = useAsync(
+    (opts) => promoService.getActivePromotion(opts),
+    [],
+  );
+  const { data: serverTime } = useAsync(
+    (opts) => promoService.getServerTime(opts),
+    [],
+  );
 
   const { days, hours, minutes, seconds, isExpired } = useCountdown(
     promo?.endsAt,
@@ -23,119 +30,93 @@ export default function SaleBanner() {
     const code = promo?.couponCode || "FESTIVE40";
     navigator.clipboard?.writeText(code);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2200);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <section className={s.banner} aria-label="Festive Sale Highlights">
-      <div className={`container ${s.grid}`}>
-        {/* Left Column: Promotion Details & Offer */}
-        <div className={s.copyCol}>
-          <div className={s.tagRow}>
-            <span className={s.liveTag}>
-              <Flame size={14} className={s.flame} />
-              LIMITED TIME SALE
-            </span>
-            <span className={s.discountPill}>UP TO 40% OFF</span>
-          </div>
-
-          <h1 className={s.title}>
-            {promo?.headline || "Festive Sale — Up to 40% Off Handmade Gifting"}
-          </h1>
-
-          <p className={s.subtitle}>
-            {promo?.subline ||
-              "Artisanal soy candles, floral resin art & keepsake gift boxes. Hand-poured in small studio batches — when they sell out, they're gone."}
+    <header className={s.banner} aria-label="Festive Sale">
+      <div className={`container ${s.layout}`}>
+        <div className={s.content}>
+          <p className={s.kicker}>
+            Festive Studio Archive &bull; Up to 40% Off
           </p>
 
-          {/* Action Row: Timer & Coupon */}
-          <div className={s.actionRow}>
-            {/* Live Countdown Box */}
+          <h1 className={s.title}>
+            {promo?.headline || "Curated handmade pieces, thoughtfully discounted."}
+          </h1>
+
+          <p className={s.description}>
+            {promo?.subline ||
+              "Hand-poured soy wax candles, dried botanical resin art, and keepsake gift boxes crafted in small studio batches."}
+          </p>
+
+          <div className={s.metaRow}>
+            {/* Minimalist Countdown */}
             {!isExpired && (
-              <div className={s.timerCard}>
-                <div className={s.timerHead}>
-                  <Timer size={14} className={s.timerIcon} />
-                  <span>SALE ENDS IN:</span>
-                </div>
-                <div className={s.timerUnits}>
-                  <div className={s.unit}>
-                    <strong>{String(days).padStart(2, "0")}</strong>
-                    <span>Days</span>
-                  </div>
-                  <span className={s.sep}>:</span>
-                  <div className={s.unit}>
-                    <strong>{String(hours).padStart(2, "0")}</strong>
-                    <span>Hours</span>
-                  </div>
-                  <span className={s.sep}>:</span>
-                  <div className={s.unit}>
-                    <strong>{String(minutes).padStart(2, "0")}</strong>
-                    <span>Mins</span>
-                  </div>
-                  <span className={s.sep}>:</span>
-                  <div className={s.unit}>
-                    <strong>{String(seconds).padStart(2, "0")}</strong>
-                    <span>Secs</span>
-                  </div>
-                </div>
+              <div className={s.countdownGroup}>
+                <span className={s.metaLabel}>Ending in</span>
+                <span className={s.countdownValue}>
+                  {String(days).padStart(2, "0")}d : {String(hours).padStart(2, "0")}h : {String(minutes).padStart(2, "0")}m : {String(seconds).padStart(2, "0")}s
+                </span>
               </div>
             )}
 
-            {/* Coupon Code Pill */}
-            <div className={s.couponCard}>
-              <div className={s.couponHead}>
-                <Tag size={13} />
-                <span>EXTRA FESTIVE DISCOUNT:</span>
+            {/* Elevated Boutique Coupon Card */}
+            <div
+              className={cn(s.voucherCard, copied && s.voucherCopied)}
+              onClick={handleCopy}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) =>
+                (e.key === "Enter" || e.key === " ") && handleCopy()
+              }
+              title="Click to copy coupon code"
+              aria-label="Copy festive discount coupon code"
+            >
+              <div className={s.voucherLeft}>
+                <div className={s.voucherTag}>
+                  <Tag size={11} className={s.voucherTagIcon} />
+                  <span>FESTIVE VOUCHER</span>
+                </div>
+                <div className={s.voucherCodeRow}>
+                  <code className={s.voucherCode}>
+                    {promo?.couponCode || "FESTIVE40"}
+                  </code>
+                  <span className={s.voucherOffer}>Extra 10% Off</span>
+                </div>
               </div>
-              <div className={s.couponAction} onClick={handleCopy}>
-                <span className={s.codeText}>
-                  {promo?.couponCode || "FESTIVE40"}
-                </span>
-                <button
-                  type="button"
-                  className={s.copyButton}
-                  onClick={handleCopy}
-                  title="Copy coupon code"
-                >
-                  {copied ? <Check size={13} /> : <Copy size={13} />}
-                  <span>{copied ? "Copied!" : "Copy"}</span>
-                </button>
-              </div>
-            </div>
-          </div>
 
-          {/* Highlights Bar */}
-          <div className={s.featuresRow}>
-            <div className={s.feature}>
-              <Gift size={15} />
-              <span>Free Gift above ₹1,499</span>
-            </div>
-            <div className={s.dotSep}>•</div>
-            <div className={s.feature}>
-              <Sparkles size={15} />
-              <span>Pure Soy Wax & Botanicals</span>
-            </div>
-            <div className={s.dotSep}>•</div>
-            <div className={s.feature}>
-              <span>Direct Studio Hand-Pouring</span>
+              <div className={s.voucherDivider} aria-hidden="true" />
+
+              <div className={s.voucherRight}>
+                <span className={s.voucherActionBtn}>
+                  {copied ? (
+                    <>
+                      <Check size={13} className={s.checkIcon} />
+                      <span>Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy size={13} />
+                      <span>Copy</span>
+                    </>
+                  )}
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Right Column: 100% Clear, Vibrant Photo (Zero Black Shadow!) */}
-        <div className={s.photoCol}>
-          <div className={s.photoFrame}>
-            <img
-              src={BANNER_IMAGE}
-              alt="Festive Handcrafted Studio Sale"
-              className={s.photoImg}
-            />
-            <div className={s.photoBadge}>
-              <span>Handcrafted In Jaipur</span>
-            </div>
-          </div>
+        {/* Clean, pure visual without badges or stickers */}
+        <div className={s.mediaWrap}>
+          <img
+            src={BANNER_IMAGE}
+            alt="Handcrafted Festive Studio Pieces"
+            className={s.image}
+            loading="eager"
+          />
         </div>
       </div>
-    </section>
+    </header>
   );
 }

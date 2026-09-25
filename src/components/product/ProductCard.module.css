@@ -1,5 +1,5 @@
 .card {
-  /* One height shared by the flag pills and the wishlist button so they line up. */
+  /* Height shared by flag pills */
   --pc-pill-h: 22px;
   position: relative;
   display: flex;
@@ -17,9 +17,9 @@
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  border-color: var(--c-border-strong);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(31, 58, 43, 0.08);
+  border-color: rgba(74, 107, 83, 0.28);
 }
 
 /* Remove outline on click or focus without collapsing border */
@@ -42,17 +42,17 @@
 
 .image {
   border-radius: 0;
-  transition: transform var(--t-slow) var(--ease);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover .image img {
-  transform: none;
+  transform: scale(1.04);
 }
 
 .flags {
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 9px;
+  left: 9px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -67,43 +67,46 @@
   align-items: center;
   box-sizing: border-box;
   height: var(--pc-pill-h);
-  border-radius: 2px !important;
+  border-radius: 4px !important;
   font-size: 9px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.04em;
-  padding: 0 6px;
+  padding: 0 7px;
   text-transform: uppercase;
+  backdrop-filter: blur(6px);
 }
 
 .wishlist {
   position: absolute;
-  /* Sits directly opposite the flag pills: same top edge, same height. */
-  top: 8px;
-  right: 8px;
+  top: 9px;
+  right: 9px;
   display: grid;
   place-items: center;
   box-sizing: border-box;
-  width: var(--pc-pill-h);
-  height: var(--pc-pill-h);
+  width: 28px;
+  height: 28px;
   border-radius: var(--r-circle);
-  background-color: var(--c-surface);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.07);
   color: var(--c-text-2);
-  box-shadow: var(--sh-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition:
     color var(--t-fast) var(--ease),
-    transform var(--t-fast) var(--ease);
+    transform var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease);
 }
 
 .wishlist svg {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
 }
 
 .wishlist:hover {
   color: var(--c-brand);
-  transform: scale(1.08);
+  background-color: #ffffff;
+  transform: scale(1.1);
 }
 
 .wishlistOn {
@@ -118,9 +121,8 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  justify-content: space-between;
   padding: 12px 14px 14px 14px;
-  gap: 8px;
+  gap: 6px;
 }
 
 .title {

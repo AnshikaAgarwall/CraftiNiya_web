@@ -137,7 +137,7 @@ export default function ProductCard({ product, eager = false, compact = false })
         <LazyImage
           src={product.image}
           alt={product.title}
-          ratio="4 / 5"
+          ratio="1 / 1"
           eager={eager}
           className={s.image}
           sizes="(max-width: 640px) 45vw, (max-width: 1180px) 30vw, 280px"
