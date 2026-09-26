@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { Gift, ArrowRight, Sparkles } from "lucide-react";
 import Button from "../../components/ui/Button.jsx";
-import giftBoxBanner from "C:/Users/anshi/.gemini/antigravity-ide/brain/5245d55d-9c9c-434b-90f1-f8ea9d7ae0ef/giftbox_banner_1790337468853.jpg";
 import s from "./CountdownBanner.module.css";
 
-const FALLBACK_IMAGE =
+const BANNER_IMAGE =
   "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1200&q=85";
 
 export default function CountdownBanner() {
-  const [imgSrc, setImgSrc] = useState(giftBoxBanner);
+  const [imgSrc, setImgSrc] = useState(BANNER_IMAGE);
 
   return (
     <section className={s.banner} aria-labelledby="giftbox-banner-heading">
@@ -58,7 +57,7 @@ export default function CountdownBanner() {
                 alt="Artisanal Handcrafted Gift Box with Scented Candle and Floral Resin Coaster"
                 className={s.image}
                 loading="lazy"
-                onError={() => setImgSrc(FALLBACK_IMAGE)}
+                onError={() => setImgSrc(BANNER_IMAGE)}
               />
               <div className={s.imageBadge}>
                 <Sparkles size={11} aria-hidden="true" />
