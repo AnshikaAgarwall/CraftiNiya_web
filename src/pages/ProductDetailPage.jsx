@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Check, Heart, Minus, Plus, RotateCcw, ShieldCheck, ShoppingBag, Truck } from "lucide-react";
+import { Check, ChevronDown, Heart, Leaf, Minus, Play, Plus, RotateCcw, ShieldCheck, ShoppingBag, Truck, X } from "lucide-react";
 import SEO from "../components/common/SEO.jsx";
 import PageHeader from "../components/layout/PageHeader.jsx";
 import Button from "../components/ui/Button.jsx";
@@ -40,6 +40,8 @@ export default function ProductDetailPage() {
   const [qty, setQty] = useState(1);
   const [tab, setTab] = useState("details");
   const [justAdded, setJustAdded] = useState(false);
+  const [artisanOpen, setArtisanOpen] = useState(false);
+  const [creatorNoteOpen, setCreatorNoteOpen] = useState(false);
 
   const { data: product, loading, error, refetch } = useAsync(
     (opts) => productService.getProductBySlug(slug, opts),
@@ -350,6 +352,101 @@ export default function ProductDetailPage() {
             </li>
           </ul>
 
+          {/* ---------- Impact Tag: NGO products ---------- */}
+          {product.creator?.creatorCategory === "ngo_artisan" && product.impactTag && (
+            <div className={s.impactTag}>
+              <Leaf className={s.impactTagIcon} />
+              <span>{product.impactTag}</span>
+            </div>
+          )}
+
+          {/* ---------- Who Made This? Artisan Card: NGO products ---------- */}
+          {product.creator?.creatorCategory === "ngo_artisan" && product.artisan && (
+            <div className={s.artisanSection}>
+              <button
+                type="button"
+                className={s.artisanHeader}
+                onClick={() => setArtisanOpen((o) => !o)}
+                aria-expanded={artisanOpen}
+              >
+                <div className={s.artisanHeaderLeft}>
+                  <div className={s.artisanAvatar} style={{ width: 36, height: 36, flex: "0 0 36px" }}>
+                    <img src={product.artisan.photo} alt={product.artisan.name} />
+                  </div>
+                  <div>
+                    <div className={s.artisanHeaderTitle}>Who Made This?</div>
+                    <div className={s.artisanHeaderSub}>Meet the artisan behind this piece</div>
+                  </div>
+                </div>
+                <ChevronDown
+                  className={cn(s.artisanToggleIcon, artisanOpen && s.open)}
+                  aria-hidden="true"
+                />
+              </button>
+              <div className={cn(s.artisanBody, artisanOpen && s.visible)}>
+                <div className={s.artisanBodyInner}>
+                  <div className={s.artisanCard}>
+                    <div className={s.artisanAvatar}>
+                      <img src={product.artisan.photo} alt={product.artisan.name} loading="lazy" />
+                    </div>
+                    <div className={s.artisanInfo}>
+                      <p className={s.artisanName}>{product.artisan.name}</p>
+                      <p className={s.artisanLocation}>📍 {product.artisan.location}</p>
+                      <p className={s.artisanQuote}>"{product.artisan.quote}"</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ---------- As Seen On Reel: Influencer products ---------- */}
+          {product.creator?.creatorCategory === "influencer" && product.seenOn && (
+            <div className={s.seenOnSection}>
+              <div className={s.seenOnHeader}>
+                <div className={s.seenOnIcon}>
+                  <Play aria-hidden="true" />
+                </div>
+                <div>
+                  <div className={s.seenOnTitle}>As Seen On Reel</div>
+                  <div className={s.seenOnHandle}>{product.seenOn.handle}</div>
+                </div>
+              </div>
+              <div className={s.seenOnVideoWrap}>
+                <video
+                  className={s.seenOnVideo}
+                  src={product.seenOn.reelVideoUrl}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+              </div>
+              <div className={s.seenOnCtaRow}>
+                <span className={s.seenOnCtaText}>
+                  <strong>You saw it here first.</strong> Shop the exact piece from this reel.
+                </span>
+              </div>
+            </div>
+          )}
+
+          {/* ---------- Creator Video Note button: Influencer products ---------- */}
+          {product.creator?.creatorCategory === "influencer" && product.creatorVideoUrl && (
+            <button
+              type="button"
+              className={s.creatorNoteBtn}
+              onClick={() => setCreatorNoteOpen(true)}
+              aria-label="Watch creator video note for this product"
+            >
+              <Play size={18} color="#7c3aed" />
+              <div>
+                <div className={s.creatorNoteBtnText}>🎥 Watch Creator Note</div>
+                <div className={s.creatorNoteBtnSub}>{product.creator.name} shares the story behind this piece</div>
+              </div>
+            </button>
+          )}
+
           {/* ---------- Product Detail Tabs (Embedded right below Made and checked by hand) ---------- */}
           <div className={s.productTabsContainer}>
             <div className={`${s.tabList} no-scrollbar`} role="tablist" aria-label="Product information">
@@ -495,6 +592,43 @@ export default function ProductDetailPage() {
           />
           <ProductGrid products={related} columns={4} />
         </section>
+      )}
+
+      {/* ---------- Creator Video Note Modal (Influencer) ---------- */}
+      {creatorNoteOpen && product?.creatorVideoUrl && (
+        <div
+          className={s.creatorNoteModal}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Creator video note"
+          onClick={(e) => { if (e.target === e.currentTarget) setCreatorNoteOpen(false); }}
+        >
+          <div className={s.creatorNoteModalCard}>
+            <div className={s.creatorNoteModalHeader}>
+              <span className={s.creatorNoteModalTitle}>🎥 Creator Note — {product.creator?.name}</span>
+              <button
+                type="button"
+                className={s.creatorNoteCloseBtn}
+                onClick={() => setCreatorNoteOpen(false)}
+                aria-label="Close video"
+              >
+                <X size={16} />
+              </button>
+            </div>
+            <div className={s.creatorNoteVideoWrap}>
+              <video
+                className={s.creatorNoteVideo}
+                src={product.creatorVideoUrl}
+                autoPlay
+                controls
+                playsInline
+              />
+            </div>
+            <p className={s.creatorNoteCaption}>
+              "{product.creator?.name} shares the story, craft and heart behind this piece — straight from their studio."
+            </p>
+          </div>
+        </div>
       )}
     </>
   );

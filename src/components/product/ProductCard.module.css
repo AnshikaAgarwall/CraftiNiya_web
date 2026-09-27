@@ -356,6 +356,15 @@
   .flags {
     top: 7px;
     left: 7px;
+    gap: 3px;
+  }
+
+  .flags :global(.badge),
+  .flags span {
+    height: 18px;
+    font-size: 8px;
+    padding: 0 5px;
+    border-radius: 3px !important;
   }
 
   .body {
@@ -378,15 +387,15 @@
   }
 
   .price :global([class*="priceCurrent"]) {
-    font-size: 1.025rem;
+    font-size: 1rem;
   }
 
   .price :global([class*="priceWas"]) {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
   }
 
   .price :global([class*="priceOff"]) {
-    font-size: 0.6875rem;
+    font-size: 0.65625rem;
   }
 
   .add {
@@ -408,3 +417,31 @@
     font-size: 9.5px;
   }
 }
+
+@media (max-width: 380px) {
+  .body {
+    padding: 7px 8px 9px 8px;
+  }
+
+  .title {
+    font-size: 0.75rem;
+  }
+
+  .price :global([class*="priceCurrent"]) {
+    font-size: 0.90625rem;
+  }
+
+  .price :global([class*="priceWas"]) {
+    font-size: 0.65625rem;
+  }
+
+  .price :global([class*="priceOff"]) {
+    font-size: 0.59375rem;
+  }
+
+  .add {
+    width: 26px;
+    height: 26px;
+  }
+}
+

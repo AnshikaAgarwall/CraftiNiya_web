@@ -1,5 +1,5 @@
 .pageWrap {
-  padding-block: var(--sp-6) var(--sp-12);
+  padding-block: var(--sp-4) var(--sp-8);
   background-color: var(--c-bg);
 }
 
@@ -33,396 +33,168 @@
 }
 
 /* =========================================================
-   1. HERO BANNER SECTION (Full Width Card)
+   HOMEPAGE-STYLE FULL-BLEED HERO BANNER
+   (100% Edge-to-Edge, Fluid Aspect Ratio, Zero Card Border)
    ========================================================= */
-.heroBannerSection {
-  margin-bottom: var(--sp-8);
-  width: 100%;
-}
 
-.imageHeroCard {
+.homeStyleHeroBanner {
   position: relative;
   width: 100%;
-  aspect-ratio: 21 / 9;
-  min-height: 260px;
-  max-height: 520px;
-  border-radius: var(--r-lg, 16px);
-  overflow: hidden;
-  border: 1px solid var(--c-border);
-  box-shadow: var(--sh-md);
-  background-color: var(--c-sunken);
-}
-
-.heroPicture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.heroBannerImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.bannerOverlayBadge {
-  position: absolute;
-  top: var(--sp-4, 16px);
-  left: var(--sp-4, 16px);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background-color: rgba(31, 58, 43, 0.88);
-  backdrop-filter: blur(8px);
-  color: #ffffff;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: var(--r-pill);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-}
-
-/* Video Reel Hero variant (e.g. Priya) */
-.reelHeroWrapper {
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: var(--sp-8);
-  align-items: center;
-  background-color: var(--c-surface);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-lg);
-  padding: var(--sp-6);
-  box-shadow: var(--sh-sm);
-}
-
-.reelPlayerBox {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 9 / 14;
-  max-height: 440px;
-  border-radius: var(--r-md);
   overflow: hidden;
   background-color: #0f1115;
+  user-select: none;
+  margin-bottom: var(--sp-8);
 }
 
-.reelVideo {
+.homeBannerPicture {
+  display: block;
   width: 100%;
-  height: 100%;
+}
+
+.homeBannerImg {
+  display: block;
+  width: 100%;
+  height: auto;
   object-fit: cover;
+  object-position: center;
 }
 
-.reelHeroText {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-3);
-}
-
-.heroTitle {
-  font-family: var(--font-sans);
-  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-  font-weight: 700;
-  color: var(--c-text);
-  margin: 0;
-  line-height: 1.2;
-}
-
-.heroTagline {
-  font-size: var(--fs-lg, 1rem);
-  color: var(--c-text-2);
-  line-height: 1.5;
-  margin: 0;
-}
-
-.locationChip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--c-text-2);
-  font-size: 0.8125rem;
-  font-weight: 500;
-}
-
-/* =========================================================
-   2. CREATOR IDENTITY & MISSION STORY
-   ========================================================= */
-.creatorStorySection {
-  margin-bottom: var(--sp-12);
-  display: flex;
-  flex-direction: column;
+/* 2. Identity + Impact Counts side-by-side (Open layout, not inside a card) */
+.ngoProfileStatsRow {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
   gap: var(--sp-8);
-}
-
-/* Header Banner Identity Strip */
-.profileHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--sp-6);
-  padding-bottom: var(--sp-6);
+  align-items: center;
+  padding-bottom: var(--sp-8);
   border-bottom: 1px solid var(--c-border);
+  margin-bottom: var(--sp-10);
 }
 
-.titleArea {
+.ngoIdentityCol {
   display: flex;
   flex-direction: column;
   gap: var(--sp-2);
-  max-width: 780px;
 }
 
-.categoryTag {
-  align-self: flex-start;
-  display: inline-block;
-  font-size: 0.6875rem;
+.ngoBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--c-brand-soft, rgba(46, 117, 89, 0.12));
+  color: var(--c-brand);
+  font-size: clamp(0.625rem, 0.8vw, 0.6875rem);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--c-brand);
-  background-color: var(--c-brand-soft);
   padding: 4px 12px;
   border-radius: var(--r-pill);
+  width: fit-content;
 }
 
-.creatorMainName {
+.ngoTitle {
   font-family: var(--font-sans);
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 700;
+  font-size: clamp(1.4rem, 2.4vw, 2.3rem);
+  font-weight: 800;
   color: var(--c-text);
   margin: 0;
   line-height: 1.18;
   letter-spacing: var(--ls-tight);
 }
 
-.tagline {
-  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
-  color: var(--c-text-2);
-  margin: 0;
+.ngoDescription {
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  color: var(--c-text);
+  font-weight: 500;
   line-height: 1.5;
+  margin: 0;
+  max-width: 600px;
 }
 
-.socialCtaBox {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-  flex-shrink: 0;
-}
-
-.instagramBtn {
+.ngoLocation {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, #e1306c 0%, #c13584 100%);
-  color: #ffffff;
-  padding: 10px 18px;
-  border-radius: var(--r-pill);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(225, 48, 108, 0.28);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.instagramBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(225, 48, 108, 0.38);
-}
-
-.handleText {
-  font-size: 0.75rem;
+  gap: 6px;
   color: var(--c-text-2);
+  font-size: clamp(0.75rem, 0.9vw, 0.8125rem);
   font-weight: 500;
+  margin-top: 2px;
 }
 
-/* Mission / Cause Card */
-.missionCard {
+/* 4-line story context under location */
+.ngoStoryText {
+  font-size: clamp(0.8125rem, 0.95vw, 0.875rem);
+  color: var(--c-text-2);
+  line-height: 1.65;
+  margin: var(--sp-2) 0 0 0;
+  max-width: 600px;
+}
+
+/* Impact counts grid */
+.ngoStatsStrip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-3);
   background-color: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--r-lg, 16px);
-  padding: clamp(var(--sp-6), 4vw, var(--sp-9));
+  padding: var(--sp-4);
   box-shadow: var(--sh-sm);
 }
 
-.causeHeader {
-  margin-bottom: var(--sp-6);
-}
-
-.causeBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #128c7e;
-  background-color: #e8f9ef;
-  padding: 6px 14px;
-  border-radius: var(--r-pill);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: var(--sp-3);
-}
-
-.missionTitle {
-  font-family: var(--font-sans);
-  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
-  font-weight: 700;
-  color: var(--c-text);
-  margin: 0 0 var(--sp-2) 0;
-  line-height: 1.25;
-}
-
-.missionSubtitle {
-  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
-  color: var(--c-text-2);
-  margin: 0;
-  line-height: 1.5;
-  font-weight: 500;
-}
-
-.storyParagraphs {
+.ngoStatItem {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-4);
-  margin-bottom: var(--sp-8);
-}
-
-.storyP {
-  font-size: clamp(0.88rem, 1.05vw, 0.98rem);
-  line-height: 1.7;
-  color: var(--c-text);
-  margin: 0;
-}
-
-/* Quote Box */
-.quoteBox {
-  margin: var(--sp-6) 0 0 0;
-  padding: var(--sp-5) var(--sp-6);
-  background-color: var(--c-brand-soft);
-  border-left: 4px solid var(--c-brand);
-  border-radius: 0 var(--r-md) var(--r-md) 0;
-  position: relative;
-}
-
-.quoteIcon {
-  color: var(--c-brand);
-  opacity: 0.35;
-  margin-bottom: 6px;
-}
-
-.quoteText {
-  font-family: var(--font-sans);
-  font-style: italic;
-  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
-  color: var(--c-text);
-  line-height: 1.6;
-  margin: 0 0 var(--sp-2) 0;
-}
-
-.quoteAuthor {
-  display: block;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  font-style: normal;
-  color: var(--c-brand);
-}
-
-/* Support Section & 3 Pillars */
-.supportSection {
-  background-color: var(--c-sunken);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-lg);
-  padding: clamp(var(--sp-6), 3.5vw, var(--sp-8));
-}
-
-.supportHeader {
-  display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: var(--sp-6);
+  text-align: center;
+  gap: 4px;
+  padding: var(--sp-3) var(--sp-2);
+  background-color: var(--c-sunken);
+  border-radius: var(--r-md, 10px);
 }
 
-.supportFlame {
-  color: #e06c3a;
-}
-
-.supportTitle {
-  font-family: var(--font-sans);
-  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
-  font-weight: 700;
-  color: var(--c-text);
-  margin: 0;
-}
-
-.supportGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-5);
-}
-
-.supportCard {
-  background-color: var(--c-surface);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-md);
-  padding: var(--sp-5);
-  display: flex;
-  gap: var(--sp-4);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.supportCard:hover {
-  transform: translateY(-2px);
-  border-color: var(--c-brand);
-}
-
-.supportIconWrap {
-  width: 34px;
-  height: 34px;
+.ngoStatIcon {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background-color: var(--c-brand-soft);
+  background-color: var(--c-brand-soft, rgba(46, 117, 89, 0.12));
   color: var(--c-brand);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 
-.pointTitle {
-  font-size: 0.875rem;
-  font-weight: 700;
+.ngoStatValue {
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-weight: 800;
   color: var(--c-text);
-  margin: 0 0 6px 0;
-  line-height: 1.3;
+  line-height: 1.1;
 }
 
-.pointDesc {
-  font-size: 0.78125rem;
+.ngoStatLabel {
+  font-size: clamp(0.625rem, 0.75vw, 0.6875rem);
+  font-weight: 600;
   color: var(--c-text-2);
-  margin: 0;
-  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-/* =========================================================
-   3. HANDCRAFTED CATALOG SECTION
-   ========================================================= */
-.catalogSection {
-  padding-top: var(--sp-6);
+/* 3. Featured 4 Products */
+.ngoFeaturedSection {
+  margin-bottom: var(--sp-6);
 }
 
-.catalogHeader {
+.sectionHeadRow {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: var(--sp-6);
-  padding-bottom: var(--sp-4);
+  margin-bottom: var(--sp-5);
+  padding-bottom: var(--sp-3);
   border-bottom: 1px solid var(--c-border);
 }
 
 .subHeading {
-  font-size: 0.6875rem;
+  font-size: clamp(0.625rem, 0.7vw, 0.6875rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -432,7 +204,7 @@
 
 .catalogTitle {
   font-family: var(--font-sans);
-  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.75rem);
   font-weight: 700;
   color: var(--c-text);
   margin: 0;
@@ -440,58 +212,1023 @@
 }
 
 .countBadge {
-  font-size: 0.75rem;
+  font-size: clamp(0.6875rem, 0.8vw, 0.75rem);
   font-weight: 600;
   color: var(--c-text-2);
   background-color: var(--c-sunken);
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: var(--r-pill);
   border: 1px solid var(--c-border);
 }
 
+.ngoRestGrid {
+  margin-top: var(--sp-5);
+  animation: fadeIn 0.3s ease;
+}
+
+.showMoreRow {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--sp-5);
+}
+
+.showMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background-color: var(--c-surface);
+  color: var(--c-text);
+  font-size: clamp(0.8125rem, 0.95vw, 0.875rem);
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--sh-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.showMoreBtn:hover {
+  background-color: var(--c-brand);
+  color: #ffffff;
+  border-color: var(--c-brand);
+  transform: translateY(-1px);
+  box-shadow: var(--sh-md);
+}
+
+/* 4. Creator Mission & Social Service: Compact & Clean */
+.missionSection {
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-6);
+  padding-block: 0;
+}
+
+.causeHeader {
+  margin-bottom: var(--sp-5);
+}
+
+.causeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: clamp(0.6875rem, 0.8vw, 0.75rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-brand);
+  background-color: var(--c-brand-soft, rgba(46, 117, 89, 0.12));
+  padding: 5px 14px;
+  border-radius: var(--r-pill);
+}
+
+.artisanElderQuoteGrid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: var(--sp-8);
+  align-items: center;
+}
+
+/* Natural image display without card borders or heavy box */
+.artisanElderImageWrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-lg, 16px);
+  overflow: hidden;
+}
+
+.artisanElderImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: var(--r-lg, 16px);
+}
+
+.artisanQuoteCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quoteBox {
+  position: relative;
+  background-color: var(--c-sunken);
+  border-left: 4px solid var(--c-brand);
+  border-radius: 0 var(--r-lg) var(--r-lg) 0;
+  padding: var(--sp-5) var(--sp-6);
+  margin: 0;
+}
+
+.quoteIcon {
+  color: var(--c-brand);
+  opacity: 0.5;
+  margin-bottom: var(--sp-2);
+}
+
+.quoteText {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(0.95rem, 1.25vw, 1.18rem);
+  font-style: italic;
+  color: var(--c-text);
+  line-height: 1.65;
+  margin: 0 0 var(--sp-2) 0;
+}
+
+.quoteAuthor {
+  display: block;
+  font-size: clamp(0.75rem, 0.85vw, 0.8125rem);
+  font-weight: 700;
+  font-style: normal;
+  color: var(--c-brand);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ngoFollowBox {
+  margin-top: var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.ngoFollowPrompt {
+  font-size: clamp(0.75rem, 0.85vw, 0.8125rem);
+  color: var(--c-text-2);
+  margin: 0;
+}
+
 /* =========================================================
-   RESPONSIVE LAYOUT
+   INFLUENCER CREATOR LAYOUT
+   (Consistent layout on phone & desktop)
+   ========================================================= */
+
+/* 1. Circular Avatar Hero */
+.influHero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--sp-6);
+  padding: var(--sp-6) var(--sp-8);
+  background: linear-gradient(
+    135deg,
+    var(--c-surface) 0%,
+    var(--c-sunken) 100%
+  );
+  border-radius: var(--r-xl, 20px);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--sh-sm);
+  margin-bottom: var(--sp-8);
+}
+
+.influAvatarWrap {
+  position: relative;
+  width: clamp(80px, 10vw, 130px);
+  height: clamp(80px, 10vw, 130px);
+  flex-shrink: 0;
+}
+
+.influStoryRing {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  padding: 3px;
+  animation: pulseGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.85; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.02); }
+}
+
+.influAvatarRing {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--c-surface);
+  background-color: var(--c-surface);
+}
+
+.influAvatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.influBioBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  text-align: left;
+}
+
+.categoryBadge {
+  align-self: flex-start;
+  display: inline-block;
+  font-size: clamp(0.625rem, 0.75vw, 0.6875rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-brand);
+  background-color: var(--c-brand-soft, rgba(46, 117, 89, 0.12));
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+}
+
+.influName {
+  font-family: var(--font-sans);
+  font-size: clamp(1.3rem, 2.2vw, 2.2rem);
+  font-weight: 800;
+  color: var(--c-text);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.influTagline {
+  font-size: clamp(0.8125rem, 0.95vw, 0.95rem);
+  color: var(--c-text-2);
+  line-height: 1.45;
+  margin: 0;
+  max-width: 600px;
+}
+
+.influMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.influMetaChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: clamp(0.6875rem, 0.8vw, 0.75rem);
+  font-weight: 500;
+  color: var(--c-text-2);
+  background-color: var(--c-sunken);
+  padding: 3px 9px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--c-border);
+}
+
+.instagramBtn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+  color: #ffffff;
+  font-size: clamp(0.75rem, 0.85vw, 0.8125rem);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  text-decoration: none;
+  margin-top: 4px;
+  box-shadow: 0 2px 8px rgba(220, 39, 67, 0.25);
+  transition: all 0.2s ease;
+}
+
+.instagramBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(220, 39, 67, 0.35);
+  color: #ffffff;
+}
+
+/* 2. Feature Reel Video */
+.influReelSection {
+  margin-bottom: var(--sp-10);
+}
+
+.influReelBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: clamp(0.625rem, 0.75vw, 0.6875rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-brand);
+  margin-bottom: var(--sp-3);
+}
+
+.influReelPlayer {
+  position: relative;
+  width: 100%;
+  max-height: 480px;
+  aspect-ratio: 21 / 9;
+  border-radius: var(--r-xl, 20px);
+  overflow: hidden;
+  background-color: #0d1117;
+  border: 1px solid var(--c-border);
+  box-shadow: var(--sh-md);
+}
+
+.influReelVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.influReelGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.influReelCaption {
+  position: absolute;
+  bottom: var(--sp-5);
+  left: var(--sp-5);
+  right: var(--sp-5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: clamp(0.8125rem, 1vw, 0.9375rem);
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+/* 3. Studio Handcrafted Pieces (Shop Now) */
+.studioCreationsSection {
+  margin-bottom: var(--sp-10);
+}
+
+/* 4. Shop the Look — 2 Reels with Related Products */
+.shopTheLookSection {
+  margin-bottom: var(--sp-12);
+}
+
+.shopTheLookList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+
+.shopTheLookGrid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--sp-6);
+  align-items: start;
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl, 20px);
+  padding: var(--sp-5);
+  box-shadow: var(--sh-sm);
+}
+
+.shopLookVideo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--r-lg, 14px);
+  overflow: hidden;
+  background-color: #0f1115;
+  border: 1px solid var(--c-border);
+  box-shadow: var(--sh-sm);
+  align-self: start;
+}
+
+.shopLookVideoBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  z-index: 2;
+}
+
+.shopLookVideoEl {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.shopLookVideoHandle {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  z-index: 2;
+}
+
+.shopLookProducts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.lookHeaderRow {
+  margin-bottom: var(--sp-3);
+}
+
+.lookHeading {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  font-weight: 700;
+  color: var(--c-text);
+  margin: 0 0 2px 0;
+}
+
+.lookSubTag {
+  font-size: clamp(0.6875rem, 0.8vw, 0.75rem);
+  color: var(--c-text-2);
+}
+
+/* 4. More Products Section */
+.catalogSection {
+  margin-bottom: var(--sp-12);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (Screen-aware font & layout scaling)
    ========================================================= */
 @media (max-width: 960px) {
-  .supportGrid {
+  .ngoProfileStatsRow {
     grid-template-columns: 1fr;
-    gap: var(--sp-4);
+    gap: var(--sp-6);
   }
 
-  .reelHeroWrapper {
+  .artisanElderQuoteGrid {
     grid-template-columns: 1fr;
+    gap: var(--sp-5);
   }
 
-  .imageHeroCard {
+  .shopTheLookGrid {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .influReelPlayer {
     aspect-ratio: 16 / 9;
   }
 }
 
 @media (max-width: 640px) {
-  .profileHeader {
-    flex-direction: column;
-    align-items: flex-start;
+  /* Page Wrap & Breadcrumb */
+  .pageWrap {
+    padding-block: var(--sp-2) var(--sp-6);
   }
 
-  .socialCtaBox {
-    align-items: flex-start;
-    width: 100%;
+  .breadcrumb {
+    font-size: 0.71875rem !important;
+    gap: 5px !important;
+    margin-bottom: var(--sp-3) !important;
+  }
+
+  /* Phone view: Influencer Header */
+  .influHero {
+    flex-direction: row !important;
+    text-align: left !important;
+    align-items: center !important;
+    padding: var(--sp-3) var(--sp-3-5, 14px) !important;
+    gap: var(--sp-3) !important;
+    margin-bottom: var(--sp-5) !important;
+    border-radius: 14px !important;
+  }
+
+  .influAvatarWrap {
+    width: 66px !important;
+    height: 66px !important;
+    flex-shrink: 0;
+  }
+
+  .influBioBlock {
+    gap: 3px !important;
+  }
+
+  .categoryBadge {
+    font-size: 0.625rem !important;
+    letter-spacing: 0.06em !important;
+    padding: 2px 8px !important;
+    align-self: flex-start !important;
+  }
+
+  .influName {
+    font-size: 1.1875rem !important;
+    font-weight: 750 !important;
+    line-height: 1.18 !important;
+  }
+
+  .influTagline {
+    font-size: 0.78125rem !important;
+    line-height: 1.4 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .influMeta {
+    gap: 4px !important;
+    margin-top: 2px !important;
+    justify-content: flex-start !important;
+  }
+
+  .influMetaChip {
+    font-size: 0.65625rem !important;
+    padding: 2px 7px !important;
+    gap: 3px !important;
   }
 
   .instagramBtn {
-    width: 100%;
-    justify-content: center;
+    font-size: 0.71875rem !important;
+    padding: 5px 12px !important;
+    gap: 4px !important;
+    align-self: flex-start !important;
+    margin-top: 3px !important;
   }
 
-  .imageHeroCard {
-    aspect-ratio: 1 / 1;
-    min-height: 280px;
-    max-height: 420px;
+  .instagramBtn svg {
+    width: 12px !important;
+    height: 12px !important;
   }
 
-  .catalogHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--sp-2);
+  /* Top Studio Video on mobile */
+  .influReelSection {
+    margin-bottom: var(--sp-6) !important;
+  }
+
+  .influReelBadge {
+    font-size: 0.625rem !important;
+    letter-spacing: 0.06em !important;
+    margin-bottom: 5px !important;
+    gap: 5px !important;
+  }
+
+  .influReelPlayer {
+    aspect-ratio: 16 / 9 !important;
+    border-radius: var(--r-md, 12px) !important;
+  }
+
+  .influReelCaption {
+    font-size: 0.6875rem !important;
+    line-height: 1.35 !important;
+    bottom: 8px !important;
+    left: 10px !important;
+    right: 10px !important;
+    gap: 5px !important;
+  }
+
+  .influReelCaption svg {
+    width: 12px !important;
+    height: 12px !important;
+    flex-shrink: 0;
+  }
+
+  /* Section Headings & Badges */
+  .sectionHeadRow {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 3px !important;
+    margin-bottom: var(--sp-3) !important;
+    padding-bottom: var(--sp-2) !important;
+  }
+
+  .subHeading {
+    font-size: 0.625rem !important;
+    letter-spacing: 0.07em !important;
+    margin-bottom: 1px !important;
+  }
+
+  .catalogTitle {
+    font-size: 1.0625rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .countBadge {
+    font-size: 0.625rem !important;
+    padding: 2.5px 8px !important;
+    margin-top: 2px !important;
+  }
+
+  .studioCreationsSection {
+    margin-bottom: var(--sp-6) !important;
+  }
+
+  /* Shop the look on phone: prominent reel + compact product cards + tight border spacing */
+  .shopTheLookSection {
+    margin-bottom: var(--sp-4) !important;
+  }
+
+  .shopTheLookList {
+    gap: 10px !important;
+  }
+
+  .shopTheLookGrid {
+    grid-template-columns: clamp(142px, 46vw, 172px) 1fr !important;
+    gap: 8px !important;
+    padding: 6px !important;
+    align-items: flex-start !important;
+    border-radius: 10px !important;
+  }
+
+  .shopLookVideo {
+    width: 100% !important;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: 305px !important;
+    aspect-ratio: 9 / 16 !important;
+    align-self: flex-start !important;
+    border-radius: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .shopLookVideoBadge {
+    font-size: 0.59375rem !important;
+    padding: 2px 7px !important;
+    top: 6px !important;
+    left: 6px !important;
+  }
+
+  .shopLookVideoHandle {
+    font-size: 0.625rem !important;
+    padding: 2px 7px !important;
+    bottom: 6px !important;
+    left: 6px !important;
+  }
+
+  .lookHeading {
+    font-size: 0.8125rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .lookSubTag {
+    font-size: 0.625rem !important;
+  }
+
+  .lookHeaderRow {
+    margin-bottom: 5px !important;
+    padding-top: 2px !important;
+  }
+
+  .shopLookProducts {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    min-width: 0 !important;
+  }
+
+  /* Compact Horizontal Product Cards beside the Reel */
+  .shopLookProducts [class*="grid"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+
+  .shopLookProducts [class*="card"] {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 4px 6px !important;
+    gap: 7px !important;
+    border-radius: 7px !important;
+    background-color: var(--c-sunken) !important;
+    border: 1px solid var(--c-border) !important;
+    min-height: 0 !important;
+    height: auto !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
+
+  .shopLookProducts [class*="media"] {
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+    flex-shrink: 0 !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+  }
+
+  .shopLookProducts [class*="image"] {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .shopLookProducts [class*="body"] {
+    padding: 0 !important;
+    gap: 2px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .shopLookProducts [class*="title"] {
+    font-size: 0.71875rem !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  .shopLookProducts [class*="titleLink"] {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: block !important;
+  }
+
+  .shopLookProducts [class*="footer"] {
+    margin-top: 2px !important;
+    padding-top: 0 !important;
+    gap: 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .shopLookProducts [class*="price"] {
+    gap: 3px !important;
+    align-items: baseline !important;
+  }
+
+  .shopLookProducts [class*="priceCurrent"] {
+    font-size: 0.8125rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+  }
+
+  .shopLookProducts [class*="priceWas"] {
+    display: none !important;
+  }
+
+  .shopLookProducts [class*="priceOff"] {
+    font-size: 0.59375rem !important;
+  }
+
+  .shopLookProducts [class*="add"] {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .shopLookProducts [class*="add"] svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+
+  .shopLookProducts [class*="flags"],
+  .shopLookProducts [class*="wishlist"] {
+    display: none !important;
+  }
+
+  /* Homepage-style banner on phone: clean full display */
+  .homeStyleHeroBanner {
+    margin-bottom: var(--sp-4) !important;
+  }
+
+  .homeBannerImg {
+    min-height: unset !important;
+    max-height: unset !important;
+  }
+
+  /* NGO Section Mobile Typography */
+  .ngoProfileStatsRow {
+    padding-bottom: var(--sp-4) !important;
+    margin-bottom: var(--sp-4) !important;
+    gap: var(--sp-3-5, 14px) !important;
+  }
+
+  .ngoBadge {
+    font-size: 0.625rem !important;
+    letter-spacing: 0.06em !important;
+    padding: 2.5px 8px !important;
+  }
+
+  .ngoTitle {
+    font-size: 1.22rem !important;
+    line-height: 1.18 !important;
+  }
+
+  .ngoDescription {
+    font-size: 0.8125rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .ngoLocation {
+    font-size: 0.71875rem !important;
+    margin-top: 1px !important;
+    gap: 4px !important;
+  }
+
+  .ngoStoryText {
+    font-size: 0.78125rem !important;
+    line-height: 1.55 !important;
+    margin-top: 4px !important;
+  }
+
+  /* CRITICAL: COUNTS IN EXACTLY ONE SINGLE LINE ON PHONE */
+  .ngoStatsStrip {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 4px !important;
+    padding: 6px 4px !important;
+    background-color: var(--c-surface) !important;
+    border: 1px solid var(--c-border) !important;
+    border-radius: var(--r-md, 10px) !important;
+  }
+
+  .ngoStatItem {
+    padding: 5px 2px !important;
+    gap: 2px !important;
+    background-color: var(--c-sunken) !important;
+    border-radius: 6px !important;
+  }
+
+  .ngoStatIcon {
+    width: 22px !important;
+    height: 22px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .ngoStatIcon svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+
+  .ngoStatValue {
+    font-size: 0.875rem !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+  }
+
+  .ngoStatLabel {
+    font-size: 0.5625rem !important;
+    font-weight: 600 !important;
+    line-height: 1.15 !important;
+    letter-spacing: 0 !important;
+    white-space: normal !important;
+  }
+
+  .ngoFeaturedSection {
+    margin-bottom: var(--sp-6) !important;
+  }
+
+  .showMoreBtn {
+    font-size: 0.78125rem !important;
+    padding: 7px 18px !important;
+  }
+
+  /* Mission Section on Mobile */
+  .missionSection {
+    margin-top: var(--sp-2) !important;
+    margin-bottom: var(--sp-4) !important;
+  }
+
+  .causeBadge {
+    font-size: 0.625rem !important;
+    letter-spacing: 0.06em !important;
+    padding: 3px 9px !important;
+  }
+
+  .artisanElderImageWrap {
+    aspect-ratio: 16 / 10 !important;
+    border-radius: 10px !important;
+  }
+
+  .quoteBox {
+    padding: 9px 12px !important;
+  }
+
+  .quoteIcon {
+    width: 18px !important;
+    height: 18px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .quoteText {
+    font-size: 0.84375rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .quoteAuthor {
+    font-size: 0.6875rem !important;
+  }
+
+  .ngoFollowBox {
+    margin-top: var(--sp-2) !important;
+    gap: var(--sp-2) !important;
+  }
+
+  .ngoFollowPrompt {
+    font-size: 0.71875rem !important;
+  }
+}
+
+/* Extra compact screens (≤ 380px) */
+@media (max-width: 380px) {
+  .influHero {
+    padding: var(--sp-2-5, 10px) !important;
+  }
+
+  .influAvatarWrap {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .influName {
+    font-size: 1.0625rem !important;
+  }
+
+  .influTagline {
+    font-size: 0.75rem !important;
+  }
+
+  .ngoTitle {
+    font-size: 1.125rem !important;
+  }
+
+  .catalogTitle {
+    font-size: 0.9875rem !important;
+  }
+
+  .ngoStatValue {
+    font-size: 0.8125rem !important;
+  }
+
+  .ngoStatLabel {
+    font-size: 0.5rem !important;
+  }
+
+  .shopTheLookGrid {
+    grid-template-columns: minmax(130px, 45%) 1fr !important;
+    gap: 6px !important;
+    padding: 4px !important;
+  }
+
+  .shopLookVideo {
+    max-height: 260px !important;
+  }
+
+  .shopLookProducts [class*="media"] {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  .shopLookProducts [class*="title"] {
+    font-size: 0.6875rem !important;
+  }
+
+  .shopLookProducts [class*="priceCurrent"] {
+    font-size: 0.75rem !important;
+  }
+
+  .shopLookProducts [class*="add"] {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Gift, ArrowRight, Sparkles } from "lucide-react";
 import Button from "../../components/ui/Button.jsx";
+import giftBoxBanner from "../../assets/giftbox_banner.jpg";
 import s from "./CountdownBanner.module.css";
 
 const BANNER_IMAGE =
   "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1200&q=85";
 
 export default function CountdownBanner() {
-  const [imgSrc, setImgSrc] = useState(BANNER_IMAGE);
+  const [imgSrc, setImgSrc] = useState(giftBoxBanner);
 
   return (
     <section className={s.banner} aria-labelledby="giftbox-banner-heading">

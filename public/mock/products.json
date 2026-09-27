@@ -43,6 +43,13 @@
       "mediaType": "banner",
       "mediaUrl": "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg"
     },
+    "artisan": {
+      "name": "Sunita Devi",
+      "location": "Barmer, Rajasthan",
+      "photo": "https://images.unsplash.com/photo-1590086782957-93c06ef21604?auto=format&fit=crop&w=400&q=80",
+      "quote": "I learned to knot macramé from my grandmother. Every thread I tie carries a memory of home."
+    },
+    "impactTag": "Your purchase supports 2 days of skill training for rural women",
     "isBestSeller": true,
     "inStock": true,
     "stockCount": 23,
@@ -77,6 +84,13 @@
       "mediaType": "banner",
       "mediaUrl": "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg"
     },
+    "artisan": {
+      "name": "Kamla Ben",
+      "location": "Kutch, Gujarat",
+      "photo": "https://images.unsplash.com/photo-1564460576398-ef55d99548b2?auto=format&fit=crop&w=400&q=80",
+      "quote": "Lippan kaam is our village's heritage. I set each mirror by hand — no two panels are ever the same."
+    },
+    "impactTag": "Your purchase preserves 3 days of ancestral Lippan craft heritage",
     "ageGroup": "All ages",
     "specifications": {
       "dimensions": "Diameter (12 inches)",
@@ -98,52 +112,111 @@
     "lowStock": false
   },
   {
-    "id": "prod-wall-decor-03",
-    "slug": "resin-ocean-wave-wall-art",
-    "title": "Resin Ocean Wave Wall Art",
-    "description": "Layered resin waves poured over a white base and edged in gold leaf.",
-    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSniZSvVztYHpJg_Prz2nXVtWNtmtdvnYlNusQahc_uAWl6HPovLFXtcK1CXt9QrNCxdzgjrGlDMTAyXs5DMzpbcSR2JosuWFFy-_akvs1KUOTMt_nRUFowkQ",
+    "id": "prod-resin-pendant-01",
+    "slug": "botanical-resin-pendant-necklace",
+    "title": "Botanical Resin Teardrop Pendant",
+    "description": "Handcrafted crystal-clear resin teardrop pendant encasing real wild forget-me-nots and fern fronds on an 18k gold-plated chain.",
+    "image": "https://images.pexels.com/photos/16110426/pexels-photo-16110426.jpeg",
     "images": [
-      "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSniZSvVztYHpJg_Prz2nXVtWNtmtdvnYlNusQahc_uAWl6HPovLFXtcK1CXt9QrNCxdzgjrGlDMTAyXs5DMzpbcSR2JosuWFFy-_akvs1KUOTMt_nRUFowkQ"
+      "https://images.pexels.com/photos/16110426/pexels-photo-16110426.jpeg"
     ],
     "category": "home-decor",
     "subcategory": "wall-decor",
     "gender": "unisex",
-    "price": 2499,
-    "salePrice": null,
-    "isOnSale": false,
-    "discountPercentage": 0,
-    "rating": 4.5,
-    "reviewCount": 2,
-    "orderCount": 95,
+    "price": 1199,
+    "salePrice": 999,
+    "isOnSale": true,
+    "discountPercentage": 17,
+    "rating": 4.8,
+    "reviewCount": 12,
+    "orderCount": 142,
     "createdAt": "2026-07-27",
-    "isFeatured": false,
+    "isFeatured": true,
     "productType": "creator",
     "creator": {
       "name": "Priya Creations",
       "slug": "priya-crafts",
       "creatorCategory": "influencer",
       "mediaType": "reel",
-      "mediaUrl": "https://videos.pexels.com/video-files/34428330/14585482_1280_720_50fps.mp4"
+      "mediaUrl": "https://www.pexels.com/download/video/7253687/"
     },
+    "seenOn": {
+      "handle": "@priyacrafts.studio",
+      "reelVideoUrl": "https://www.pexels.com/download/video/7253689/"
+    },
+    "creatorVideoUrl": "https://www.pexels.com/download/video/7253689/",
     "ageGroup": "All ages",
     "specifications": {
-      "dimensions": "Length (18 inches), Width (12 inches)",
-      "materials": "Epoxy resin, mica pigments, gold leaf, MDF"
+      "dimensions": "Pendant (1.5 inches), Chain (18 inches)",
+      "materials": "Eco-resin, preserved flowers, 18k gold-plated brass"
     },
     "gifting": {
-      "idealFor": "Housewarming, Festivals, Anniversaries",
-      "targetAudience": "Anyone setting up or refreshing a home"
+      "idealFor": "Birthdays, Anniversaries, Everyday Wear",
+      "targetAudience": "Lovers of delicate handmade botanical jewelry"
     },
     "variants": [
       {
-        "id": "prod-wall-decor-03-v1",
-        "name": "Standard"
+        "id": "prod-resin-pendant-01-v1",
+        "name": "Teardrop Gold"
       }
     ],
-    "isBestSeller": false,
+    "isBestSeller": true,
     "inStock": true,
-    "stockCount": 6,
+    "stockCount": 18,
+    "lowStock": false
+  },
+  {
+    "id": "prod-resin-bangles-01",
+    "slug": "floral-resin-statement-bangles",
+    "title": "Floral Resin Statement Bangles (Set of 2)",
+    "description": "Chunky hand-cast resin bangles embedded with real dried marigold petals, gold flakes, and botanical stems.",
+    "image": "https://media.istockphoto.com/id/599912818/photo/fashion-portrait-of-beautiful-hippie-young-woman.jpg?s=1024x1024&w=is&k=20&c=EISIcQTdgCHbtMgUmObFPwERivXjv3OsgPdfYPweocA=",
+    "images": [
+      "https://media.istockphoto.com/id/599912818/photo/fashion-portrait-of-beautiful-hippie-young-woman.jpg?s=1024x1024&w=is&k=20&c=EISIcQTdgCHbtMgUmObFPwERivXjv3OsgPdfYPweocA="
+    ],
+    "category": "home-decor",
+    "subcategory": "wall-decor",
+    "gender": "unisex",
+    "price": 1499,
+    "salePrice": 1299,
+    "isOnSale": true,
+    "discountPercentage": 13,
+    "rating": 4.9,
+    "reviewCount": 15,
+    "orderCount": 180,
+    "createdAt": "2026-08-01",
+    "isFeatured": true,
+    "productType": "creator",
+    "creator": {
+      "name": "Priya Creations",
+      "slug": "priya-crafts",
+      "creatorCategory": "influencer",
+      "mediaType": "reel",
+      "mediaUrl": "https://www.pexels.com/download/video/7253687/"
+    },
+    "seenOn": {
+      "handle": "@priyacrafts.studio",
+      "reelVideoUrl": "https://www.pexels.com/download/video/7253687/"
+    },
+    "creatorVideoUrl": "https://www.pexels.com/download/video/7253687/",
+    "ageGroup": "All ages",
+    "specifications": {
+      "dimensions": "Inner Diameter (2.5 inches), Width (1 inch)",
+      "materials": "Hand-poured epoxy resin, real dried marigold, gold leaf"
+    },
+    "gifting": {
+      "idealFor": "Festivals, Weddings, Boho Styling",
+      "targetAudience": "Anyone looking for statement handcrafted resin jewelry"
+    },
+    "variants": [
+      {
+        "id": "prod-resin-bangles-01-v1",
+        "name": "Gold Marigold"
+      }
+    ],
+    "isBestSeller": true,
+    "inStock": true,
+    "stockCount": 14,
     "lowStock": false
   },
   {
@@ -298,6 +371,11 @@
       "mediaType": "reel",
       "mediaUrl": "https://videos.pexels.com/video-files/34428330/14585482_1280_720_50fps.mp4"
     },
+    "seenOn": {
+      "handle": "@priyacrafts.studio",
+      "reelVideoUrl": "https://videos.pexels.com/video-files/5634000/5634000-hd_1280_720_24fps.mp4"
+    },
+    "creatorVideoUrl": "https://videos.pexels.com/video-files/5634000/5634000-hd_1280_720_24fps.mp4",
     "ageGroup": "All ages",
     "specifications": {
       "dimensions": "Diameter (4 inches) each",
@@ -511,6 +589,11 @@
       "mediaType": "reel",
       "mediaUrl": "https://videos.pexels.com/video-files/34428330/14585482_1280_720_50fps.mp4"
     },
+    "seenOn": {
+      "handle": "@priyacrafts.studio",
+      "reelVideoUrl": "https://videos.pexels.com/video-files/6275420/6275420-sd_960_506_30fps.mp4"
+    },
+    "creatorVideoUrl": "https://videos.pexels.com/video-files/6275420/6275420-sd_960_506_30fps.mp4",
     "ageGroup": "All ages",
     "specifications": {
       "dimensions": "Length (8 inches), Width (8 inches)",
@@ -933,6 +1016,13 @@
       "mediaType": "banner",
       "mediaUrl": "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg"
     },
+    "artisan": {
+      "name": "Rekha Kumari",
+      "location": "Jaipur, Rajasthan",
+      "photo": "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=400&q=80",
+      "quote": "I crochet dreamcatchers in evenings after cooking. This craft gave me financial independence for the first time."
+    },
+    "impactTag": "Your purchase funds childcare access for 1 artisan mother for a week",
     "ageGroup": "All ages",
     "specifications": {
       "dimensions": "Diameter (8 inches), Length (22 inches)",
@@ -989,6 +1079,21 @@
         "name": "Standard"
       }
     ],
+    "productType": "creator",
+    "creator": {
+      "name": "Ananya Sharma",
+      "slug": "local-artisans",
+      "creatorCategory": "ngo_artisan",
+      "mediaType": "banner",
+      "mediaUrl": "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg"
+    },
+    "artisan": {
+      "name": "Meera Bai",
+      "location": "Jodhpur, Rajasthan",
+      "photo": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80",
+      "quote": "Tying these hand-cast brass bells gives me steady livelihood and self-respect in my community."
+    },
+    "impactTag": "Your purchase sponsors 1 week of nutrition supplement for rural artisan families",
     "isBestSeller": true,
     "inStock": true,
     "stockCount": 33,
@@ -1030,6 +1135,21 @@
         "name": "Standard"
       }
     ],
+    "productType": "creator",
+    "creator": {
+      "name": "Ananya Sharma",
+      "slug": "local-artisans",
+      "creatorCategory": "ngo_artisan",
+      "mediaType": "banner",
+      "mediaUrl": "https://okhai.org/cdn/shop/products/12_dbd02675-3567-4efe-89bb-f6693c9cd5d8.jpg"
+    },
+    "artisan": {
+      "name": "Shanti Devi",
+      "location": "Barmer, Rajasthan",
+      "photo": "https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=400&q=80",
+      "quote": "Weaving natural rattan and macramé has been our livelihood for three generations."
+    },
+    "impactTag": "Your purchase supports 3 days of clean drinking water supply for artisan hamlets",
     "isBestSeller": false,
     "inStock": true,
     "stockCount": 13,

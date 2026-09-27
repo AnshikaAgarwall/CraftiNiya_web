@@ -10,6 +10,8 @@ import collabBannerWide from "../assets/COLLABBRAND.png";
 import bundleBannerWide from "../assets/BRANDPROMOTION.png";
 import ananyaCreatorImg from "../assets/ananya creator.png";
 import ananyaCreatorLandscape from "../assets/ananya_creator_horizontal.jpg";
+import creatorBanner from "../assets/LOCALSHOPS.png";
+import creatorBannerMobile from "../assets/LOCALSHOPS_mobile.jpg";
 
 /**
  * Three partner types supported by CraftiNiya:
@@ -155,9 +157,9 @@ export const CREATORS = [
     category: "ngo_artisan",
     categoryLabel: "Artisan Collective & NGO",
     mediaType: "banner",
-    mediaUrl: ananyaCreatorLandscape,
-    mediaUrlDesktop: ananyaCreatorLandscape,
-    mediaUrlMobile: ananyaCreatorImg,
+    mediaUrl: creatorBanner,
+    mediaUrlDesktop: creatorBanner,
+    mediaUrlMobile: creatorBannerMobile,
     posterUrl: ananyaCreatorImg,
     location: "Jaipur, Rajasthan",
     founded: "Heritage Studio Collective",
@@ -199,10 +201,10 @@ export const CREATORS = [
     category: "influencer",
     categoryLabel: "Independent Maker",
     mediaType: "reel",
-    mediaUrl:
-      "https://videos.pexels.com/video-files/34428330/14585482_1280_720_50fps.mp4",
+    mediaUrl: "https://www.pexels.com/download/video/7253687/",
+    processVideoUrl: "https://www.pexels.com/download/video/7253689/",
     posterUrl:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80",
+      "https://images.pexels.com/photos/9748484/pexels-photo-9748484.jpeg?auto=compress&cs=tinysrgb&w=1200",
     location: "Bengaluru, India",
     crafts: ["Botanical Resin", "Floral Keepsakes", "Aromatherapy"],
     instagramHandle: "@priyacrafts.studio",
