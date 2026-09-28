@@ -53,6 +53,24 @@
   --c-support: #8ba888;
 
   /* ---------------------------------------------------------
+     MOBILE DRAWER PALETTE — strictly derived from brand palette:
+     Deep Pine #1F3A2B · Moss Green #4A6B53 · Laurel #EEF4ED ·
+     Pale Pink #F8EFF2 · Linen Sunken #F8F8F8
+     --------------------------------------------------------- */
+  --c-drawer-banner-bg: linear-gradient(135deg, #1f3a2b 0%, #36533f 100%);
+  /* Deep Pine to Mid-Moss gradient for promotional / account banner */
+  --c-drawer-icon-green: #eef4ed;
+  /* Laurel tint — circular icon ground for categories / shop */
+  --c-drawer-icon-pink: #f8eff2;
+  /* Pale Pink tint — circular icon ground for sale / special */
+  --c-drawer-icon-sage: #e8ede8;
+  /* Soft Sage — circular icon ground for gifts / artisans */
+  --c-drawer-icon-clay: #fbf6f0;
+  /* Linen warm ground — circular icon ground for care & support */
+  --c-drawer-close-bg: #f4f5f4;
+  /* Soft neutral ground for circular close button */
+
+  /* ---------------------------------------------------------
      TEXT
      --c-text-2 is a grey-green rather than Moss on purpose:
      Moss is the link/button colour, and captions in the same

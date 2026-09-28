@@ -3,13 +3,22 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   ChevronDown,
+  ChevronRight,
+  Gift,
+  Handshake,
   Heart,
   HelpCircle,
+  Home,
+  Info,
+  LayoutGrid,
   MapPin,
   MessageCircle,
   Search,
   ShoppingBag,
+  Sparkles,
+  Tag,
   User,
+  Users,
   X,
 } from "lucide-react";
 import { cn } from "../../lib/cn.js";
@@ -35,19 +44,39 @@ const TRENDY_SEARCH_PLACEHOLDERS = [
   "Search 'curated gift boxes'...",
 ];
 
-/**
- * Two-tier header.
- *
- *   Row 1 — brand centred, utility icons right
- *   Row 2 — primary navigation, centred
- *
- * On mobile the second row collapses into a drawer and the brand shifts left,
- * because a centred wordmark plus four icons does not fit a 360px viewport
- * without either wrapping or shrinking the tap targets below 44px.
- *
- * "Categories" opens the mega menu on hover (and click for accessibility).
- * Closes when mouse leaves the trigger + panel, or on outside click / Escape.
- */
+const NAV_ITEM_CONFIG = {
+  "/": {
+    icon: Home,
+    iconClass: "itemIconGreen",
+    title: "Home",
+    subtitle: "Back to studio showcase & collections",
+  },
+  "/categories": {
+    icon: LayoutGrid,
+    iconClass: "itemIconSage",
+    title: "All Categories",
+    subtitle: "Ceramics, candles, resin & home decor",
+  },
+  "#partners": {
+    icon: Handshake,
+    iconClass: "itemIconClay",
+    title: "Partners & Creators",
+    subtitle: "Artisan collectives & studio makers",
+  },
+  "/sale": {
+    icon: Tag,
+    iconClass: "itemIconPink",
+    title: "Festive Sale",
+    subtitle: "Handcrafted specials up to 40% off",
+  },
+  "/about": {
+    icon: Info,
+    iconClass: "itemIconGreen",
+    title: "About CraftiNiya",
+    subtitle: "Heritage traditions & rural workshops",
+  },
+};
+
 export default function Header() {
   const { itemCount } = useCart();
   const { count: wishlistCount } = useWishlist();
@@ -349,10 +378,10 @@ export default function Header() {
           >
             {/* Drawer Header */}
             <div className={s.drawerHeader}>
-              <div className={s.drawerBrand}>
-                <span className={s.drawerBrandName}>{BRAND.name}</span>
-                <span className={s.drawerBrandTagline}>{BRAND.tagline}</span>
-              </div>
+              <Link to="/" className={s.brand} onClick={closeMenu} aria-label={`${BRAND.name} home`}>
+                <span className={s.brandName}>{BRAND.name}</span>
+                <span className={s.brandTagline}>{BRAND.tagline}</span>
+              </Link>
               <button
                 type="button"
                 className={s.drawerCloseBtn}
@@ -363,59 +392,104 @@ export default function Header() {
               </button>
             </div>
 
-            {/* User Account Bar */}
-            <div className={s.drawerUserBar}>
-              <Link
-                to={accountTo}
-                className={s.drawerUserLink}
-                onClick={closeMenu}
-              >
-                <div className={s.drawerUserAvatar}>
-                  {user?.avatarUrl ? (
-                    <img src={user.avatarUrl} alt="" className={s.userAvatarImg} />
-                  ) : (
-                    <User size={18} />
-                  )}
-                </div>
-                <div className={s.drawerUserInfo}>
-                  <span className={s.drawerUserName}>
-                    {isAuthenticated ? user?.name || "My Account" : "Sign In / Register"}
-                  </span>
-                  <span className={s.drawerUserSub}>
-                    {isAuthenticated ? "View profile & orders" : "10% off your first handcrafted order"}
-                  </span>
-                </div>
-                <ArrowRight size={14} className={s.drawerUserArrow} />
-              </Link>
-            </div>
+            <div className={s.drawerBody}>
+              {/* User Account / Welcome Offer Banner (matches screenshot banner card) */}
+              <div className={s.drawerBannerWrap}>
+                <Link
+                  to={accountTo}
+                  className={s.drawerBannerCard}
+                  onClick={closeMenu}
+                >
+                  <div className={s.drawerBannerContent}>
+                    <span className={s.drawerBannerBadge}>
+                      {isAuthenticated ? "Studio Member" : "Special Offer"}
+                    </span>
+                    <h3 className={s.drawerBannerTitle}>
+                      {isAuthenticated ? `Hi, ${user?.name || "Member"}` : "Flat 10% Off First Order"}
+                    </h3>
+                    <p className={s.drawerBannerSubtitle}>
+                      {isAuthenticated ? "View profile, orders & saved pieces" : "Handcrafted heirlooms direct from artisans"}
+                    </p>
+                    <div className={s.drawerBannerAction}>
+                      <span>{isAuthenticated ? "My Account" : "Explore Now"}</span>
+                      <ArrowRight size={13} aria-hidden="true" />
+                    </div>
+                  </div>
+                  <div className={s.drawerBannerBadgeCircle}>
+                    {isAuthenticated && user?.avatarUrl ? (
+                      <img src={user.avatarUrl} alt="" className={s.userAvatarImg} />
+                    ) : (
+                      <Sparkles size={20} className={s.drawerBannerStarIcon} />
+                    )}
+                  </div>
+                </Link>
+              </div>
 
-            {/* Navigation links */}
-            <nav className={s.drawerNav}>
-              <div className={s.drawerSectionTitle}>Explore Studio</div>
-              <ul className={s.drawerList}>
+              {/* Quick Highlight Cards (matches screenshot 3-card row) */}
+              <div className={s.drawerQuickRow}>
+                <Link to="/categories" className={s.drawerQuickCard} onClick={closeMenu}>
+                  <div className={cn(s.drawerQuickIcon, s.quickIconGreen)}>
+                    <LayoutGrid size={18} />
+                  </div>
+                  <span className={s.drawerQuickLabel}>Shop All</span>
+                </Link>
+                <Link to="/sale" className={s.drawerQuickCard} onClick={closeMenu}>
+                  <div className={cn(s.drawerQuickIcon, s.quickIconPink)}>
+                    <Tag size={18} />
+                  </div>
+                  <span className={s.drawerQuickLabel}>Sale 40%</span>
+                </Link>
+                <Link to="/gift-box" className={s.drawerQuickCard} onClick={closeMenu}>
+                  <div className={cn(s.drawerQuickIcon, s.quickIconSage)}>
+                    <Gift size={18} />
+                  </div>
+                  <span className={s.drawerQuickLabel}>Gift Boxes</span>
+                </Link>
+              </div>
+
+              {/* Browse Categories Section Header */}
+              <div className={s.drawerSectionHeader}>
+                <span>Browse Categories</span>
+              </div>
+
+              {/* Category / Nav List Items */}
+              <ul className={s.drawerCategoryList}>
                 {PRIMARY_NAV.map((item) => {
                   const isPartners =
                     item.isTrigger || item.to === "#partners" || item.label === "Partners";
+                  const conf = NAV_ITEM_CONFIG[item.to] || {
+                    icon: LayoutGrid,
+                    iconClass: "itemIconGreen",
+                    title: item.label,
+                    subtitle: "Handcrafted studio collections",
+                  };
+                  const Icon = conf.icon;
 
                   if (isPartners) {
                     return (
-                      <li key={item.to || item.label}>
+                      <li key={item.to || item.label} className={s.drawerCategoryLi}>
                         <button
                           type="button"
                           className={cn(
-                            s.drawerLink,
-                            s.drawerTrigger,
-                            mobilePartnersOpen && s.drawerLinkActive,
+                            s.drawerCategoryItem,
+                            s.drawerCategoryItemBtn,
+                            mobilePartnersOpen && s.drawerItemActive,
                           )}
                           onClick={() => setMobilePartnersOpen((prev) => !prev)}
                           aria-expanded={mobilePartnersOpen}
                           aria-controls="mobile-partners-submenu"
                         >
-                          <span className={s.drawerLinkText}>{item.label}</span>
+                          <div className={cn(s.drawerItemIcon, s[conf.iconClass])}>
+                            <Icon size={18} />
+                          </div>
+                          <div className={s.drawerItemText}>
+                            <span className={s.drawerItemTitle}>{conf.title}</span>
+                            <span className={s.drawerItemSubtitle}>{conf.subtitle}</span>
+                          </div>
                           <ChevronDown
-                            size={15}
+                            size={16}
                             className={cn(
-                              s.drawerChevron,
+                              s.drawerItemChevron,
                               mobilePartnersOpen && s.drawerChevronOpen,
                             )}
                             aria-hidden="true"
@@ -423,35 +497,53 @@ export default function Header() {
                         </button>
 
                         {mobilePartnersOpen && (
-                          <ul id="mobile-partners-submenu" className={s.drawerSubMenu}>
+                          <ul id="mobile-partners-submenu" className={s.drawerSubMenuList}>
                             <li>
                               <Link
                                 to="/collaborations"
-                                className={s.drawerSubItem}
+                                className={s.drawerSubItemRow}
                                 onClick={closeMenu}
                               >
-                                <span>Brand Collaborations</span>
-                                <span className={s.drawerSubItemTag}>Editions</span>
+                                <div className={cn(s.drawerSubIconWrap, s.itemIconGreen)}>
+                                  <Sparkles size={15} />
+                                </div>
+                                <div className={s.drawerItemText}>
+                                  <span className={s.drawerSubItemTitle}>Brand Collaborations</span>
+                                  <span className={s.drawerItemSubtitle}>Limited edition artisan craft sets</span>
+                                </div>
+                                <ChevronRight size={14} className={s.drawerItemChevron} />
                               </Link>
                             </li>
                             <li>
                               <Link
                                 to="/creators"
-                                className={s.drawerSubItem}
+                                className={s.drawerSubItemRow}
                                 onClick={closeMenu}
                               >
-                                <span>Creators</span>
-                                <span className={s.drawerSubItemTag}>Artisans</span>
+                                <div className={cn(s.drawerSubIconWrap, s.itemIconSage)}>
+                                  <Users size={15} />
+                                </div>
+                                <div className={s.drawerItemText}>
+                                  <span className={s.drawerSubItemTitle}>Creators &amp; Artisans</span>
+                                  <span className={s.drawerItemSubtitle}>Independent studio makers &amp; NGOs</span>
+                                </div>
+                                <ChevronRight size={14} className={s.drawerItemChevron} />
                               </Link>
                             </li>
                             <li>
                               <Link
                                 to="/partner-picks"
-                                className={s.drawerSubItem}
+                                className={s.drawerSubItemRow}
                                 onClick={closeMenu}
                               >
-                                <span>Partner Picks</span>
-                                <span className={s.drawerSubItemTag}>Affiliate</span>
+                                <div className={cn(s.drawerSubIconWrap, s.itemIconPink)}>
+                                  <ShoppingBag size={15} />
+                                </div>
+                                <div className={s.drawerItemText}>
+                                  <span className={s.drawerSubItemTitle}>Partner Picks</span>
+                                  <span className={s.drawerItemSubtitle}>Curated affiliate workshop designs</span>
+                                </div>
+                                <ChevronRight size={14} className={s.drawerItemChevron} />
                               </Link>
                             </li>
                           </ul>
@@ -461,74 +553,83 @@ export default function Header() {
                   }
 
                   return (
-                    <li key={item.to}>
+                    <li key={item.to} className={s.drawerCategoryLi}>
                       <NavLink
                         to={item.to}
                         end={item.to === "/"}
                         onClick={closeMenu}
                         className={({ isActive }) =>
                           cn(
-                            s.drawerLink,
-                            isActive && s.drawerLinkActive,
-                            item.to === "/sale" && s.drawerSaleLink,
+                            s.drawerCategoryItem,
+                            isActive && s.drawerItemActive,
                           )
                         }
                       >
-                        <span className={s.drawerLinkText}>{item.label}</span>
-
-                        {item.to === "/sale" && (
-                          <span className={s.drawerSaleBadge}>
-                            <span className={s.saleDot} aria-hidden="true" />
-                            40% OFF
-                          </span>
-                        )}
+                        <div className={cn(s.drawerItemIcon, s[conf.iconClass])}>
+                          <Icon size={18} />
+                        </div>
+                        <div className={s.drawerItemText}>
+                          <div className={s.drawerTitleRow}>
+                            <span className={s.drawerItemTitle}>{conf.title}</span>
+                            {item.to === "/sale" && (
+                              <span className={s.drawerSalePill}>40% OFF</span>
+                            )}
+                          </div>
+                          <span className={s.drawerItemSubtitle}>{conf.subtitle}</span>
+                        </div>
+                        <ChevronRight size={16} className={s.drawerItemChevron} />
                       </NavLink>
                     </li>
                   );
                 })}
               </ul>
 
-              {/* Quick Customer Support inside drawer */}
-              <div className={s.drawerSectionTitle}>Customer Care</div>
-              <ul className={s.drawerSecondaryList}>
-                <li>
-                  <Link to="/track-order" className={s.drawerSubLink} onClick={closeMenu}>
-                    <span className={s.drawerSubIcon}>
-                      <MapPin size={15} />
-                    </span>
-                    <span>Track Your Order</span>
+              {/* Customer Care Section */}
+              <div className={s.drawerSectionHeader}>
+                <span>Customer Care</span>
+              </div>
+              <ul className={s.drawerCategoryList}>
+                <li className={s.drawerCategoryLi}>
+                  <Link to="/track-order" className={s.drawerCategoryItem} onClick={closeMenu}>
+                    <div className={cn(s.drawerItemIcon, s.itemIconClay)}>
+                      <MapPin size={18} />
+                    </div>
+                    <div className={s.drawerItemText}>
+                      <span className={s.drawerItemTitle}>Track Your Order</span>
+                      <span className={s.drawerItemSubtitle}>Real-time delivery &amp; dispatch updates</span>
+                    </div>
+                    <ChevronRight size={16} className={s.drawerItemChevron} />
                   </Link>
                 </li>
-                <li>
-                  <Link to="/faq" className={s.drawerSubLink} onClick={closeMenu}>
-                    <span className={s.drawerSubIcon}>
-                      <HelpCircle size={15} />
-                    </span>
-                    <span>Help & FAQs</span>
+                <li className={s.drawerCategoryLi}>
+                  <Link to="/faq" className={s.drawerCategoryItem} onClick={closeMenu}>
+                    <div className={cn(s.drawerItemIcon, s.itemIconGreen)}>
+                      <HelpCircle size={18} />
+                    </div>
+                    <div className={s.drawerItemText}>
+                      <span className={s.drawerItemTitle}>Help &amp; FAQs</span>
+                      <span className={s.drawerItemSubtitle}>Care guides, shipping &amp; returns</span>
+                    </div>
+                    <ChevronRight size={16} className={s.drawerItemChevron} />
                   </Link>
                 </li>
-                <li>
-                  <Link to="/contact" className={s.drawerSubLink} onClick={closeMenu}>
-                    <span className={s.drawerSubIcon}>
-                      <MessageCircle size={15} />
-                    </span>
-                    <span>Contact Support</span>
+                <li className={s.drawerCategoryLi}>
+                  <Link to="/contact" className={s.drawerCategoryItem} onClick={closeMenu}>
+                    <div className={cn(s.drawerItemIcon, s.itemIconSage)}>
+                      <MessageCircle size={18} />
+                    </div>
+                    <div className={s.drawerItemText}>
+                      <span className={s.drawerItemTitle}>Contact Support</span>
+                      <span className={s.drawerItemSubtitle}>Direct assistance from studio team</span>
+                    </div>
+                    <ChevronRight size={16} className={s.drawerItemChevron} />
                   </Link>
                 </li>
               </ul>
-            </nav>
+            </div>
 
-            {/* Bottom studio WhatsApp button in drawer */}
+            {/* Drawer Footer */}
             <div className={s.drawerFooter}>
-              <a
-                href="https://wa.me/919876543210?text=Hi%20CraftiNiya,%20I%20have%20an%20enquiry"
-                target="_blank"
-                rel="noreferrer noopener"
-                className={s.drawerWhatsappBtn}
-              >
-                <MessageCircle size={16} />
-                <span>Chat on WhatsApp</span>
-              </a>
               <div className={s.drawerFooterNote}>
                 <span>🌿 Handcrafted with love in India</span>
               </div>
