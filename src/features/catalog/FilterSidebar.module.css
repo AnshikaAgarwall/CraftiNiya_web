@@ -22,7 +22,7 @@
 
 .heading {
   font-family: var(--font-sans);
-  font-size: var(--fs-sm);
+  font-size: 0.75rem;
   font-weight: var(--fw-bold);
   letter-spacing: var(--ls-wider);
   text-transform: uppercase;
@@ -30,7 +30,7 @@
 
 .clear {
   color: var(--c-brand-hover);
-  font-size: var(--fs-sm);
+  font-size: 0.75rem;
   font-weight: var(--fw-semibold);
 }
 
@@ -45,13 +45,13 @@
   overflow-y: auto;
 }
 
-/* Checkbox/radio labels here run 2px larger than the shared Field default. */
+/* Checkbox/radio labels here made 1 size smaller for sleek compact layout */
 .scroll label {
-  font-size: var(--fs-base);
+  font-size: 0.8125rem;
 }
 
 .group {
-  padding-block: var(--sp-5);
+  padding-block: var(--sp-4);
   border-bottom: 1px solid var(--c-border);
 }
 
@@ -61,9 +61,9 @@
 }
 
 .groupTitle {
-  margin-bottom: var(--sp-4);
+  margin-bottom: var(--sp-3);
   font-family: var(--font-sans);
-  font-size: var(--fs-sm);
+  font-size: 0.72rem;
   font-weight: var(--fw-bold);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;

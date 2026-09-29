@@ -29,26 +29,24 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  height: 38px;
-  padding: 0 14px;
-  border: 1px solid var(--c-border-strong);
-  border-radius: var(--r-pill);
-  background-color: var(--c-surface);
+  height: 34px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
   color: var(--c-text);
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
   cursor: pointer;
   position: relative;
-  box-shadow: var(--sh-sm);
+  box-shadow: none;
   transition:
     background-color var(--t-fast) var(--ease),
-    border-color var(--t-fast) var(--ease),
     color var(--t-fast) var(--ease);
 }
 
 .actionTrigger:hover {
-  border-color: var(--c-brand);
-  color: var(--c-brand);
+  color: var(--c-brand-hover);
   background-color: var(--c-brand-soft);
 }
 
@@ -81,7 +79,7 @@
 }
 
 .actionText {
-  font-size: var(--fs-sm);
+  font-size: 0.78rem;
   font-weight: 600;
   line-height: 1;
 }
@@ -101,9 +99,10 @@
 }
 
 .actionTriggerActive {
-  border-color: var(--c-brand) !important;
+  border: none !important;
   background-color: var(--c-brand-soft) !important;
-  color: var(--c-brand) !important;
+  color: var(--c-brand-hover) !important;
+  box-shadow: none !important;
 }
 
 /* -------------------------------------------------------------
@@ -141,7 +140,7 @@
 }
 
 .dropdownTitle {
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -158,10 +157,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 12px;
+  padding: 7px 11px;
   border: 0;
   background: transparent;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: var(--c-text);
   border-radius: var(--r-sm);
   cursor: pointer;
@@ -284,7 +283,7 @@
 }
 
 .drawerTitle {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -333,7 +332,7 @@
 .clearBtn {
   background: transparent;
   border: 0;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   color: var(--c-brand);
   text-decoration: underline;
@@ -367,7 +366,7 @@
 }
 
 .groupLabel {
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -385,7 +384,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: var(--c-text);
   cursor: pointer;
   user-select: none;
@@ -404,7 +403,7 @@
 
 .facetBadge {
   margin-left: auto;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: var(--c-text-2);
   font-weight: 500;
 }

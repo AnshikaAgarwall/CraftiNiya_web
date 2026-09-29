@@ -1,12 +1,14 @@
 // Desktop Banners (Landscape)
 import saleBanner from "../assets/SALE.png";
 import creatorBanner from "../assets/LOCALSHOPS.png";
+import priyaCollabBanner from "../assets/PRIYACREATIONS_HERO.jpg";
 import collabBanner from "../assets/COLLABBRAND.png";
 import bundleBanner from "../assets/BRANDPROMOTION.png";
 
 // Mobile Banners (Portrait / Vertical)
 import saleBannerMobile from "../assets/SALE_mobile.jpg";
 import creatorBannerMobile from "../assets/LOCALSHOPS_mobile.jpg";
+import priyaCollabBannerMobile from "../assets/PRIYACREATIONS_MOBILE.jpg";
 import collabBannerMobile from "../assets/COLLABBRAND_mobile.jpg";
 import bundleBannerMobile from "../assets/BRANDPROMOTION_mobile.jpg";
 
@@ -49,6 +51,19 @@ export const heroSlides = [
       "A limited-edition fusion of natural textures and festive handicraft gifting.",
     cta: "Explore Collaboration",
     href: "/collaboration/rangsajja",
+  },
+  {
+    id: "collab-priya",
+    image: priyaCollabBanner,
+    imageDesktop: priyaCollabBanner,
+    imageMobile: priyaCollabBannerMobile,
+    alt: "CraftiNiya x Priya Creations Collaboration — Botanical Resin Keepsakes",
+    eyebrow: "New Collaboration",
+    heading: "Priya Creations is now on CraftiNiya",
+    subheading:
+      "Handcrafted botanical resin jewelry, floral keepsakes, and mindful studio art.",
+    cta: "Shop Collection",
+    href: "/creator/priya-crafts",
   },
   {
     id: "brand-bundle",

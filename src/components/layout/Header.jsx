@@ -2,6 +2,7 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
+  Bell,
   ChevronDown,
   ChevronRight,
   Gift,
@@ -29,6 +30,7 @@ import { useAuth } from "../../context/AuthContext.jsx";
 import { useUI } from "../../context/UIContext.jsx";
 import MegaMenu from "./MegaMenu.jsx";
 import PartnersMegaMenu from "./PartnersMegaMenu.jsx";
+import NotificationCenter from "./NotificationCenter.jsx";
 import s from "./Header.module.css";
 
 /** The nav entry that opens the mega menu instead of routing. */
@@ -87,6 +89,8 @@ export default function Header() {
   const [condensed, setCondensed] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null); // 'categories' | 'partners' | null
   const [mobilePartnersOpen, setMobilePartnersOpen] = useState(false);
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [unreadNotifications, setUnreadNotifications] = useState(3);
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const headerRef = useRef(null);
   const closeTimeoutRef = useRef(null);
@@ -105,16 +109,19 @@ export default function Header() {
   const closeAllMenus = useCallback(() => {
     clearTimeout(closeTimeoutRef.current);
     setActiveMenu(null);
+    setNotificationsOpen(false);
   }, []);
 
   const openCategoriesMenu = useCallback(() => {
     clearTimeout(closeTimeoutRef.current);
     setActiveMenu("categories");
+    setNotificationsOpen(false);
   }, []);
 
   const openPartnersMenu = useCallback(() => {
     clearTimeout(closeTimeoutRef.current);
     setActiveMenu("partners");
+    setNotificationsOpen(false);
   }, []);
 
   const closeMenuDelayed = useCallback(() => {
@@ -135,6 +142,7 @@ export default function Header() {
     closeMenu();
     closeAllMenus();
     setMobilePartnersOpen(false);
+    setNotificationsOpen(false);
   }, [pathname, closeMenu, closeAllMenus]);
 
   /* Close mega menus on pointerdown outside or Escape key */
@@ -174,7 +182,10 @@ export default function Header() {
             <button
               type="button"
               className={s.searchExpandable}
-              onClick={openSearch}
+              onClick={() => {
+                setNotificationsOpen(false);
+                openSearch();
+              }}
               aria-label="Search products and categories"
             >
               <span className={s.searchIconWrapper}>
@@ -188,6 +199,31 @@ export default function Header() {
                 </span>
               </span>
             </button>
+
+            {/* Notification Bell Button: Alerts for New Creators, Drops, Sales & Coupons */}
+            <div className={s.notificationWrapper}>
+              <button
+                type="button"
+                className={cn(s.action, s.notificationButton, notificationsOpen && s.actionActive)}
+                onClick={() => setNotificationsOpen((prev) => !prev)}
+                aria-label={`Notifications, ${unreadNotifications} unread`}
+                aria-expanded={notificationsOpen}
+                data-notification-trigger="true"
+              >
+                <Bell />
+                {unreadNotifications > 0 && (
+                  <span className={cn(s.badge, s.notificationBadge)}>
+                    {unreadNotifications}
+                  </span>
+                )}
+              </button>
+
+              <NotificationCenter
+                isOpen={notificationsOpen}
+                onClose={() => setNotificationsOpen(false)}
+                onUnreadChange={setUnreadNotifications}
+              />
+            </div>
 
             <Link
               to="/wishlist"

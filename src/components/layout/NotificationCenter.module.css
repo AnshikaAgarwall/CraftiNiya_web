@@ -1,0 +1,486 @@
+/* =========================================================
+   CRAFTINIYA — NOTIFICATION CENTER / LIVE UPDATES FLYOUT
+   Supports: Creator Drops, Fresh Products, Flash Sales, Coupons
+   Palette: Deep Pine, Moss Green, Laurel, Pale Pink, White
+   ========================================================= */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 20, 0.48);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: calc(var(--z-header) + 60);
+  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(440px, 90vw);
+  height: 100vh;
+  height: 100dvh;
+  background-color: #ffffff;
+  border-left: 1px solid rgba(74, 107, 83, 0.16);
+  border-radius: 24px 0 0 24px;
+  box-shadow: 
+    -16px 0 48px rgba(18, 30, 22, 0.22),
+    -2px 0 10px rgba(0, 0, 0, 0.04);
+  z-index: calc(var(--z-header) + 70);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: drawerSlideInRight 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes drawerSlideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .panel {
+    width: min(350px, 88vw);
+    border-radius: 20px 0 0 20px;
+  }
+}
+
+/* Header bar */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px 12px 18px;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--c-border, #e8ede8);
+  gap: 12px;
+}
+
+.titleArea {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--c-text, #1f3a2b);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.unreadCountBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--c-brand, #4a6b53);
+  border-radius: var(--r-pill, 9999px);
+  line-height: 1;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.markAllBtn {
+  background: none;
+  border: none;
+  color: var(--c-brand, #4a6b53);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+
+.markAllBtn:hover {
+  background-color: var(--c-brand-soft, #eef4ed);
+  color: var(--c-brand-hover, #1f3a2b);
+}
+
+.closeBtn {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--c-border, #e0e6e1);
+  background-color: var(--c-sunken, #f8f8f8);
+  color: var(--c-text-2, #4f5e54);
+  cursor: pointer;
+  transition: all var(--t-fast) var(--ease);
+}
+
+.closeBtn:hover {
+  background-color: #ffffff;
+  color: var(--c-text, #1f3a2b);
+  border-color: var(--c-brand, #4a6b53);
+  transform: rotate(90deg);
+}
+
+/* Category Filter Tabs */
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: var(--c-sunken, #fbfcfb);
+  border-bottom: 1px solid var(--c-border, #eef2ee);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--c-text-2, #526357);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--r-pill, 9999px);
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all var(--t-fast) var(--ease);
+}
+
+.tab:hover {
+  color: var(--c-brand, #4a6b53);
+  background-color: #ffffff;
+}
+
+.activeTab {
+  background-color: #ffffff !important;
+  color: var(--c-brand-hover, #1f3a2b) !important;
+  border-color: var(--c-border, #d5ded7) !important;
+  box-shadow: 0 1px 4px rgba(31, 58, 43, 0.08);
+}
+
+/* Notifications List Content */
+.list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: rgba(74, 107, 83, 0.2);
+  border-radius: 4px;
+}
+
+/* Individual Notification Item Card */
+.card {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background-color: #ffffff;
+  border: 1px solid var(--c-border, #e9eee9);
+  transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-1.5px);
+  border-color: var(--c-brand, #4a6b53);
+  box-shadow: 0 4px 14px rgba(31, 58, 43, 0.07);
+}
+
+.cardUnread {
+  background-color: var(--c-brand-soft, #f4f8f5);
+  border-color: rgba(74, 107, 83, 0.25);
+}
+
+/* Unread Pulse Indicator Dot */
+.unreadDot {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--c-brand, #4a6b53);
+  box-shadow: 0 0 0 3px rgba(74, 107, 83, 0.2);
+}
+
+/* Icon / Media thumbnail on left */
+.iconBox {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.creatorIconBox {
+  background-color: var(--c-brand-soft, #eef4ed);
+  color: var(--c-brand, #4a6b53);
+}
+
+.couponIconBox {
+  background-color: #fffbeb;
+  color: #b45309;
+}
+
+.productIconBox {
+  background-color: #e0e7ff;
+  color: #4338ca;
+}
+
+.saleIconBox {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.mediaThumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Content block */
+.content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tagRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: var(--r-pill, 9999px);
+  line-height: 1.2;
+}
+
+.creatorTag {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.couponTag {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.productTag {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.saleTag {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.time {
+  font-size: 11px;
+  color: var(--c-text-2, #758579);
+}
+
+.cardTitle {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--c-text, #1f3a2b);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.cardDesc {
+  font-size: 12px;
+  color: var(--c-text-2, #4f5e54);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Special Coupon Box Inside Notification */
+.couponBox {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 1.5px dashed #d97706;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.couponCode {
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #92400e;
+}
+
+.couponMeta {
+  font-size: 11px;
+  color: #b45309;
+  font-weight: 600;
+}
+
+.copyCodeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--r-pill, 9999px);
+  cursor: pointer;
+  transition: all var(--t-fast) var(--ease);
+}
+
+.copyCodeBtn:hover {
+  background-color: #fde68a;
+  color: #78350f;
+}
+
+.copiedBtn {
+  background-color: #dcfce7 !important;
+  color: #15803d !important;
+  border-color: #bbf7d0 !important;
+}
+
+/* Card Action Link/Button */
+.actionRow {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--c-brand, #4a6b53);
+  text-decoration: none;
+  transition: color var(--t-fast) var(--ease);
+}
+
+.card:hover .actionLink {
+  color: var(--c-brand-hover, #1f3a2b);
+  text-decoration: underline;
+}
+
+/* Empty State */
+.emptyState {
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  color: var(--c-text-2, #55675c);
+}
+
+.emptyIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--c-sunken, #f8f8f8);
+  display: grid;
+  place-items: center;
+  color: var(--c-brand, #4a6b53);
+}
+
+.emptyText {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Footer of panel */
+.footer {
+  padding: 10px 16px;
+  background-color: var(--c-sunken, #fbfcfb);
+  border-top: 1px solid var(--c-border, #e8ede8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerNote {
+  font-size: 11px;
+  color: var(--c-text-2, #6a7c70);
+  font-weight: 500;
+}
+
+.viewAllLink {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--c-brand, #4a6b53);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.viewAllLink:hover {
+  color: var(--c-brand-hover, #1f3a2b);
+}

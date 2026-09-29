@@ -1,0 +1,127 @@
+/* Desktop Collaboration Announcement Popup */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: rgba(15, 17, 21, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeIn 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modalWrapper {
+  position: relative;
+  max-width: 720px;
+  width: 100%;
+  animation: scaleUp 350ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.closeBtn {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background-color: #2a2522;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.closeBtn:hover {
+  transform: scale(1.1) rotate(90deg);
+  background-color: #9c4b37;
+  color: #ffffff;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  background: #f7f2ed;
+  outline: none;
+  transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms ease;
+}
+
+.card:hover {
+  transform: translateY(-3px) scale(1.008);
+  box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.52), 0 0 0 1.5px rgba(184, 98, 77, 0.4);
+}
+
+.card:focus-visible {
+  outline: 3px solid #b8624d;
+  outline-offset: 4px;
+}
+
+.cardImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.cardPicture {
+  display: block;
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive for mobile devices */
+@media (max-width: 640px) {
+  .overlay {
+    padding: 1rem;
+  }
+
+  .modalWrapper {
+    max-width: 340px;
+    width: 88vw;
+  }
+
+  .card {
+    border-radius: 18px;
+    box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.5);
+  }
+
+  .closeBtn {
+    top: -12px;
+    right: -8px;
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -178,8 +178,8 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--r-circle);
   color: var(--c-text);
   transition:
@@ -193,26 +193,62 @@
 }
 
 .action svg {
-  width: 20px;
-  height: 20px;
+  width: 18.5px;
+  height: 18.5px;
   stroke-width: 1.6;
 }
 
 .badge {
   position: absolute;
-  top: 4px;
-  right: 2px;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 5px;
+  top: 2px;
+  right: 1px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
   display: grid;
   place-items: center;
   border-radius: var(--r-pill);
   background-color: var(--c-brand);
   color: var(--c-text-on-brand);
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: var(--fw-bold);
   line-height: 1;
+}
+
+/* Notification Bell Button */
+.notificationWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.notificationButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.actionActive {
+  background-color: var(--c-brand-soft) !important;
+  color: var(--c-brand-hover) !important;
+}
+
+.notificationBadge {
+  background-color: #d97706; /* Warm amber-gold alert badge */
+  box-shadow: 0 0 0 2px #ffffff;
+  animation: notificationBadgePulse 2.6s infinite ease-in-out;
+}
+
+@keyframes notificationBadgePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 2px #ffffff, 0 0 4px rgba(217, 119, 6, 0.4);
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow: 0 0 0 2px #ffffff, 0 0 10px rgba(217, 119, 6, 0.7);
+  }
 }
 
 /* ---------- Expandable Slide-out Search (inside .actions) ---------- */
@@ -532,10 +568,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 72px;
-    gap: var(--sp-3);
+    min-height: 68px;
+    gap: 16px;
     max-width: 100% !important;
-    padding-inline: 10px !important;
+    padding-inline: 12px !important;
   }
 
   .brand {
@@ -543,11 +579,12 @@
     justify-self: start;
     align-items: flex-start;
     flex-shrink: 0;
+    margin-right: auto;
   }
 
   .brandName {
     font-family: var(--font-serif) !important;
-    font-size: 1.625rem !important;
+    font-size: 1.55rem !important;
     font-weight: 700 !important;
     letter-spacing: -0.02em;
     line-height: 1.05;
@@ -555,8 +592,8 @@
 
   .brandTagline {
     display: block;
-    margin-top: 3px;
-    font-size: 9.5px;
+    margin-top: 2px;
+    font-size: 9px;
     font-weight: 600;
     letter-spacing: var(--ls-wider);
     text-transform: uppercase;
@@ -572,14 +609,43 @@
     order: 3;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2.5px;
+    flex-shrink: 0;
+  }
+
+  .action {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .action svg {
+    width: 17px !important;
+    height: 17px !important;
+    stroke-width: 1.6 !important;
   }
 
   .menuButton {
     display: inline-flex;
     order: 99;
+    width: 35px !important;
+    height: 35px !important;
     margin-left: 2px;
     margin-right: 0;
+    border-radius: 10px;
+  }
+
+  .hamburgerIcon {
+    width: 16px;
+    height: 13px;
+  }
+
+  .hamburgerBar {
+    width: 16px;
+    height: 1.6px;
+  }
+
+  .hamburgerBarBot {
+    width: 16px;
   }
 
   .navRow {
@@ -595,8 +661,8 @@
 /* Mobile: keep search as the original clean circular icon button, hide slide-out area */
 @media (max-width: 640px) {
   .searchExpandable {
-    width: 44px !important;
-    height: 44px !important;
+    width: 35px !important;
+    height: 35px !important;
     padding: 0 !important;
     border: none !important;
     background: transparent !important;
@@ -619,8 +685,8 @@
   }
 
   .searchIconWrapper svg {
-    width: 20px !important;
-    height: 20px !important;
+    width: 17px !important;
+    height: 17px !important;
     stroke-width: 1.6 !important;
   }
 
@@ -634,11 +700,12 @@
 @media (max-width: 400px) {
   .brandInner {
     padding-inline: 8px !important;
+    gap: 8px;
   }
 
   .brandName {
     font-family: var(--font-serif) !important;
-    font-size: 1.45rem !important;
+    font-size: 1.38rem !important;
     font-weight: 700 !important;
     letter-spacing: -0.015em;
     line-height: 1.05;
@@ -647,19 +714,25 @@
   .brandTagline {
     display: block;
     margin-top: 2px;
-    font-size: 9px;
+    font-size: 8.5px;
     font-weight: 600;
   }
 
   .action,
   .searchExpandable,
   .menuButton {
-    width: 38px !important;
-    height: 38px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .action svg,
+  .searchIconWrapper svg {
+    width: 15.5px !important;
+    height: 15.5px !important;
   }
 
   .actions {
-    gap: 2px;
+    gap: 1.5px !important;
   }
 }
 
@@ -779,8 +852,12 @@
 }
 
 .drawerHeader .brandName {
-  font-size: 1.35rem !important;
+  font-size: 1.18rem !important;
   font-weight: 700 !important;
+}
+
+.drawerHeader .brandTagline {
+  font-size: 8.5px !important;
 }
 
 .drawerCloseBtn {
@@ -866,7 +943,7 @@
 
 .drawerBannerTitle {
   font-family: var(--font-sans);
-  font-size: 0.98rem;
+  font-size: 0.90rem;
   font-weight: 750;
   line-height: 1.25;
   color: #ffffff;
@@ -1108,7 +1185,7 @@
 
 .drawerItemTitle {
   font-family: var(--font-sans);
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   font-weight: 650;
   color: var(--c-text);
   line-height: 1.25;

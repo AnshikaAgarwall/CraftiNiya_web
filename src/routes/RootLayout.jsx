@@ -5,6 +5,7 @@ import SearchOverlay from "../components/layout/SearchOverlay.jsx";
 import Toaster from "../components/layout/Toaster.jsx";
 import ErrorBoundary from "../components/common/ErrorBoundary.jsx";
 import TopPromoBanner from "../components/common/TopPromoBanner.jsx";
+import PriyaCollabPopup from "../components/common/PriyaCollabPopup.jsx";
 import ChatBot from "../components/chatbot/ChatBot.jsx";
 import WhatsAppSupport from "../components/support/WhatsAppSupport.jsx";
 
@@ -45,6 +46,7 @@ export default function RootLayout() {
       {!isFullScreen && <Footer />}
 
       {!isFullScreen && <SearchOverlay />}
+      {!isFullScreen && <PriyaCollabPopup />}
       {!isFullScreen && <ChatBot />}
       {!isFullScreen && <WhatsAppSupport />}
       <Toaster />

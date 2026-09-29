@@ -188,7 +188,7 @@ export default function CatalogView({
 
         {/* Toolbar */}
         <div className={s.toolbar}>
-          {drawerFilter ? (
+          {drawerFilter && (
             <div className={s.toolbarLeft}>
               <button
                 ref={filterToggleRef}
@@ -203,19 +203,8 @@ export default function CatalogView({
                 <span className={s.actionText}>
                   {filterOpen ? "Hide Filters" : "Filters"}
                 </span>
-                {activeCount > 0 && (
-                  <span className={s.activeBadge}>{activeCount}</span>
-                )}
               </button>
-
-              <p className={s.count} aria-live="polite">
-                {loading ? "Loading…" : pluralize(total, "piece")}
-              </p>
             </div>
-          ) : (
-            <p className={s.count} aria-live="polite">
-              {loading ? "Loading…" : pluralize(total, "piece")}
-            </p>
           )}
 
           <div className={s.toolbarActions}>
@@ -322,9 +311,6 @@ export default function CatalogView({
                     <div className={s.drawerTitleGroup}>
                       <SlidersHorizontal size={16} className={s.drawerHeaderIcon} />
                       <h3 className={s.drawerTitle}>Filters</h3>
-                      {activeCount > 0 && (
-                        <span className={s.drawerCountBadge}>{activeCount}</span>
-                      )}
                     </div>
                     <div className={s.drawerHeaderActions}>
                       {hasFilters && (
