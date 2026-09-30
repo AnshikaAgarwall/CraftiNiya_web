@@ -5,7 +5,7 @@
    ========================================================= */
 
 .banner {
-  background-color: #faf8f5;
+  background-color: var(--c-sunken);
   border-bottom: 1px solid var(--c-border);
   padding-block: clamp(var(--sp-8), 4.5vw, var(--sp-12));
   margin-bottom: var(--sp-8);
@@ -82,7 +82,7 @@
   color: var(--c-text);
   letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
-  background-color: #ffffff;
+  background-color: var(--c-surface, #ffffff);
   padding: 6px 12px;
   border-radius: var(--r-md);
   border: 1px solid var(--c-border);
@@ -93,10 +93,10 @@
 .voucherCard {
   display: inline-flex;
   align-items: center;
-  background: #ffffff;
-  border: 1px solid rgba(74, 107, 83, 0.32);
+  background: var(--c-surface, #ffffff);
+  border: 1px solid var(--c-border);
   border-radius: var(--r-md);
-  box-shadow: 0 4px 16px rgba(31, 58, 43, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   overflow: hidden;
   user-select: none;
@@ -150,7 +150,7 @@
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: var(--c-brand-hover);
+  color: var(--c-brand);
 }
 
 .voucherOffer {
@@ -190,12 +190,12 @@
 
 .voucherCard:hover .voucherActionBtn {
   background-color: var(--c-brand);
-  color: #ffffff;
+  color: var(--c-text-on-brand);
 }
 
 .voucherCopied .voucherActionBtn {
   background-color: var(--c-brand) !important;
-  color: #ffffff !important;
+  color: var(--c-text-on-brand) !important;
 }
 
 .checkIcon {
@@ -333,4 +333,64 @@
     padding: 4px 10px;
     font-size: 0.68rem;
   }
+}
+
+/* =========================================================
+   DARK THEME VOUCHER & COUNTDOWN HIGH-CONTRAST LEGIBILITY
+   ========================================================= */
+
+:global([data-theme="dark"]) .countdownValue {
+  background-color: var(--c-surface);
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+:global([data-theme="dark"]) .metaLabel {
+  color: #d0dfd4;
+}
+
+:global([data-theme="dark"]) .voucherCard {
+  background: var(--c-surface);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+:global([data-theme="dark"]) .voucherCard:hover {
+  border-color: #ffffff;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.6);
+}
+
+:global([data-theme="dark"]) .voucherTag {
+  color: #86efac;
+}
+
+:global([data-theme="dark"]) .voucherTagIcon {
+  color: #86efac;
+}
+
+:global([data-theme="dark"]) .voucherCode {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Coupon amount - extra 10% off - prominently visible */
+:global([data-theme="dark"]) .voucherOffer {
+  color: #52e189 !important;
+  font-weight: 700 !important;
+}
+
+:global([data-theme="dark"]) .voucherDivider {
+  border-left-color: rgba(255, 255, 255, 0.18);
+}
+
+:global([data-theme="dark"]) .voucherActionBtn {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+:global([data-theme="dark"]) .voucherCard:hover .voucherActionBtn,
+:global([data-theme="dark"]) .voucherCopied .voucherActionBtn {
+  background-color: #ffffff !important;
+  color: #0c1811 !important;
 }

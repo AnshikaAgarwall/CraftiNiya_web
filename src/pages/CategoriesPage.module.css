@@ -206,7 +206,7 @@
   padding: 10px 20px;
   border-radius: var(--r-pill);
   background-color: var(--c-brand);
-  color: #ffffff;
+  color: var(--c-text-on-brand);
   font-size: var(--fs-sm);
   font-weight: var(--fw-semibold);
   text-decoration: none;

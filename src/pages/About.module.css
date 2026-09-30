@@ -10,7 +10,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: #f4f8f9;
+  background-color: var(--c-sunken);
   border-bottom: 1px solid var(--c-border);
 }
 
@@ -322,7 +322,7 @@
 
 .collaborations {
   padding-block: clamp(var(--sp-8), 5vw, var(--sp-12));
-  background-color: #ffffff;
+  background-color: var(--c-bg);
   border-bottom: 1px solid var(--c-border);
 }
 
@@ -338,10 +338,10 @@
   display: flex;
   flex-direction: column;
   padding: var(--sp-6) var(--sp-6);
-  background-color: #ffffff;
+  background-color: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--r-xl);
-  box-shadow: 0 4px 16px rgba(31, 58, 43, 0.04);
+  box-shadow: var(--sh-sm);
   text-decoration: none;
   transition:
     transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
@@ -446,7 +446,7 @@
 
 .impactCardClickable:hover .impactActionBtn {
   background-color: var(--c-brand);
-  color: #ffffff;
+  color: var(--c-text-on-brand, #ffffff);
 }
 
 .impactArrow {
@@ -459,18 +459,18 @@
 
 /* Distinctive NGO Card (Grassroots Social Mission) */
 .ngoCard {
-  background: linear-gradient(135deg, #f2f7f1 0%, #ffffff 100%);
+  background: var(--c-surface);
   border-color: rgba(74, 107, 83, 0.3);
 }
 
 .ngoIconPill {
   background-color: var(--c-brand);
-  color: #ffffff;
+  color: var(--c-text-on-brand, #ffffff);
   border-color: var(--c-brand);
 }
 
 .ngoTagBadge {
-  background-color: #ffffff;
+  background-color: var(--c-brand-soft);
   color: var(--c-brand);
   border-color: rgba(74, 107, 83, 0.3);
 }
@@ -478,7 +478,7 @@
 /* Creator Card (Instagram Aesthetic) */
 .creatorCard:hover {
   border-color: #e1306c;
-  box-shadow: 0 14px 32px rgba(225, 48, 108, 0.08);
+  box-shadow: 0 14px 32px rgba(225, 48, 108, 0.12);
 }
 
 .creatorCard:hover .impactActionBtn {
@@ -487,9 +487,9 @@
 }
 
 .creatorTagBadge {
-  background-color: #fdf2f4;
-  color: #c13584;
-  border-color: rgba(193, 53, 132, 0.25);
+  background-color: rgba(225, 48, 108, 0.14);
+  color: #f472b6;
+  border-color: rgba(225, 48, 108, 0.3);
 }
 
 /* Responsive */

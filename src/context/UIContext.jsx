@@ -15,10 +15,58 @@ const UIContext = createContext(null);
 const TOAST_TTL = 4000;
 
 export function UIProvider({ children }) {
+  const [theme, setThemeState] = useState(() => {
+    try {
+      const saved = localStorage.getItem("craftiniya_theme");
+      if (saved === "dark" || saved === "light") return saved;
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    } catch {
+      return "light";
+    }
+  });
+
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [toasts, setToasts] = useState([]);
   const timersRef = useRef(new Map());
+
+  // Keep DOM attribute & storage in sync
+  useEffect(() => {
+    try {
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch {}
+  }, [theme]);
+
+  // Listen to OS scheme changes if user hasn't manually overridden
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const handler = (e) => {
+      const saved = localStorage.getItem("craftiniya_theme");
+      if (!saved) {
+        const sysTheme = e.matches ? "dark" : "light";
+        setThemeState(sysTheme);
+      }
+    };
+    media.addEventListener("change", handler);
+    return () => media.removeEventListener("change", handler);
+  }, []);
+
+  const setTheme = useCallback((nextTheme) => {
+    setThemeState(nextTheme);
+    try {
+      localStorage.setItem("craftiniya_theme", nextTheme);
+    } catch {}
+  }, []);
+
+  const toggleTheme = useCallback(() => {
+    setThemeState((prev) => {
+      const next = prev === "dark" ? "light" : "dark";
+      try {
+        localStorage.setItem("craftiniya_theme", next);
+      } catch {}
+      return next;
+    });
+  }, []);
 
   const dismissToast = useCallback((id) => {
     setToasts((list) => list.filter((t) => t.id !== id));
@@ -91,6 +139,10 @@ export function UIProvider({ children }) {
 
   const value = useMemo(
     () => ({
+      theme,
+      toggleTheme,
+      setTheme,
+
       searchOpen,
       openSearch,
       closeSearch,
@@ -105,7 +157,21 @@ export function UIProvider({ children }) {
       toast,
       dismissToast,
     }),
-    [searchOpen, openSearch, closeSearch, menuOpen, toggleMenu, closeMenu, closeAll, toasts, toast, dismissToast],
+    [
+      theme,
+      toggleTheme,
+      setTheme,
+      searchOpen,
+      openSearch,
+      closeSearch,
+      menuOpen,
+      toggleMenu,
+      closeMenu,
+      closeAll,
+      toasts,
+      toast,
+      dismissToast,
+    ],
   );
 
   return <UIContext.Provider value={value}>{children}</UIContext.Provider>;

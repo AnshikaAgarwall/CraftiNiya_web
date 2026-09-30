@@ -71,6 +71,24 @@
   /* Soft neutral ground for circular close button */
 
   /* ---------------------------------------------------------
+     ANNOUNCEMENT TICKER PALETTE (Token-driven, no hardcoding)
+     --------------------------------------------------------- */
+  --c-ticker-bg: var(--c-brand);
+  --c-ticker-hover-bg: var(--c-brand-hover);
+  --c-ticker-text: var(--c-text-on-brand);
+  --c-ticker-border: rgba(0, 0, 0, 0.12);
+  --c-ticker-cta: var(--c-text-on-brand);
+  --c-ticker-close: var(--c-text-on-brand);
+  --c-ticker-close-hover-bg: rgba(0, 0, 0, 0.12);
+
+  --c-marquee-bg: var(--c-bg);
+  --c-marquee-text: var(--c-text);
+  --c-marquee-border: var(--c-border);
+  --c-marquee-icon: var(--c-brand);
+  --c-marquee-dot: var(--c-support);
+
+
+  /* ---------------------------------------------------------
      TEXT
      --c-text-2 is a grey-green rather than Moss on purpose:
      Moss is the link/button colour, and captions in the same
@@ -278,5 +296,165 @@
     --section-y-sm: 1rem;       /* 16px consistent padding-block for compact strips */
     --section-header-mb: 0.95rem; /* 15px consistent header bottom margin */
     --gutter: 0.875rem;         /* 14px page edge padding */
+  }
+}
+
+/* =========================================================
+   DARK THEME PALETTE — High-Contrast Modern Luxury
+   Inversion Rule:
+   1. Whatever was White in light mode -> Deep Forest Green (#0c1811, #15241b)
+   2. Whatever was Green in light mode -> Crisp Pure White (#ffffff)
+   3. Original light mode (:root) remains 100% untouched.
+   ========================================================= */
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* SURFACE — Whatever was white in light mode is now deep, rich forest green */
+  --c-bg: #0c1811;
+  /* Deep Atmospheric Forest ground */
+  --c-surface: #15241b;
+  /* Velvety Moss / Pine card & panel ground */
+  --c-sunken: #08110b;
+  /* Deepest forest sunken well */
+
+  /* BRAND — Whatever was green in light mode is now pure white */
+  --c-brand: #ffffff;
+  /* White buttons & primary CTA */
+  --c-brand-hover: #eaf3ec;
+  /* Soft pearl-white hover */
+  --c-brand-soft: #162c1f;
+  /* Solid deep forest pine ground — high contrast for badges, pills & soft wells */
+
+  /* ACCENT — Deep Rose Wine ground & Luminous Rose text */
+  --c-accent: #3b1822;
+  --c-accent-ink: #ffd6e0;
+  --c-accent-soft: #122017;
+  /* Deep forest soft ground */
+
+  /* SUPPORT */
+  --c-support: #8eb394;
+
+  /* MOBILE DRAWER PALETTE */
+  --c-drawer-banner-bg: linear-gradient(135deg, #182c20 0%, #233e2e 100%);
+  --c-drawer-icon-green: rgba(255, 255, 255, 0.14);
+  --c-drawer-icon-pink: rgba(240, 194, 205, 0.2);
+  --c-drawer-icon-sage: rgba(255, 255, 255, 0.16);
+  --c-drawer-icon-clay: rgba(255, 255, 255, 0.12);
+  --c-drawer-close-bg: #1c2e22;
+
+  /* ANNOUNCEMENT TICKER PALETTE — Soft artisan light sage green, gentle on eyes, no harsh white glare */
+  --c-ticker-bg: #c5dfcc;
+  --c-ticker-hover-bg: #b6d8bd;
+  --c-ticker-text: #0c1811;
+  --c-ticker-border: rgba(12, 24, 17, 0.16);
+  --c-ticker-cta: #0c1811;
+  --c-ticker-close: #0c1811;
+  --c-ticker-close-hover-bg: rgba(12, 24, 17, 0.12);
+
+  --c-marquee-bg: #c5dfcc;
+  --c-marquee-text: #0c1811;
+  --c-marquee-border: rgba(12, 24, 17, 0.16);
+  --c-marquee-icon: #183d24;
+  --c-marquee-dot: #4d7056;
+
+
+
+  /* TEXT — High-contrast pure white and luminous sage-white */
+  --c-text: #ffffff;
+  /* Pure white (was deep green #1f3a2b) */
+  --c-text-2: #d0dfd4;
+  /* Luminous sage-white (was grey-green #4f5e54) */
+  --c-text-on-brand: #0c1811;
+  /* Deep Forest Green text on White brand button! */
+  --c-text-on-accent: #ffd6e0;
+  --c-text-on-media: #ffffff;
+
+  /* LINES */
+  --c-border: rgba(255, 255, 255, 0.14);
+  --c-border-strong: rgba(255, 255, 255, 0.38);
+  --c-focus: #ffffff;
+
+  /* STATUS */
+  --c-success: #52e189;
+  --c-success-soft: rgba(82, 225, 137, 0.18);
+  --c-error: #f87171;
+  --c-error-soft: rgba(248, 113, 113, 0.18);
+  --c-warning: #fbbf24;
+  --c-warning-soft: rgba(251, 191, 36, 0.18);
+
+  /* CHANNELS — for translucency */
+  --c-ink-rgb: 0 0 0;
+  --c-bg-rgb: 12 24 17;
+  --c-surface-rgb: 21 36 27;
+  --c-sunken-rgb: 8 17 11;
+  --c-accent-rgb: 59 24 34;
+  --c-on-media-rgb: 255 255 255;
+
+  /* SHADOWS */
+  --sh-sm: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --sh-md: 0 6px 16px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  --sh-lg: 0 12px 32px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  --sh-xl: 0 24px 56px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --c-bg: #0c1811;
+    --c-surface: #15241b;
+    --c-sunken: #08110b;
+    --c-brand: #ffffff;
+    --c-brand-hover: #eaf3ec;
+    --c-brand-soft: #162c1f;
+    --c-accent: #3b1822;
+    --c-accent-ink: #ffd6e0;
+    --c-accent-soft: #122017;
+    --c-support: #8eb394;
+    --c-drawer-banner-bg: linear-gradient(135deg, #182c20 0%, #233e2e 100%);
+    --c-drawer-icon-green: rgba(255, 255, 255, 0.14);
+    --c-drawer-icon-pink: rgba(240, 194, 205, 0.2);
+    --c-drawer-icon-sage: rgba(255, 255, 255, 0.16);
+    --c-drawer-icon-clay: rgba(255, 255, 255, 0.12);
+    --c-drawer-close-bg: #1c2e22;
+
+    /* ANNOUNCEMENT TICKER PALETTE — Soft artisan light sage green */
+    --c-ticker-bg: #c5dfcc;
+    --c-ticker-hover-bg: #b6d8bd;
+    --c-ticker-text: #0c1811;
+    --c-ticker-border: rgba(12, 24, 17, 0.16);
+    --c-ticker-cta: #0c1811;
+    --c-ticker-close: #0c1811;
+    --c-ticker-close-hover-bg: rgba(12, 24, 17, 0.12);
+
+    --c-marquee-bg: #c5dfcc;
+    --c-marquee-text: #0c1811;
+    --c-marquee-border: rgba(12, 24, 17, 0.16);
+    --c-marquee-icon: #183d24;
+    --c-marquee-dot: #4d7056;
+
+
+    --c-text: #ffffff;
+    --c-text-2: #d0dfd4;
+    --c-text-on-brand: #0c1811;
+    --c-text-on-accent: #ffd6e0;
+    --c-text-on-media: #ffffff;
+    --c-border: rgba(255, 255, 255, 0.14);
+    --c-border-strong: rgba(255, 255, 255, 0.38);
+    --c-focus: #ffffff;
+    --c-success: #52e189;
+    --c-success-soft: rgba(82, 225, 137, 0.18);
+    --c-error: #f87171;
+    --c-error-soft: rgba(248, 113, 113, 0.18);
+    --c-warning: #fbbf24;
+    --c-warning-soft: rgba(251, 191, 36, 0.18);
+    --c-ink-rgb: 0 0 0;
+    --c-bg-rgb: 12 24 17;
+    --c-surface-rgb: 21 36 27;
+    --c-sunken-rgb: 8 17 11;
+    --c-accent-rgb: 59 24 34;
+    --c-on-media-rgb: 255 255 255;
+    --sh-sm: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    --sh-md: 0 6px 16px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    --sh-lg: 0 12px 32px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.12);
+    --sh-xl: 0 24px 56px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.14);
   }
 }

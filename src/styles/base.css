@@ -28,6 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  transition: background-color var(--t-base) var(--ease), color var(--t-base) var(--ease);
 }
 
 h1,
@@ -353,4 +354,20 @@ hr {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---------------------------------------------------------
+   DARK MODE REFINEMENTS
+   Subtle glare reduction for white-ground catalog imagery
+   --------------------------------------------------------- */
+
+:root[data-theme="dark"] img:not([class*="avatar"]):not([class*="logo"]),
+[data-theme="dark"] img:not([class*="avatar"]):not([class*="logo"]) {
+  filter: brightness(0.93) contrast(1.02);
+  transition: filter var(--t-base) var(--ease);
+}
+
+:root[data-theme="dark"] img:hover,
+[data-theme="dark"] img:hover {
+  filter: brightness(1) contrast(1);
 }

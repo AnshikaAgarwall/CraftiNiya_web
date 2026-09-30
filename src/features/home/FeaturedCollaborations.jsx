@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Sparkles } from "lucide-react";
 import { SectionHeading } from "../../components/ui/Bits.jsx";
 import { getCollaborations } from "../../data/partners.js";
 import s from "./FeaturedCollaborations.module.css";
@@ -31,7 +32,10 @@ export default function FeaturedCollaborations() {
               />
 
               {item.badge && (
-                <span className={s.badgePill}>{item.badge}</span>
+                <span className={s.badgePill}>
+                  <Sparkles size={11} aria-hidden="true" />
+                  {item.badge}
+                </span>
               )}
             </Link>
           ))}
@@ -40,3 +44,4 @@ export default function FeaturedCollaborations() {
     </section>
   );
 }
+

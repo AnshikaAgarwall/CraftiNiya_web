@@ -6,15 +6,15 @@
 .tickerWrapper {
   width: 100%;
   overflow: hidden;
-  background: var(--c-bg, #ffffff);
-  color: var(--c-text, #1f3a2b);
+  background: var(--c-marquee-bg, var(--c-bg, #ffffff));
+  color: var(--c-marquee-text, var(--c-text, #1f3a2b));
   padding-block: 5px;
   position: relative;
-  border-block: 1px solid var(--c-border, #e8e8e8);
+  border-block: 1px solid var(--c-marquee-border, var(--c-border, #e8e8e8));
   user-select: none;
 }
 
-/* Subtle edge blur vignettes for clean white background */
+/* Subtle edge blur vignettes */
 .tickerWrapper::before,
 .tickerWrapper::after {
   content: "";
@@ -28,12 +28,12 @@
 
 .tickerWrapper::before {
   left: 0;
-  background: linear-gradient(90deg, #ffffff 0%, transparent 100%);
+  background: linear-gradient(90deg, var(--c-marquee-bg, var(--c-bg)) 0%, transparent 100%);
 }
 
 .tickerWrapper::after {
   right: 0;
-  background: linear-gradient(270deg, #ffffff 0%, transparent 100%);
+  background: linear-gradient(270deg, var(--c-marquee-bg, var(--c-bg)) 0%, transparent 100%);
 }
 
 .track {
@@ -57,7 +57,7 @@
 }
 
 .icon {
-  color: var(--c-brand, #4a6b53);
+  color: var(--c-marquee-icon, var(--c-brand, #4a6b53));
   flex-shrink: 0;
 }
 
@@ -66,15 +66,16 @@
   font-weight: var(--fw-semibold, 600);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--c-text, #1f3a2b);
+  color: var(--c-marquee-text, var(--c-text, #1f3a2b));
 }
 
 .dot {
   margin-left: clamp(10px, 1.8vw, 18px);
-  color: var(--c-support, #8ba888);
+  color: var(--c-marquee-dot, var(--c-support, #8ba888));
   font-size: 11px;
   opacity: 0.7;
 }
+
 
 @keyframes tickerScroll {
   from {

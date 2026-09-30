@@ -64,7 +64,7 @@
 
 .cartActive .ctaPill {
   background-color: var(--c-brand);
-  color: #ffffff;
+  color: var(--c-text-on-brand);
   box-shadow: 0 0 10px rgb(var(--c-accent-rgb, 234 126 107) / 0.4);
 }
 
@@ -364,4 +364,102 @@
   .tag {
     font-size: 6.5px;
   }
+}
+
+/* ---------- Dark Theme Cart Styling ---------- */
+:global([data-theme="dark"]) .stripes {
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.08);
+}
+
+:global([data-theme="dark"]) .stripe {
+  border-top-color: #ffffff;
+}
+
+:global([data-theme="dark"]) .stripe:nth-child(odd) {
+  background: linear-gradient(180deg, #1f1f1f 0%, #0a0a0a 100%);
+}
+
+:global([data-theme="dark"]) .stripe:nth-child(even) {
+  background: linear-gradient(180deg, #ffffff 0%, #e6e6e6 100%);
+}
+
+:global([data-theme="dark"]) .scallop:nth-child(odd) {
+  background-color: #0a0a0a;
+}
+
+:global([data-theme="dark"]) .scallop:nth-child(even) {
+  background-color: #ffffff;
+}
+
+:global([data-theme="dark"]) .board {
+  background: #ffffff;
+  border-inline-color: #ffffff;
+}
+
+:global([data-theme="dark"]) .counterShelf {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+  border: 1px solid #ffffff;
+}
+
+:global([data-theme="dark"]) .cartChassis {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+:global([data-theme="dark"]) .wheelRim {
+  background-color: #0a0a0a;
+  border-color: #0a0a0a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+:global([data-theme="dark"]) .spoke {
+  background-color: #ffffff !important;
+}
+
+:global([data-theme="dark"]) .wheelHub {
+  background-color: #ffffff;
+  border-color: #0a0a0a;
+}
+
+
+:global([data-theme="dark"]) .ctaPill {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  border: 1.5px solid #ffffff;
+}
+
+:global([data-theme="dark"]) .label {
+  color: #155724 !important;
+  font-weight: 800;
+}
+
+:global([data-theme="dark"]) .tag {
+  color: #155724 !important;
+  background-color: #e8f5e9 !important;
+  border-color: #a5d6a7 !important;
+}
+
+:global([data-theme="dark"]) .cart:hover .board,
+:global([data-theme="dark"]) .cartActive .board {
+  background: #f7fbf8;
+  border-inline-color: #ffffff;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.2);
+}
+
+:global([data-theme="dark"]) .cart:hover .cartChassis,
+:global([data-theme="dark"]) .cartActive .cartChassis {
+  border-color: #ffffff;
+}
+
+:global([data-theme="dark"]) .cart:hover .wheelRim,
+:global([data-theme="dark"]) .cartActive .wheelRim {
+  border-color: #0a0a0a;
+}
+
+
+:global([data-theme="dark"]) .cart:hover .ctaPill,
+:global([data-theme="dark"]) .cartActive .ctaPill {
+  background-color: #155724;
+  color: #ffffff;
+  border-color: #ffffff;
 }

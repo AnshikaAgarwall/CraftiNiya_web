@@ -53,6 +53,41 @@
   color: var(--c-error);
 }
 
+:global([data-theme="dark"]) .tone_brand {
+  background-color: #12281a;
+  color: #ffffff;
+  border: 1px solid rgba(82, 225, 137, 0.35);
+}
+
+:global([data-theme="dark"]) .tone_neutral {
+  background-color: #16241b;
+  color: #d0dfd4;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+:global([data-theme="dark"]) .tone_accent {
+  background-color: #3b1822;
+  color: #ffd6e0;
+  border: 1px solid rgba(244, 114, 182, 0.35);
+}
+
+:global([data-theme="dark"]) .tone_solid {
+  background-color: #ffffff;
+  color: #0c1811;
+}
+
+:global([data-theme="dark"]) .tone_success {
+  background-color: #0d2816;
+  color: #52e189;
+  border: 1px solid rgba(82, 225, 137, 0.35);
+}
+
+:global([data-theme="dark"]) .tone_error {
+  background-color: #381414;
+  color: #fca5a5;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+}
+
 /* ---------- price ---------- */
 
 .price {

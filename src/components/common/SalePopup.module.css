@@ -55,7 +55,7 @@
   height: 36px;
   border-radius: var(--r-circle);
   border: 1.5px solid var(--c-border);
-  background-color: #ffffff;
+  background-color: var(--c-surface, #ffffff);
   color: var(--c-text);
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(31, 58, 43, 0.15);
@@ -76,7 +76,7 @@
   overflow: hidden;
   border-radius: var(--r-xl);
   border: 1px solid var(--c-border);
-  background-color: #ffffff;
+  background-color: var(--c-surface, #ffffff);
   box-shadow: 0 16px 40px rgba(31, 58, 43, 0.12);
   cursor: pointer;
   transition: transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease);
@@ -174,7 +174,7 @@
   text-align: center;
   padding: var(--sp-5) var(--sp-6) var(--sp-6);
   color: var(--c-text);
-  background-color: #ffffff;
+  background-color: var(--c-surface, #ffffff);
 }
 
 .headline {
@@ -365,3 +365,82 @@
     padding: var(--sp-4);
   }
 }
+
+/* =========================================================
+   DARK THEME POPUP & COUPON STYLING
+   ========================================================= */
+
+:global([data-theme="dark"]) .dialog {
+  background-color: var(--c-surface);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+:global([data-theme="dark"]) .content {
+  background-color: var(--c-surface);
+}
+
+:global([data-theme="dark"]) .couponBox {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+:global([data-theme="dark"]) .couponBox:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+}
+
+:global([data-theme="dark"]) .couponCode {
+  color: #ffffff !important;
+}
+
+:global([data-theme="dark"]) .couponLabel {
+  color: #d0dfd4;
+}
+
+:global([data-theme="dark"]) .tagIcon {
+  color: #52e189;
+}
+
+:global([data-theme="dark"]) .discountBadge {
+  background-color: #ffffff;
+  color: #0c1811;
+}
+
+:global([data-theme="dark"]) .copyBtn {
+  background-color: #ffffff;
+  color: #0c1811;
+}
+
+:global([data-theme="dark"]) .ctaBtn {
+  background-color: #ffffff;
+  color: #0c1811;
+}
+
+:global([data-theme="dark"]) .ctaBtn:hover {
+  background-color: #eaf3ec;
+}
+
+:global([data-theme="dark"]) .timerUnit {
+  background-color: var(--c-sunken);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+:global([data-theme="dark"]) .timerUnit strong {
+  color: #ffffff;
+}
+
+:global([data-theme="dark"]) .timerUnit span {
+  color: #d0dfd4;
+}
+
+:global([data-theme="dark"]) .timerColon {
+  color: #52e189;
+}
+
+:global([data-theme="dark"]) .liveBadge {
+  background-color: rgba(18, 28, 22, 0.95);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #f87171;
+}
+

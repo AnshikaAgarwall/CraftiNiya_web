@@ -85,6 +85,18 @@
   text-transform: uppercase;
 }
 
+:global([data-theme="dark"]) .collabBadge {
+  background-color: #12281b !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(82, 225, 137, 0.45) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+:global([data-theme="dark"]) .collabBadge svg {
+  color: #52e189 !important;
+}
+
+
 .collabTitle {
   font-family: var(--font-sans);
   font-size: clamp(var(--fs-2xl), 3vw, var(--fs-4xl));
@@ -304,7 +316,7 @@
 .applyBtn {
   padding: 8px 18px;
   background-color: var(--c-brand);
-  color: #ffffff;
+  color: var(--c-text-on-brand);
   border-radius: var(--r-md);
   font-size: var(--fs-sm);
   font-weight: 600;

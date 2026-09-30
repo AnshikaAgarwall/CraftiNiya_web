@@ -245,6 +245,30 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
+:global([data-theme="dark"]) .cardBadge {
+  background-color: #0c2014;
+  color: #ffffff;
+  border: 1px solid rgba(82, 225, 137, 0.45);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+:global([data-theme="dark"]) .cardBadge svg {
+  color: #52e189;
+}
+
+:global([data-theme="dark"]) .sectionBadge {
+  color: #ffffff;
+  background-color: #162c1f;
+  border: 1px solid rgba(82, 225, 137, 0.35);
+}
+
+:global([data-theme="dark"]) .viewAll:hover,
+:global([data-theme="dark"]) .featuredCard:hover .cardAction,
+:global([data-theme="dark"]) .sectionTitle:hover {
+  color: #52e189;
+}
+
+
 .cardBody {
   display: flex;
   flex-direction: column;

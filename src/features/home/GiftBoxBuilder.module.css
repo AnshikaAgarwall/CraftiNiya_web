@@ -74,9 +74,9 @@
 .presetBtn {
   padding: 7px 14px;
   border-radius: var(--r-pill);
-  border: 1.5px solid var(--c-border-strong);
+  border: 1.5px solid var(--c-border);
   background: var(--c-brand-soft);
-  color: var(--c-brand-hover);
+  color: var(--c-brand);
   font-weight: 700;
   font-size: 0.84rem;
   cursor: pointer;
@@ -133,7 +133,7 @@
   font-size: 0.84rem;
   font-weight: 600;
   color: var(--c-text);
-  background: var(--c-bg);
+  background: var(--c-sunken);
   outline: none;
   transition: border-color var(--t-fast) var(--ease);
   -moz-appearance: textfield;
@@ -450,7 +450,7 @@
 }
 
 .receipt {
-  background: #fffef8;
+  background: var(--c-surface, #fffef8);
   border-radius: var(--r-md);
   padding: var(--sp-5) var(--sp-4);
   box-shadow: var(--sh-md);
@@ -463,6 +463,24 @@
     rgba(0, 0, 0, 0.028) 27px,
     rgba(0, 0, 0, 0.028) 28px
   );
+}
+
+:global([data-theme="dark"]) .receipt {
+  background-color: var(--c-surface);
+  border-color: rgba(255, 255, 255, 0.12);
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 27px,
+    rgba(255, 255, 255, 0.035) 27px,
+    rgba(255, 255, 255, 0.035) 28px
+  );
+}
+
+:global([data-theme="dark"]) .noteInput {
+  background: var(--c-sunken);
+  color: var(--c-text);
+  border-color: var(--c-border);
 }
 
 .receiptHeader {
@@ -772,9 +790,9 @@
 .starterPillBtn {
   padding: 8px 16px;
   border-radius: var(--r-pill);
-  border: 1.5px solid var(--c-border-strong);
+  border: 1.5px solid var(--c-border);
   background: var(--c-brand-soft);
-  color: var(--c-brand-hover);
+  color: var(--c-brand);
   font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;

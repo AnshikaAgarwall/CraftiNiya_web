@@ -71,8 +71,8 @@ export const reels = [
   {
     id: 4,
     title: 'Preserving wedding garland in custom resin clock',
-    caption: "A forever keepsake! Preserved the couple's wedding varmala flowers inside a 14-inch Roman numeral resin clock 🌸 ⏰",
-    description: "A forever keepsake! Preserved the couple's wedding varmala flowers inside a 14-inch Roman numeral resin clock 🌸 ⏰",
+    caption: "A forever keepsake! Preserved the couple's wedding varmala flowers inside a 14-inch Roman numeral resin clock ",
+    description: "A forever keepsake!",
     views: '44K views',
     likes: '5.9k',
     image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80',
@@ -94,8 +94,8 @@ export const reels = [
   {
     id: 5,
     title: 'Ocean wave hexagon coaster demolding',
-    caption: 'Satisfying coaster demolding session! Hexagon resin coaster set with gold leaf rim and foamy sea waves 🌊',
-    description: 'Satisfying coaster demolding session! Hexagon resin coaster set with gold leaf rim and foamy sea waves 🌊',
+    caption: 'Satisfying coaster demolding session! ',
+    description: 'Satisfying coaster demolding session! ',
     views: '21K views',
     likes: '2.8k',
     image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80',

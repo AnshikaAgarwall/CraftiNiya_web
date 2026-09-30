@@ -17,6 +17,8 @@ import {
   Search,
   ShoppingBag,
   Sparkles,
+  Sun,
+  Moon,
   Tag,
   User,
   Users,
@@ -83,7 +85,7 @@ export default function Header() {
   const { itemCount } = useCart();
   const { count: wishlistCount } = useWishlist();
   const { isAuthenticated, user } = useAuth();
-  const { openSearch, menuOpen, toggleMenu, closeMenu } = useUI();
+  const { openSearch, menuOpen, toggleMenu, closeMenu, theme, toggleTheme } = useUI();
   const { pathname } = useLocation();
 
   const [condensed, setCondensed] = useState(false);
@@ -224,6 +226,17 @@ export default function Header() {
                 onUnreadChange={setUnreadNotifications}
               />
             </div>
+
+            {/* Dark / Light Theme Toggle */}
+            <button
+              type="button"
+              className={cn(s.action, s.themeToggle)}
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+              title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+            >
+              {theme === "dark" ? <Sun size={19} /> : <Moon size={19} />}
+            </button>
 
             <Link
               to="/wishlist"
@@ -418,14 +431,25 @@ export default function Header() {
                 <span className={s.brandName}>{BRAND.name}</span>
                 <span className={s.brandTagline}>{BRAND.tagline}</span>
               </Link>
-              <button
-                type="button"
-                className={s.drawerCloseBtn}
-                onClick={closeMenu}
-                aria-label="Close menu"
-              >
-                <X size={18} />
-              </button>
+              <div className={s.drawerHeaderActions}>
+                <button
+                  type="button"
+                  className={s.drawerThemeBtn}
+                  onClick={toggleTheme}
+                  aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+                  title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+                >
+                  {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
+                </button>
+                <button
+                  type="button"
+                  className={s.drawerCloseBtn}
+                  onClick={closeMenu}
+                  aria-label="Close menu"
+                >
+                  <X size={18} />
+                </button>
+              </div>
             </div>
 
             <div className={s.drawerBody}>

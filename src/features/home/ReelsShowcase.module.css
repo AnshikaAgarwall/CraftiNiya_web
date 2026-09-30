@@ -568,7 +568,7 @@
 }
 
 .modalProductCard:hover {
-  background-color: #ffffff;
+  background-color: var(--c-surface, #ffffff);
   border-color: var(--c-brand);
   box-shadow: var(--sh-sm);
   transform: translateY(-2px);
