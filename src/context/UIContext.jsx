@@ -18,8 +18,7 @@ export function UIProvider({ children }) {
   const [theme, setThemeState] = useState(() => {
     try {
       const saved = localStorage.getItem("craftiniya_theme");
-      if (saved === "dark" || saved === "light") return saved;
-      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      return saved === "dark" ? "dark" : "light";
     } catch {
       return "light";
     }
@@ -36,20 +35,6 @@ export function UIProvider({ children }) {
       document.documentElement.setAttribute("data-theme", theme);
     } catch {}
   }, [theme]);
-
-  // Listen to OS scheme changes if user hasn't manually overridden
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const handler = (e) => {
-      const saved = localStorage.getItem("craftiniya_theme");
-      if (!saved) {
-        const sysTheme = e.matches ? "dark" : "light";
-        setThemeState(sysTheme);
-      }
-    };
-    media.addEventListener("change", handler);
-    return () => media.removeEventListener("change", handler);
-  }, []);
 
   const setTheme = useCallback((nextTheme) => {
     setThemeState(nextTheme);
