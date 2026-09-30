@@ -182,6 +182,12 @@
   height: 40px;
   border-radius: var(--r-circle);
   color: var(--c-text);
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
   transition:
     background-color var(--t-fast) var(--ease),
     color var(--t-fast) var(--ease);
@@ -201,6 +207,10 @@
 
 .themeToggle {
   cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
 }
 
 .themeToggle:hover svg {
@@ -227,19 +237,24 @@
 /* Notification Bell Button */
 .notificationWrapper {
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .notificationButton {
+  width: 100%;
+  height: 100%;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-}
-
-.themeToggle {
-  display: inline-flex;
+  margin: 0;
 }
 
 .actionActive {
@@ -627,7 +642,8 @@
     flex-shrink: 0;
   }
 
-  .action {
+  .action,
+  .notificationWrapper {
     width: 35px !important;
     height: 35px !important;
   }
@@ -738,6 +754,7 @@
   }
 
   .action,
+  .notificationWrapper,
   .searchExpandable,
   .menuButton {
     width: 32px !important;

@@ -9,6 +9,8 @@ import CountdownBanner from "../features/home/CountdownBanner.jsx";
 import FeaturedCollaborations from "../features/home/FeaturedCollaborations.jsx";
 import ReelsShowcase from "../features/home/ReelsShowcase.jsx";
 import BudgetTiers from "../features/home/BudgetTiers.jsx";
+import RecentOrderRecommendations from "../features/home/RecentOrderRecommendations.jsx";
+import RecentlyViewedSection from "../features/home/RecentlyViewedSection.jsx";
 import ReviewPills from "../features/home/ReviewPills.jsx";
 import SocialCommunityBanners from "../features/home/SocialCommunityBanners.jsx";
 
@@ -49,18 +51,24 @@ export default function Home() {
           />
 
           <ProductGrid
-            products={(bestSellers ?? []).slice(0, 8)}
+            products={(bestSellers ?? []).slice(0, 4)}
             loading={loading}
             error={error}
             onRetry={refetch}
             columns={4}
-            skeletonCount={8}
+            skeletonCount={4}
           />
         </div>
       </section>
 
+      {/* Last Order Spotlight & Matching Recommendations */}
+      <RecentOrderRecommendations />
+
       <ReelsShowcase />
       <BudgetTiers />
+
+      {/* Past Viewed / Recently Explored Items */}
+      <RecentlyViewedSection />
 
       <ReviewPills />
       {/* Social community section temporarily disabled for later reconsideration */}

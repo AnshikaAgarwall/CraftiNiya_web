@@ -1,0 +1,142 @@
+/* =========================================================
+   BECAUSE YOU BOUGHT — PERSONALIZED RECOMMENDATION SECTION
+   Pairs matching handcrafted pieces based on user's past orders
+   or viewing taste.
+   ========================================================= */
+
+.section {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+  background-color: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+  position: relative;
+}
+
+.headerRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  margin-bottom: var(--section-header-mb);
+}
+
+.badgePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background-color: var(--c-brand-soft);
+  color: var(--c-brand);
+  border-radius: var(--r-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--sp-2);
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: clamp(var(--fs-2xl), 2.6vw, var(--fs-4xl));
+  font-weight: var(--fw-semibold);
+  color: var(--c-text);
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: var(--lh-tight);
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  max-width: 600px;
+}
+
+/* Past Order Anchor Pill (Desktop) */
+.anchorCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.anchorLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--c-text-2);
+}
+
+.anchorProduct {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px 4px 4px;
+  background-color: var(--c-sunken);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-pill);
+  max-width: 280px;
+}
+
+.anchorImg {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.anchorTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--c-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Skeleton Loading */
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+}
+
+.skeletonCard {
+  height: 340px;
+  border-radius: var(--r-lg);
+}
+
+@media (max-width: 900px) {
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-4);
+  }
+
+  .anchorCard {
+    align-items: flex-start;
+  }
+
+  .skeletonGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 1.35rem;
+  }
+
+  .subtitle {
+    font-size: 0.78125rem;
+  }
+
+  .anchorProduct {
+    max-width: 100%;
+  }
+}

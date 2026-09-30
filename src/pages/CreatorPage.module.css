@@ -1,5 +1,5 @@
 .pageWrap {
-  padding-block: var(--sp-4) var(--sp-8);
+  padding-block: var(--sp-3) var(--sp-6);
   background-color: var(--c-bg);
 }
 
@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   gap: var(--sp-2);
-  margin-bottom: var(--sp-5);
+  margin-bottom: var(--sp-3);
   font-size: var(--fs-xs, 0.75rem);
   color: var(--c-text-2);
 }
@@ -200,8 +200,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: var(--sp-5);
-  padding-bottom: var(--sp-3);
+  margin-bottom: var(--sp-4);
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--c-border);
 }
 
@@ -381,8 +381,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: var(--sp-6);
-  padding: var(--sp-6) var(--sp-8);
+  gap: clamp(var(--sp-4), 2vw, var(--sp-6));
+  padding: clamp(14px, 1.6vw, 18px) clamp(16px, 2.5vw, 24px);
   background: linear-gradient(
     135deg,
     var(--c-surface) 0%,
@@ -391,13 +391,13 @@
   border-radius: var(--r-xl, 20px);
   border: 1px solid var(--c-border);
   box-shadow: var(--sh-sm);
-  margin-bottom: var(--sp-8);
+  margin-bottom: var(--sp-5);
 }
 
 .influAvatarWrap {
   position: relative;
-  width: clamp(80px, 10vw, 130px);
-  height: clamp(80px, 10vw, 130px);
+  width: clamp(72px, 6.5vw, 92px);
+  height: clamp(72px, 6.5vw, 92px);
   flex-shrink: 0;
 }
 
@@ -522,7 +522,7 @@
 
 /* 2. Feature Reel Video */
 .influReelSection {
-  margin-bottom: var(--sp-10);
+  margin-bottom: var(--sp-6);
 }
 
 .influReelBadge {
@@ -534,13 +534,13 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--c-brand);
-  margin-bottom: var(--sp-3);
+  margin-bottom: var(--sp-2);
 }
 
 .influReelPlayer {
   position: relative;
   width: 100%;
-  max-height: 480px;
+  max-height: clamp(260px, 28vw, 360px);
   aspect-ratio: 21 / 9;
   border-radius: var(--r-xl, 20px);
   overflow: hidden;
@@ -584,29 +584,29 @@
 
 /* 3. Studio Handcrafted Pieces (Shop Now) */
 .studioCreationsSection {
-  margin-bottom: var(--sp-10);
+  margin-bottom: var(--sp-6);
 }
 
 /* 4. Shop the Look — 2 Reels with Related Products */
 .shopTheLookSection {
-  margin-bottom: var(--sp-12);
+  margin-bottom: var(--sp-6);
 }
 
 .shopTheLookList {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-8);
+  gap: var(--sp-4);
 }
 
 .shopTheLookGrid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: var(--sp-6);
+  grid-template-columns: clamp(220px, 20vw, 260px) 1fr;
+  gap: var(--sp-5);
   align-items: start;
   background-color: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--r-xl, 20px);
-  padding: var(--sp-5);
+  padding: clamp(12px, 1.4vw, 16px);
   box-shadow: var(--sh-sm);
 }
 
@@ -687,7 +687,7 @@
 
 /* 4. More Products Section */
 .catalogSection {
-  margin-bottom: var(--sp-12);
+  margin-bottom: var(--sp-6);
 }
 
 /* =========================================================

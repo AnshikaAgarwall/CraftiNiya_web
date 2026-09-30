@@ -1,0 +1,74 @@
+/* =========================================================
+   RECENTLY VIEWED SECTION
+   Displays items the user recently explored.
+   ========================================================= */
+
+.section {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+  background-color: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+  position: relative;
+}
+
+.headingBlock {
+  margin-bottom: var(--section-header-mb);
+}
+
+.badgePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background-color: var(--c-brand-soft);
+  color: var(--c-brand);
+  border-radius: var(--r-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  margin-bottom: var(--sp-2);
+}
+
+.sectionTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(var(--fs-2xl), 2.8vw, var(--fs-4xl));
+  font-weight: var(--fw-semibold);
+  color: var(--c-text);
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: var(--lh-tight);
+}
+
+.sectionSubtitle {
+  margin-top: 6px;
+  color: var(--c-text-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  max-width: 600px;
+}
+
+/* Skeleton Loading */
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+}
+
+.skeletonCard {
+  height: 330px;
+  border-radius: var(--r-lg);
+}
+
+@media (max-width: 900px) {
+  .skeletonGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+  }
+}
+
+@media (max-width: 640px) {
+  .sectionTitle {
+    font-size: 1.32rem;
+  }
+}
